@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOpsaTable extends Migration
+class AddUserNameToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateOpsaTable extends Migration
      */
     public function up()
     {
-        Schema::create('opsa', function (Blueprint $table) {
-            $table->id();
-            $table->numero_reporte();
-            $table->actos_seguros();
-            $table->actos_inseguros();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('username');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateOpsaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('opsa');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('username');
+        });
     }
 }

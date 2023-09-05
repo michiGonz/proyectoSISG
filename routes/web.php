@@ -1,35 +1,23 @@
 <?php
-
+/* Configs and Route */
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Config;
+
+/* Controllers  */
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\AmbienteController;
+use App\Http\Controllers\ObsController;
+use App\Http\Controllers\AutenticacionController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('/', ActivityController::class);
+    Route::resource('indicators', IndicatorController::class);
+    Route::resource('ambiente', AmbienteController::class);
+    Route::resource('observacion', ObsController::Class);
+    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('logout', [AutenticacionController::class,'logout'])->name('logout');
+});
 
-/* Route::get('/', function () {
-    return view('index');
-}); */
-
-Route::resource('/', ActivityController::class);
-Route::resource('indicators', IndicatorController::class);
-Route::resource('ambiente', AmbienteController::class);
-Route::resource('login', LoginController::class);
-/* Route::resource('mostrar', MostrarController::class);*/
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('login', [AutenticacionController::class,'postLogin'])->name('loginData');
+Route::get('login', [AutenticacionController::class,'getLogin'])->name('login');
