@@ -2,29 +2,27 @@
 @section('content')
 
 <div class="container">
-<h1>Crear Registro de Visita Gerencial</h1>
+<h1>Crear Registro de OPSA</h1>
 
-   
 <div class="card-body">
-                    <form method="POST" action="{{ route('ambiente.store') }}">
+                    <form method="POST" action="{{ route('observacion.store') }}">
                         @csrf
                         <div class="form-group">
-                            <label for="name">Lugar de la visita</label>
+                            <label for="name">Descripcion</label>
                             <textarea type="text" name="name" id="name" class="form-control" rows="1" required></textarea>
                         </div>
-
-                        <div class="form-group">
-                            <label for="description">Descripción</label>
-                            <textarea type="text "name="description" id="description" class="form-control" rows="4" required></textarea>
-                        </div>
+                       
+                        <input type="number"name="cantidad" id="cantidad" class="form-control">
+                            <label for="acompanantes">Cantidad de Actos Seguros</label>
+                        </input>
 
                         <input type="number"name="cantidad" id="cantidad" class="form-control">
-                            <label for="acompanantes">Cantidad de Personas</label>
+                            <label for="acompanantes">Cantidad de Actos Inseguros</label>
                         </input>
 
                         <div class="form-group">
-                            <label for="acompanantes">Nombre de Acompañantes</label>
-                            <textarea name="acompanantes" id="acompanante" class="form-control" rows="1" required></textarea>
+                            <label for="Observacion">Observacion</label>
+                            <textarea type="text "name="description" id="description" class="form-control" rows="4" required></textarea>
                         </div>
 
                         <div class="container px-1 px-sm-5 mx-auto">
@@ -47,5 +45,4 @@
 </div>
 </div>
 
-  
 @endsection

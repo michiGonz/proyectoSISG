@@ -22,8 +22,8 @@
                         <td><a class="btn btn-success" href="{{ route('ambiente.create') }}"><span>Agregar Reporte Visita Gerencial</span></button></td>
                     </tr>
                     <tr>
-                        <td><a class="nav-link" href="{{ route('ambiente.index') }}"><span>OPSA</span></a></td>
-                        <td><a class="btn btn-success" href="{{ route('ambiente.create') }}"><span>Agregar Reporte OPSA</span></button></td>
+                        <td><a class="nav-link" href="{{ route('observacion.index') }}"><span>OPSA</span></a></td>
+                        <td><a class="btn btn-success" href="{{ route('observacion.create') }}"><span>Agregar Reporte OPSA</span></button></td>
                     </tr>
 
                     <tr>
