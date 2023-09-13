@@ -5,23 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ambiente extends Model
+class Simulacion extends Model
 {
     use HasFactory;
-
-    protected $table = 'ambiente';
+    protected $table = 'simulacion';
 
     protected $fillable = [
+        'simulacro_cumplido',
         'name',
-        'description',
-        'cantidad',
-        'acompanantes',
+        'ubicacion',
+        'observacion',
         'date',
-
-
     ];
-
-    public function ambiente(){
+    public function simulacion(){
         return $this->hasMany(indicator::class);
     }
+
 }

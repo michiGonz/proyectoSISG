@@ -3,6 +3,8 @@
 @section('content')
 <div class="container-fluid">
 
+
+
 <!-- Content Row -->
 <div class="row">
 
@@ -90,71 +92,6 @@
     </div>
 </div>
 
-<!-- Content Row -->
-
-<div class="row">
-
-    <!-- Area Chart -->
-    <div class="col-xl-8 col-lg-7">
-        <div class="card shadow mb-4">
-            <!-- Card Header - Dropdown -->
-            <div
-                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Indicadores</h6>
-                <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                </div>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name of indicator</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($indicators as $indicator)
-                        <tr>
-                            <th scope="row">{{$indicator->id}}</th>
-                            <td><a href="" data-toggle="modal"
-                                    data-target="#indicador-{{$indicator->id}}">{{$indicator->name}}</a>
-                            </td>
-                        </tr>
-                        <!-- Modal -->
-                        <div class="modal fade" id="indicador-{{$indicator->id}}">
-                            <div class="modal-xl modal-dialog">
-                                <div class="modal-content">
-                                    <!-- Encabezado del modal -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">{{$indicator->name}}</h4>
-                                        <button type="button" class="close"
-                                            data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <!-- Contenido del modal -->
-                                    <div class="modal-body">
-                                        <p>{!! $indicator->description !!}</p>
-                                    </div>
-                                    <!-- Pie del modal -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Cerrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Content Row -->
 <div class="row">
@@ -210,13 +147,9 @@
             </div>
             <div class="card-body">
                 <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                        src="img/undraw_posting_photo.svg" alt="...">
+                    <img class="img-fluid px- px-sm-6 mt-3 mb-4" style="width: 25rem;" src="" />
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque, tempore
-                    nisi totam expedita, sapiente distinctio perferendis excepturi ullam
-                    reprehenderit explicabo saepe repellat quisquam magnam vitae, ex quae cum
-                    maxime placeat! </a>
+                <p>Un indicador es una característica específica, observable y medible que puede ser usada para mostrar los cambios y progresos que está haciendo un programa hacia el logro de un resultado específico. </a>
             </div>
         </div>
 

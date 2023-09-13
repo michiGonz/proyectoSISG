@@ -8,17 +8,13 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="name">Nombre del Indicador:</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $indicator->name }}" required>
-                <input type="text" class="form-control" id="description" name="description" value="{{ $indicator->description }}">
-            </div>
-            <div class="form-group">
-                <label for="actividad_id">Actividad:</label>
-                <select class="form-control" id="activity_id" name="activity_id" required>
-                    @foreach ($actividades as $actividad)
-                        <option value="{{ $actividad->id }}" {{ $actividad->id === $indicator->activity_id ? 'selected' : '' }}>{{ $actividad->name }}</option>
-                    @endforeach
-                </select>
+          
+                <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-primary">Crear Registro</button>
+                    <a href="{{ route('indicators.index') }}" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
             </div>
             <button type="submit" class="btn btn-primary">Actualizar Indicador</button>
         </form>

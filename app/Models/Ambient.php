@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Indicator extends Model
+class Ambient extends Model
 {
     use HasFactory;
 
-    protected $table = 'indicator';
+    protected $table = 'ambiente';
 
     protected $fillable = [
-        'name',
-        'description',
-
+    'name',
+    'description',
+    'cantpersona',
+    'acompanantes',
+    'date',
     ];
 
     public function indicator(){

@@ -17,10 +17,7 @@ class CreateIndicatorTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->unsignedBigInteger('activity_id');
             $table->timestamps();
-
-            $table->foreign('activity_id')->references('id')->onDelete('cascade');
         });
     }
 

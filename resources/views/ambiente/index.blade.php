@@ -3,39 +3,55 @@
 @section('title', 'Inicio')
 
 @section('content')
-       
+
 <div class="container">
-        <h2>Visita Gerencial</h2>
+    <h2>Visita Gerencial</h2>
+    <tbody>
+        <tr>
+            <td><a class="btn btn-success" class="nav-link" href="{{ route('ambiente.create') }}"><span>Crear Reporte</span></a></td>
+
+    </tbody>
+</div>
+
+
+
+<div class="container">
+
+
         <table class="table mt-3">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
+                    <th>#</th>
+                    <th>Lugar de Visita</th>
                     <th>Descripción</th>
+                    <th>Acompanantes</th>
                     <th>Cantidad</th>
+                    <th>Fecha</th>
                     <th>Acciones</th>
+
                 </tr>
             </thead>
             <tbody>
-                @foreach ($ambiente as $ambient)
+                @foreach ($ambients as $ambient)
                     <tr>
                         <td>{{ $ambient->id }}</td>
                         <td>{{ $ambient->name }}</td>
                         <td>{{ $ambient->description }}</td>
-                        <td>{{ $ambient->cantidad }}</td>
+                        <td>{{ $ambient->acompanantes}}</td>
+                        <td>{{ $ambient->cantpersona}}</td>
+                        <td>{{ $ambient->date }}</td>
                         <td>
-                            <a href="{{ route('ambiente.edit', $ambient->id) }}" class="btn btn-primary btn-sm">Mostrar Reporte</a>
+                            <a href="{{ route('ambiente.show', $ambient->id) }}" class="btn btn-primary btn-sm">Mostrar Reporte</a>
                             <form action="{{ route('ambiente.destroy', $ambient->id) }}" method="POST" class="d-inline">
                                 @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
+                            <a href="{{ route('ambiente.edit', $ambient->id) }}" class="btn btn-primary btn-sm">Editar Falla</a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
 
-   
+
 </div>
 @endsection

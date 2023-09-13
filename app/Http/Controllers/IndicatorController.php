@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Indicator;
-use App\Models\Activity;
 use Illuminate\Http\Request;
 
 class IndicatorController extends Controller
@@ -15,20 +14,20 @@ class IndicatorController extends Controller
 
     public function create()
     {
-        $actividades = Activity::all();
-        return view('indicators.create', compact('actividades'));
+        $indicators = Indicator::all();
+        return view('indicators.create', compact('indicators'));
     }
 
     public function store(Request $request)
     {
         Indicator::create($request->all());
-        return redirect()->route('index');
+        return redirect()->route('indicators.index');
     }
 
     public function edit(Indicator $indicator)
     {
-        $actividades = Activity::all();
-        return view('indicators.edit', compact('indicator', 'actividades'));
+        $indicators = Indicator::all();
+        return view('indicators.edit', compact('indicator'));
     }
 
     public function update(Request $request, Indicator $indicator)

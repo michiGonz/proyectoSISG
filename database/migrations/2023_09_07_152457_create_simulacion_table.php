@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateambienteTable extends Migration
+class CreateSimulacionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateambienteTable extends Migration
      */
     public function up()
     {
-        Schema::create('ambiente', function (Blueprint $table) {
+        Schema::create('simulacion', function (Blueprint $table) {
             $table->id();
+            $table->text('simulacro_cumplido');
             $table->string('name');
-            $table->text('description');
-            $table->text('acompanantes');
+            $table->text('ubicacion');
+            $table->text('observacion');
             $table->date('date');
             $table->timestamps();
-
-           
         });
     }
 
@@ -32,6 +31,6 @@ class CreateambienteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ambiente');
+        Schema::dropIfExists('simulacion');
     }
 }
