@@ -12,10 +12,19 @@
     <table class="table mt-3">
 
                     <tr>
+<<<<<<< HEAD
                         <td><a class="nav-link" href="{{ route('ambiente.index') }}"><span>Visita Gerencial</span></a>
                         </td>
                         <td><a class="btn btn-success" href="{{ route('ambiente.create') }}"><span>Agregar Reporte
                                     Visita Gerencial</span></button></td>
+=======
+                        <td><a class="nav-link" href="{{ route('ambiente.index') }}"><span>VISITA GERENCIAL</span></a></td>
+                        <td><a class="btn btn-success" href="{{ route('ambiente.create') }}"><span>Agregar Reporte Visita Gerencial</span></button></td>
+                    </tr>
+                    <tr>
+                        <td><a class="nav-link" href="{{ route('observacion.index') }}"><span>OPSA</span></a></td>
+                        <td><a class="btn btn-success" href="{{ route('observacion.create') }}"><span>Agregar Reporte OPSA</span></button></td>
+>>>>>>> dfaed05db36b252590d6b264daac07e9ebc834e8
                     </tr>
 
                     <tr>
