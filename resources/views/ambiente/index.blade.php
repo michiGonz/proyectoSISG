@@ -1,7 +1,5 @@
 @extends('base')
-
 @section('title', 'Inicio')
-
 @section('content')
 
 <div class="container">
@@ -14,8 +12,7 @@
 </div>
 
 
-
-<div class="container">
+<div class="table tabble-responsive">
 
 
         <table class="table mt-3">
@@ -45,7 +42,7 @@
                             <form action="{{ route('ambiente.destroy', $ambient->id) }}" method="POST" class="d-inline">
                                 @csrf
                             </form>
-                            <a href="{{ route('ambiente.edit', $ambient->id) }}" class="btn btn-primary btn-sm">Editar Falla</a>
+                            <a href="{{ route('ambiente.edit', $ambient->id) }}" class="btn btn-primary btn-sm">Editar</a>
                         </td>
                     </tr>
                 @endforeach

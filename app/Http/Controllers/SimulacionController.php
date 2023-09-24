@@ -12,12 +12,6 @@ class SimulacionController extends Controller
         $simulacion = Simulacion::all();
         return view('simulacion.index', compact('simulacion'));
     }
-    public function show($id)
-    {
-        //dd($id);
-        $simulacion = Simulacion::find($id);
-        return view('simulacion.show', compact('simulacion'));
-    }
 
     public function create()
     {
@@ -31,21 +25,28 @@ class SimulacionController extends Controller
         return redirect()->route('simulacion.index');
     }
 
-    public function edit(Simulacion $simulacion)
+    public function edit($id)
     {
-        $simulacion = Simulacion::all();
+        $simulacion = Simulacion::find($id);
         return view('simulacion.edit', compact('simulacion'));
     }
-
-    public function update(Request $request, Simulacion $simulacion)
+    public function update(Request $request, $id)
     {
+      
+        $simulacion = Simulacion::find($id);
         $simulacion->update($request->all());
         return redirect()->route('simulacion.index');
     }
-
+  
     public function destroy(Simulacion $simulacion)
     {
         $simulacion->delete();
         return redirect()->route('simulacion.index');
+    }
+
+    public function show($id)
+    {
+        $simulacion = Simulacion::find($id);
+        return view('simulacion.show', compact('simulacion'));
     }
 }

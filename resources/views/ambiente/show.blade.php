@@ -1,7 +1,6 @@
 @extends('base')
-
+@section('title', 'Inicio')
 @section('content')
-
 
 <h1>Mostrar Reporte de Visita Gerencial</h1>
 

@@ -1,7 +1,5 @@
 @extends('base')
-
 @section('title', 'Inicio')
-
 @section('content')
 
 
@@ -9,68 +7,54 @@
     <h1>Indicadores de Quiriquire Gas SA</h1>
 
 
-    <table class="table mt-3">
+    <div class=" table table-striped-columns table-secondary ">
+        <table class="table mt-3  table-secondary">
 
-                    <tr>
-<<<<<<< HEAD
-                        <td><a class="nav-link" href="{{ route('ambiente.index') }}"><span>Visita Gerencial</span></a>
-                        </td>
-                        <td><a class="btn btn-success" href="{{ route('ambiente.create') }}"><span>Agregar Reporte
-                                    Visita Gerencial</span></button></td>
-=======
-                        <td><a class="nav-link" href="{{ route('ambiente.index') }}"><span>VISITA GERENCIAL</span></a></td>
-                        <td><a class="btn btn-success" href="{{ route('ambiente.create') }}"><span>Agregar Reporte Visita Gerencial</span></button></td>
-                    </tr>
-                    <tr>
-                        <td><a class="nav-link" href="{{ route('observacion.index') }}"><span>OPSA</span></a></td>
-                        <td><a class="btn btn-success" href="{{ route('observacion.create') }}"><span>Agregar Reporte OPSA</span></button></td>
->>>>>>> dfaed05db36b252590d6b264daac07e9ebc834e8
-                    </tr>
+            <tr>
+                <td><a class="nav-link" href="{{ route('ambiente.index') }}"><span>Visita Gerencial</span></a>
+                </td>
+                <td><a class="btn btn-success" href="{{ route('ambiente.create') }}"><span>Agregar Reporte
+                            Visita Gerencial</span></button></td>
+            </tr>
 
-                    <tr>
-                        <td><a class="nav-link" href="{{ route('actoseguro.index') }}"><span>OPSA </span></a></td>
-                        
-                    </tr>
+            <tr>
+                <td><a class="nav-link" href="{{ route('opsa.index') }}"><span>OPSA </span></a>
+                </td>
+
+            </tr>
 
 
-                    <tr>
-                        <td><a class="nav-link" href="{{ route('actoseguro.index') }}"><span>OPSA actos seguros</span></a></td>
-                        <td><a class="btn btn-success" href="{{ route('actoseguro.create') }}"><span>Agregar Reporte
-                                    OPSA Actos seguros</span></button></td>
-                    </tr>
+            <tr>
+                <td><a class="nav-link" href="{{ route('simulacion.index') }}"><span>Simulacro</span></a></td>
+                <td><a class="btn btn-success" href="{{ route('simulacion.create') }}"><span>Agregar Reporte
+                            Simulacro</span></button></td>
+            </tr>
 
-                    <tr>
-                        <td><a class="nav-link" href="{{ route('actoinseguro.index') }}"><span>OPSA actos inseguro</span></a>
-                        </td>
-                        <td><a class="btn btn-success" href="{{ route('actoinseguro.create') }}"><span>Agregar Reporte
-                                    OPSA Acto inseguro</span></button></td>
-                    </tr>
+            <tr>
+                <td><a class="nav-link" href="{{ route('plandeformacion.index') }}"><span> Plan de Formacion Seguridad
+                            Salud y Ambiente</span></a></td>
+                <td><a class="btn btn-success" href="{{ route('plandeformacion.create') }}"><span>Agregar Reporte
+                            Plan de Formacion </span></button></td>
+            </tr>
 
-                    <tr>
-                        <td><a class="nav-link" href="{{ route('simulacion.index') }}"><span>SIMULACRO</span></a></td>
-                        <td><a class="btn btn-success" href="{{ route('simulacion.create') }}"><span>Agregar Reporte
-                                    Simulacro</span></button></td>
-                    </tr>
+            <tr>
+                <td><a class="nav-link" href="{{ route('auditorias.index') }}"><span> Auditorias de Los Permisos de Trabajo </span></a></td>
+                <td><a class="btn btn-success" href="{{ route('auditorias.create') }}"><span>Agregar Reporte
+                            de permisos de trabajo </span></button></td>
+            </tr>
 
-                    <tr>
-                        <td><a class="nav-link" href="{{ route('simulacion.index') }}"><span> PLAN DE FORMACIÓN EN SEGURIDAD, SALUD Y AMBIENTE </span></a></td>
-                        <td><a class="btn btn-success" href="{{ route('simulacion.create') }}"><span>Agregar Reporte
-                            PLAN DE FORMACIÓN EN SEGURIDAD, SALUD Y AMBIENTE </span></button></td>
-                    </tr>
 
-                    <tr>
-                        <td><a class="nav-link" href="{{ route('simulacion.index') }}"><span>AUDITORIAS A LOS PERMISOS DE TRABAJO/span></a></td>
-                        <td><a class="btn btn-success" href="{{ route('simulacion.create') }}"><span>Agregar Reporte AUDITORIAS A LOS PERMISOS DE TRABAJO</span></button></td>
-                    </tr>
-
-                    <tr>
-                        <td><a class="nav-link" href="{{ route('simulacion.index') }}"><span>  COMITÉ DE SEGURIDAD Y SALUD LABORALES </span></a></td>
-                        <td><a class="btn btn-success" href="{{ route('simulacion.create') }}"><span>Agregar Reporte
+            <tr>
+                <td><a class="nav-link" href="{{ route('simulacion.index') }}"><span> COMITÉ DE SEGURIDAD Y SALUD
+                            LABORALES en proceso
+                        </span></a></td>
+                <td><a class="btn btn-success" href="{{ route('simulacion.create') }}"><span>Agregar Reporte
                             COMITÉ DE SEGURIDAD Y SALUD LABORALES </span></button></td>
-                    </tr>
+            </tr>
 
-                </tbody>
-            </table>
+        </table>
+    </div>
 
+</div>
 
-    @endsection
+@endsection

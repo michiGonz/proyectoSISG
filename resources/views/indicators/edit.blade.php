@@ -1,6 +1,7 @@
 @extends('base')
-
+@section('title', 'Inicio')
 @section('content')
+
 
 <div class="container">
         <h2>Editar Indicador</h2>
@@ -8,7 +9,7 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-          
+
                 <div class="form-group col-md-6">
                     <button type="submit" class="btn btn-primary">Crear Registro</button>
                     <a href="{{ route('indicators.index') }}" class="btn btn-secondary">Cancelar</a>

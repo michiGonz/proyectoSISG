@@ -8,34 +8,34 @@
         @csrf
 
         <div class="form-group col-md-6">
-            <label for="reacciones_personas">RP</label>
+            <label for="reacciones_personas">Reacciones de las personas</label>
             <input class="form-control" id="reacciones_personas"  type="number" disabled="true" value="{{ $actos_seguro->reacciones_personas }}"name="reacciones_personas" value="0" />
         </div>
 
 
         <div class="form-group col-md-6">
-            <label for="equipo_proteccion">EPP</label>
+            <label for="equipo_proteccion">Equipo de proteccion personal</label>
             <input class="form-control" type="number" value="{{ $actos_seguro->equipo_proteccion }}" disabled="true" name="equipo_proteccion" value="0" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="posicion_persona">PP</label>
+            <label for="posicion_persona">Posiciones de las personas</label>
             <input class="form-control" type="number" value="{{ $actos_seguro->posicion_persona }}" disabled="true"name="posicion_persona" value="0" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="herramienta_equipo">HE</label>
+            <label for="herramienta_equipo">Herramientas y equipo</label>
             <input class="form-control" type="number" value="{{ $actos_seguro->herramienta_equipo }}" disabled="true"name="herramienta_equipo" value="0" />
         </div>
 
 
         <div class="form-group col-md-6">
-            <label for="procedimiento_orden">POL</label>
+            <label for="procedimiento_orden">Procedimientos, orden y limpieza</label>
             <input class="form-control" type="number" value="{{ $actos_seguro->procedimiento_orden }}" disabled="true" name="procedimiento_orden" value="0" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="ambiente">A</label>
+            <label for="ambiente">Ambiente</label>
             <input class="form-control" type="number" value="{{ $actos_seguro->ambiente }}" disabled="true"name="ambiente" value="0" />
         </div>
 

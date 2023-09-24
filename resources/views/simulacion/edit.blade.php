@@ -1,6 +1,7 @@
 @extends('base')
-
+@section('title', 'Inicio')
 @section('content')
+
 <div class="container">
     <h1>Editar Reporte Simulacro</h1>
 </div>
@@ -10,8 +11,10 @@
 
     <h1>Crear Registro de Simulacro</h1>
     <div class="card-body">
-        <form method="POST" action="{{ route('simulacion.store') }}">
+        <form method="POST" class="row" action="{{ route('simulacion.update', $simulacion->id) }}" method="POST">
             @csrf
+               @method('PUT')
+
             <div class="form-group">
                 <label for="simulacro_cumplido">Simulacros Ejecutados</label>
                 <input value="{{ $simulacion->simulacro_cumplido }}" type="number" name="simulacro_cumplido"
@@ -30,7 +33,6 @@
                     class="form-control">
             </div>
 
-
             <div class="form-group">
                 <label for="observacion">Observacion</label>
                 <textarea name="observacion" id="observacion" class="form-control" rows="1"
@@ -39,9 +41,7 @@
 
 
             <div class="form-group">
-
                 <button type="submit" class="btn btn-primary">Crear Registro</button>
-
                 <a href="{{ route('simulacion.create') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
@@ -51,4 +51,3 @@
 @endsection
 
 
-@endsection

@@ -24,15 +24,15 @@ class ActoseguroController extends Controller
         Actoseguro::create($request->all());
         return redirect()->route('actoseguro.index');
     }
-
-    public function edit(Actoseguro $actos_seguro)
+    public function edit($id)
     {
-        $actos_seguro = Actoseguro::all();
-        return view('actoseguro.edit', compact('actos_seguro'));
+        $actoseguro = Actoseguro::find($id);
+        return view('actoseguro.edit', compact('actoseguro'));
     }
-
-    public function update(Request $request, Actoseguro $actoseguro)
+    public function update(Request $request, $id)
     {
+       
+        $actos_seguro = Actoseguro::find($id);
         $actos_seguro->update($request->all());
         return redirect()->route('actoseguro.index');
     }

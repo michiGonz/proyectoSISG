@@ -28,7 +28,7 @@
 
         <div class="form-group col-md-6 table-danger" >
             <h6>Equipo de proteccion personal</h6>
-            <label for= "C" >CABEZA</label>
+            <label for= "C" >Cabeza</label>
             <input class="form-control" type="number" name="C" value=0 />
             <label for=  "OC" >Ojos y Cara</label>
             <input class="form-control" type="number" name="OC"  value=0 />

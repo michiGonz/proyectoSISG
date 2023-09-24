@@ -12,7 +12,7 @@
     </tbody>
 </div>
 
-<div class="container">
+<div class="table table-striped-columns ">
     <table class="table mt-3">
         <thead>
             <tr>
@@ -23,7 +23,7 @@
                 <th>HE</th>
                 <th>POL</th>
                 <th>A</th>
-                <th>Date</th>
+                <th>Fecha</th>
                 <th>Acciones</th>
 
             </tr>
@@ -46,7 +46,7 @@
                         @csrf
 
                     </form>
-                    <a href="{{ route('actoseguro.edit', $actoseguro->id) }}" class="btn btn-primary btn-sm">Editar F</a>
+                    <a href="{{ route('actoseguro.edit', $actoseguro->id) }}" class="btn btn-primary btn-sm">Editar</a>
                 </td>
             </tr>
             @endforeach

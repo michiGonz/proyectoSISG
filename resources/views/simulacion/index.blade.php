@@ -1,8 +1,9 @@
 @extends('base')
-
+@section('title', 'Inicio')
 @section('content')
 
-<div class="container">
+
+<div class="container ">
     <h1>Simulacro</h1>
     <tbody>
         <tr>
@@ -11,8 +12,8 @@
     </tbody>
 </div>
 
-<div class="container">
-    <table class="table mt-3">
+<div class="table table-striped-columns table-secondary ">
+    <table class="table mt-3 table table-striped-columns table-secondary">
 
         <thead>
             <tr>
@@ -35,7 +36,7 @@
                         <a href="{{ route('simulacion.show', $simulacion->id) }}" class="btn btn-primary btn-sm">Mostrar Reporte</a>
                         <form action="{{ route('simulacion.destroy', $simulacion->id) }}" method="POST" class="d-inline">
                             @csrf
-                        
+
                         </form>
                         <a href="{{ route('simulacion.edit', $simulacion->id) }}" class="btn btn-primary btn-sm">Editar</a>
 

@@ -1,59 +1,65 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
+
 <div class="container">
     <h2>Editar Indicador</h2>
-
-    @csrf
-    <form action="/enviar" method="POST">
+    <form method="POST" class="row" action="{{ route('actoseguro.update', $actoseguro->id) }}" method="POST">
+        @csrf
         @method('PUT')
 
-        <label for="reacciones_personas">RP</label>
-        <input class="form-control" id="reacciones_personas" type="number" value="{{$actos_seguro->reacciones_personas}}"name="reacciones_personas" />
-
+        <div class="form-group col-md-6">
+            <label for="reacciones_personas">RP</label>
+            <input class="form-control" type="number" name="reacciones_personas"
+                value="{{$actoseguro->reacciones_personas}}" />
+        </div>
 
         <div class="form-group col-md-6">
             <label for="equipo_proteccion">EPP</label>
-            <input class="form-control" type="number" name="equipo_proteccion" value="{{$actos_seguro->equipo_proteccion}}" />
+            <input class="form-control" type="number" name="equipo_proteccion"
+                value="{{$actoseguro->equipo_proteccion}}" />
         </div>
 
         <div class="form-group col-md-6">
             <label for="posicion_persona">PP</label>
-            <input class="form-control" type="number" name="posicion_persona" value="{{$actos_seguro->posicion_persona}}" />
+            <input class="form-control" type="number" name="posicion_persona"
+                value="{{$actoseguro->posicion_persona}}" />
         </div>
 
         <div class="form-group col-md-6">
             <label for="herramienta_equipo">HE</label>
-            <input class="form-control" type="number" name="herramienta_equipo" value="{{$actos_seguro->herramienta_equipo}}" />
+            <input class="form-control" type="number" name="herramienta_equipo"
+                value="{{$actoseguro->herramienta_equipo}}" />
         </div>
 
 
         <div class="form-group col-md-6">
             <label for="procedimiento_orden">POL</label>
             <input class="form-control" type="number" name="procedimiento_orden" value="0"
-                value="{{ $actos_seguro->procedimiento_orden }}" />
+                value="{{ $actoseguro->procedimiento_orden }}" />
         </div>
 
         <div class="form-group col-md-6">
             <label for="ambiente">A</label>
-            <input class="form-control" type="number" name="ambiente" value="{{ $actos_seguro->ambiente }}" />
+            <input class="form-control" type="number" name="ambiente" value="{{ $actoseguro->ambiente }}" />
         </div>
 
         <div class="form-group col-md-6">
             <label for="observacion">Observacion</label>
-            <textarea type="text " name="observacion" class="form-control" value="{{ $actos_seguro->observacion }}"
-                required></textarea>
+            <input class="form-control" type="text" name="ambiente" value="{{ $actoseguro->observacion }}" />
         </div>
+
 
         <div class="form-group col-md-6">
             <label for="date">Fecha</label>
-            <input class="form-control" id="date" type="date" name="date" value="{{ $actos_seguro->date }}" />
+            <input class="form-control" id="date" type="date" name="date" value="{{ $actoseguro->date }}" />
         </div>
-    </form>
-    <div class="form-group col-md-6">
-        <button type="submit" class="btn btn-primary">Crear Registro</button>
-        <a href="{{ route('indicators.index') }}" class="btn btn-secondary">Cancelar</a>
-    </div>
+
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary">Actualizar Registro</button>
+            <a href="{{ route('actoinseguro.index') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
 </div>
+</form>
 
 @endsection

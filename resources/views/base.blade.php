@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,18 +9,34 @@
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link>
+
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <!-- Flag sprites service provided by Martijn Lafeber,
+        https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.jsdelivr.net/gh/lafeber/world-flags-sprite/stylesheets/flags32-both.css" />
 </head>
 
-
 <body id="page-top">
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -41,10 +56,10 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-            <a class="nav-link" href="{{ route('/') }}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Menu</span></a>
-                </li>
+                <a class="nav-link" href="{{ route('/') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Menu</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -95,16 +110,16 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-            <a class="nav-link" href="{{ route('indicators.index') }}">
+                <a class="nav-link" href="{{ route('indicators.index') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Gestión de Indicadores</span></a>
             </li>
 
-             <!-- reportes planificados -->
+            <!-- reportes planificados -->
             <li class="nav-item">
-            <a class="nav-link" href="{{ route('indicators.index') }}">
+                <a class="nav-link" href="{{ route('indicadorplan.index') }}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Planificación de reportes "en construcción</span></a>
+                    <span>Planificación de Indicadores</span></a>
             </li>
 
             <!-- Divider -->
@@ -135,8 +150,8 @@
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Buscar por..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar por..."
+                                aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -274,8 +289,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle"
-                                            src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div>
@@ -295,20 +310,15 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ str_replace('-',',',Auth::user()->name) }}</span>
-<<<<<<< HEAD
-
-=======
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
->>>>>>> dfaed05db36b252590d6b264daac07e9ebc834e8
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{
+                                    str_replace('-',',',Auth::user()->name) }}</span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
 
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Cerrar Sesión
                                 </a>
@@ -316,6 +326,7 @@
                         </li>
                     </ul>
                 </nav>
+
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -325,41 +336,33 @@
             </div>
             <!-- End of Content Wrapper -->
 
-<<<<<<< HEAD
-=======
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
 
-
->>>>>>> dfaed05db36b252590d6b264daac07e9ebc834e8
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Salir del sistema</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Si desea salir de su sesión presione salir.</div>
-                    <div class="modal-footer">
-<<<<<<< HEAD
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-primary" href="{{ route('logout') }}">Salir del sistema</a>
-=======
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="{{ route('logout') }}">Logout</a>
->>>>>>> dfaed05db36b252590d6b264daac07e9ebc834e8
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Salir del sistema</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Si desea salir de su sesión presione salir.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-primary" href="{{ route('logout') }}">Salir del sistema</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-</body>
+    </div>
 
-</html>
+
+</body>

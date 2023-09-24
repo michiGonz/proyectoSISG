@@ -11,11 +11,14 @@
                 <form method="POST" action="{{ route('ambiente.store') }}">
                     <td><a class="btn btn-success" class="nav-link" href="{{ route('ambiente.create') }}"><span>Crear
                                 Reporte</span></a></td>
+                </form>
+            </div>
+        </tr>
         </tr>
     </tbody>
 </div>
 
-<div class="container">
+<div class="table table-striped-columns table-secondary">
     @csrf
     <div class="form-group ">
         <label for="name">Lugar de la visita</label>
@@ -26,7 +29,8 @@
         <label for="description">Descripción</label>
         <textarea type="text " name="description" id="description" class="form-control" rows="4" required></textarea>
     </div>
-    <div>
+
+    <div class="form-group">
         <label for="acompanantes">Cantidad de Personas</label>
         <input type="number" name="cantpersona" id="cantpersona" class="form-control">
     </div>
@@ -36,19 +40,17 @@
         <textarea name="acompanantes" id="acompanante" class="form-control" rows="1" required></textarea>
     </div>
 
-    <div class="container px-1 px-sm-5 mx-auto">
-
-        <div class="form-group col-md-6">
-            <label for="date">Fecha</label>
-            <input class="form-control" id="date" type="date" name="date" value="" />
-        </div>
-
-        <div class="form-group">
-            <br>
-            <button type="submit" class="btn btn-primary">Crear Registro</button>
-
-            <a href="{{ route('indicators.index') }}" class="btn btn-secondary">Cancelar</a>
-        </div>
+    <div class="form-group">
+        <label for="date">Fecha</label>
+        <input class="form-control" id="date" type="date" name="date" value="" />
     </div>
+
+    <div class="form-group">
+        <br>
+        <button type="submit" class="btn btn-primary">Crear Registro</button>
+
+        <a href="{{ route('indicators.index') }}" class="btn btn-secondary">Cancelar</a>
+    </div>
+
 </div>
 @endsection

@@ -26,15 +26,16 @@ class AmbientController extends Controller
         return redirect()->route('ambiente.index');
     }
 
-    public function edit(Ambient $indicator)
+    public function edit($id)
     {
-        $ambient = Ambient::all();
-        return view('ambiente.edit', compact('indicator', 'ambient'));
+        $ambient = Ambient::find($id);
+        return view('ambiente.edit', compact('ambient'));
     }
 
-    public function update(Request $request, Ambient $indicator)
+    public function update(Request $request, $id)
     {
-        $indicator->update($request->all());
+        $ambient = Ambient::find($id);
+        $ambient->update($request->all());
         return redirect()->route('ambiente.index');
     }
 

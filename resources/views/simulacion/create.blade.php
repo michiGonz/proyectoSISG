@@ -18,7 +18,7 @@
                     <textarea type="text" name="name" id="name" class="form-control" rows="1" required></textarea>
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label for="ubicacion">Ubicacion</label>
                     <input type="ubicacion" name="ubicacion" id="ubicacion" class="form-control">
                 </div>

@@ -28,14 +28,16 @@ class ActoinseguroController extends Controller
         return redirect()->route('actoinseguro.index');
     }
 
-    public function edit(Actoinseguro $actoinseguro)
+    public function edit($id)
     {
-        $actoinseguro = Actoinseguro::all();
+        $actoinseguro = Actoinseguro::find($id);
         return view('actoinseguro.edit', compact('actoinseguro'));
     }
 
-    public function update(Request $request, Actoinseguro $actoinseguro)
+    public function update(Request $request, $id)
     {
+        //dd($request->all());
+        $actoinseguro = Actoinseguro::find($id);
         $actoinseguro->update($request->all());
         return redirect()->route('actoinseguro.index');
     }
