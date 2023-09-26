@@ -3,39 +3,48 @@
 @section('content')
 <div class="container">
 
-    <h2>Editar Registro de Plan de Formacion, Seguridad Salud y Ambiente</h2>
+    <h2>Mostrar Registro de Permisos de Trabajo</h2>
     <form method="POST" action="{{ route('auditorias.store') }}">
         @csrf
 
         <div class="table table-striped-columns ">
             @csrf
+
             <div class="form-group ">
-                <label for="auditorias_generadas">Auditorias Generadas </label>
-                <input value="{{ $auditorias->auditorias_generadas }}" disabled="true" type="number" name="auditorias_generadas" id="auditorias_generadas" class="form-control"
-                    value=0 />
+                <label for="permisos_generados">Permisos Generadas </label>
+                <input value={{ $auditorias->permisos_generados }} disabled="true" type="number" name="permisos_generados" id="permisos_generados" class="form-control" value=0 />
             </div>
 
             <div class="form-group ">
-                <label for="auditadas">Auditadas</label>
-                <input value="{{ $auditorias->auditadas }}" disabled="true" type="number" name="auditadas" id="auditadas" class="form-control" value=0 />
+                <label for="auditadas_pdvsa">Auditados PDVSA</label>
+                <input value={{ $auditorias->auditadas_pdvsa}} disabled="true" type="number" name="auditadas_pdvsa" id="auditadas_pdvsa" class="form-control" value=0 />
             </div>
 
             <div class="form-group">
-                <label for="auditadas_desviaciones">Permisos de Trabajo Auditados</label>
-                <input value="{{ $auditorias->auditadas_desviaciones }}" disabled="true" type="number " name="auditadas_desviaciones" id="auditadas_desviaciones" class="form-control"
-                    value=0 />
+                <label for="auditadas_qqgas">Auditados QQgas</label>
+                <input value={{ $auditorias->auditadas_qqgas }}  disabled="true" type="number" name="auditadas_qqgas" id="auditadas_qqgas" class="form-control" value=0 />
+            </div>
+
+            <div class="form-group">
+                <label for="desviacion_qqgas">Desviaciones QQgas</label>
+                <input value={{ $auditorias->desviacion_qqgas }} disabled="true" type="number" name="desviacion_qqgas" id="desviacion_qqgas" class="form-control" value=0 />
+            </div>
+
+            <div class="form-group">
+                <label for="desviaciones_pdvsa">Desviaciones PDVSA</label>
+                <input value={{ $auditorias->desviaciones_pdvsa }} disabled="true" type="number" name="desviaciones_pdvsa" id="desviaciones_pdvsa" class="form-control" value=0 />
             </div>
 
             <table class="table table-striped table-primary">
                 <div class="form-check  table-primary ">
                     <h5>Desviaciones QQgas</h5>
-                    <input value="{{ $auditorias->auditadas_desviaciones }}" disabled="true" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" disabled="true" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         desviacion 1
                     </label>
                 </div>
                 <div class="form-check  table-primary">
-                    <input value="{{ $auditorias->auditadas_desviaciones }}" disabled="true" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" disabled="true" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         Desviacion 2
                     </label>
@@ -44,13 +53,13 @@
 
             <div class="form-check table-danger  ">
                 <h5>Desviaciones PDVSA</h5>
-                <input value="{{ $auditorias->auditadas_desviaciones }}" disabled="true" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" disabled="true" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
                     desviacion 1
                 </label>
             </div>
             <div class="form-check table-danger">
-                <input value="{{ $auditorias->auditadas_desviaciones }}" disabled="true" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <input class="form-check-input" type="checkbox" disabled="true" value="" id="flexCheckChecked" checked>
                 <label class="form-check-label" for="flexCheckChecked">
                     Desviacion 2
                 </label>
@@ -58,24 +67,36 @@
         </div>
 
         <div class="form-group">
-            <label for="auditadas_sindesviaciones">Permisos de Trabajo sin desviacion</label>
-            <input value="{{ $auditorias->auditadas_sindesviaciones }}" disabled="true" type="number " name="auditadas_sindesviaciones" id="auditadas_sindesviaciones'" class="form-control"
-                value=0 />
+            <label for="sindesviacion_qqgas">Permisos de Trabajo sin desviacion Qqgas</label>
+            <input value={{ $auditorias->sindesviacion_qqgas }} disabled="true" type="number" name="sindesviacion_qqgas" id="sindesviacion_qqgas" class="form-control" value=0 />
         </div>
 
         <div class="form-group">
-            <label for="no_auditados">Permisos de Trabajo no Auditados</label>
-            <input value="{{ $auditorias->no_auditados }}" disabled="true" type="number " name="no_auditados" id="no_auditados" class="form-control" value=0 />
+            <label for="sindesviacionpdvsa">Permisos de Trabajo sin desviacion PDVSA</label>
+            <input value={{ $auditorias->sindesviacionpdvsa }} disabled="true" type="number" name="sindesviacionpdvsa" id="sindesviacionpdvsa" class="form-control" value=0 />
         </div>
+
+        <div class="form-group">
+            <label for="noauditadas_qqgas">Permisos de Trabajo no Auditados Qqgas</label>
+            <input value={{ $auditorias->noauditadas_qqgas }} disabled="true" type="number" name="noauditadas_qqgas" id="noauditadas_qqgas" class="form-control" value=0 />
+        </div>
+
+        <div class="form-group">
+            <label for="noauditadas_pdvsa">Permisos de Trabajo no Auditados PDVSA</label>
+            <input value={{ $auditorias->noauditadas_pdvsa}} disabled="true" type="number" name="noauditadas_pdvsa" id="noauditadas_pdvsa" class="form-control" value=0 />
+        </div>
+
 
         <div class="form-group">
             <label for="observacion">Observacion</label>
-            <input value="{{ $auditorias->observacion }}" disabled="true" name="observacion" id="observacion" class="form-control" />
+            <input value="{{ $auditorias->observacion }}" disabled="true" name="observacion" id="observacion"
+                class="form-control" />
         </div>
 
         <div class="form-group">
             <label for="date">Fecha</label>
-            <input value="{{ $auditorias->date }}" disabled="true" class="form-control" id="date" type="date" name="date" value="0" />
+            <input value="{{ $auditorias->date }}" disabled="true" class="form-control" id="date" type="date"
+                name="date" value="0" />
         </div>
 
         <div class="form-group">

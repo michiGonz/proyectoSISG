@@ -17,6 +17,9 @@ use App\Http\Controllers\IndicadorplanController;
 use App\Http\Controllers\PlanificacionformacionController;
 use App\Http\Controllers\PlandeformacionController;
 use App\Http\Controllers\AuditoriasController;
+use App\Http\Controllers\InvestigacionController;
+use App\Http\Controllers\ComiteController;
+use App\Http\Controllers\JornadaController;
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -33,6 +36,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('planificacionformacion', PlanificacionformacionController::class);
     Route::resource('plandeformacion', PlandeformacionController::class);
     Route::resource('auditorias', AuditoriasController::class);
+    Route::resource('investigacion', InvestigacionController::class);
+    Route::resource('comite', ComiteController::class);
+    Route::resource('jornada', JornadaController::class);
 });
 
 Route::post('login', [AutenticacionController::class,'postLogin'])->name('loginData');

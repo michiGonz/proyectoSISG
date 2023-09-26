@@ -17,18 +17,28 @@
 <div class="table table-striped-columns ">
     @csrf
     <div class="form-group ">
-        <label for="auditorias_generadas">Auditorias Generadas </label>
-        <input type="number" name="auditorias_generadas" id="auditorias_generadas" class="form-control" value=0 />
+        <label for="permisos_generados">Permisos Generadas </label>
+        <input type="number" name="permisos_generados" id="permisos_generados" class="form-control" value=0 />
     </div>
 
     <div class="form-group ">
-        <label for="auditadas">Auditadas</label>
-        <input type="number" name="auditadas" id="auditadas" class="form-control" value=0 />
+        <label for="auditadas_pdvsa">Auditados PDVSA</label>
+        <input type="number" name="auditadas_pdvsa" id="auditadas_pdvsa" class="form-control" value=0 />
     </div>
 
     <div class="form-group">
-        <label for="auditadas_desviaciones">Permisos de Trabajo Auditados</label>
-        <input type="number " name="auditadas_desviaciones" id="auditadas_desviaciones" class="form-control" value=0 />
+        <label for="auditadas_qqgas">Auditados QQgas</label>
+        <input type="number" name="auditadas_qqgas" id="auditadas_qqgas" class="form-control" value=0 />
+    </div>
+
+    <div class="form-group">
+        <label for="desviacion_qqgas">Desviaciones QQgas</label>
+        <input type="number" name="desviacion_qqgas" id="desviacion_qqgas" class="form-control" value=0 />
+    </div>
+
+    <div class="form-group">
+        <label for="desviaciones_pdvsa">Desviaciones PDVSA</label>
+        <input type="number" name="desviaciones_pdvsa" id="desviaciones_pdvsa" class="form-control" value=0 />
     </div>
 
     <table class="table table-striped table-primary">
@@ -51,7 +61,7 @@
         <h5>Desviaciones PDVSA</h5>
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
         <label class="form-check-label" for="flexCheckDefault">
-              desviacion 1
+            desviacion 1
         </label>
     </div>
     <div class="form-check table-danger">
@@ -63,13 +73,23 @@
 </div>
 
 <div class="form-group">
-    <label for="auditadas_sindesviaciones">Permisos de Trabajo sin desviacion</label>
-    <input type="number " name="auditadas_sindesviaciones" id="auditadas_sindesviaciones'" class="form-control" value=0  />
+    <label for="sindesviacion_qqgas">Permisos de Trabajo sin desviacion Qqgas</label>
+    <input type="number" name="sindesviacion_qqgas" id="sindesviacion_qqgas" class="form-control" value=0 />
 </div>
 
 <div class="form-group">
-    <label for="no_auditados">Permisos de Trabajo no Auditados</label>
-    <input type="number " name="no_auditados" id="no_auditados" class="form-control" value=0 />
+    <label for="sindesviacionpdvsa">Permisos de Trabajo sin desviacion PDVSA</label>
+    <input type="number" name="sindesviacionpdvsa" id="sindesviacionpdvsa" class="form-control" value=0 />
+</div>
+
+<div class="form-group">
+    <label for="noauditadas_qqgas">Permisos de Trabajo no Auditados Qqgas</label>
+    <input type="number" name="noauditadas_qqgas" id="noauditadas_qqgas" class="form-control" value=0 />
+</div>
+
+<div class="form-group">
+    <label for="noauditadas_pdvsa">Permisos de Trabajo no Auditados PDVSA</label>
+    <input type="number" name="noauditadas_pdvsa" id="noauditadas_pdvsa" class="form-control" value=0 />
 </div>
 
 <div class="form-group">

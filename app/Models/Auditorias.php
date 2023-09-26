@@ -11,12 +11,15 @@ class Auditorias extends Model
     protected $table = 'auditorias';
 
     protected $fillable = [
-
-        'auditorias_generadas',
-        'auditadas',
-        'auditadas_desviaciones',
-        'auditadas_sindesviaciones',
-        'no_auditados',
+        'permisos_generados',
+        'auditadas_pdvsa',
+        'auditadas_qqgas',
+        'desviacion_qqgas',
+        'desviaciones_pdvsa',
+        'sindesviacion_qqgas',
+        'sindesviacionpdvsa',
+        'noauditadas_qqgas',
+        'noauditadas_pdvsa',
         'observacion',
         'date',
 

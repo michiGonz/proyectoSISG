@@ -3,6 +3,7 @@
 @section('content')
 
 
+
 <div class="container">
 
     <h2>Planificacion de Indicadores </h2>
@@ -16,7 +17,7 @@
                 <option selected>Indicador</option>
                 <option value= "visita Gerencial">Visita Gerencial</option>
                 <option value= "Simulacro">Simulacro</option>
-                <option value="3">Three</option>
+                <option value="comite de seguridad salud y ambiente">Comite de Seguridad Salud y Ambiente</option>
             </select>
 
 

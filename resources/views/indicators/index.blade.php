@@ -8,7 +8,7 @@
 
 
     <div class=" table table-striped-columns table-secondary ">
-        <table class="table mt-3  table-secondary">
+        <table class="  table-secondary">
 
             <tr>
                 <td><a class="nav-link" href="{{ route('ambiente.index') }}"><span>Visita Gerencial</span></a>
@@ -43,13 +43,20 @@
                             de permisos de trabajo </span></button></td>
             </tr>
 
+            <tr>
+                <td><a class="nav-link" href="{{ route('investigacion.index') }}"><span> Investigacion de Incidentes</span></a></td>
+                <td><a class="btn btn-success" href="{{ route('investigacion.create') }}"><span>Agregar Reporte
+                            de permisos de trabajo </span></button></td>
+            </tr>
 
             <tr>
-                <td><a class="nav-link" href="{{ route('simulacion.index') }}"><span> COMITÉ DE SEGURIDAD Y SALUD
-                            LABORALES en proceso
-                        </span></a></td>
-                <td><a class="btn btn-success" href="{{ route('simulacion.create') }}"><span>Agregar Reporte
-                            COMITÉ DE SEGURIDAD Y SALUD LABORALES </span></button></td>
+                <td><a class="nav-link" href="{{ route('comite.index') }}"><span> Comite De Seguridad y Salud Laborales</span></a></td>
+                <td><a class="btn btn-success" href="{{ route('comite.create') }}"><span>Agregar Reporte de Comite Seguridad y Salud Laborales </span></button></td>
+            </tr>
+
+            <tr>
+                <td><a class="nav-link" href="{{ route('jornada.index') }}"><span> Jornada Ambiental</span></a></td>
+                <td><a class="btn btn-success" href="{{ route('jornada.create') }}"><span>Agregar Reporte de Jornada Ambiental</span></button></td>
             </tr>
 
         </table>

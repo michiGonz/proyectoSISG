@@ -15,11 +15,15 @@ class CreateAuditoriasTable extends Migration
     {
         Schema::create('auditorias', function (Blueprint $table) {
             $table->id();
-            $table->string('auditorias_generadas');
-            $table->string('auditadas');
-            $table->string('auditadas_desviaciones');
-            $table->string('auditadas_sindesviaciones');
-            $table->string('no_auditados');
+            $table->string('permisos_generados');
+            $table->string('auditadas_pdvsa');
+            $table->string('auditadas_qqgas');
+            $table->string('desviacion_qqgas');
+            $table->string('desviaciones_pdvsa');
+            $table->string('sindesviacion_qqgas');
+            $table->string('sindesviacionpdvsa');
+            $table->string('noauditadas_qqgas');
+            $table->string('noauditadas_pdvsa');
             $table->text('observacion');
             $table->date('date');
             $table->timestamps();

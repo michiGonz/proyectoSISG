@@ -50,7 +50,6 @@
             <tr>
                 <td>{{ $indicadorplan->id }}</td>
                 <td>{{ $indicadorplan->nombre_indicador }}</td>
-
                 <td>{{ $indicadorplan->meta }}</td>
                 <td>{{ $indicadorplan->programacion_anual}}</td>
                 <td>{{ $indicadorplan->programadas_mes}}</td>
