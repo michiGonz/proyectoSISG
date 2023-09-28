@@ -2,8 +2,11 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-    <h2>Editar Indicador</h2>
+<div class="card">
+    <h2 class="card-header">
+        Editar Registro de Acto Seguro
+    </h2>
+    <div class="card-body">
     <form method="POST" class="row" action="{{ route('actoseguro.update', $actoseguro->id) }}" method="POST">
         @csrf
         @method('PUT')

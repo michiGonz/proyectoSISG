@@ -1,9 +1,12 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-<div class="container">
 
-    <h2>Editar Registro de Plan de Formacion, Seguridad Salud y Ambiente</h2>
+<div class="card">
+    <h2 class="card-header">
+        Editar Registro Auditorias de Permisos de Trabajo
+    </h2>
+    <div class="card-body">
     <form method="POST" action="{{ route('auditorias.update', $auditorias->id) }}" method="POST">
         @csrf
         @method('PUT')

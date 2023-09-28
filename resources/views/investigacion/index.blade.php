@@ -2,27 +2,19 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-    <h2> Reporte de Investigacion de incidentes</h2>
-    <tbody>
-        <tr>
-            <div class="card-body">
-                <form method="POST" action="{{ route('investigacion.store') }}">
-                    <td><a class="btn btn-success" class="nav-link"
-                            href="{{ route('investigacion.create') }}"><span>Crear
-                                Reporte</span></a></td>
-                </form>
-            </div>
-        </tr>
-    </tbody>
-</div>
-<div class=" table table-striped-columns table-secondary ">
+<div class="card">
+    <h2 class="card-header">
+        Investigacion de Incidentes
+        <a class="btn btn-success float-right" class="nav-link" href="{{ route('investigacion.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
+    </h2>
+    <div class="card-body">
+<div class=" table table-striped-columns">
+    
     <table class="table mt-3"  id="investigacion">
 
         <thead>
             <tr>
                 <th>ID</th>
-                <th>acomulado</th>
                 <th>Unidad Funcional</th>
                 <th>Nombre Del incidente</th>
                 <th>Ubicacion</th>
@@ -35,7 +27,6 @@
             @foreach ($investigacion as $investigacion)
                 <tr>
                     <td>{{ $investigacion->id }}</td>
-                    <td>{{ $investigacion->acomulado}}</td>
                     <td>{{ $investigacion->uf}}</td>
                     <td>{{ $investigacion->nombre_incidente}}</td>
                     <td>{{ $investigacion->nombre_lugar}}</td>

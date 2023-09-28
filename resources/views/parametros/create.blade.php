@@ -1,11 +1,11 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-
-
-    <div class="container">
-        <h2>Crear Registro de Parametros Ambientales</h2>
-        <div class="card-body">
+<div class="card">
+    <h2 class="card-header">
+        Crear Reporte de Parametros Ambientales
+    </h2>
+    <div class="card-body">
             <form method="POST" action="{{ route('parametros.store') }}">
                 @csrf
                 <div class="form-group">
@@ -19,7 +19,7 @@
                 </div>
 
 
-                <div class="form-group col-md-6 table-primary">
+                <div class=" card-body form-group col-md-6 table-primary">
                     <h6>Unidades Funcionales </h6>
                     <label for="PROD">Produccion</label>
                     <input class="form-control" type="number" name="PROD" value=0 />
@@ -47,7 +47,7 @@
                 </div>
 
 
-                <div class="form-group">
+                <div class="form-grou col-md-12 text-center">
 
                     <button type="submit" class="btn btn-primary">Crear Registro</button>
 

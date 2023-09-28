@@ -2,11 +2,10 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-    <h2>Crear Registro de Cultura en Seguridad</h2>
-    <tbody>
-        <tr>
-            <div class="card-body">
+<div class="card">
+    <h2 class="card-header">Crear Registro de Cultura en Seguridad Salud y Ambiente</h2>
+    <div class="card-body">
+     
                 <form method="POST" action="{{ route('cultura.store') }}">
 
                     <div class="table table-striped-columns">

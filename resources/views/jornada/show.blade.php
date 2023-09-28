@@ -15,28 +15,27 @@
 
                 <div class="form-group col-md-6">
                     <label for="jornadas_ejecutadas">Comites Ejecutados</label>
-                    <input value="{{ $jornada->jornadas_ejecutadas}}" type="number" name="jornadas_ejecutadas" id="jornadas_ejecutadas" value=0 class="form-control">
+                    <input disabled value="{{ $jornada->jornadas_ejecutadas}}" type="number" name="jornadas_ejecutadas" id="jornadas_ejecutadas" value=0 class="form-control">
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="descripcion">Descripcion</label>
-                    <input value="{{ $jornada->descripcion}}" type="text" name="descripcion" id="descripcion" class="form-control" />
+                    <input disabled value="{{ $jornada->descripcion}}" type="text" name="descripcion" id="descripcion" class="form-control" />
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="ubicacion">Ubicacion</label>
-                    <input value="{{ $jornada->ubicacion}}" type="text" name="ubicacion" id="ubicacion" class="form-control" />
+                    <input disabled value="{{ $jornada->ubicacion}}" type="text" name="ubicacion" id="ubicacion" class="form-control" />
                 </div>
 
                 <div class="form-group col-md-6">
                     <div class="form-group">
                         <label for="date">Fecha</label>
-                        <input value="{{$jornada->date}}" type="date" id="start" class="form-control text-left mr-2" name="date">
+                        <input disabled value="{{$jornada->date}}" type="date" id="start" class="form-control text-left mr-2" name="date">
                     </div>
                 </div>
 
-                <div class="form-group col-md-6">
-                    <button type="submit" class="btn btn-primary">Actualizar Registro</button>
+                <div class="form-group col-md-12 text-center">
                     <a href="{{ route('jornada.index') }}" class="btn btn-secondary">Cancelar</a>
                 </div>
             </form>

@@ -2,8 +2,9 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-    <h2>Crear Registro de Investigacion de Incidentes</h2>
+
+<div class="card">
+    <h2 class="card-header">Crear Registro de Investigacion de Incidentes</h2>
     <div class="card-body">
         <form method="POST" action="{{ route('investigacion.store') }}">
             @csrf
@@ -84,7 +85,7 @@
                     <input class="form-control" id="date" type="date" name="date" value="" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12 text-center">
 
                     <button type="submit" class="btn btn-primary">Crear Registro</button>
 

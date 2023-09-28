@@ -1,11 +1,11 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-<div class="container">
-    <h2>Crear Registro de Jornada Ambiental </h2>
-    <tbody>
+
+<div class="card">
+    <h2 class="card-header">Crear Registro de Jornada Ambiental</h2>
+    <div class="card-body">
         <tr>
-            <div class="card-body">
                 <form method="POST" action="{{ route('jornada.store') }}">
 
 
@@ -26,12 +26,12 @@
                             <input type="text " name="ubicacion" id="ubicacion" class="form-control" />
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group ">
                             <label for="date">Fecha</label>
                             <input class="form-control" id="date" type="date" name="date" value="" />
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group col-md-12 text-center">
                             <br>
                             <button type="submit" class="btn btn-primary">Crear Registro</button>
 

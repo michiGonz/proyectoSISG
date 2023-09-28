@@ -2,22 +2,21 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container ">
-    <h1>Comite de Seguridad Salud y Ambiente</h1>
-    <tbody>
-        <tr>
-            <td><a class="btn btn-success" class="nav-link" href="{{ route('comite.create') }}"><span>Crear Reporte</span></a></td>
+<div class="card">
+    <h2 class="card-header">
+       Comite de Seguridad Salud Laborales
+        <a class="btn btn-success float-right" class="nav-link" href="{{ route('comite.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
+    </h2>
+    <div class="card-body">
 
-    </tbody>
-</div>
-
-<div class="table table-striped-columns table-secondary ">
-    <table class="table mt-3 table table-striped-columns table-secondary">
+<div class="table table-striped-columns" >
+    <table class="table mt-3 table table-striped-columns" id="comite">
 
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Ejecutados</th>
+                <th>Observacion</th>
                 <th>Date</th>
                 <th>Acciones</th>
 
@@ -28,6 +27,7 @@
                 <tr>
                     <td>{{ $comite->id }}</td>
                     <td>{{ $comite->ejecutadas }}</td>
+                    <td>{{ $comite->observacion }}</td>
                     <td>{{ $comite->date}}</td>
                     <td>
                         <a href="{{ route('comite.show', $comite->id) }}" class="btn btn-primary btn-sm">Mostrar Reporte</a>
@@ -40,8 +40,9 @@
                     </td>
                 </tr>
             @endforeach
+            </table>
         </tbody>
-    </table>
-
-
+    <script>
+        DataTabla('#comite', [3, 'desc']);
+    </script>
 @endsection

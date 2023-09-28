@@ -1,9 +1,10 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-<div class="container">
-    <h2>Editar Registro de Manejo del Cambio</h2>
-    <tbody>
+
+<div class="card">
+    <h2 class="card-header"> Editar Reporte Manejo del Cambio
+    </h2>
         <tr>
             <div class="card-body">
             <form method="POST" class="row" action="{{ route('manejo.update', $manejo->id) }}" method="POST">
@@ -26,7 +27,7 @@
                             <input value="{{ $manejo->date }}" class="form-control" id="date" type="date" name="date" />
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group col-md-12 text-center">
                             <br>
                             <button type="submit" class="btn btn-primary">Acualizar Registro</button>
 

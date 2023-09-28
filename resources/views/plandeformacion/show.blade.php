@@ -2,10 +2,11 @@
 @section('title', 'Inicio')
 @section('content')
 
-<h2>Editar Registro de Plan de Formacion, Seguridad Salud y Ambiente</h2>
-
-<div class="table-primary">
-
+<div class="card">
+    <h2 class="card-header">
+        Mostrar Plan de Formacion Seguridad Salud y Ambiente
+    </h2>
+    <div class="card-body">
     <form method="POST"  action="{{ route('plandeformacion.update', $plandeformacion->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -48,8 +49,8 @@
         <input value={{ $plandeformacion->observacion }}  disabled="true" name="observacion" id="observacion" class="form-control" required></textarea>
     </div>
 
-        <div class="form-group">
-            <button  type="submit" class="btn btn-primary">Guardar</button>
+        <div class="form-group col-md-12 text-center">
+          
             <a href="{{ route('plandeformacion.index') }}" class="btn btn-secondary">Cancelar</a>
         </div>
     </form>

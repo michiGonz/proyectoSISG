@@ -2,8 +2,11 @@
 @section('title', 'Inicio')
 @section('content')
 
-<h1>Reporte de Registro de Actos Seguros</h1>
-<div class="table table-primary table-striped ">
+<div class="card">
+    <h2 class="card-header">
+    Reporte de Registro de Actos Seguros
+    </h2>
+    <div class="card-body">
     <form method="POST" class="row" action="{{ route('actoseguro.store') }}">
         @csrf
 
@@ -49,8 +52,7 @@
             <input class="form-control" id="date"value="{{ $actos_seguro->date }}" disabled="true" type="date" name="date" value="" />
         </div>
 
-        <div class="form-group col-md-6">
-            <button type="submit" class="btn btn-primary">Descargar "en proceso"</button>
+        <div class="form-group col-md-12 text-center">
             <a href="{{ route('actoseguro.index') }}" class="btn btn-secondary">Cancelar</a>
         </div>
     </form>

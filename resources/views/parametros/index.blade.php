@@ -2,30 +2,19 @@
 @section('title', 'Inicio')
 @section('content')
 
+<div class="card">
+    <h2 class="card-header">Reporte de Parametros Ambientales
+        <a class="btn btn-success float-right" class="nav-link" href="{{ route('parametros.create') }}"><span><i class="fas fa-plus"></i>Crear Reporte</span></a>
+    </h2>
 
-<div class="container">
-    <h2> Reporte de Parametros Ambientales</h2>
-    <tbody>
-        <tr>
-            <div class="card-body">
-                <form method="POST" action="{{ route('parametros.store') }}">
-                    <td><a class="btn btn-success" class="nav-link"
-                            href="{{ route('parametros.create') }}"><span>Crear
-                                Reporte</span></a></td>
-                </form>
-            </div>
-        </tr>
-    </tbody>
-</div>
-
-<div class="table table-striped-columns">
+<div class=" card-body table table-striped-columns">
     <table class="table mt-3" id="parametros">
 
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Parametros Planificados</th>
-                <th>Parametros Ejecutadas</th>
+                <th>Planificados</th>
+                <th>Ejecutadas</th>
                 <th>PROD</th>
                <Th>MTTO</Th> 
                 <th>SSGG</th>

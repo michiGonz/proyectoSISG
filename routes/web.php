@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('manejo', ManejoController::class);
     Route::resource('operativa', OperativaController::class);
     Route::resource('parametros', ParametrosController::class);
-    Route::resource('Monitoreos', MonitoreosController::class);
+    Route::resource('monitoreos', MonitoreosController::class);
 });
 
 Route::post('login', [AutenticacionController::class,'postLogin'])->name('loginData');

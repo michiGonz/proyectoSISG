@@ -1,15 +1,17 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-<div class="container">
-    <h2>Crear Registro de Aprendiendo en el Trabajo</h2>
-    <tbody>
-        <tr>
-            <div class="card-body">
+
+<div class="card">
+    <h2 class="card-header">
+        Aprendiendo en el Trabajo
+       
+    </h2>
+    <div class="card-body">
                 <form method="POST" action="{{ route('aprendiendo.store') }}">
 
 
-                    <div class="table table-striped-columns table-primary">
+                    <div class="table table-striped-column">
                         @csrf
                         <div class="form-group ">
                             <label for="Reuniones">Comites Ejecutados</label>
@@ -31,9 +33,7 @@
                             <input value="{{ $aprendiendo->date}}" disabled="true" class="form-control" id="date" type="date" name="date" value="" />
                         </div>
 
-                        <div class="form-group">
-                            <br>
-                            <button type="submit" class="btn btn-primary">Descargar</button>
+                        <div class="form-group col-md-12 text-center">
 
                             <a href="{{ route('aprendiendo.index') }}" class="btn btn-secondary">Cancelar</a>
                         </div>

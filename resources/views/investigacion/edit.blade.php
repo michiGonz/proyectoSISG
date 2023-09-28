@@ -2,12 +2,14 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-    <h2>Crear Registro de Investigacion de Incidentes</h2>
+<div class="card">
+    <h2 class="card-header">
+        Editar Registro de Invesigacion de Incidentes
+    </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('investigacion.store') }}">
             @csrf
-
+            @method('PUT')
             <div class="form-group">
                 <label for="acomulado">Acomulado del mes</label>
                 <input  value="{{ $investigacion->acomulado }}" type="number" name="acomulado" id="acomulado" class="form-control" value="0" />
@@ -83,7 +85,7 @@
                     <input  value="{{ $investigacion->date}}" class="form-control" id="date" type="date" name="date" value="" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12 text-center">
 
                     <button type="submit" class="btn btn-primary">Actualizar Registro</button>
 

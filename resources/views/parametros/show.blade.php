@@ -3,9 +3,11 @@
 @section('content')
 
 
-<div class="table table-primary">
-    <h2>Parametros Ambientales</h2>
-        <div class="card-body">
+<div class="card">
+    <h2 class="card-header">
+        Registro de Parametros Ambientales
+    </h2>
+    <div class="card-body">
             <form method="POST" action="{{ route('parametros.store') }}">
                 @csrf
                 <div class="form-group">
@@ -18,7 +20,7 @@
                     <input type="number" value="{{ $parametros->ejecutados}}"  disabled="true" name="ejecutados" id="ejecutados" class="form-control" value=0 />
                 </div>
 
-                <div class="form-group col-md-6 table-primary" >
+                <div class=" card-body form-group col-md-6 table-primary" >
                     <h6>Unidades Funcionales </h6>
                     <label for= "PROD" >Produccion</label>
                     <input value="{{ $parametros->PROD}}" disabled="true" class="form-control" type="number" name="PROD" value=0 />
@@ -46,9 +48,7 @@
                 </div>
 
                 
-                <div class="form-group">
-
-                    <button type="submit" class="btn btn-primary">Descargar Registro</button>
+                <div class="form-group col-md-12 text-center">
 
                     <a href="{{ route('parametros.index') }}" class="btn btn-secondary">Cancelar</a>
                 </div>

@@ -2,10 +2,9 @@
 @section('title', 'Inicio')
 @section('content')
 
-
-<div class="container">
-    <h2>Crear Registro de Simulacro</h2>
-        <div class="card-body">
+<div class="card">
+    <h2 class="card-header">Crear Registro de Simulacro</h2>
+    <div class="card-body">
             <form method="POST" action="{{ route('simulacion.store') }}">
                 @csrf
                 <div class="form-group">
@@ -44,4 +43,5 @@
             </div>
         </form>
     </div>
+    
     @endsection

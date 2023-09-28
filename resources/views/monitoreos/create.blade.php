@@ -2,18 +2,21 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-    <h2>Crear Registro de Monitoreos Ambientales</h2>
-    <tbody>
-        <tr>
-            <div class="card-body">
+<div class="card">
+    <h2 class="card-header">Crear Reporte de Monitoreos Ambientales</h2>
+    <div class="card-body">
                 <form method="POST" action="{{ route('monitoreos.store') }}">
 
                     <div class="table table-striped-columns">
                         @csrf
                         <div class="form-group ">
-                            <label for="comite_cumplido">Acciones Ejecutados</label>
-                            <input type="number" name="comite_cumplido" id="comite_cumplido" class="form-control" value=0 />
+                            <label for="cantidad_actividad">Acciones Ejecutados</label>
+                            <input type="number" name="cantidad_actividad" id="cantidad_actividad" class="form-control" value=0 />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text " name="nombre" id="nombre" class="form-control" />
                         </div>
 
                         <div class="form-group">

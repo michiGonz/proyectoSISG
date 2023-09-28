@@ -36,7 +36,7 @@
             
             <tr>
                 <td>{{ $monitoreos->id }}</td>
-                <td>{{ $monitoreos->comite_cumplido}}</td>
+                <td>{{ $monitoreos->cantidad_actividad}}</td>
                 <td>{{ $monitoreos->observacion}}</td>
                 <td>{{ $monitoreos->date}}</td>
                 

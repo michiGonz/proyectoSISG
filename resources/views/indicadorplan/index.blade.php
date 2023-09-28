@@ -3,21 +3,12 @@
 @section('content')
 
 
-<div class="container">
-    <h2> Planificacion de indicadores QQGAS</h2>
-    <tbody>
-        <tr>
-            <div class="card-body">
-                <form method="POST" action="{{ route('indicadorplan.store') }}">
-                    <td><a class="btn btn-success" class="nav-link"
-                            href="{{ route('indicadorplan.create') }}"><span>Crear
-                                Planificación</span></a></td>
-                </form>
-            </div>
-        </tr>
-    </tbody>
-</div>
-
+<div class="card">
+    <h2 class="card-header">
+        Planificacion de Indicadores
+        <a class="btn btn-success float-right" class="nav-link" href="{{ route('indicadorplan.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
+    </h2>
+    <div class="card-body">
 <table class="table table-success table-striped">
     <tr>
         <td><a class="nav-link" href="{{ route('planificacionformacion.index') }}"><span>Plan de Formacion Seguridad

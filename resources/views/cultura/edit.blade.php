@@ -2,8 +2,11 @@
 @section('title', 'Inicio')
 @section('content')
 
-<h2>Editar Registro de Cultura y seguridad</h2>
-
+<div class="card">
+    <h2 class="card-header">
+        Editar Registro de Cultura en Seguridad, Salud y Ambiente
+    </h2>
+    <div class="card-body">
 <div class="table table-striped-columns">
     <form method="POST" class="row" action="{{ route('cultura.update', $cultura->id) }}" method="POST">
         @csrf
@@ -28,7 +31,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Actualizar Registro</button>
             <a href="{{ route('cultura.index') }}" class="btn btn-secondary">Cancelar</a>
         </div>

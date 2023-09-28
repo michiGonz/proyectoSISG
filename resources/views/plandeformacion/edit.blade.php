@@ -1,9 +1,13 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-<div class="container">
 
-    <h2>Editar Registro de Plan de Formacion, Seguridad Salud y Ambiente</h2>
+<div class="card">
+    <h2 class="card-header">
+        Editar Registro de Plan de formacion Seguridad, Salud y Ambiente
+    </h2>
+
+    <div class="card-body">
     <form method="POST"  action="{{ route('plandeformacion.update', $plandeformacion->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -48,7 +52,7 @@
 
         <div class="form-group">
             <button  type="submit" class="btn btn-primary">Actualizar Registro</button>
-            <a href="{{ route('ambiente.index') }}" class="btn btn-secondary">Cancelar</a>
+            <a href="{{ route('plandeformacion.index') }}" class="btn btn-secondary">Cancelar</a>
         </div>
     </form>
 

@@ -1,9 +1,10 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-<div class="container">
 
-    <h2>Mostrar Registro de Permisos de Trabajo</h2>
+<div class="card">
+    <h2 class="card-header">Mostrar Registro de Permisos de Trabajo</h2>
+    <div class="card-body">
     <form method="POST" action="{{ route('auditorias.store') }}">
         @csrf
 
@@ -12,22 +13,22 @@
 
             <div class="form-group ">
                 <label for="permisos_generados">Permisos Generadas </label>
-                <input value={{ $auditorias->permisos_generados }} disabled="true" type="number" name="permisos_generados" id="permisos_generados" class="form-control" value=0 />
+                <input value= "{{ $auditorias->permisos_generados }}" disabled="true" type="number" name="permisos_generados" id="permisos_generados" class="form-control" value=0 />
             </div>
 
             <div class="form-group ">
                 <label for="auditadas_pdvsa">Auditados PDVSA</label>
-                <input value={{ $auditorias->auditadas_pdvsa}} disabled="true" type="number" name="auditadas_pdvsa" id="auditadas_pdvsa" class="form-control" value=0 />
+                <input value="{{ $auditorias->auditadas_pdvsa}}" disabled="true" type="number" name="auditadas_pdvsa" id="auditadas_pdvsa" class="form-control" value=0 />
             </div>
 
             <div class="form-group">
                 <label for="auditadas_qqgas">Auditados QQgas</label>
-                <input value={{ $auditorias->auditadas_qqgas }}  disabled="true" type="number" name="auditadas_qqgas" id="auditadas_qqgas" class="form-control" value=0 />
+                <input value="{{ $auditorias->auditadas_qqgas }}"  disabled="true" type="number" name="auditadas_qqgas" id="auditadas_qqgas" class="form-control" value=0 />
             </div>
 
             <div class="form-group">
                 <label for="desviacion_qqgas">Desviaciones QQgas</label>
-                <input value={{ $auditorias->desviacion_qqgas }} disabled="true" type="number" name="desviacion_qqgas" id="desviacion_qqgas" class="form-control" value=0 />
+                <input value="{{ $auditorias->desviacion_qqgas }}" disabled="true" type="number" name="desviacion_qqgas" id="desviacion_qqgas" class="form-control" value=0 />
             </div>
 
             <div class="form-group">

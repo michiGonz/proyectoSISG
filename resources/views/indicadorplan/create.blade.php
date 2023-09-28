@@ -1,19 +1,19 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-
-<div class="container">
-
-    <h2>Planificacion de Indicadores </h2>
+<div class="card">
+    <h2 class="card-header">
+        Planificacion de Indicadores
+        <a class="btn btn-success float-right" class="nav-link" href="{{ route('indicadorplan.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
+    </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('indicadorplan.store') }}">
             @csrf
 
-            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0"  name="nombre_indicador" id="nombre_indicador"
-                aria-label="Default select example">
+            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="nombre_indicador" id="nombre_indicador" aria-label="Default select example">
                 <option selected>Indicador</option>
-                <option value= "visita Gerencial">Visita Gerencial</option>
-                <option value= "Simulacro">Simulacro</option>
+                <option value="visita Gerencial">Visita Gerencial</option>
+                <option value="Simulacro">Simulacro</option>
                 <option value="comite de seguridad salud y ambiente">Comite de Seguridad Salud y Ambiente</option>
                 <option value="Parametros Ambientales">Parametros Ambientales</option>
             </select>
@@ -26,18 +26,18 @@
 
             <div class="form-group">
                 <label for="programacion_anual">Programacion Anual</label>
-                <input type="number" name="programacion_anual" id="programacion_anual" class="form-control" value=0
-                    required>
+                <input type="number" name="programacion_anual" id="programacion_anual" class="form-control" value=0 required>
             </div>
 
             <div class="form-group">
                 <label for="programadas_mes">Programacion Mensual</label>
                 <input type="number" name="programadas_mes" id="programadas_mes" class="form-control" value=0>
             </div>
-            <div class="row" id="fechas"></div>            
+            <div class="row" id="fechas"></div>
+
             <div class="form-group">
                 <label for="observacion">Observacion</label>
-                <input name="observacion" id="observacion" class="form-control" />
+                <input name="observacion" id="observacion" required class="form-control" />
             </div>
 
             <div class="form-group">
@@ -55,12 +55,12 @@
         $('#fechas').html('')
         if (nro <= 50) {
             for (let index = 0; index < nro; index++) {
-                $('#fechas').append('<div class="form-group col-md-3">'+
-                    '<label for="date">Fecha</label>'+
-                    '<input class="form-control" id="date" type="month" name="date[]" />'+
-                '</div>');
+                $('#fechas').append('<div class="form-group col-md-3">' +
+                    '<label for="date">Fecha</label>' +
+                    '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                    '</div>');
             }
-        }else{
+        } else {
             alert('Máximo 50 fechas')
         }
     });

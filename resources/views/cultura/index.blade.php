@@ -3,21 +3,12 @@
 @section('content')
 
 
-<div class="container">
-    <h2> Reporte de Cultura en Seguridad</h2>
-    <tbody>
-        <tr>
-            <div class="card-body">
-                <form method="POST" action="{{ route('cultura.store') }}">
-                    <td><a class="btn btn-success" class="nav-link"
-                            href="{{ route('cultura.create') }}"><span>Crear
-                                Reporte</span></a></td>
-                </form>
-            </div>
-        </tr>
-    </tbody>
-</div>
-
+<div class="card">
+    <h2 class="card-header">
+        Cultura En Seguridad Salud y Ambiente
+        <a class="btn btn-success float-right" class="nav-link" href="{{ route('cultura.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
+    </h2>
+    <div class="card-body">
 <div class="table table-striped-columns">
     <table class="table mt-3" id="cultura">
 

@@ -2,8 +2,10 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-    <h2>Crear Registro de Plan de formacion</h2>
+<div class="card">
+    <h2 class="card-header">
+    Crear Registro de Plan de Formacion
+    </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('plandeformacion.store') }}">
             @csrf
@@ -44,7 +46,7 @@
                 <textarea name="observacion" id="observacion" class="form-control" required></textarea>
             </div>
 
-            <div class="form-group">
+            <div class="form-group col-md-12 text-center ">
                 <button type="submit" class="btn btn-primary">Crear Registro</button>
                 <a href="{{ route('plandeformacion.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>

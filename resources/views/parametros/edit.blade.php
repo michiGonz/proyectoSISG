@@ -2,26 +2,27 @@
 @section('title', 'Inicio')
 @section('content')
 
-    <h2>Editar Parametros Ambientales</h2>
+<div class="card">
+        <h2>Editar Registro de Parametros Ambientales</h2>
+        <div class="card-body">
 
-    <div class="table">
         <form method="POST" class="row" action="{{ route('parametros.update', $parametros->id) }}" method="POST">
             @csrf
             @method('PUT')
 
-            <div class="form-group">
-                <label for="plsnificado">Acciones Ejecutados</label>
+            <div class="form-group col-md-6">
+                <label for="planificado">Acciones Ejecutados</label>
                 <input value="{{ $parametros->planificado }}" type="number" name="comite_cumplido" id="" value=0
                     class="form-control">
             </div>
 
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label for="ejecutados">Ejecutados</label>
                 <input value="{{ $parametros->ejecutados }}" type="text" name="observacion" id="observacion"
                     class="form-control" />
             </div>
 
-            <div class="form-group col-md-8 table-primary">
+            <div class=" card-body form-group col-md-8 table-primary">
                 <h6>Unidades Funcionales </h6>
                 <label for="PROD">Produccion</label>
                 <input value="{{ $parametros->PROD }}" class="form-control" type="number" name="PROD" value=0 />
@@ -37,7 +38,7 @@
                 <input value="{{ $parametros->SSII }}" class="form-control" type="number" name="SSII" value=0 />
             </div>
 
-            <div class="container px-1 px-sm-2 mx-auto">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="date">Fecha</label>
                     <input value="{{ $parametros->date }}" type="date" id="start" class="form-control text-left mr-2"
@@ -45,15 +46,13 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label for="observacion">Observacion</label>
                 <input value="{{ $parametros->observacion }}" type="text" name="observacion" id="observacion"
                     class="form-control" />
             </div>
 
-
-
-            <div class="form-group">
+            <div class="form-group col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Actualizar Registro</button>
                 <a href="{{ route('parametros.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>

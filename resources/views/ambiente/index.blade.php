@@ -2,34 +2,30 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-    <h2>Visita Gerencial</h2>
-    <tbody>
-        <tr>
-            <td><a class="btn btn-success" class="nav-link" href="{{ route('ambiente.create') }}"><span>Crear Reporte</span></a></td>
 
-    </tbody>
-</div>
+<div class="card">
+    <h2 class="card-header">
+        Visita Gerencial
+        <a class="btn btn-success float-right" class="nav-link" href="{{ route('ambiente.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
+    </h2>
+    <div class="card-body">
 
+        <div class="table tabble-responsive">
+            <table class="table mt-3" id="table-ambiente">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Lugar de Visita</th>
+                        <th>Descripción</th>
+                        <th>Acompanantes</th>
+                        <th>Cantidad</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
 
-<div class="table tabble-responsive">
-
-
-        <table class="table mt-3" id="table-ambiente">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Lugar de Visita</th>
-                    <th>Descripción</th>
-                    <th>Acompanantes</th>
-                    <th>Cantidad</th>
-                    <th>Fecha</th>
-                    <th>Acciones</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($ambients as $ambient)
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($ambients as $ambient)
                     <tr>
                         <td>{{ $ambient->id }}</td>
                         <td>{{ $ambient->name }}</td>
@@ -45,13 +41,14 @@
                             <a href="{{ route('ambiente.edit', $ambient->id) }}" class="btn btn-primary btn-sm">Editar</a>
                         </td>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-
-
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+
 <script>
-    DataTabla('#table-ambiente',[5, 'desc']);
+    DataTabla('#table-ambiente', [5, 'desc']);
 </script>
 @endsection

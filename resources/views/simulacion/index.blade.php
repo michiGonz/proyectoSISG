@@ -2,18 +2,14 @@
 @section('title', 'Inicio')
 @section('content')
 
-
-<div class="container ">
-    <h1>Simulacro</h1>
-    <tbody>
-        <tr>
-            <td><a class="btn btn-success" class="nav-link" href="{{ route('simulacion.create') }}"><span>Crear Reporte</span></a></td>
-
-    </tbody>
-</div>
-
-<div class="table table-striped-columns table-secondary ">
-    <table class="table mt-3 table table-striped-columns table-secondary" id="simulacion">
+<div class="card">
+    <h2 class="card-header">
+        Simulacro
+        <a class="btn btn-success float-right" class="nav-link" href="{{ route('simulacion.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
+    </h2>
+    <div class="card-body">
+<div class="table table-striped-columns ">
+    <table class="table mt-3 table table-striped-columns" id="simulacion">
 
         <thead>
             <tr>
