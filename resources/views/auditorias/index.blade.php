@@ -13,7 +13,7 @@
 </div>
 
 <div class="table tabble-responsive">
-    <table class="table mt-3">
+    <table class="table mt-3" id="auditoria">
         <thead>
             <tr>
                 <th>#</th>
@@ -56,7 +56,8 @@
             @endforeach
         </tbody>
     </table>
-
-
 </div>
+<script>
+    DataTabla('#auditoria',[10, 'desc']);
+</script>
 @endsection

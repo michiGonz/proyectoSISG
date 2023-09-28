@@ -9,8 +9,8 @@ class IndicadorplanController extends Controller
 {
     public function index()
     {
-    $indicadorplan = Indicadorplan::all();
-
+    $indicadorplan = Indicadorplan::get();
+    //return response()->json(json_decode($indicadorplan[2]->date)[0]);
         return view('indicadorplan.index', compact('indicadorplan'));
     }
 
@@ -22,7 +22,11 @@ class IndicadorplanController extends Controller
 
     public function store(Request $request)
     {
-        Indicadorplan::create($request->all());
+      
+        $plan=new Indicadorplan($request->all());
+        $plan->date=json_encode($request->date);
+        $plan->save();
+       
         return redirect()->route('indicadorplan.index');
     }
 

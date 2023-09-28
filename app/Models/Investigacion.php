@@ -19,8 +19,6 @@ class Investigacion extends Model
         'observacion',
         'date',
     ];
-    public function investigacion(){
-        return $this->hasMany(indicator::class);
-    }
+    
 
 }

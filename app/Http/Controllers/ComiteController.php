@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use\App\Models\Comite;
+use \App\Models\Comite;
 
 class ComiteController extends Controller
 {

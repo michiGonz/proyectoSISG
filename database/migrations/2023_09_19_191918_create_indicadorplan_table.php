@@ -19,7 +19,7 @@ class CreateIndicadorplanTable extends Migration
             $table->string('meta');
             $table->string('programacion_anual');
             $table->string('programadas_mes');
-            $table->string('date');
+            $table->text('date');
             $table->text('observacion');
             $table->timestamps();
         });

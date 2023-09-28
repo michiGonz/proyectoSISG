@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h2>Crear Registro de Simulacro</h2>
+    <h2>Crear Registro de Plan de formacion</h2>
     <div class="card-body">
         <form method="POST" action="{{ route('plandeformacion.store') }}">
             @csrf

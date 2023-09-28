@@ -24,15 +24,14 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
     <!-- Flag sprites service provided by Martijn Lafeber,
         https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
-    <link rel="stylesheet" type="text/css"
-          href="https://cdn.jsdelivr.net/gh/lafeber/world-flags-sprite/stylesheets/flags32-both.css" />
+   
+        <link href="{{asset('assets/DataTables/datatables.min.css')}}" rel="stylesheet">
+ 
+ <script src="{{asset('assets/DataTables/datatables.min.js')}}"></script>
+ <script src="{{asset('assets/js/js.js')}}"></script>
+
 </head>
 
 <body id="page-top">

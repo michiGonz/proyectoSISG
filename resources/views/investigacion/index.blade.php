@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h2> Reporte de Investigacion de insidentes</h2>
+    <h2> Reporte de Investigacion de incidentes</h2>
     <tbody>
         <tr>
             <div class="card-body">
@@ -17,7 +17,7 @@
     </tbody>
 </div>
 <div class=" table table-striped-columns table-secondary ">
-    <table class="table mt-3  table-secondary">
+    <table class="table mt-3"  id="investigacion">
 
         <thead>
             <tr>
@@ -55,4 +55,8 @@
             @endforeach
         </tbody>
     </table>
+
+    <script>
+    DataTabla('#investigacion',[5, 'desc']);
+</script>
 @endsection

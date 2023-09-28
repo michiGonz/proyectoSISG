@@ -22,7 +22,5 @@ class Plandeformacion extends Model
 
 
     ];
-    public function plandeformacion(){
-        return $this->hasMany(indicator::class);
-    }
+    
 }

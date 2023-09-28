@@ -28,7 +28,7 @@
 
         <div class="form-group">
             <label for="acompanantes">Nombre de Acompañantes</label>
-            <input value={{ $ambient->acompanantes }} name="acompanantes" id="acompanante" class="form-control" />
+            <input value="{{ $ambient->acompanantes }}" name="acompanantes" id="acompanante" class="form-control" />
         </div>
 
         <div class="container px-1 px-sm-2 mx-auto">

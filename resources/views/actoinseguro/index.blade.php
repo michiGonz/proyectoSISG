@@ -2,7 +2,7 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
+<div class="container" >
     <h2>Acto Inseguro</h2>
     <tbody>
         <tr>
@@ -13,7 +13,7 @@
 </div>
 
 <div class="table table-striped-columns ">
-    <table class="table mt-3">
+    <table class="table mt-3" id="acto-inseguro" >
         <thead>
             <tr>
                 <th>#</th>
@@ -47,4 +47,7 @@
         </tbody>
     </table>
 </div>
+<script>
+    DataTabla('#acto-inseguro',[4, 'desc']);
+</script>
 @endsection

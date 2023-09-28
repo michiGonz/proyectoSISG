@@ -1,4 +1,3 @@
-
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
@@ -19,8 +18,8 @@
     </tbody>
 </div>
 
-<div class="container ">
-    <table class="table mt-3">
+<div class="container">
+    <table class="table mt-3" id="control">
 
         <thead>
             <tr>
@@ -29,6 +28,7 @@
                 <th>Meta Mensual</th>
                 <th>Programadas Ambiente</th>
                 <th>Programadas Salud</th>
+                <th>Programadas Seguridad</th>
                 <th>Fecha Planificada</th>
                 <th>Acciones</th>
 
@@ -38,16 +38,15 @@
             @foreach ($planificacionformacion as $planificacionformacion)
                 <tr>
                     <td>{{ $planificacionformacion->id }}</td>
-                    
                     <td>{{ $planificacionformacion->programadas_anual}}</td>
                     <td>{{ $planificacionformacion->programadas_mensual }}</td>
-                    <td>{{ $planificacionformacion->programadas_seguridad}}</td>
-                    <td>{{ $planificacionformacion->programadas_salud}}</td>
                     <td>{{ $planificacionformacion->programadas_ambiente}}</td>
+                    <td>{{ $planificacionformacion->programadas_salud}}</td>
+                    <td>{{ $planificacionformacion->programadas_seguridad}}</td>
                     <td>{{ $planificacionformacion->date}}</td>
 
                     <td>
-                        <a href="{{ route('planificacionformacion.show', $planificacionformacion->id) }}" class="btn btn-primary btn-sm">Mostrar Reporte</a>
+                        <a href="{{ route('planificacionformacion.show', $planificacionformacion->id) }}" class="btn btn-primary btn-sm">Mostrar Planificacion</a>
                         <form action="{{ route('planificacionformacion.destroy', $planificacionformacion->id) }}" method="POST" class="d-inline">
                             @csrf
 
@@ -59,5 +58,7 @@
             @endforeach
         </tbody>
     </table>
-
+    <script>
+    DataTabla('#control',[7, 'desc']);
+</script>
 @endsection

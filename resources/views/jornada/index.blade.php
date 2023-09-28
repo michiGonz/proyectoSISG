@@ -7,13 +7,12 @@
     <h1>Jornada Ambiental</h1>
     <tbody>
         <tr>
-            <td><a class="btn btn-success" class="nav-link" href="{{ route('jornada.create') }}"><span>Crear Reporte</span></a></td>
-
+        <td><a class="btn btn-success" class="nav-link" href="{{ route('jornada.create') }}"><span>Crear Reporte</span></a></td>
     </tbody>
 </div>
 
 <div class="table table-striped-columns table-secondary ">
-    <table class="table mt-3 table table-striped-columns table-secondary">
+    <table class="table mt-3 table table-striped-columns table-secondary" id="jornada">
 
         <thead>
             <tr>
@@ -48,4 +47,7 @@
         </tbody>
     </table>
 
+    <script>
+    DataTabla('#jornada',[4, 'desc']);
+</script>
 @endsection

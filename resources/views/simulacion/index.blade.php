@@ -13,7 +13,7 @@
 </div>
 
 <div class="table table-striped-columns table-secondary ">
-    <table class="table mt-3 table table-striped-columns table-secondary">
+    <table class="table mt-3 table table-striped-columns table-secondary" id="simulacion">
 
         <thead>
             <tr>
@@ -45,5 +45,7 @@
             @endforeach
         </tbody>
     </table>
-
+    <script>
+    DataTabla('#simulacion',[3, 'desc']);
+</script>
 @endsection

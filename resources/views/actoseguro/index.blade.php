@@ -13,7 +13,7 @@
 </div>
 
 <div class="table table-striped-columns ">
-    <table class="table mt-3">
+    <table class="table mt-3" id="acto-seguro">
         <thead>
             <tr>
                 <th>id</th>
@@ -53,4 +53,7 @@
         </tbody>
     </table>
 </div>
+<script>
+    DataTabla('#acto-seguro',[6, 'desc']);
+</script>
 @endsection

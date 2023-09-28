@@ -2,7 +2,7 @@
 @section('title', 'Inicio')
 @section('content')
 
-<h2>Editar Registro de Comite de Seguridad y Salud</h2>
+<h2>Editar Registro de Comite de seguridad, salud y ambiente</h2>
 
 <div class="table table-striped-columns">
     <form method="POST" class="row" action="{{ route('comite.update', $comite->id) }}" method="POST">

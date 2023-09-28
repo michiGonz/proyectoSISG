@@ -1,0 +1,49 @@
+@extends('base')
+@section('title', 'Inicio')
+@section('content')
+
+    <h2>Planificacion de Indicadores</h2>
+
+    <div class="card-body">
+        <form method="POST" class="row" action="{{ route('indicadorplan.update', $indicadorplan->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+
+
+            <select value="{{ $indicadorplan->nombre_indicador}}" class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="nombre_indicador" id="nombre_indicador"
+                aria-label="indicador">
+                <option selected>Indicador</option>
+                <option value="visita Gerencial">Visita Gerencial</option>
+                <option value="Simulacro">Simulacro</option>
+                <option value="comite de seguridad salud y ambiente">Comite de Seguridad Salud y Ambiente</option>
+            </select>
+
+           <div class="form-group">
+                <label for="meta">Meta establecida</label>
+                <input value="{{ $indicadorplan->meta}}" type="number" name="meta" id="meta" class="form-control" value=0 />
+            </div>
+
+            <div class="form-group">
+                <label for="programacion_anual">Programacion Anual</label>
+                <input value="{{ $indicadorplan->programacion_anual}}" type="number" name="programacion_anual" id="programacion_anual" class="form-control" value=0
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="programadas_mes">Programacion Mensual</label>
+                <input value="{{ $indicadorplan->programadas_mes}}"type="number" name="programadas_mes" id="programadas_mes" class="form-control" value=0>
+            </div>
+
+            <div class="row" id="fechas"></div>            
+            <div class="form-group">
+                <label for="observacion">Observacion</label>
+                <textarea value="{{ $indicadorplan->observacion}}"name="observacion" id="observacion" class="form-control" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Actualizar Registro</button>
+                <a href="{{ route('indicadorplan.index') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+@endsection

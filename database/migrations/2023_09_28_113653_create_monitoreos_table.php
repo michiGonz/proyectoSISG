@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateManejoTable extends Migration
+class CreateMonitoreosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateManejoTable extends Migration
      */
     public function up()
     {
-        Schema::create('manejo', function (Blueprint $table) {
+        Schema::create('monitoreos', function (Blueprint $table) {
             $table->id();
+            $table->string('cantidad_actividad');
+            $table->text('nombre');
+            $table->date('date');
+            $table->text('observacion');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateManejoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('manejo');
+        Schema::dropIfExists('monitoreos');
     }
 }

@@ -20,7 +20,12 @@ use App\Http\Controllers\AuditoriasController;
 use App\Http\Controllers\InvestigacionController;
 use App\Http\Controllers\ComiteController;
 use App\Http\Controllers\JornadaController;
-
+use App\Http\Controllers\CulturaController;
+use App\Http\Controllers\AprendiendoController;
+use App\Http\Controllers\ManejoController;
+use App\Http\Controllers\OperativaController;
+use App\Http\Controllers\ParametrosController;
+use App\Http\Controllers\MonitoreosController;
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('/');
@@ -39,6 +44,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('investigacion', InvestigacionController::class);
     Route::resource('comite', ComiteController::class);
     Route::resource('jornada', JornadaController::class);
+    Route::resource('cultura', CulturaController::class);
+    Route::resource('aprendiendo', AprendiendoController::class);
+    Route::resource('manejo', ManejoController::class);
+    Route::resource('operativa', OperativaController::class);
+    Route::resource('parametros', ParametrosController::class);
+    Route::resource('Monitoreos', MonitoreosController::class);
 });
 
 Route::post('login', [AutenticacionController::class,'postLogin'])->name('loginData');

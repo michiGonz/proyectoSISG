@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use\App\Models\Jornada;
+use \App\Models\Jornada;
 
 class JornadaController extends Controller
 {

@@ -17,7 +17,5 @@ class Indicator extends Model
 
     ];
 
-    public function indicator(){
-        return $this->belongsTo(Indicator::class);
-    }
+    
 }

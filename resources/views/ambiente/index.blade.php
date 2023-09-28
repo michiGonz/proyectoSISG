@@ -15,7 +15,7 @@
 <div class="table tabble-responsive">
 
 
-        <table class="table mt-3">
+        <table class="table mt-3" id="table-ambiente">
             <thead>
                 <tr>
                     <th>#</th>
@@ -51,4 +51,7 @@
 
 
 </div>
+<script>
+    DataTabla('#table-ambiente',[5, 'desc']);
+</script>
 @endsection

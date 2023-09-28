@@ -17,8 +17,6 @@ class Jornada extends Model
       'date'
 
     ];
-    public function jornada(){
-        return $this->hasMany(indicator::class);
-    }
+    
 
 }

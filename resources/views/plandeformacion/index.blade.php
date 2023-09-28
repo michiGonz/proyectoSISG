@@ -18,9 +18,8 @@
         </tr>
     </tbody>
 </div>
-<div class=" table table-striped-columns table-secondary ">
-    <table class="table mt-3  table-secondary">
-
+<div class=" table table-striped-columns">
+    <table class="table mt-3" id="formacion">
         <thead>
             <tr>
                 <th>ID</th>
@@ -32,7 +31,6 @@
                 <th>Formaciones ejecutadas de Salud</th>
                 <th>Fecha Ejecutada de Salud</th>
                 <th>Acciones</th>
-
             </tr>
         </thead>
         <tbody>
@@ -46,9 +44,6 @@
                     <td>{{ $plandeformacion->date_seguridad}}</td>
                     <td>{{ $plandeformacion->ejecutadas_salud}}</td>
                     <td>{{ $plandeformacion->date_salud}}</td>
-
-
-
                     <td>
                         <a href="{{ route('plandeformacion.show', $plandeformacion->id) }}" class="btn btn-primary btn-sm">Mostrar Reporte</a>
                         <form action="{{ route('plandeformacion.destroy', $plandeformacion->id) }}" method="POST" class="d-inline">
@@ -62,6 +57,7 @@
             @endforeach
         </tbody>
     </table>
-
-
+    <script>
+    DataTabla('#formacion',[7, 'desc']);
+</script>
 @endsection

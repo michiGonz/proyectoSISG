@@ -29,8 +29,8 @@
 </table>
 
 
-<div class="table table-striped-columns table-secondary ">
-    <table class="table mt-3">
+<div class="table table-striped-columns">
+    <table class="table mt-3" id="indicador">
 
         <thead>
             <tr>
@@ -46,14 +46,20 @@
         </thead>
         <tbody>
             @foreach ($indicadorplan as $indicadorplan)
-
+            
             <tr>
                 <td>{{ $indicadorplan->id }}</td>
                 <td>{{ $indicadorplan->nombre_indicador }}</td>
                 <td>{{ $indicadorplan->meta }}</td>
                 <td>{{ $indicadorplan->programacion_anual}}</td>
                 <td>{{ $indicadorplan->programadas_mes}}</td>
-                <td>{{ $indicadorplan->date}}</td>
+                <td>
+                    <?php $fechas = json_decode($indicadorplan->date);?>
+                    @foreach ($fechas as $fecha)
+                        {{$fecha}}<br>
+                    @endforeach
+                </td>
+                
 
                 <td>
                     <a href="{{ route('indicadorplan.show', $indicadorplan->id) }}"
@@ -72,5 +78,7 @@
             @endforeach
         </tbody>
     </table>
-
+    <script>
+    DataTabla('#indicador',[4, 'desc']);
+</script>
     @endsection

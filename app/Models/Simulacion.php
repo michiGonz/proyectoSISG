@@ -17,8 +17,6 @@ class Simulacion extends Model
         'observacion',
         'date',
     ];
-    public function simulacion(){
-        return $this->hasMany(indicator::class);
-    }
+   
 
 }
