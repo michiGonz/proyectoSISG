@@ -44,7 +44,7 @@
 
         <div class="form-group col-md-6">
             <label for="ambiente">A</label>
-            <input class="form-control" type="number" name="ambiente" value="{{ $actoseguro->ambiente }}" />
+            <input class="form-control" type="number" name="ambiente" value="0" value="{{ $actoseguro->ambiente }}" />
         </div>
 
         <div class="form-group col-md-6">
@@ -60,7 +60,7 @@
 
         <div class="form-group col-md-6">
             <button type="submit" class="btn btn-primary">Actualizar Registro</button>
-            <a href="{{ route('actoinseguro.index') }}" class="btn btn-secondary">Cancelar</a>
+            <a href="{{ route('actoseguro.index') }}" class="btn btn-secondary">Cancelar</a>
         </div>
 </div>
 </form>

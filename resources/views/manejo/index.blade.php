@@ -31,12 +31,12 @@
 
 
                     <td>
-                        <a href="{{ route('manejo.show', $manejo->id) }}" class="btn btn-primary btn-sm">Mostrar Reporte</a>
+                        <a href="{{ route('manejo.show', $manejo->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
                         <form action="{{ route('manejo.destroy', $manejo->id) }}" method="POST" class="d-inline">
                             @csrf
 
                         </form>
-                        <a href="{{ route('manejo.edit', $manejo->id) }}" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="{{ route('manejo.edit', $manejo->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
 
                     </td>
                 </tr>

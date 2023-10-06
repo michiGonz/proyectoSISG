@@ -8,6 +8,7 @@
     <div class="card-body">
             <form method="POST" action="{{ route('parametros.store') }}">
                 @csrf
+
                 <div class="form-group">
                     <label for="planificado">Parametros Ambientales Planificados</label>
                     <input type="number" name="planificado" id="planificado" class="form-control">

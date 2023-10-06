@@ -26,6 +26,8 @@ use App\Http\Controllers\ManejoController;
 use App\Http\Controllers\OperativaController;
 use App\Http\Controllers\ParametrosController;
 use App\Http\Controllers\MonitoreosController;
+use App\Http\Controllers\Ambiente_planController;
+use App\Http\Controllers\UnidadfuncionalController;
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('/');
@@ -50,7 +52,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('operativa', OperativaController::class);
     Route::resource('parametros', ParametrosController::class);
     Route::resource('monitoreos', MonitoreosController::class);
+    Route::resource('ambiente_plan', Ambiente_planController::class);
+    Route::resource('unidadfuncional', UnidadfuncionalController::class);
+   
+
 });
 
 Route::post('login', [AutenticacionController::class,'postLogin'])->name('loginData');
 Route::get('login', [AutenticacionController::class,'getLogin'])->name('login');
+

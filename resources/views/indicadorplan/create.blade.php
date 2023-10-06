@@ -2,20 +2,22 @@
 @section('title', 'Inicio')
 @section('content')
 <div class="card">
+
     <h2 class="card-header">
         Planificacion de Indicadores
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('indicadorplan.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
     </h2>
+
     <div class="card-body">
         <form method="POST" action="{{ route('indicadorplan.store') }}">
             @csrf
 
-            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="nombre_indicador" id="nombre_indicador" aria-label="Default select example">
-                <option selected>Indicador</option>
-                <option value="visita Gerencial">Visita Gerencial</option>
-                <option value="Simulacro">Simulacro</option>
-                <option value="comite de seguridad salud y ambiente">Comite de Seguridad Salud y Ambiente</option>
-                <option value="Parametros Ambientales">Parametros Ambientales</option>
+            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0 table-primary" name="nombre_indicador" id="nombre_indicador" aria-label="Default select example">
+                <option value="simulacro">Simulacro</option>
+                <option value="comite">Comite de Seguridad Salud y Ambiente</option>
+                <option value="parametros_ambientales">Parametros Ambientales</option>
+                <option value="visita_gerencial">Visita Gerencial</option>
+
             </select>
 
 
@@ -52,18 +54,31 @@
 <script>
     $('#programacion_anual').change(function() {
         let nro = parseInt($('#programacion_anual').val());
+        let indicador = $('#nombre_indicador').val();
         $('#fechas').html('')
         if (nro <= 50) {
-            for (let index = 0; index < nro; index++) {
-                $('#fechas').append('<div class="form-group col-md-3">' +
-                    '<label for="date">Fecha</label>' +
-                    '<input class="form-control" id="date" type="month" name="date[]" required />' +
-                    '</div>');
+            if (indicador == "simulacro") {
+                for (let index = 0; index < nro; index++) {
+                    $('#fechas').append('<div class="form-group col-md-3">' +
+                        '<label for="date">Nombre del simulacro</label>' +
+                        '<input class="form-control" id="date" type="text" name="nombre_simulacro[]" required />' +
+                        '<label for="date">Fecha</label>' +
+                        '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                        '</div>');
+                }
+            } else {
+                for (let index = 0; index < nro; index++) {
+                    $('#fechas').append('<div class="form-group col-md-3">' +
+                        '<label for="date">Fecha</label>' +
+                        '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                        '</div>');
+                }
             }
         } else {
             alert('Máximo 50 fechas')
         }
     });
 </script>
+
 
 @endsection

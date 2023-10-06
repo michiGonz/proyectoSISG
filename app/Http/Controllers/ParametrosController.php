@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Parametros;
+use App\Models\Indicadorplan;
+
 
 class ParametrosController extends Controller
 {
     public function index()
     {
-    $parametros = Parametros::all();
-    
-        return view('parametros.index', compact('parametros'));
+        $indicadorplan = Indicadorplan::all();
+        $parametros = Parametros::all();
+        return view('parametros.index', compact('parametros' , 'indicadorplan'));
     }
 
     public function create()

@@ -44,13 +44,38 @@
                         <h5>Desviaciones QQgas</h5>
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                            desviacion 1
+                        No indica hora de inicio de la actividad.
+                        </label>
+                        
+                    </div>
+                    <div class="form-check  table-primary">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        Permiso sin cerrar.
                         </label>
                     </div>
                     <div class="form-check  table-primary">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                         <label class="form-check-label" for="flexCheckChecked">
-                            Desviacion 2
+                        Casillas sin llenar ó vacias.
+                        </label>
+                    </div>
+                    <div class="form-check  table-primary">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No especifica herramientas manuales a utilizar.
+                        </label>
+                    </div>
+                    <div class="form-check  table-primary">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No indica numero de Orden de Trabajo.
+                        </label>
+                    </div>
+                    <div class="form-check  table-primary">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No indica EPP a utilizar.
                         </label>
                     </div>
                 </table>

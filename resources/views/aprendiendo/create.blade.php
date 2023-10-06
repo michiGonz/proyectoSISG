@@ -36,7 +36,6 @@
                 <div class="form-group col-md-12 text-center">
                     <br>
                     <button type="submit" class="btn btn-primary">Crear Registro</button>
-
                     <a href="{{ route('aprendiendo.index') }}" class="btn btn-secondary">Cancelar</a>
                 </div>
         </form>

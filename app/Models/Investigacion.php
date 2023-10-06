@@ -9,9 +9,9 @@ class Investigacion extends Model
 {
     use HasFactory;
     protected $table = 'investigacion';
+    protected $with = ['unidad_funcional'];
 
     protected $fillable = [
-    
        'acomulado',
         'uf',
         'nombre_incidente',
@@ -19,6 +19,10 @@ class Investigacion extends Model
         'observacion',
         'date',
     ];
+
+    public function unidad_funcional(){
+        return $this->hasMany(Unidadfuncional::class,'co_depart','unidad_funcional');
+    }
     
 
 }

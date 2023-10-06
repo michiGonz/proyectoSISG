@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Comite;
+use \App\Models\Indicadorplan;
 
 class ComiteController extends Controller
 {
@@ -11,7 +12,8 @@ class ComiteController extends Controller
     public function index()
     {
         $comite = Comite::all();
-        return view('comite.index', compact('comite'));
+        $indicadorplan = Indicadorplan::all();
+        return view('comite.index', compact('comite' , 'indicadorplan'));
     }
 
     public function create()

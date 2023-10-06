@@ -34,20 +34,21 @@
             
                 <td>
                     <a href="{{ route('cultura.show', $cultura->id) }}"
-                        class="btn btn-primary btn-sm">Mostrar Reporte</a>
+                    class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
                     <form action="{{ route('cultura.destroy', $cultura->id) }}" method="POST"
                         class="d-inline">
                         @csrf
 
                     </form>
                     <a href="{{ route('cultura.edit', $cultura->id) }}"
-                        class="btn btn-primary btn-sm">Editar</a>
+                    class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
 
                 </td>
             </tr>
 
             @endforeach
         </tbody>
+        
     </table>
     <script>
     DataTabla('#cultura',[4, 'desc']);

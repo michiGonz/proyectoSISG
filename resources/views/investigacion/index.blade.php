@@ -34,12 +34,12 @@
                    
 
                     <td>
-                        <a href="{{ route('investigacion.show', $investigacion->id) }}" class="btn btn-primary btn-sm">Mostrar Reporte</a>
+                        <a href="{{ route('investigacion.show', $investigacion->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
                         <form action="{{ route('investigacion.destroy', $investigacion->id) }}" method="POST" class="d-inline">
                             @csrf
 
                         </form>
-                        <a href="{{ route('investigacion.edit', $investigacion->id) }}" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="{{ route('investigacion.edit', $investigacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
 
                     </td>
                 </tr>

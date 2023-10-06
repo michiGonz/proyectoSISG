@@ -2,9 +2,8 @@
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-
-    <h2>Planificacion de Plan de Formacion</h2>
+<div class="card">
+    <h2 class="card-header">Crear Planificacion de Plan de Formación</h2>
     <div class="card-body">
         <form method="POST" action="{{ route('planificacionformacion.store') }}">
             @csrf

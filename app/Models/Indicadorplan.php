@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Indicadorplan extends Model
 {
     use HasFactory;
@@ -18,11 +19,16 @@ class Indicadorplan extends Model
         'programacion_anual',
         'programadas_mes',
         'date',
-       'observacion',
+        'observacion',
+        'vg',
+        'simulacro',
+        'comite',
+        'parametros',
 
 
     ];
-    public function indicadorplan(){
+    public function indicadorplan()
+    {
         return $this->hasMany(indicator::class);
     }
 }

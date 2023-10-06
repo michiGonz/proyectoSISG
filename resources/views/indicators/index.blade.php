@@ -5,8 +5,7 @@
 
 <div class="container">
     <h1>Indicadores de Quiriquire Gas SA</h1>
-
-
+    
     <div class=" table table-striped-columns ">
         <table class="table">
 

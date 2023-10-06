@@ -4,18 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Ambient;
 use Illuminate\Http\Request;
+use App\Models\Indicadorplan;
+
+
 
 class AmbientController extends Controller
 {
     public function index()
     {
-    $ambients = Ambient::all();
-    //dd($ambient);
-        return view('ambiente.index', compact('ambients'));
+  
+    $ambiente = Ambient::all();
+    $indicadorplan = Indicadorplan::all();
+    return view('ambiente.index', compact('ambiente','indicadorplan'));
     }
 
     public function create()
     {
+        
         $ambient = Ambient::all();
         return view('ambiente.create', compact('ambient'));
     }

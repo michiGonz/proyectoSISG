@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Investigacion;
-
+use \App\Models\Unidadfuncional;
 
 class InvestigacionController extends Controller
 {
@@ -16,8 +16,8 @@ class InvestigacionController extends Controller
 
     public function create()
     {
-        $investigacion = Investigacion::all();
-        return view('investigacion.create', compact('investigacion'));
+        $ufs = Unidadfuncional::get();
+        return view('investigacion.create', compact('ufs'));
     }
 
     public function store(Request $request)

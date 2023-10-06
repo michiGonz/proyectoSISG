@@ -8,31 +8,21 @@
     <div class="card-body">
         <form method="POST" action="{{ route('investigacion.store') }}">
             @csrf
-
+        
             <div class="form-group">
                 <label for="acomulado">Acomulado del mes</label>
                 <input type="number" name="acomulado" id="acomulado" class="form-control" value="0" />
             </div>
+            <br>
 
-            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="uf"
-                id="uf" aria-label="Default select example">
-                <option selected>Unidad Funcional</option>
-                <option value="uf produccion">UF Produccion</option>
-                <option value="uf visita gerencial">UF Mantenimiento</option>
-                <option value="uf masc">UF MASC</option>
-                <option value="uf sistema de inf">UF Sistema de Información</option>
-                <option value="uf ing mtto">UF Ing Mantenimiento</option>
-                <option value="uf planificacion y finanzas">UF Planificacion y Finanzas</option>
-                <option value="uf compras y contrataciones">UF Compras y Contrataciones</option>
-                <option value="uf recursos humanos">UF Recursos Humanos</option>
-                <option value="uf servicio generales">UF Servicios Generales</option>
-                <option value="uf seguridad corporativa">UF Seguridad Corporativa</option>
-                <option value="uf ingenieria de proceso">UF Ingenieria de Proceso</option>
-                <option value="uf gerencia general">UF Gerencia General</option>
-                 <option value="uf Compresion"> UF Compresion</option>
+            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="uf" id="uf" aria-label="Default select example">
+                @foreach ($ufs as $uf)
+                <option value="{{$uf->co_depart}}">{{$uf->des_depart}}</option>
+                @endforeach
             </select>
 
-        <div class="form-group">
+
+            <div class="form-group">
                 <label for="nombre_incidente">Nombre del incidente</label>
                 <textarea type="text" name="nombre_incidente" id="nombre_indcidente" class="form-control" rows="1" required></textarea>
             </div>

@@ -54,14 +54,6 @@ class ActoinseguroController extends Controller
         return view('actoinseguro.show', compact('actoinseguro'));
     }
     public function mostrarSumatoria()
-{
-    $total = Registro::all(); // Cambia esto según tu lógica de consulta
-
-    $sumatoria = $total->sum(function ($total) {
-        return sum('actoinseguro.index');
-    });
-
-    return view('actoinseguro.create', compact('registros', 'sumatoria'));
+    {
+    }
 }
-}
-

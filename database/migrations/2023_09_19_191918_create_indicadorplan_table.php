@@ -21,6 +21,10 @@ class CreateIndicadorplanTable extends Migration
             $table->string('programadas_mes');
             $table->text('date');
             $table->text('observacion');
+            $table->string('vg');
+            $table->string('simulacro');
+            $table->string('comite');
+            $table->string('parametros');
             $table->timestamps();
         });
     }

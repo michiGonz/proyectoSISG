@@ -15,6 +15,8 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Flag sprites service provided by Martijn Lafeber,
         https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
 
@@ -22,6 +24,13 @@
 
     <script src="{{asset('assets/vendor/DataTables/datatables.min.js')}}"></script>
     <script src="{{asset('assets/js/js.js')}}"></script>
+
+    <!-- graficas-->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
 
 </head>
 
@@ -48,7 +57,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('/') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Menu</span></a>
+                    <span>Inicio</span></a>
             </li>
 
             <!-- Divider -->
@@ -61,7 +70,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa fa-book"></i>
                     <span>Reportes "En construccion" </span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -109,14 +118,15 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Planificación de Indicadores</span></a>
             </li>
+            <div id="content">
+            <div class="form-group col-md-12   text-left">
+                <a href="{{ route('unidadfuncional.index') }}" class="btn btn-secondary">Profit UF</a>
+            </div>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
 
         </ul>
         <!-- End of Sidebar -->
@@ -124,8 +134,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
-
+        
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -134,20 +143,9 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-   
-                     
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->

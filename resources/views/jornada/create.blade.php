@@ -23,7 +23,7 @@
 
                         <div class="form-group">
                             <label for="ubicacion">Ubicacion de la Jornada Ambiental</label>
-                            <input type="text " name="ubicacion" id="ubicacion" class="form-control" />
+                            <input type="text " name="ubicacion" id="ubicacion" class="form-control" required />
                         </div>
 
                         <div class="form-group ">

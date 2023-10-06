@@ -4,19 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Simulacion;
+use \App\Models\Indicadorplan;
 
 class SimulacionController extends Controller
 {
     public function index()
     {
         $simulacion = Simulacion::all();
-        return view('simulacion.index', compact('simulacion'));
+        $indicadorplan = Indicadorplan::all();
+        return view('simulacion.index', compact('simulacion','indicadorplan'));
     }
 
     public function create()
     {
-        $simulacion = Simulacion::all();
-        return view('simulacion.create', compact('simulacion'));
+        return view('simulacion.create');
     }
 
     public function store(Request $request)

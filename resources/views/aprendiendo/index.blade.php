@@ -3,7 +3,6 @@
 @section('content')
 
 
-
 <div class="card">
     <h2 class="card-header">
         Aprendiendo en el Trabajo
@@ -37,14 +36,14 @@
                 
                 <td>
                     <a href="{{ route('aprendiendo.show', $aprendiendo->id) }}"
-                        class="btn btn-primary btn-sm">Mostrar Reporte</a>
+                    class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
                     <form action="{{ route('aprendiendo.destroy', $aprendiendo->id) }}" method="POST"
                         class="d-inline">
                         @csrf
 
                     </form>
                     <a href="{{ route('aprendiendo.edit', $aprendiendo->id) }}"
-                        class="btn btn-primary btn-sm">Editar</a>
+                    class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
 
                 </td>
             </tr>

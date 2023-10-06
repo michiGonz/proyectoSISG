@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Indicadorplan;
+use App\Models\Uf;
+
 
 class IndicadorplanController extends Controller
 {
@@ -22,7 +24,6 @@ class IndicadorplanController extends Controller
 
     public function store(Request $request)
     {
-      
         $plan=new Indicadorplan($request->all());
         $plan->date=json_encode($request->date);
         $plan->save();

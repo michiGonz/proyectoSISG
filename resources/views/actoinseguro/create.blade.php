@@ -4,18 +4,19 @@
 
 <div class="card">
     <h2 class="card-header">
-    Crear Registro de Actos Inseguros
+        Crear Registro de Actos Inseguros
     </h2>
     <div class="card-body">
-        <form method="POST" class="row" action="{{ route('actoinseguro.store') }}">
+        <a onclick="consultaOpsa('inseguro','<?php echo date('m');?>','<?php echo date('Y');?>')" class="btn btn-secondary">Traer datos Opsa</a>
+        <form method="POST" class="row opsa" action="{{ route('actoinseguro.store') }}">
             @csrf
 
-            <div class="form-group col-md-6 card-body table-primary">
+            <div class="form-group col-md-6 card-body table-primary" id="reaccion">
                 <h6>Reacciones de las personas</h6>
                 <label for="AE">Ajustan su EPP</label>
-                <input class="form-control" type="number" name="AE" value=0 />
+                <input class="form-control" type="number" name="PP_4" value=0 />
                 <label for="CP">Cambian de posicion</label>
-                <input class="form-control" type="number" name="CP" value=0 />
+                <input class="form-control" type="number" name="A_2" value=0 />
                 <label for="RT">Reacomodan su trabajo</label>
                 <input class="form-control" type="number" name="RT" value=0 />
                 <label for="DT">Dejan de Trabajar</label>
@@ -24,10 +25,12 @@
                 <input class="form-control" type="number" name="PT" value=0 />
                 <label for="CB">Colocan bloqueos</label>
                 <input class="form-control" type="number" name="CB" value=0 />
+                <br>
+                <div class="card-body table-secondary text-center" id="suma_reaccion"></div>
 
             </div>
 
-            <div class="form-group col-md-6 card-body table-danger">
+            <div class="form-group col-md-6 card-body table-danger" id="equipo">
                 <h6>Equipo de proteccion personal</h6>
                 <label for="C">Cabeza</label>
                 <input class="form-control" type="number" name="C" value=0 />
@@ -43,9 +46,11 @@
                 <input class="form-control" type="number" name="TR" value=0 />
                 <label for="PP">Piernas y pies</label>
                 <input class="form-control" type="number" name="PP" value=0 />
+                <br>
+                <div class="card-body table-secondary text-center" id="suma_equipo"></div>
             </div>
 
-            <div class="form-group col-md-6 card-body table-warning">
+            <div class="form-group col-md-6 card-body table-warning" id=posicion>
                 <h6>Posiciones de las personas</h6>
                 <label for="GO">Golpear contra objetos</label>
                 <input class="form-control" type="number" name="GO" value=0 />
@@ -63,9 +68,11 @@
                 <input class="form-control" type="number" name="IAI" value=0 />
                 <label for="SE">Sobre-esfuerzo</label>
                 <input class="form-control" type="number" name="SE" value=0 />
+                <br>
+                <div class="card-body table-secondary text-center" id="suma_posicion"></div>
             </div>
 
-            <div class="form-group col-md-6 card-body table-secondary">
+            <div class="form-group col-md-6 card-body table-secondary" id="herramientas">
                 <h6>Herramientas y Equipo</h6>
                 <label for="IT">Inadecuados para el trabajo</label>
                 <input class="form-control" type="number" name="IT" value=0 />
@@ -73,9 +80,11 @@
                 <input class="form-control" type="number" name="EFI" value=0 />
                 <label for="CI">En condiciones inseguras</label>
                 <input class="form-control" type="number" name="CI" value=0 />
+                <br>
+                <div class="card-body table-secondary text-center" id="suma_herramienta"></div>
             </div>
 
-            <div class="form-group col-md-6 card-body table-dark">
+            <div class="form-group col-md-6 card-body table-dark" id="procedimiento">
                 <h6>Procedimientos, orden y limpieza</h6>
                 <label for="PI">Procedimientos inadecuados</label>
                 <input class="form-control" type="number" name="PI" value=0 />
@@ -87,9 +96,11 @@
                 <input class="form-control" type="number" name="EOLI" value=0 />
                 <label for="EOLC">Estandares de orden y limpieza no se cumplen</label>
                 <input class="form-control" type="number" name="EOLC" value=0 />
+                <br>
+                <div class="card-body table-secondary text-center" id="suma_procedimiento"></div>
             </div>
 
-            <div class="form-group col-md-6 card-body table-success">
+            <div class="form-group col-md-6 card-body table-success" id="ambiente">
                 <h6>Ambiente</h6>
                 <label for="TIP">Transferir incorrectamente productos o materiales liquidos y solidos</label>
                 <input class="form-control" type="number" name="TIP" value=0 />
@@ -113,11 +124,14 @@
                 <input class="form-control" type="number" name="AFAS" value=0 />
                 <label for="MAND">Manejo de desechos</label>
                 <input class="form-control" type="number" name="MAND" value=0 />
+                <br>
+                <div class="card-body table-secondary text-center" id="suma_ambiente"></div>
             </div>
 
             <div class="form-group col-md-6">
-                <label for="total">Total Observaciones</label>
-                <input class="form-control" id="total" type="number" name="total" value="" required />
+                <label for="cantidad">Total Observaciones</label>
+
+                <input class="form-control" id="cantidad" type="number" name="cantidad" value="" required />
             </div>
 
             <div class="form-group col-md-6">
@@ -137,4 +151,85 @@
         </form>
     </div>
 </div>
+
+<script>
+    $('#reaccion input').change(function() {
+        let suma = 0;
+        $('#reaccion').find('*').each(function(index) {
+            if ($(this).attr('name')) {
+                let nro = parseInt($(this).val());
+                if (nro > 0) {
+                    suma = suma + nro;
+                }
+            }
+        });
+        $('#suma_reaccion').html(suma);
+    });
+
+    $('#equipo input').change(function() {
+        let suma = 0;
+        $('#equipo').find('*').each(function(index) {
+            if ($(this).attr('name')) {
+                let nro = parseInt($(this).val());
+                if (nro > 0) {
+                    suma = suma + nro;
+                }
+            }
+        });
+        $('#suma_equipo').html(suma);
+    });
+
+    $('#posicion input').change(function() {
+        let suma = 0;
+        $('#reaccion').find('*').each(function(index) {
+            if ($(this).attr('name')) {
+                let nro = parseInt($(this).val());
+                if (nro > 0) {
+                    suma = suma + nro;
+                }
+            }
+        });
+        $('#suma_posicion').html(suma);
+    });
+
+    $('#herramientas input').change(function() {
+        let suma = 0;
+        $('#herramientas').find('*').each(function(index) {
+            if ($(this).attr('name')) {
+                let nro = parseInt($(this).val());
+                if (nro > 0) {
+                    suma = suma + nro;
+                }
+            }
+        });
+        $('#suma_herramienta').html(suma);
+    });
+
+    $('#procedimiento input').change(function() {
+        let suma = 0;
+        $('#herramienta').find('*').each(function(index) {
+            if ($(this).attr('name')) {
+                let nro = parseInt($(this).val());
+                if (nro > 0) {
+                    suma = suma + nro;
+                }
+            }
+        });
+        $('#suma_procedimiento').html(suma);
+    });
+
+    $('#ambiente input').change(function() {
+        let suma = 0;
+        $('#ambiente').find('*').each(function(index) {
+            if ($(this).attr('name')) {
+                let nro = parseInt($(this).val());
+                if (nro > 0) {
+                    suma = suma + nro;
+                }
+            }
+        });
+        $('#suma_ambiente').html(suma);
+    });
+</script>
+
 @endsection

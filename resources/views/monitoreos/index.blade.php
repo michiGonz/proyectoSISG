@@ -43,15 +43,14 @@
             
                 <td>
                     <a href="{{ route('monitoreos.show', $monitoreos->id) }}"
-                        class="btn btn-primary btn-sm">Mostrar Reporte</a>
+                    class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
                     <form action="{{ route('monitoreos.destroy', $monitoreos->id) }}" method="POST"
                         class="d-inline">
                         @csrf
 
                     </form>
                     <a href="{{ route('monitoreos.edit', $monitoreos->id) }}"
-                        class="btn btn-primary btn-sm">Editar</a>
-
+                    class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
                 </td>
             </tr>
 

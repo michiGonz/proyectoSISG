@@ -41,12 +41,11 @@
                     <td>{{ $auditorias->noauditadas_pdvsa}}</td>
                     <td>{{ $auditorias->date}}</td>
                     <td>
-                        <a href="{{ route('auditorias.show', $auditorias->id) }}" class="btn btn-primary btn-sm">Mostrar
-                            Reporte</a>
+                        <a href="{{ route('auditorias.show', $auditorias->id) }}"class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
                         <form action="{{ route('auditorias.destroy', $auditorias->id) }}" method="POST" class="d-inline">
                             @csrf
                         </form>
-                        <a href="{{ route('auditorias.edit', $auditorias->id) }}" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="{{ route('auditorias.edit', $auditorias->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
                     </td>
                 </tr>
                 @endforeach

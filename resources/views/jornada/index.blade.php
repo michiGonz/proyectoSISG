@@ -32,12 +32,12 @@
                         <td>{{ $jornada->ubicacion }}</td>
                         <td>{{ $jornada->date}}</td>
                         <td>
-                            <a href="{{ route('jornada.show', $jornada->id) }}" class="btn btn-primary btn-sm">Mostrar Reporte</a>
+                            <a href="{{ route('jornada.show', $jornada->id) }}"  class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
                             <form action="{{ route('jornada.destroy', $jornada->id) }}" method="POST" class="d-inline">
                                 @csrf
 
                             </form>
-                            <a href="{{ route('jornada.edit', $jornada->id) }}" class="btn btn-primary btn-sm">Editar</a>
+                            <a href="{{ route('jornada.edit', $jornada->id) }}"class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
 
                         </td>
                     </tr>
