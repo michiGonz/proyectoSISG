@@ -25,8 +25,7 @@
 
         <div class="form-group col-md-6">
             <label for="posicion_persona">PP</label>
-            <input class="form-control" type="number" name="posicion_persona"
-                value="{{$actoseguro->posicion_persona}}" />
+            <input class="form-control" type="number" name="posicion_persona" value="{{$actoseguro->posicion_persona}}" />
         </div>
 
         <div class="form-group col-md-6">

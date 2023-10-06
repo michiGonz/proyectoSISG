@@ -39,7 +39,7 @@ function consultaOpsa(tipo = "seguro", mes, anio) {
         beforeSend: function (dato) { }
     }).done(function (dato) {
         $.each(dato.observaciones, (index, value) => {
-            $('form .opsa').find('*').each(function (index_) {
+            $('#opsa').find('*').each(function (index_) {
                 let name = $(this).attr('name');
                 if (name) {
                     if (index == name) {
@@ -49,6 +49,7 @@ function consultaOpsa(tipo = "seguro", mes, anio) {
             });
         })
         $("#cantidad").val(dato.cantidad);
+        console.log("Exioso")
     }).fail(function (dato) {
         console.log("Error")
     });

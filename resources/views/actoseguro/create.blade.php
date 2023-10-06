@@ -7,39 +7,36 @@
     <h2 class="card-header">Crear Registro de Actos Seguros</h2>
     <div class="card-body">
         <a onclick="consultaOpsa('seguro','<?php echo date('m'); ?>','<?php echo date('Y'); ?>')" class="btn btn-secondary">Traer datos Opsa</a>
-        <form method="POST" class="row opsa" action="{{ route('actoseguro.store') }}">
+        <form method="POST" class="row" id="opsa" action="{{route('actoseguro.store') }}">
             @csrf
+            <div class="form-group col-md-6">
+                <label for="RP_main">Reacciones de las personas </label>
+                <input class="form-control" id="RP_main" type="number" name="RP_main" value="0" />
+            </div>
+            <div class="form-group col-md-6">
+                <label for="EPP_main">Equipo de proteccion personal</label>
+                <input class="form-control" type="number" name="EPP_main" value="0" />
+            </div>
 
             <div class="form-group col-md-6">
-                <label for="reacciones_personas">Reacciones de las personas </label>
-                <input class="form-control" id="reacciones_personas" type="number" name="reacciones_personas" value="0" />
+                <label for="PP_main">Posiciones de las personas</label>
+                <input class="form-control" type="number" name="PP_main" value="0" />
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="HE_main">Herramientas y equipo</label>
+                <input class="form-control" type="number" name="HE_main" value="0" />
             </div>
 
 
             <div class="form-group col-md-6">
-                <label for="equipo_proteccion">Equipo de proteccion personal</label>
-                <input class="form-control" type="number" name="equipo_proteccion" value="0" />
+                <label for="PROCE_main">Procedimientos, orden y limpieza</label>
+                <input class="form-control" type="number" name="PROCE_main" value="0" />
             </div>
 
             <div class="form-group col-md-6">
-                <label for="posicion_persona">Posiciones de las personas</label>
-                <input class="form-control" type="number" name="posicion_persona" value="0" />
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="herramienta_equipo">Herramientas y equipo</label>
-                <input class="form-control" type="number" name="herramienta_equipo" value="0" />
-            </div>
-
-
-            <div class="form-group col-md-6">
-                <label for="procedimiento_orden">Procedimientos, orden y limpieza</label>
-                <input class="form-control" type="number" name="procedimiento_orden" value="0" />
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="ambiente">Ambiente</label>
-                <input class="form-control" id="ambiente" type="number" name="ambiente" value="0" />
+                <label for="A_main">Ambiente</label>
+                <input class="form-control" id="A_main" type="number" name="A_main" value="0" />
             </div>
             <div class="form-group col-md-6">
                 <label for="cantidad">Total Observaciones</label>
@@ -63,4 +60,5 @@
             </div>
         </form>
     </div>
-    @endsection
+</div>
+@endsection

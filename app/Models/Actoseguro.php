@@ -12,15 +12,15 @@ class Actoseguro extends Model
     protected $table = 'actos_seguro';
 
     protected $fillable = [
-        'reacciones_personas',
-        'equipo_proteccion',
-        'posicion_persona',
-        'herramienta_equipo',
-        'procedimiento_orden',
-        'ambiente',
+        'RP_main',
+        'EPP_main',
+        'PP_main',
+        'HE_main',
+        'PROCE_main',
+        'A_main',
         'observacion',
         'date',
-        'total'
+        'cantidad'
 
     ];
 

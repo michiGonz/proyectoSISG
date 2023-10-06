@@ -4,14 +4,14 @@
 
 <div class="card">
     <h2 class="card-header">
-    Crear Registro de Plan de Formacion
+        Crear Registro de Plan de Formacion
     </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('plandeformacion.store') }}">
             @csrf
             <div class="form-group">
                 <label for="ejecutadas">Plan de formaciones ejecutadas</label>
-                <input type="number" name="ejecutadas" id="simulacro_cumplido" class="form-control" value=0 >
+                <input type="number" name="ejecutadas" id="simulacro_cumplido" class="form-control" value=0>
             </div>
 
             <div class="table-info">
