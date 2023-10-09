@@ -50,5 +50,32 @@
         </form>
     </div>
 </div>
-
+<script>
+    $('#programacion_anual').change(function() {
+        let nro = parseInt($('#programacion_anual').val());
+        let indicador = $('#nombre_indicador').val();
+        $('#fechas').html('')
+        if (nro <= 50) {
+            if (indicador == "simulacro") {
+                for (let index = 0; index < nro; index++) {
+                    $('#fechas').append('<div class="form-group col-md-3">' +
+                        '<label for="date">Nombre del simulacro</label>' +
+                        '<input class="form-control" id="date" type="text" name="nombre_simulacro[]" required />' +
+                        '<label for="date">Fecha</label>' +
+                        '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                        '</div>');
+                }
+            } else {
+                for (let index = 0; index < nro; index++) {
+                    $('#fechas').append('<div class="form-group col-md-3">' +
+                        '<label for="date">Fecha</label>' +
+                        '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                        '</div>');
+                }
+            }
+        } else {
+            alert('Máximo 50 fechas')
+        }
+    });
+</script>
 @endsection

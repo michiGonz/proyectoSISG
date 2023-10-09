@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ambient;
 use Illuminate\Http\Request;
 use App\Models\Indicadorplan;
-
-
+use App\Models\Usuariosprofit;
 
 class AmbientController extends Controller
 {
@@ -22,12 +21,16 @@ class AmbientController extends Controller
     {
         
         $ambient = Ambient::all();
-        return view('ambiente.create', compact('ambient'));
+        $usuarios = Usuariosprofit::get();
+        return view('ambiente.create', compact('ambient', 'usuarios'));
     }
 
     public function store(Request $request)
     {
-        Ambient::create($request->all());
+        $ambient = new Ambient($request->all());
+        $ambient->personal=json_encode($request['personal']);
+        $ambient->save();
+
         return redirect()->route('ambiente.index');
     }
 

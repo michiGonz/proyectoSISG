@@ -15,7 +15,6 @@ class CreateSimulacionTable extends Migration
     {
         Schema::create('simulacion', function (Blueprint $table) {
             $table->id();
-            $table->text('simulacro_cumplido');
             $table->string('name');
             $table->text('ubicacion');
             $table->text('observacion');

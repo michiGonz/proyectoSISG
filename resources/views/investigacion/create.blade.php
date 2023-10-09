@@ -1,23 +1,25 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-
+<?php $t = 0;
+foreach ($investigacion as $clave => $valor) {
+    if (substr($valor['date'], 0, 4) == date('Y')) {
+        $t = $t + 1;
+    }
+} ?>
 
 <div class="card">
-    <h2 class="card-header">Crear Registro de Investigacion de Incidentes</h2>
+    <h2 class="card-header">Crear Registro de Investigacion de Incidentes
+    <small class="float-right">Acomulado {{$t}}</small>
+    </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('investigacion.store') }}">
             @csrf
         
-            <div class="form-group">
-                <label for="acomulado">Acomulado del mes</label>
-                <input type="number" name="acomulado" id="acomulado" class="form-control" value="0" />
-            </div>
-            <br>
-
             <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="uf" id="uf" aria-label="Default select example">
                 @foreach ($ufs as $uf)
-                <option value="{{$uf->co_depart}}">{{$uf->des_depart}}</option>
+                <option value="{{$uf->nombres}}">{{$uf->des_depart}}</option>
+                
                 @endforeach
             </select>
 
@@ -86,4 +88,8 @@
     </div>
 
 </div>
+
+<script>
+    $("#uf").select2();
+</script>
 @endsection

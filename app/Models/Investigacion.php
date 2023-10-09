@@ -21,7 +21,7 @@ class Investigacion extends Model
     ];
 
     public function unidad_funcional(){
-        return $this->hasMany(Unidadfuncional::class,'co_depart','unidad_funcional');
+        return $this->hasMany(Unidadfuncional::class,'co_depart','uf');
     }
     
 

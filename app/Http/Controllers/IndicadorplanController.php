@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Indicadorplan;
-use App\Models\Uf;
 
 
 class IndicadorplanController extends Controller

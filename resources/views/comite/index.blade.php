@@ -2,23 +2,6 @@
 @section('title', 'Inicio')
 @section('content')
 <div class="row">
-    <?php function ObtenerMes($fecha){
-        switch (substr($fecha,5,8)) {
-            case '01': $mes = "Enero"; break;
-            case '02': $mes = "Febrero"; break;
-            case '03': $mes = "Marzo"; break;
-            case '04': $mes = "Abril"; break;
-            case '05': $mes = "Mayo"; break;
-            case '06': $mes = "Junio"; break;
-            case '07': $mes = "Julio"; break;
-            case '08': $mes = "Agosto"; break;
-            case '09': $mes = "Septiembre"; break;
-            case '10': $mes = "Octubre"; break;
-            case '11': $mes = "Noviembre"; break;
-            case '12': $mes = "Diciembre"; break;
-        }
-        return $mes;
-    }?>
     @foreach ($indicadorplan as $indicadorplan)
         @if ($indicadorplan->nombre_indicador=="comite" && substr($indicadorplan->created_at,0,4) == date('Y'))
         <?php $fechas = json_decode($indicadorplan->date); $cumplido=[]; ?>
@@ -66,7 +49,6 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Ejecutados</th>
                 <th>Observacion</th>
                 <th>Date</th>
                 <th>Acciones</th>
@@ -77,7 +59,6 @@
             @foreach ($comite as $comite)
                 <tr>
                     <td>{{ $comite->id }}</td>
-                    <td>{{ $comite->ejecutadas }}</td>
                     <td>{{ $comite->observacion }}</td>
                     <td>{{ $comite->date}}</td>
                     <td>

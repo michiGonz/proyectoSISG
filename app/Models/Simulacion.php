@@ -11,7 +11,6 @@ class Simulacion extends Model
     protected $table = 'simulacion';
 
     protected $fillable = [
-        'simulacro_cumplido',
         'name',
         'ubicacion',
         'observacion',

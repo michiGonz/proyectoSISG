@@ -11,7 +11,6 @@ class Plandeformacion extends Model
     protected $table = 'plandeformacion';
 
     protected $fillable = [
-        'ejecutadas',
         'ejecutadas_ambiente',
         'date_ambiente',
         'ejecutadas_seguridad',

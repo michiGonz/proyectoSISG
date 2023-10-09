@@ -14,8 +14,7 @@ class Ambient extends Model
     protected $fillable = [
     'name',
     'description',
-    'cantpersona',
-    'acompanantes',
+    'personal',
     'date',
     ];
 

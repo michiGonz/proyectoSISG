@@ -17,8 +17,7 @@ class CreateAmbienteTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->text('cantpersona');
-            $table->text('acompanantes');
+            $table->text('personal');
             $table->date('date');
             $table->timestamps();
         });

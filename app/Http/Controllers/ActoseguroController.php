@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Actoseguro;
 
+
 class ActoseguroController extends Controller
 {
     public function index()
@@ -37,7 +38,7 @@ class ActoseguroController extends Controller
         return redirect()->route('actoseguro.index');
     }
 
-    public function destroy(Ambiente $actos_seguro)
+    public function destroy(Actoseguro $actos_seguro)
     {
         $actos_seguro->delete();
         return redirect()->route('actoseguro.index');

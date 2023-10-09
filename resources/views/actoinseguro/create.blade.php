@@ -3,13 +3,14 @@
 @section('content')
 
 <div class="card">
-<a onclick="consultaOpsa('inseguro','<?php echo date('m');?>','<?php echo date('Y');?>')" class="btn btn-warning float-right">Traer datos Opsa</a>
+
     <h2 class="card-header">
         Crear Registro de Actos Inseguros
+        <a onclick="consultaOpsa('inseguro','<?php echo date('m'); ?>','<?php echo date('Y'); ?>')" class="btn btn-warning float-right">Traer datos Opsa</a>
     </h2>
-    
+
     <div class="card-body">
-        
+
         <form method="POST" class="row" id="opsa" action="{{ route('actoinseguro.store') }}">
             @csrf
 
@@ -28,7 +29,7 @@
                 <label for="RP_6">Colocan bloqueos</label>
                 <input class="form-control" type="number" name="RP_6" value=0 />
                 <br>
-                <div class="card-body table-secondary text-center" id="suma_reaccion"></div>
+                <div class="card-body table-danger text-center" id="suma_reaccion"></div>
 
             </div>
 
@@ -49,7 +50,7 @@
                 <label for="EPP_7">Piernas y pies</label>
                 <input class="form-control" type="number" name="EPP_7" value=0 />
                 <br>
-                <div class="card-body table-secondary text-center" id="suma_equipo"></div>
+                <div class="card-body table-primary text-center" id="suma_equipo"></div>
             </div>
 
             <div class="form-group col-md-6 card-body table-warning" id=posicion>
@@ -71,7 +72,7 @@
                 <label for="PP_8">Sobre-esfuerzo</label>
                 <input class="form-control" type="number" name="PP_8" value=0 />
                 <br>
-                <div class="card-body table-secondary text-center" id="suma_posicion"></div>
+                <div class="card-body table-danger text-center" id="suma_posicion"></div>
             </div>
 
             <div class="form-group col-md-6 card-body table-secondary" id="herramientas">
@@ -83,7 +84,7 @@
                 <label for="HE_3">En condiciones inseguras</label>
                 <input class="form-control" type="number" name="HE_3" value=0 />
                 <br>
-                <div class="card-body table-secondary text-center" id="suma_herramienta"></div>
+                <div class="card-body table-danger text-center" id="suma_herramienta"></div>
             </div>
 
             <div class="form-group col-md-6 card-body table-dark" id="procedimiento">
@@ -101,7 +102,7 @@
                 <label for="OL_3">Estandares de orden y limpieza no se cumplen</label>
                 <input class="form-control" type="number" name="OL_3" value=0 />
                 <br>
-                <div class="card-body table-secondary text-center" id="suma_procedimiento"></div>
+                <div class="card-body table-danger text-center" id="suma_procedimiento"></div>
             </div>
 
             <div class="form-group col-md-6 card-body table-success" id="ambiente">
@@ -127,7 +128,7 @@
                 <label for="A_10">Manejo de desechos</label>
                 <input class="form-control" type="number" name="A_10" value=0 />
                 <br>
-                <div class="card-body table-secondary text-center" id="suma_ambiente"></div>
+                <div class="card-body table-danger text-center" id="suma_ambiente"></div>
             </div>
 
             <div class="form-group col-md-6">
@@ -183,7 +184,7 @@
 
     $('#posicion input').change(function() {
         let suma = 0;
-        $('#reaccion').find('*').each(function(index) {
+        $('#posicion').find('*').each(function(index) {
             if ($(this).attr('name')) {
                 let nro = parseInt($(this).val());
                 if (nro > 0) {
@@ -209,7 +210,7 @@
 
     $('#procedimiento input').change(function() {
         let suma = 0;
-        $('#herramienta').find('*').each(function(index) {
+        $('#procedimiento').find('*').each(function(index) {
             if ($(this).attr('name')) {
                 let nro = parseInt($(this).val());
                 if (nro > 0) {
@@ -233,5 +234,4 @@
         $('#suma_ambiente').html(suma);
     });
 </script>
-
 @endsection

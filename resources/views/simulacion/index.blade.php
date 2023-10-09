@@ -2,48 +2,6 @@
 @section('title', 'Inicio')
 @section('content')
 <div class="row">
-    <?php function ObtenerMes($fecha)
-    {
-        switch (substr($fecha, 5, 8)) {
-            case '01':
-                $mes = "Enero";
-                break;
-            case '02':
-                $mes = "Febrero";
-                break;
-            case '03':
-                $mes = "Marzo";
-                break;
-            case '04':
-                $mes = "Abril";
-                break;
-            case '05':
-                $mes = "Mayo";
-                break;
-            case '06':
-                $mes = "Junio";
-                break;
-            case '07':
-                $mes = "Julio";
-                break;
-            case '08':
-                $mes = "Agosto";
-                break;
-            case '09':
-                $mes = "Septiembre";
-                break;
-            case '10':
-                $mes = "Octubre";
-                break;
-            case '11':
-                $mes = "Noviembre";
-                break;
-            case '12':
-                $mes = "Diciembre";
-                break;
-        }
-        return $mes;
-    } ?>
     @foreach ($indicadorplan as $indicadorplan)
     @if ($indicadorplan->nombre_indicador=="simulacro" && substr($indicadorplan->created_at,0,4) == date('Y'))
     <?php $fechas = json_decode($indicadorplan->date);
@@ -95,7 +53,6 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Logrado</th>
                         <th>Nombre</th>
                         <th>Date</th>
                         <th>Acciones</th>
@@ -103,59 +60,85 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $simulacro_cumplido=0; $simulacro_ejecutados=0;?>
+                    <?php $simulacro_cumplido = 0;
+                    $simulacro_ejecutados = 0; ?>
                     @foreach ($simulacion as $simulacion)
                     <tr>
                         <td>{{ $simulacion->id }}</td>
-                        <td>{{ $simulacion->simulacro_cumplido }}</td>
                         <td>{{ $simulacion->name }}</td>
                         <td>{{ $simulacion->date}}</td>
                         <td>
-                            <a href="{{ route('simulacion.show', $simulacion->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
+                            <a href="{{ route('simulacion.show', $simulacion->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
                             <form action="{{ route('simulacion.destroy', $simulacion->id) }}" method="POST" class="d-inline">
                                 @csrf
 
                             </form>
-                            <a href="{{ route('simulacion.edit', $simulacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
+                            <a href="{{ route('simulacion.edit', $simulacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
 
                         </td>
                     </tr>
-                    <?php $simulacro_cumplido=$simulacro_cumplido+$simulacion->simulacro_cumplido;
-                    $simulacro_cumplido=$simulacro_cumplido+$simulacion->simulacro_ejecutado;?>
+                    <?php $simulacro_cumplido = $simulacro_cumplido + $simulacion->simulacro_cumplido;
+                    $simulacro_cumplido = $simulacro_cumplido + $simulacion->simulacro_ejecutado; ?>
                     @endforeach
                 </tbody>
             </table>
-            <script>
-                DataTabla('#simulacion', [3, 'desc']);
-            </script>
-<div>
-  <canvas id="myChart"></canvas>
+
+        </div>
+    </div>
 </div>
+<style>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+</style>
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        Modelo de Grafica para el indicador Simulacro
+    </p>
+</figure>
 <script>
-  const ctx = document.getElementById('myChart');
-
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Planificados', 'ejecutados'],
-      datasets: [{
-        label: 'Simulacro',
-        data: [<?php echo $simulacro_cumplido;?>, 10],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+    DataTabla('#simulacion', [3, 'desc']);
 </script>
-    
-       
-            @endsection
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Simulacro',
+            align: 'left'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'Cumplido',
+                y: <?php echo $simulacro_cumplido;?>
+            }, {
+                name: 'Eecutados',
+                y: <?php echo $simulacro_ejecutados+2;?>
+            }]
+        }]
+    });
+</script>
+@endsection

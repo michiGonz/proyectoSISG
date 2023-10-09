@@ -39,8 +39,8 @@
                     <input type="number" name="desviaciones_pdvsa" id="desviaciones_pdvsa" class="form-control" value=0 />
                 </div>
 
-                <table class="table table-striped table-primary">
-                    <div class="form-check  table-primary ">
+                <table class="table table-striped table-info">
+                    <div class="form-check  table-info">
                         <h5>Desviaciones QQgas</h5>
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
@@ -48,50 +48,196 @@
                         </label>
                         
                     </div>
-                    <div class="form-check  table-primary">
+                    <div class="form-check  table-info">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                         <label class="form-check-label" for="flexCheckChecked">
                         Permiso sin cerrar.
                         </label>
                     </div>
-                    <div class="form-check  table-primary">
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No indica prueba de gas
+                        </label>
+                    </div>
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No establece en el permiso el uso de un certificado de altura
+                        </label>
+                    </div>
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                       No indica nombre y apellido del solicitante, solo firma
+                        </label>
+                    </div>
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        El saro no indica firma del supervisor responsable
+                        </label>
+                    </div>
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        El saro no describe el motivo del riesgo en ninguno de los peligros señalados
+                        </label>
+                    </div>
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                       No presento el saro al momento de la auditoria
+                        </label>
+                    </div>
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                       No corresponde de el numero de permiso en el saro
+                        </label>
+                    </div>
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                     El saro no indica el numero de permiso
+                        </label>
+                    </div>
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                     No indica el equipo a intervenir
+                        </label>
+                    </div>
+                    <div class="form-check  table-info">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                         <label class="form-check-label" for="flexCheckChecked">
                         Casillas sin llenar ó vacias.
                         </label>
                     </div>
-                    <div class="form-check  table-primary">
+                    <div class="form-check  table-info">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                         <label class="form-check-label" for="flexCheckChecked">
                         No especifica herramientas manuales a utilizar.
                         </label>
                     </div>
-                    <div class="form-check  table-primary">
+                    <div class="form-check  table-info">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                         <label class="form-check-label" for="flexCheckChecked">
                         No indica numero de Orden de Trabajo.
                         </label>
                     </div>
-                    <div class="form-check  table-primary">
+                    <div class="form-check  table-info">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                         <label class="form-check-label" for="flexCheckChecked">
                         No indica EPP a utilizar.
                         </label>
                     </div>
+                    <div class="form-check  table-info">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                         No indica nombre, apellido ni cargo del autorizante.
+                        </label>
+                    </div>
                 </table>
 
-                <div class="form-check table-danger  ">
+                <div class="form-check table-danger">
                     <h5>Desviaciones PDVSA</h5>
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        desviacion 1
-                    </label>
-                </div>
-                <div class="form-check table-danger">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Desviacion 2
-                    </label>
+                        <label class="form-check-label" for="flexCheckDefault">
+                        No indica hora de inicio de la actividad.
+                        </label>
+                        
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        Permiso sin cerrar.
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No indica prueba de gas
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No establece en el permiso el uso de un certificado de altura
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                       No indica nombre y apellido del solicitante, solo firma
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        El saro no indica firma del supervisor responsable
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        El saro no describe el motivo del riesgo en ninguno de los peligros señalados
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                       No presento el saro al momento de la auditoria
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                       No corresponde de el numero de permiso en el saro
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                     El saro no indica el numero de permiso
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                     No indica el equipo a intervenir
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        Casillas sin llenar ó vacias.
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No especifica herramientas manuales a utilizar.
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No indica numero de Orden de Trabajo.
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                        No indica EPP a utilizar.
+                        </label>
+                    </div>
+                    <div class="form-check  table-danger">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                         No indica nombre, apellido ni cargo del autorizante.
+                        </label>
+                    </div>
                 </div>
             </div>
 

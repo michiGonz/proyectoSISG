@@ -9,17 +9,6 @@
             <form method="POST" action="{{ route('parametros.store') }}">
                 @csrf
 
-                <div class="form-group">
-                    <label for="planificado">Parametros Ambientales Planificados</label>
-                    <input type="number" name="planificado" id="planificado" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label for="ejecutados">Parametros Ambientales Ejecutados</label>
-                    <input type="number" name="ejecutados" id="ejecutados" class="form-control" value=0 />
-                </div>
-
-
                 <div class=" card-body form-group col-md-6 table-primary">
                     <h6>Unidades Funcionales </h6>
                     <label for="PROD">Produccion</label>

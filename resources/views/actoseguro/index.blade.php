@@ -21,6 +21,7 @@
                         <th>POL</th>
                         <th>A</th>
                         <th>Fecha</th>
+                        <th>Total</th>
                         <th>Acciones</th>
 
                     </tr>
@@ -29,13 +30,14 @@
                     @foreach ($actos_seguro as $actoseguro)
                     <tr>
                         <td>{{ $actoseguro->id }}</td>
-                        <td>{{ $actoseguro->reacciones_personas }}</td>
-                        <td>{{ $actoseguro->equipo_proteccion}}</td>
-                        <td>{{ $actoseguro->posicion_persona}}</td>
-                        <td>{{ $actoseguro->herramienta_equipo}}</td>
-                        <td>{{ $actoseguro->procedimiento_orden}}</td>
-                        <td>{{ $actoseguro->ambiente}}</td>
+                        <td>{{ $actoseguro->RP_main }}</td>
+                        <td>{{ $actoseguro->EPP_main}}</td>
+                        <td>{{ $actoseguro->PP_main}}</td>
+                        <td>{{ $actoseguro->HE_main}}</td>
+                        <td>{{ $actoseguro->PROCE_main}}</td>
+                        <td>{{ $actoseguro->A_main}}</td>
                         <td>{{ $actoseguro->date }}</td>
+                        <td>{{ $actoseguro->cantidad }}</td>
                         <td>
 
                             <a href="{{ route('actoseguro.show', $actoseguro->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
@@ -51,7 +53,7 @@
             </table>
         </div>
         <script>
-            DataTabla('#acto-seguro', [7, 'desc']);
+            DataTabla('#acto-seguro', [8, 'desc']);
         </script>
     </div>
 </div>

@@ -28,6 +28,9 @@ use App\Http\Controllers\ParametrosController;
 use App\Http\Controllers\MonitoreosController;
 use App\Http\Controllers\Ambiente_planController;
 use App\Http\Controllers\UnidadfuncionalController;
+use App\Http\Controllers\UsuariosprofitController;
+use App\Http\Controllers\ConfiguracionController;
+use NunoMaduro\Collision\Adapters\Phpunit\ConfigureIO;
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('/');
@@ -54,8 +57,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('monitoreos', MonitoreosController::class);
     Route::resource('ambiente_plan', Ambiente_planController::class);
     Route::resource('unidadfuncional', UnidadfuncionalController::class);
-   
-
+    Route::resource('usuariosprofit', UsuariosprofitController::class);
+    Route::resource('configuracion', ConfiguracionController::class);
 });
 
 Route::post('login', [AutenticacionController::class,'postLogin'])->name('loginData');

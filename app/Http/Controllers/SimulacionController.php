@@ -17,7 +17,9 @@ class SimulacionController extends Controller
 
     public function create()
     {
-        return view('simulacion.create');
+        $simulacion = Simulacion::all();
+        return view('simulacion.create', compact('simulacion'));
+
     }
 
     public function store(Request $request)

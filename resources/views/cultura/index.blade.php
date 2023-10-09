@@ -4,13 +4,13 @@
 
 
 <div class="card">
-    <h2 class="card-header">
+    <h2 class="card-header ">
         Cultura En Seguridad Salud y Ambiente
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('cultura.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
     </h2>
     <div class="card-body">
-<div class="table table-striped-columns">
-    <table class="table mt-3" id="cultura">
+<div class="table table-striped-columns text-center">
+    <table class="table mt-3 text-center" id="cultura">
 
         <thead>
             <tr>

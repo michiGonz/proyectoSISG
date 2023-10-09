@@ -3,23 +3,6 @@
 @section('content')
 
 <div class="row">
-    <?php function ObtenerMes($fecha){
-        switch (substr($fecha,5,8)) {
-            case '01': $mes = "Enero"; break;
-            case '02': $mes = "Febrero"; break;
-            case '03': $mes = "Marzo"; break;
-            case '04': $mes = "Abril"; break;
-            case '05': $mes = "Mayo"; break;
-            case '06': $mes = "Junio"; break;
-            case '07': $mes = "Julio"; break;
-            case '08': $mes = "Agosto"; break;
-            case '09': $mes = "Septiembre"; break;
-            case '10': $mes = "Octubre"; break;
-            case '11': $mes = "Noviembre"; break;
-            case '12': $mes = "Diciembre"; break;
-        }
-        return $mes;
-    }?>
     @foreach ($indicadorplan as $indicadorplan)
         @if ($indicadorplan->nombre_indicador=="parametros_ambientales" && substr($indicadorplan->created_at,0,4) == date('Y'))
         <?php $fechas = json_decode($indicadorplan->date); $cumplido=[]; ?>
@@ -60,14 +43,13 @@
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('parametros.create') }}"><span><i class="fas fa-plus"></i>Crear Reporte</span></a>
     </h2>
 
-<div class=" card-body table table-striped-columns">
+<div class=" card-body table table-striped-columns text-center">
     <table class="table mt-3" id="parametros">
 
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Planificados</th>
-                <th>Ejecutadas</th>
+              
                 <th>PROD</th>
                <Th>MTTO</Th> 
                 <th>SSGG</th>
@@ -85,8 +67,6 @@
             
             <tr>
                 <td>{{ $parametros->id }}</td>
-                <td>{{ $parametros->planificado}}</td>
-                <td>{{ $parametros->ejecutados}}</td>
                 <td>{{ $parametros->PROD}}</td>
                 <td>{{ $parametros->MTTO}}</td>
                 <td>{{ $parametros->SSGG}}</td>

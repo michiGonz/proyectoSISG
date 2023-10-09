@@ -11,35 +11,35 @@
         @csrf
 
         <div class="form-group col-md-6">
-            <label for="reacciones_personas">Reacciones de las personas</label>
-            <input class="form-control" id="reacciones_personas"  type="number" disabled="true" value="{{ $actos_seguro->reacciones_personas }}"name="reacciones_personas" value="0" />
+            <label for="RP_main">Reacciones de las personas</label>
+            <input class="form-control" id="RP_main"  type="number" disabled="true" value="{{ $actos_seguro->RP_main }}"name="RP_main" value="0" />
         </div>
 
 
         <div class="form-group col-md-6">
-            <label for="equipo_proteccion">Equipo de proteccion personal</label>
-            <input class="form-control" type="number" value="{{ $actos_seguro->equipo_proteccion }}" disabled="true" name="equipo_proteccion" value="0" />
+            <label for="EPP_main">Equipo de proteccion personal</label>
+            <input class="form-control" type="number" value="{{ $actos_seguro->EPP_main }}" disabled="true" name="EPP_main" value="0" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="posicion_persona">Posiciones de las personas</label>
-            <input class="form-control" type="number" value="{{ $actos_seguro->posicion_persona }}" disabled="true"name="posicion_persona" value="0" />
+            <label for="PP_main">Posiciones de las personas</label>
+            <input class="form-control" type="number" value="{{ $actos_seguro->PP_main}}" disabled="true"name="PP_main" value="0" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="herramienta_equipo">Herramientas y equipo</label>
-            <input class="form-control" type="number" value="{{ $actos_seguro->herramienta_equipo }}" disabled="true"name="herramienta_equipo" value="0" />
+            <label for="HE_main">Herramientas y equipo</label>
+            <input class="form-control" type="number" value="{{ $actos_seguro->HE_main}}" disabled="true"name="HE_main" value="0" />
         </div>
 
 
         <div class="form-group col-md-6">
-            <label for="procedimiento_orden">Procedimientos, orden y limpieza</label>
-            <input class="form-control" type="number" value="{{ $actos_seguro->procedimiento_orden }}" disabled="true" name="procedimiento_orden" value="0" />
+            <label for="PROCE_main">Procedimientos, orden y limpieza</label>
+            <input class="form-control" type="number" value="{{ $actos_seguro->PROCE_main }}" disabled="true" name="procedimiento_orden" value="0" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="ambiente">Ambiente</label>
-            <input class="form-control" type="number" value="{{ $actos_seguro->ambiente }}" disabled="true"name="ambiente" value="0" />
+            <label for="A_main">Ambiente</label>
+            <input class="form-control" type="number" value="{{ $actos_seguro->A_main }}" disabled="true" name="A_main" value="0" />
         </div>
 
         <div class="form-group col-md-6">
@@ -49,8 +49,13 @@
 
         <div class="form-group col-md-6">
             <label for="date">Fecha</label>
-            <input class="form-control" id="date"value="{{ $actos_seguro->date }}" disabled="true" type="date" name="date" value="" />
+            <input class="form-control" id="date" value="{{ $actos_seguro->date }}" disabled="true" type="date" name="date" value="" />
         </div>
+
+        <div class="form-group col-md-6">
+                <label for="cantidad">Total Observaciones</label>
+                <input class="form-control" id="cantidad" value="{{ $actos_seguro->cantidad }}" disabled="true" type="number" name="cantidad" />
+            </div>
 
         <div class="form-group col-md-12 text-center">
             <a href="{{ route('actoseguro.index') }}" class="btn btn-secondary">Cancelar</a>

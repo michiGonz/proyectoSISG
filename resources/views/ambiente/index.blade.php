@@ -2,23 +2,6 @@
 @section('title', 'Inicio')
 @section('content')
 <div class="row">
-    <?php function ObtenerMes($fecha){
-        switch (substr($fecha,5,8)) {
-            case '01': $mes = "Enero"; break;
-            case '02': $mes = "Febrero"; break;
-            case '03': $mes = "Marzo"; break;
-            case '04': $mes = "Abril"; break;
-            case '05': $mes = "Mayo"; break;
-            case '06': $mes = "Junio"; break;
-            case '07': $mes = "Julio"; break;
-            case '08': $mes = "Agosto"; break;
-            case '09': $mes = "Septiembre"; break;
-            case '10': $mes = "Octubre"; break;
-            case '11': $mes = "Noviembre"; break;
-            case '12': $mes = "Diciembre"; break;
-        }
-        return $mes;
-    }?>
     @foreach ($indicadorplan as $indicadorplan)
         @if ($indicadorplan->nombre_indicador=="visita_gerencial" && substr($indicadorplan->created_at,0,4) == date('Y'))
         <?php $fechas = json_decode($indicadorplan->date); $cumplido=[]; ?>
@@ -57,19 +40,19 @@
     <h2 class="card-header">
         Visita Gerencial
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('ambiente.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
+        
     </h2>
     <div class="card-body">
         
 
-        <div class="table tabble-responsive">
-            <table class="table mt-3" id="table-ambiente">
+        <div class="table tabble-responsive text-center">
+            <table class="table mt-3 text center" id="table-ambiente">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Lugar de Visita</th>
                         <th>Descripción</th>
                         <th>Acompanantes</th>
-                        <th>Cantidad</th>
                         <th>Fecha</th>
                         <th>Acciones</th>
 
@@ -81,8 +64,7 @@
                         <td>{{ $ambiente->id }}</td>
                         <td>{{ $ambiente->name }}</td>
                         <td>{{ $ambiente->description }}</td>
-                        <td>{{ $ambiente->acompanantes}}</td>
-                        <td>{{ $ambiente->cantpersona}}</td>
+                        <td>{{ $ambiente->personal}}</td>
                         <td>{{ $ambiente->date }}</td>
                         <td>
                             <a href="{{ route('ambiente.show', $ambiente->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
@@ -90,7 +72,7 @@
                             <form action="{{ route('ambiente.destroy', $ambiente->id) }}" method="POST" class="d-inline">
                                 @csrf
                             </form>
-                            <a class="btn btn-success float-right" class="nav-link" href="{{ route('ambiente.edit', $ambiente->id) }}" class="btn btn-info btn-sm"> <i class="fas fa-edit" ></i></span></a>
+                            <a class="btn btn-success float-right" class="nav-link" href="{{ route('ambiente.edit', $ambiente->id) }}" class="btn btn-success btn-sm" > <i class="fas fa-edit" ></i>
                            
                         </td>
                     </tr>
@@ -104,6 +86,77 @@
 </div>
 
 <script>
-    DataTabla('#table-ambiente', [5, 'desc']);
+    DataTabla('#table-ambiente', [4, 'desc']);
+</script>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        Chart showing stacked columns with grouping, allowing specific series to
+        be stacked on the same column. Stacking is often used to visualize
+        data that accumulates to a sum.
+    </p>
+</figure>
+<script>
+    // Data retrieved from https://en.wikipedia.org/wiki/Winter_Olympic_Games
+Highcharts.chart('container', {
+
+chart: {
+    type: 'column'
+},
+
+title: {
+    text: 'Olympic Games all-time medal table, grouped by continent',
+    align: 'left'
+},
+
+xAxis: {
+    categories: ['Gold', 'Silver', 'Bronze']
+},
+
+yAxis: {
+    allowDecimals: false,
+    min: 0,
+    title: {
+        text: 'Count medals'
+    }
+},
+
+tooltip: {
+    format: '<b>{key}</b><br/>{series.name}: {y}<br/>' +
+        'Total: {point.stackTotal}'
+},
+
+plotOptions: {
+    column: {
+        stacking: 'normal'
+    }
+},
+
+series: [{
+    name: 'Norway',
+    data: [148, 133, 124],
+    stack: 'Europe'
+}, {
+    name: 'Germany',
+    data: [102, 98, 65],
+    stack: 'Europe'
+}, {
+    name: 'United States',
+    data: [113, 122, 95],
+    stack: 'North America'
+}, {
+    name: 'Canada',
+    data: [77, 72, 80],
+    stack: 'North America'
+}]
+});
+
 </script>
 @endsection

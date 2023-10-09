@@ -12,38 +12,43 @@
         @method('PUT')
 
         <div class="form-group col-md-6">
-            <label for="reacciones_personas">RP</label>
-            <input class="form-control" type="number" name="reacciones_personas"
-                value="{{$actoseguro->reacciones_personas}}" />
+            <label for="RP_main">RP</label>
+            <input class="form-control" type="number" name="RP_main"
+                value="{{$actoseguro->RP_main}}" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="equipo_proteccion">EPP</label>
-            <input class="form-control" type="number" name="equipo_proteccion"
-                value="{{$actoseguro->equipo_proteccion}}" />
+            <label for="EPP_main">EPP</label>
+            <input class="form-control" type="number" name="EPP_main"
+                value="{{$actoseguro->EPP_main}}" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="posicion_persona">PP</label>
-            <input class="form-control" type="number" name="posicion_persona" value="{{$actoseguro->posicion_persona}}" />
+            <label for="PP_main">PP</label>
+            <input class="form-control" type="number" name="PP_main" value="{{$actoseguro->EPP_main}}" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="herramienta_equipo">HE</label>
-            <input class="form-control" type="number" name="herramienta_equipo"
-                value="{{$actoseguro->herramienta_equipo}}" />
+                <label for="OL_main">Procedimientos, orden y limpieza</label>
+                <input class="form-control" type="number" name="OL_main" value="{{$actoseguro->OL_main}}" />
+        </div>
+            
+        <div class="form-group col-md-6">
+            <label for="HE_main">HE</label>
+            <input class="form-control" type="number" name="HE_main"
+                value="{{$actoseguro->HE_main}}" />
         </div>
 
 
         <div class="form-group col-md-6">
-            <label for="procedimiento_orden">POL</label>
-            <input class="form-control" type="number" name="procedimiento_orden" value="0"
-                value="{{ $actoseguro->procedimiento_orden }}" />
+            <label for="PROCE_main">POL</label>
+            <input class="form-control" type="number" name="PROCE_main" value="0"
+                value="{{ $actoseguro->PROCE_main }}" />
         </div>
 
         <div class="form-group col-md-6">
-            <label for="ambiente">A</label>
-            <input class="form-control" type="number" name="ambiente" value="0" value="{{ $actoseguro->ambiente }}" />
+            <label for="A_main">A</label>
+            <input class="form-control" type="number" name="A_main" value="0" value="{{ $actoseguro->A_main}}" />
         </div>
 
         <div class="form-group col-md-6">

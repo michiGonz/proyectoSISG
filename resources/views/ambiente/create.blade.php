@@ -1,9 +1,18 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-
+<?php $t = 0;
+foreach ($ambient as $clave => $valor) {
+    if (substr($valor['date'], 0, 4) == date('Y')) {
+        $t = $t + 1;
+    }
+} ?>
 <div class="card">
-    <h2 class="card-header">Crear Registro de Visita Gerencial</h2>
+    <h2 class="card-header">
+        Crear Registro de Visita Gerencial
+        <small class="float-right">Acomulado {{$t}}</small>
+        </a>
+    </h2>
     <div class="card-body">
         <div class="row">
             <form method="POST" class="row" action="{{ route('ambiente.store') }}">
@@ -18,14 +27,14 @@
                     <input type="text" name="description" id="description" class="form-control" rows="4" required>
                 </div>
 
-                <div class="form-group col-md-2">
-                    <label for="acompanantes">Cantidad de Personas</label>
-                    <input type="number" name="cantpersona" id="cantpersona" class="form-control">
-                </div>
-
-                <div class="form-group col-md-5">
-                    <label for="acompanantes">Nombre de Acompañantes</label>
-                    <input name="acompanantes" id="acompanante" class="form-control" rows="1" required>
+                <div class="col-md-5">
+                    <label for="personal">Nombre de Acompañantes</label>
+                    <br>
+                    <select style="width: 100%;" class="col-md-5 form-select p-3 m-0 border-0 bd-example m-0 border-0" name="personal[]" id="personal" multiple aria-label="Default select example">
+                    @foreach ($usuarios as $usuario)
+                    <option value="{{$usuario->cod_emp}}">{{$usuario->nombres}} {{$usuario->apellidos}}</option>
+                    @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group col-md-5">
@@ -42,4 +51,7 @@
         </div>
     </div>
 </div>
+<script>
+    $("#personal").select2();
+</script>
 @endsection

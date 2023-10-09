@@ -4,14 +4,18 @@
 
 
 <div class="card">
-    <h2 class="card-header">Crear Registro de Actos Seguros</h2>
+    <h2 class="card-header">
+        Crear Registro de Actos Seguros
+        <a onclick="consultaOpsa('seguro','<?php echo date('m'); ?>','<?php echo date('Y'); ?>')" class="btn btn-warning float-right">Traer datos Opsa</a>
+    </h2>
+    
     <div class="card-body">
-        <a onclick="consultaOpsa('seguro','<?php echo date('m'); ?>','<?php echo date('Y'); ?>')" class="btn btn-secondary">Traer datos Opsa</a>
         <form method="POST" class="row" id="opsa" action="{{route('actoseguro.store') }}">
             @csrf
             <div class="form-group col-md-6">
                 <label for="RP_main">Reacciones de las personas </label>
                 <input class="form-control" id="RP_main" type="number" name="RP_main" value="0" />
+                <div id="suma_RP_main"></div>
             </div>
             <div class="form-group col-md-6">
                 <label for="EPP_main">Equipo de proteccion personal</label>
@@ -44,6 +48,7 @@
                 <input class="form-control" id="cantidad" type="number" name="cantidad" value="" required />
             </div>
 
+
             <div class="form-group col-md-6">
                 <label for="observacion">Observacion</label>
                 <textarea type="text " name="observacion" class="form-control" required></textarea>
@@ -61,4 +66,19 @@
         </form>
     </div>
 </div>
+
+<script>
+    $('#RP_main input').change(function() {
+        let suma = 0;
+        $('#RP_main').find('*').each(function(index) {
+            if ($(this).attr('name')) {
+                let nro = parseInt($(this).val());
+                if (nro > 0) {
+                    suma = suma + nro;
+                }
+            }
+        });
+        $('#suma_RP_main').html(suma);
+    });
+</script>
 @endsection

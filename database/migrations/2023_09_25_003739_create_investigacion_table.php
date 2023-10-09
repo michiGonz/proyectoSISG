@@ -17,7 +17,6 @@ class CreateInvestigacionTable extends Migration
             $table->id();
             $table->string('acomulado');
             $table->string('uf');
-            
             $table->text('nombre_incidente');
             $table->text('nombre_lugar');
             $table->text('observacion');

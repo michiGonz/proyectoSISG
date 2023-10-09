@@ -10,7 +10,7 @@
     </h2>
     <div class="card-body">
 
-<div class="table table-striped-columns">
+<div class="table table-striped-columns text-center">
     <table class="table mt-3" id="aprendiendo">
 
         <thead>

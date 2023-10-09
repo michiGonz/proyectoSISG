@@ -8,7 +8,7 @@
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('auditorias.create') }}"><span><i class="fas fa-plus"></i>Crear Reporte</span></a>
     </h2>
 
-    <div class="card-body table table-striped-columns  ">
+    <div class="card-body table table-striped-columns text-center">
         <table class="table mt-3" id="auditoria">
             <thead>
                 <tr>

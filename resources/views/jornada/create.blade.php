@@ -1,9 +1,16 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-
+<?php $t = 0;
+foreach ($jornada as $clave => $valor) {
+    if (substr($valor['date'], 0, 4) == date('Y')) {
+        $t = $t + 1;
+    }
+} ?>
 <div class="card">
-    <h2 class="card-header">Crear Registro de Jornada Ambiental</h2>
+    <h2 class="card-header">Crear Registro de Jornada Ambiental
+    <small class="float-right">Acomulado {{$t}}</small>
+    </h2>
     <div class="card-body">
         <tr>
                 <form method="POST" action="{{ route('jornada.store') }}">
@@ -11,11 +18,7 @@
 
                     <div class="table table-striped-columns">
                         @csrf
-                        <div class="form-group ">
-                            <label for="jornadas_ejecutadas">Jornadas Ejecutadas</label>
-                            <input type="number" name="jornadas_ejecutadas" id="jornadas_ejecutadas" class="form-control" value=0 />
-                        </div>
-
+               
                         <div class="form-group">
                             <label for="descripcion">Descripcion</label>
                             <input type="text " name="descripcion" id="descripcion" class="form-control" />

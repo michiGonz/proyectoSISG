@@ -9,13 +9,12 @@
     </h2>
     <div class="card-body">
 
-        <div class="table table-striped-columns ">
+        <div class="table table-striped-columns text-center">
             <table class="table mt-3 table table-striped-columns" id="jornada">
 
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Jornadas Ejecutadas</th>
                         <th>Descripcion</th>
                         <th>Ubicacion</th>
                         <th>Date</th>
@@ -27,7 +26,6 @@
                     @foreach ($jornada as $jornada)
                     <tr>
                         <td>{{ $jornada->id }}</td>
-                        <td>{{ $jornada->jornadas_ejecutadas }}</td>
                         <td>{{ $jornada->descripcion }}</td>
                         <td>{{ $jornada->ubicacion }}</td>
                         <td>{{ $jornada->date}}</td>
