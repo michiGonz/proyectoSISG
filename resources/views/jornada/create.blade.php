@@ -9,7 +9,7 @@ foreach ($jornada as $clave => $valor) {
 } ?>
 <div class="card">
     <h2 class="card-header">Crear Registro de Jornada Ambiental
-    <small class="float-right">Acomulado {{$t}}</small>
+    <small class="float-right">Acomulado: {{$t}}</small>
     </h2>
     <div class="card-body">
         <tr>
@@ -38,7 +38,7 @@ foreach ($jornada as $clave => $valor) {
                             <br>
                             <button type="submit" class="btn btn-primary">Crear Registro</button>
 
-                            <a href="{{ route('comite.index') }}" class="btn btn-secondary">Cancelar</a>
+                            <a href="{{ route('jornada.index') }}" class="btn btn-secondary">Cancelar</a>
                         </div>
                 </form>
             </div>

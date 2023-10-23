@@ -13,17 +13,17 @@
             <table class="table mt-3" id="formacion">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Formaciones ejecutadas de Ambiente</th>
-                        <th>Formaciones ejecutadas de Seguridad</th>
-                        <th>Formaciones ejecutadas de Salud</th>
+                   
+                        <th>Formaciones en Ambiente</th>
+                        <th>Formaciones en Seguridad</th>
+                        <th>Formaciones en Salud</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($plandeformacion as $plandeformacion)
                     <tr>
-                        <td>{{ $plandeformacion->id }}</td>
+                    
                         <td>{{ $plandeformacion->ejecutadas_ambiente}}</td>
                         <td>{{ $plandeformacion->ejecutadas_seguridad}}</td>
                         <td>{{ $plandeformacion->ejecutadas_salud}}</td>
@@ -41,6 +41,6 @@
                 </tbody>
             </table>
             <script>
-                DataTabla('#formacion', [7, 'desc']);
+                DataTabla('#formacion', [3, 'desc']);
             </script>
             @endsection

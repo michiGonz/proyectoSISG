@@ -37,7 +37,8 @@ class AmbientController extends Controller
     public function edit($id)
     {
         $ambient = Ambient::find($id);
-        return view('ambiente.edit', compact('ambient'));
+        $usuarios = Usuariosprofit::get();
+        return view('ambiente.edit', compact('ambient', 'usuarios'));
     }
 
     public function update(Request $request, $id)

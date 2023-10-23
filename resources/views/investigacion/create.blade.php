@@ -10,13 +10,13 @@ foreach ($investigacion as $clave => $valor) {
 
 <div class="card">
     <h2 class="card-header">Crear Registro de Investigacion de Incidentes
-    <small class="float-right">Acomulado {{$t}}</small>
+    <small class="float-right">Acomulado: {{$t}}</small>
     </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('investigacion.store') }}">
             @csrf
         
-            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="uf" id="uf" aria-label="Default select example">
+            <select class="form-control" name="uf" id="uf" aria-label="Default select example">
                 @foreach ($ufs as $uf)
                 <option value="{{$uf->nombres}}">{{$uf->des_depart}}</option>
                 
@@ -34,33 +34,33 @@ foreach ($investigacion as $clave => $valor) {
                 <input type="ubicacion" name="nombre_lugar" id="nombre_lugar" class="form-control">
             </div>
 
-            <table class="table table-striped table-primary">
-                <div class="form-check  table-primary ">
+            <table class="table table-striped ">
+                <div class="form-check  ">
                     <h5>Status</h5>
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Comunicación
                     </label>
                 </div>
-                <div class="form-check  table-primary">
+                <div class="form-check  ">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         Comite
                     </label>
                 </div>
-                <div class="form-check  table-primary">
+                <div class="form-check ">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         Investigación
                     </label>
                 </div>
-                <div class="form-check  table-primary">
+                <div class="form-check  ">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         Informe
                     </label>
                 </div>
-                <div class="form-check  table-primary">
+                <div class="form-check  ">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         Divulgación

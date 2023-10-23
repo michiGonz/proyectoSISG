@@ -12,7 +12,7 @@
             @method('PUT')
 
 
-            <select {{ $indicadorplan->nombre_indicador}}" class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="nombre_indicador" id="nombre_indicador"
+            <select {{ $indicadorplan->nombre_indicador}}" class="form-control" name="nombre_indicador" id="nombre_indicador"
                 aria-label="indicador">
                 <option selected>Indicador</option>
                 <option value="visita Gerencial">Visita Gerencial</option>

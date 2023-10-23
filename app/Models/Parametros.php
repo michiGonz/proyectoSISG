@@ -12,8 +12,6 @@ class Parametros extends Model
 
     protected $fillable = [
 
-        'planificado',
-        'ejecutados',
         'PROD',
         'MTTO',
         'SSGG',

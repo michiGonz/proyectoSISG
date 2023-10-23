@@ -5,7 +5,7 @@
 <div class="card">
     <h2 class="card-header">Configuraciones del sistema</h2>
     <div class="card-body">
-        <h5>Configuracion Con PROFIT</h5>
+        <h5>Configuracion Con PROFIT Unidades Funcionales</h5>
     <a class="btn btn-warning float-left" href="{{ route('unidadfuncional.index') }}" class="btn btn-secondary">Profit UF</a>
     </div>
     <div class="card-body">

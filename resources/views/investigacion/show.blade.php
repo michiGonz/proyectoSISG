@@ -11,10 +11,9 @@
             @csrf
             @method('PUT')
 
-            <label for="acomulado">Acomulado del mes</label>
-            <input value="{{ $investigacion->acomulado }}" disabled="true" type="number" name="acomulado" id="acomulado" class="form-control" />
+           
 
-            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="uf" id="uf" aria-label="Default select example" value="{{ $investigacion->uf}}" disabled="true">
+            <select class="form-control" name="uf" id="uf" aria-label="Default select example" value="{{ $investigacion->uf}}" disabled="true">
                 <option selected>Unidad Funcional</option>
                 <option value="uf produccion">UF Produccion</option>
                 <option value="uf visita gerencial">UF Mantenimiento</option>
@@ -29,6 +28,8 @@
                 <option value="uf ingenieria de proceso">UF Ingenieria de Proceso</option>
                 <option value="uf gerencia general">UF Gerencia General</option>
             </select>
+
+            <br>
 
             <div class="form-group">
                 <label for="nombre_incidente">Nombre del incidente</label>
@@ -84,8 +85,6 @@
                 </div>
 
                 <div class="form-group col-md-12 text-center">
-
-                    <button type="submit" class="btn btn-primary">Descargar Registro</button>
 
                     <a href="{{ route('investigacion.index') }}" class="btn btn-secondary">Cancelar</a>
                 </div>

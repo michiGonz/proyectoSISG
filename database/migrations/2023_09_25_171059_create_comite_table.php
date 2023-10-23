@@ -15,9 +15,9 @@ class CreateComiteTable extends Migration
     {
         Schema::create('comite', function (Blueprint $table) {
             $table->id();
-            $table->string('ejecutadas');
             $table->text('observacion');
-            $table->date('date');
+            $table->date('date_insasel');
+            $table->date('date_reunion');
             $table->timestamps();
         });
     }

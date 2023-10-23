@@ -48,9 +48,10 @@
 
         <thead>
             <tr>
-                <th>ID</th>
+               
                 <th>Observacion</th>
-                <th>Date</th>
+                <th>Fecha de Reunion</th>
+                <th>Fecha de Entrega al Insasel</th>
                 <th>Acciones</th>
 
             </tr>
@@ -58,9 +59,10 @@
         <tbody>
             @foreach ($comite as $comite)
                 <tr>
-                    <td>{{ $comite->id }}</td>
+                 
                     <td>{{ $comite->observacion }}</td>
-                    <td>{{ $comite->date}}</td>
+                    <td>{{ $comite->date_reunion}}</td>
+                    <td>{{ $comite->date_insasel}}</td>
                     <td>
                         <a href="{{ route('comite.show', $comite->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
                         <form action="{{ route('comite.destroy', $comite->id) }}" method="POST" class="d-inline">

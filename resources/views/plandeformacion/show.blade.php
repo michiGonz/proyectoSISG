@@ -11,10 +11,7 @@
         @csrf
         @method('PUT')
 
-        <div class="form-group">
-            <label for="ejecutadas">Plan de formaciones ejecutadas</label>
-            <input value="{{ $plandeformacion->ejecutadas }}" disabled="true" type="number" name="ejecutadas" id="ejecutadas" class="form-control">
-        </div>
+
 
         <div class="form-group">
             <label for="ejecutadas_ambiente">Formaciones ejecutadas de Ambiente</label>

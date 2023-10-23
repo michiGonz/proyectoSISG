@@ -65,7 +65,7 @@
                         <td>{{ $ambiente->name }}</td>
                         <td>{{ $ambiente->description }}</td>
                         <td>{{ $ambiente->personal}}</td>
-                        <td>{{ $ambiente->date }}</td>
+                        <td>{{ ObtenerFecha($ambiente->date) }}</td>
                         <td>
                             <a href="{{ route('ambiente.show', $ambiente->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
     

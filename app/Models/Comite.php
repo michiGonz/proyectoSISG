@@ -12,9 +12,11 @@ class Comite extends Model
 
     protected $fillable = [
 
-      'ejecutadas',
+   
       'observacion',
-      'date'
+      'date_insasel',
+      'date_reunion'
+
     ];
     public function comite(){
         return $this->hasMany(indicator::class);

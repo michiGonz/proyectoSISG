@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateActoinseguroTable extends Migration
+class CreateOpsaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,16 @@ class CreateActoinseguroTable extends Migration
      */
     public function up()
     {
-        Schema::create('actoinseguro', function (Blueprint $table) {
+        Schema::create('opsa', function (Blueprint $table) {
             $table->id();
-            $table->text('RP_1'); 
+            $table->text('RP_main');
+            $table->text('EPP_main');
+            $table->text('PP_main');
+            $table->text('HE_main');
+            $table->text('PROCE_main');
+            $table->text('OL_main');
+            $table->text('A_main');
+            $table->text('RP_1');
             $table->text('RP_2');
             $table->text('RP_3');
             $table->text('RP_4');
@@ -55,9 +62,12 @@ class CreateActoinseguroTable extends Migration
             $table->text('A_8');
             $table->text('A_9');
             $table->text('A_10');
+            $table->text('cantidad_seguro');
+            $table->text('cantidad_inseguro');
+            $table->text('total');
             $table->text('observacion');
             $table->date('date');
-            $table->text('cantidad');
+            $table->string('cantidad')->nullable();
             $table->timestamps();
         });
     }
@@ -69,6 +79,6 @@ class CreateActoinseguroTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actoinseguro');
+        Schema::dropIfExists('opsa');
     }
 }

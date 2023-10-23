@@ -8,15 +8,6 @@
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('indicadorplan.create') }}"><span> <i class="fas fa-plus"></i> Crear Plan</span></a>
     </h2>
     <div class="card-body">
-<table class="table table-success table-striped">
-    <tr>
-        <td><a class="nav-link" href="{{ route('planificacionformacion.index') }}"><span>Plan de Formacion Seguridad
-                    Salud y Ambiente</span></a></td>
-        <td><a class="btn btn-success" href="{{ route('planificacionformacion.index') }}"><i class="fas fa-plus"></i><span>
-                 </span></button></td>
-    </tr>
-
-</table>
 
 <div class="table table-striped-columns">
     <table class="table mt-3" id="indicador">
@@ -25,7 +16,6 @@
             <tr>
                 <th>ID</th>
                 <th>Indicador</th>
-                <th>Simulacion</th>
                 <th>Meta Establecida</th>
                 <th>Programacion Anual</th>
                 <th>Programacion Mensual</th>
@@ -40,7 +30,6 @@
             <tr>
                 <td>{{ $indicadorplan->id }}</td>
                 <td>{{ $indicadorplan->nombre_indicador}}</td>
-                <td>{{ $indicadorplan->simulacion}}</td>
                 <td>{{ $indicadorplan->meta }}</td>
                 <td>{{ $indicadorplan->programacion_anual}}</td>
                 <td>{{ $indicadorplan->programadas_mes}}</td>

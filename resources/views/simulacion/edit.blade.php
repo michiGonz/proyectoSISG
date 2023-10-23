@@ -11,11 +11,7 @@
             @csrf
                @method('PUT')
 
-            <div class="form-group form-group col-md-6">
-                <label for="simulacro_cumplido">Simulacros Ejecutados</label>
-                <input value="{{ $simulacion->simulacro_cumplido }}" type="number" name="simulacro_cumplido"
-                    id="simulacro_cumplido" class="form-control">
-            </div>
+            
 
             <div class="form-group form-group col-md-6">
                 <label for="name">Nombre del simulacro</label>

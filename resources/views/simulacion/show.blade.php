@@ -9,12 +9,7 @@
     <div class="card-body">
     <form method="POST" action="{{ route('simulacion.store') }}">
         @csrf
-        <div>
-            <label for="simulacro_cumplido">Simulacros Ejecutados</label>
-            <input value="{{ $simulacion->simulacro_cumplido }}" disabled="true" type="number" name="simulacro_cumplido"
-                id="simulacro_cumplido" class="form-control">
-
-        </div>
+    
         <div class="form-group">
             <label for="name">Nombre del simulacro</label>
             <input value="{{ $simulacion->name }}" type="text" disabled="true" name="name" id="name"

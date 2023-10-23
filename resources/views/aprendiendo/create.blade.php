@@ -13,24 +13,17 @@
 
             <div class="table table-striped-columns">
                 @csrf
-                <div class="form-group ">
+
+                <div class="form-group">
                     <label for="cantidad_actividad">Cantidad de Aprendiendo en el Trabajo</label>
                     <input type="number" name="cantidad_actividad" id="cantidad_actividad" class="form-control" value=0 />
                 </div>
+                <div class="row" id="fechas"></div>
 
-                <div class="form-group">
-                    <label for="nombre">Nombre de Aprendiendo en el trabajo</label>
-                    <input class="form-control" id="nombre" type="text" name="nombre" />
-                </div>
 
                 <div class="form-group">
                     <label for="observacion">Observacion</label>
                     <input type="text" name="observacion" id="observacion" class="form-control" />
-                </div>
-
-                <div class="form-group">
-                    <label for="date">Fecha</label>
-                    <input class="form-control" id="date" type="date" name="date" value="" />
                 </div>
 
                 <div class="form-group col-md-12 text-center">
@@ -40,9 +33,38 @@
                 </div>
         </form>
     </div>
-    </tr>
-    </tr>
-    </tbody>
-</div>
 
+
+</div>
+<script>
+    $('#cantidad_actividad').change(function() {
+        let nro = parseInt($('#cantidad_actividad').val());
+        $('#fechas').html('')
+        if (nro <= 100) {
+       
+                for (let index = 0; index < nro; index++) {
+                    $('#fechas').append(
+                        '<div class="card col-md-6">'+
+                            '<div class="card-body">'+
+                                '<div class="row">'+
+                                    '<div class="form-group col-md-6">' +
+                                        '<label for="name">Nombre</label>' +
+                                        '<input class="form-control" id="name" type="text" name="name[]" required />' +
+                                    '</div>'+
+                                    '<div class="form-group col-md-6">' +
+                                        '<label for="date">Fecha</label>' +
+                                        '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                                    '</div>'+
+                                    '</div>'+
+                                '<div>'+
+                            '<div>'+
+                        '<div>'
+                    );
+                }
+            
+        } else {
+            alert('Máximo 100 fechas')
+        }
+    });
+</script>
 @endsection

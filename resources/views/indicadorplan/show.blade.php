@@ -9,7 +9,7 @@
         <form method="POST" action="{{ route('indicadorplan.store') }}">
             @csrf
 
-            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="nombre_indicador" id="nombre_indicador" aria-label="Default select example">
+            <select class="form-control" name="nombre_indicador" id="nombre_indicador" aria-label="Default select example">
                 <option selected>Indicador</option>
                 <option value="visita Gerencial">Visita Gerencial</option>
                 <option value="Simulacro">Simulacro</option>

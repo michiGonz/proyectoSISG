@@ -7,16 +7,12 @@
         Editar Registro de Invesigacion de Incidentes
     </h2>
     <div class="card-body">
-        <form method="POST" action="{{ route('investigacion.store') }}">
+        <form method="POST" action="{{ route('investigacion.update', $investigacion->id) }}" method="POST">
             @csrf
             @method('PUT')
-            <div class="form-group">
-                <label for="acomulado">Acomulado del mes</label>
-                <input  value="{{ $investigacion->acomulado }}" type="number" name="acomulado" id="acomulado" class="form-control" value="0" />
-            </div>
+         
 
-            <select class="form-select p-3 m-0 border-0 bd-example m-0 border-0" name="uf"
-                id="uf" aria-label="Default select example" value="{{ $investigacion->uf}}" >
+            <select class="form-control" name="uf" id="uf" aria-label="Default select example" value="{{ $investigacion->uf}}">
                 <option selected>Unidad Funcional</option>
                 <option value="uf produccion">UF Produccion</option>
                 <option value="uf visita gerencial">UF Mantenimiento</option>
@@ -32,14 +28,14 @@
                 <option value="uf gerencia general">UF Gerencia General</option>
             </select>
 
-        <div class="form-group">
+            <div class="form-group">
                 <label for="nombre_incidente">Nombre del incidente</label>
                 <input value="{{ $investigacion->nombre_incidente}}" type="text" name="nombre_incidente" id="nombre_indcidente" class="form-control" />
             </div>
 
             <div class="form-group">
                 <label for="nombre_lugar">Ubicacion</label>
-                <input  value="{{ $investigacion->nombre_lugar}}" type="ubicacion" name="nombre_lugar" id="nombre_lugar" class="form-control">
+                <input value="{{ $investigacion->nombre_lugar}}" type="ubicacion" name="nombre_lugar" id="nombre_lugar" class="form-control">
             </div>
 
             <table class="table table-striped table-primary">
@@ -82,7 +78,7 @@
 
                 <div class="form-group">
                     <label for="date">Fecha</label>
-                    <input  value="{{ $investigacion->date}}" class="form-control" id="date" type="date" name="date" value="" />
+                    <input value="{{ $investigacion->date}}" class="form-control" id="date" type="date" name="date" value="" />
                 </div>
 
                 <div class="form-group col-md-12 text-center">
@@ -94,6 +90,6 @@
             </table>
         </form>
     </div>
-    
+
 </div>
 @endsection

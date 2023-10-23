@@ -15,7 +15,7 @@ class CreateInvestigacionTable extends Migration
     {
         Schema::create('investigacion', function (Blueprint $table) {
             $table->id();
-            $table->string('acomulado');
+            $table->string('Acomulado:');
             $table->string('uf');
             $table->text('nombre_incidente');
             $table->text('nombre_lugar');

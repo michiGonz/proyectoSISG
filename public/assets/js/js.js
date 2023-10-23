@@ -39,7 +39,7 @@ function consultaOpsa(tipo = "seguro", mes, anio) {
         beforeSend: function (dato) { }
     }).done(function (dato) {
         $.each(dato.observaciones, (index, value) => {
-            $('#opsa').find('*').each(function (index_) {
+            $('#opsa_'+tipo).find('*').each(function (index_) {
                 let name = $(this).attr('name');
                 if (name) {
                     if (index == name) {
@@ -48,9 +48,17 @@ function consultaOpsa(tipo = "seguro", mes, anio) {
                 }
             });
         })
-        $("#cantidad").val(dato.cantidad);
+        if(tipo=="seguro"){
+            $('#cantidad_seguro').val(dato.cantidad);
+        }else if(tipo=="inseguro"){
+            $('#cantidad_inseguro').val(dato.cantidad);
+        }
         console.log("Exioso")
     }).fail(function (dato) {
         console.log("Error")
     });
+}
+function consultaOpsa2(mes, anio){
+    consultaOpsa("seguro", mes, anio);
+    consultaOpsa("inseguro", mes, anio);
 }

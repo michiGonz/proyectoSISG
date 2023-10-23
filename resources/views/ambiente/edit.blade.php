@@ -21,15 +21,16 @@
                 <input value="{{ $ambient->description }}" type="text" name="description" id="description" class="form-control" />
             </div>
 
-            <div class="form-group col-md-2">
-                <label for="cantpersona">Cantidad de Personas</label>
-                <input value="{{ $ambient->cantpersona }}" type="number" name="cantpersona" id="cantpersona" class="form-control" />
-            </div>
 
-            <div class="form-group col-md-5">
-                <label for="acompanantes">Nombre de Acompañantes</label>
-                <input value="{{ $ambient->acompanantes }}" name="acompanantes" id="acompanante" class="form-control" />
-            </div>
+            <div class="col-md-5">
+                    <label for="personal">Nombre de Acompañantes</label>
+                    <br>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="personal[]" id="personal" multiple aria-label="Default select example">
+                    @foreach ($usuarios as $usuario)
+                    <option value="{{$usuario->cod_emp}}">{{$usuario->nombres}} {{$usuario->apellidos}}</option>
+                    @endforeach
+                    </select>
+                </div>
 
             <div class="form-group col-md-5">
                 <label for="date">Fecha</label>
@@ -43,4 +44,7 @@
         </form>
     </div>
 </div>
+<script>
+    $("#personal").select2();
+</script>
 @endsection

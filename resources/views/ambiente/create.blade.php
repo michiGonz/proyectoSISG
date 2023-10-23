@@ -10,7 +10,7 @@ foreach ($ambient as $clave => $valor) {
 <div class="card">
     <h2 class="card-header">
         Crear Registro de Visita Gerencial
-        <small class="float-right">Acomulado {{$t}}</small>
+        <small class="float-right">Acomulado: {{$t}}</small>
         </a>
     </h2>
     <div class="card-body">
@@ -30,7 +30,7 @@ foreach ($ambient as $clave => $valor) {
                 <div class="col-md-5">
                     <label for="personal">Nombre de Acompañantes</label>
                     <br>
-                    <select style="width: 100%;" class="col-md-5 form-select p-3 m-0 border-0 bd-example m-0 border-0" name="personal[]" id="personal" multiple aria-label="Default select example">
+                    <select style="width: 100%;" class="col-md-5 form-control" name="personal[]" id="personal" multiple aria-label="Default select example">
                     @foreach ($usuarios as $usuario)
                     <option value="{{$usuario->cod_emp}}">{{$usuario->nombres}} {{$usuario->apellidos}}</option>
                     @endforeach

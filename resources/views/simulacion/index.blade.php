@@ -52,7 +52,7 @@
 
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        
                         <th>Nombre</th>
                         <th>Date</th>
                         <th>Acciones</th>
@@ -64,7 +64,7 @@
                     $simulacro_ejecutados = 0; ?>
                     @foreach ($simulacion as $simulacion)
                     <tr>
-                        <td>{{ $simulacion->id }}</td>
+                    
                         <td>{{ $simulacion->name }}</td>
                         <td>{{ $simulacion->date}}</td>
                         <td>
@@ -86,9 +86,7 @@
         </div>
     </div>
 </div>
-<style>
 
-</style>
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
