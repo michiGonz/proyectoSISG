@@ -6,23 +6,42 @@
     <h2 class="card-header">
         Planificacion de Indicadores
     </h2>
-
     <div class="card-body">
         <form method="POST" action="{{ route('indicadorplan.store') }}">
             @csrf
 
             <div class="form-group">
                 <select class="form-control table-primary" name="nombre_indicador" id="nombre_indicador" aria-label="Default select example">
+                    @if (!in_array('opsa',$consulta))
                     <option value="opsa">OPSA</option>
+                    @endif
+                    @if (!in_array('simulacro',$consulta))
                     <option value="simulacro">Simulacro</option>
+                    @endif
+                    @if (!in_array('comite',$consulta))
                     <option value="comite">Comite de Seguridad Salud y Ambiente</option>
+                    @endif
+                    @if (!in_array('plan',$consulta))
                     <option value="plan">Plan de formacion seguridad salud y ambiente</option>
+                    @endif
+                    @if (!in_array('parametros_ambientales',$consulta))
                     <option value="parametros_ambientales">Parametros Ambientales</option>
+                    @endif
+                    @if (!in_array('visita',$consulta))
                     <option value="visita">Visita Gerencial</option>
+                    @endif
+                    @if (!in_array('auditoria',$consulta))
                     <option value="auditoria">Auditorias de permisos de trabajo</option>
+                    @endif
+                    @if (!in_array('aprendiendo',$consulta))
                     <option value="aprendiendo">Aprendiendo en el trabajo</option>
+                    @endif
+                    @if (!in_array('monitoreo',$consulta))
                     <option value="monitoreo">Monitoreos Ambientales</option>
+                    @endif
+                    @if (!in_array('jornada',$consulta))
                     <option value="jornada">Jornada Ambiental</option>
+                    @endif
                 </select>
             </div>
 

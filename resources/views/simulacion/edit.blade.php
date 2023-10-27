@@ -10,9 +10,6 @@
         <form method="POST" class="row" action="{{ route('simulacion.update', $simulacion->id) }}" method="POST">
             @csrf
                @method('PUT')
-
-            
-
             <div class="form-group form-group col-md-6">
                 <label for="name">Nombre del simulacro</label>
                 <input value="{{ $simulacion->name }}" type="text" name="name" id="name" class="form-control"
@@ -38,7 +35,6 @@
             </div>
         </form>
     </div>
-
 </div>
 @endsection
 

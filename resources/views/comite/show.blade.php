@@ -5,7 +5,7 @@
 <div class="card">
     <h2 class="card-header">
         Mostrar Reporte de Comite Seguridad Salud Laborales
-     
+
     </h2>
 
     <div class="card-body">
@@ -22,7 +22,7 @@
 
                         <div class="form-group col-md-6 ">
                             <label for="date_reunion">Fecha de Entrega a Inpsasel</label>
-                            <input class="form-control" id="date" value="{{ $comite->date_reunion}}" disabled="true"  type="date" name="date" />
+                            <input class="form-control" id="date" value="{{ $comite->date_reunion}}" disabled="true" type="date" name="date" />
                         </div>
                     </div>
                 </div>
@@ -34,16 +34,13 @@
             </div>
 
             <div class="form-group col-md-12 text-center">
-                
+
 
                 <a href="{{ route('comite.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
+        </form>
     </div>
 
-    </form>
 </div>
-</tr>
-</tr>
-</tbody>
-</div>
+
 @endsection

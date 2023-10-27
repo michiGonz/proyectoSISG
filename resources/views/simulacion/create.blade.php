@@ -9,7 +9,7 @@ foreach ($simulacion as $clave => $valor) {
 } ?>
 <div class="card">
     <h2 class="card-header">Crear Registro de Simulacro
-    <small class="float-right">Acomulado: {{$t}}</small>
+        <small class="float-right">Acomulado: {{$t}}</small>
     </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('simulacion.store') }}">
@@ -43,8 +43,9 @@ foreach ($simulacion as $clave => $valor) {
 
                 <a href="{{ route('simulacion.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
+        </form>
     </div>
-    </form>
+
 </div>
 
 @endsection

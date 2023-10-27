@@ -2,62 +2,59 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Indicadorplan;
 
 
 class IndicadorplanController extends Controller {
+
     public function index() {
+
         $indicadorplanes = Indicadorplan::get();
         $planes = [];
         foreach ($indicadorplanes as $indicadorplan) {
             switch ($indicadorplan['nombre_indicador']) {
                 case 'opsa':
-                    $indicadorplan['nombre']='Opsa';
+                    $indicadorplan['nombre'] = 'Opsa';
                     break;
                 case 'simulacro':
-                    $indicadorplan['nombre']='Simulacro';
+                    $indicadorplan['nombre'] = 'Simulacro';
                     $indicadorplan['date'] = json_decode($indicadorplan['date']);
                     break;
                 case 'comite':
-                    $indicadorplan['nombre']='Comité';
+                    $indicadorplan['nombre'] = 'Comité';
                     $indicadorplan['date'] = json_decode($indicadorplan['date']);
                     break;
                 case 'plan':
-                    $indicadorplan['nombre']='Plan de formación de seguridad salud y ambiente';
+                    $indicadorplan['nombre'] = 'Plan de formación de seguridad salud y ambiente';
                     break;
                 case 'parametros_ambientales':  // EN REVISIÓN
-                    $indicadorplan['nombre']='Parámetros ambientales';
+                    $indicadorplan['nombre'] = 'Parámetros ambientales';
                     break;
                 case 'visita':
-                    $indicadorplan['nombre']='Visita geranial';
+                    $indicadorplan['nombre'] = 'Visita geranial';
                     $indicadorplan['date'] = json_decode($indicadorplan['date']);
                     break;
                 case 'auditoria':  // EN REVISIÓN
-                    $indicadorplan['nombre']='Auditoria de trabajo';
+                    $indicadorplan['nombre'] = 'Auditoria de trabajo';
                     break;
                 case 'aprendiendo':
-                    $indicadorplan['nombre']='Aprendiendo en el trabajo';
+                    $indicadorplan['nombre'] = 'Aprendiendo en el trabajo';
                     break;
                 case 'monitoreo':
-                    $indicadorplan['nombre']='Monitoreo ambiental';
+                    $indicadorplan['nombre'] = 'Monitoreo ambiental';
                     break;
                 case 'jornada':
-                    $indicadorplan['nombre']='Jornada ambiental';
+                    $indicadorplan['nombre'] = 'Jornada ambiental';
                     break;
-                    default:
-                    $indicadorplan['nombre']='Indicador';
-                    $indicadorplan['date']=[];
+                default:
+                    $indicadorplan['nombre'] = 'Indicador';
+                    $indicadorplan['date'] = [];
                     break;
-                    case 'parametros_ambientales':
-                        $indicadorplan['nombre']='Parametros ambiental';
-                        $indicadorplan['PROD']='Producción';
-                        $indicadorplan['MTTO']='Mantenimiento';
-                        $indicadorplan['CC']='Producción'; 
-                        $indicadorplan['SG']='Servicios Generales';
-                        $indicadorplan['SSII']='Sistema de Información';
-                        $indicadorplan['SC']='Seguridad Corporativa';
-                        break;
+                case 'parametros_ambientales':
+                    $indicadorplan['nombre'] = 'Parametros ambiental';
+                    break;
             }
             $planes[] = $indicadorplan;
         }
@@ -67,8 +64,10 @@ class IndicadorplanController extends Controller {
     }
 
     public function create() {
-        $indicadorplan = Indicadorplan::all();
-        return view('indicadorplan.create', compact('indicadorplan'));
+        $indicadorplan = [];
+        $anio = date('Y');
+        $consulta = array_column(DB::select("SELECT nombre_indicador FROM indicadorplan WHERE created_at LIKE '$anio%'"), 'nombre_indicador');
+        return view('indicadorplan.create', compact('indicadorplan', 'consulta'));
     }
 
     public function store(Request $request) {
@@ -142,5 +141,76 @@ class IndicadorplanController extends Controller {
 
         $indicadorplan =  Indicadorplan::find($id);
         return view('indicadorplan.show', compact('indicadorplan'));
+    }
+
+
+
+    static public function verPlan($indicador, $anio) {
+        $planes = [];
+        foreach (DB::select("SELECT * FROM indicadorplan WHERE nombre_indicador = '$indicador' AND created_at LIKE '$anio%'") as $plan) {
+            switch ($plan->nombre_indicador) {
+                case 'opsa':
+                    $plan->nombre = 'Opsa';
+                    break;
+                case 'simulacro':
+                    $plan->nombre = 'Simulacro';
+                    $dates = [];
+                    foreach (json_decode($plan->date) as $date) {
+                        $status = DB::selectOne("SELECT COUNT(*) as contar FROM simulacion WHERE  id != '' AND date LIKE '{$date->date}%'")->contar;
+                        $dates[] = (object)[
+                            'name' => $date->name,
+                            'date' => $date->date,
+                            'status' => (($status >= 1) ? 'success' : (($date->date == date('Y-m')) ? 'warning' : ((date('Y-m') > $date->date) ? 'danger' : 'primary')))
+                        ];
+                    }
+                    $plan->date = $dates;
+                    break;
+                case 'comite':
+                    $plan->nombre = 'Comité';
+                    $plan->date = json_decode($plan->date);
+                    break;
+                case 'plan':
+                    $plan->nombre = 'Plan de formación de seguridad salud y ambiente';
+                    break;
+                case 'parametros_ambientales':  // EN REVISIÓN
+                    $plan->nombre = 'Parámetros ambientales';
+                    break;
+                case 'visita':
+                    $plan->nombre = 'Visita geranial';
+                    $dates = [];
+                    foreach (json_decode($plan->date) as $date) {
+                        $status = DB::selectOne("SELECT COUNT(*) as contar FROM ambiente WHERE  id != '' AND date LIKE '{$date->date}%'")->contar;
+                        $dates[] = (object)[
+                            'name' => $date->name,
+                            'date' => $date->date,
+                            'status' => (($status >= 1) ? 'success' : (($date->date == date('Y-m')) ? 'warning' : ((date('Y-m') > $date->date) ? 'danger' : 'primary')))
+                        ];
+                    }
+                    $plan->date = $dates;
+                    break;
+                case 'auditoria':  // EN REVISIÓN
+                    $plan->nombre = 'Auditoria de trabajo';
+                    break;
+                case 'aprendiendo':
+                    $plan->nombre = 'Aprendiendo en el trabajo';
+                    break;
+                case 'monitoreo':
+                    $plan->nombre = 'Monitoreo ambiental';
+                    break;
+                case 'jornada':
+                    $plan->nombre = 'Jornada ambiental';
+                    break;
+                default:
+                    $plan->nombre = 'Indicador';
+                    $plan->date = [];
+                    break;
+                case 'parametros_ambientales':
+                    $plan->nombre = 'Parametros ambiental';
+                    break;
+            }
+            $planes[] = $plan;
+        }
+
+        return $planes;
     }
 }

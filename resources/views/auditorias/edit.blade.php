@@ -103,11 +103,11 @@
 
                                         <div class="form-group col-md-4">
                                             <label for="desvqqgas_4"></label> No establece en el permiso el uso de un certificado de altura</label>
-                                            <input class="form-control" value="{{ $auditorias->desvqqgas_4}}" type="number" name="desvqqgas_4  />
-                                   
-                                </div>
+                                            <input class="form-control" value="{{ $auditorias->desvqqgas_4}}" type="number" name="desvqqgas_4" />
 
-                                <div class=" form-group col-md-4">
+                                        </div>
+
+                                        <div class=" form-group col-md-4">
                                             <label for="desvqqgas_5"></label> No indica nombre y apellido del solicitante, solo firma</label>
                                             <input class="form-control" value="{{ $auditorias->desvqqgas_5}}" type="number" name="desvqqgas_5" />
 
@@ -307,6 +307,6 @@
             </div>
         </div>
     </div>
-    </form>
 
-    @endsection
+</div>
+@endsection

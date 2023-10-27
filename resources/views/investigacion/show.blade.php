@@ -10,9 +10,6 @@
         <form method="POST" action="{{ route('investigacion.store') }}">
             @csrf
             @method('PUT')
-
-           
-
             <select class="form-control" name="uf" id="uf" aria-label="Default select example" value="{{ $investigacion->uf}}" disabled="true">
                 <option selected>Unidad Funcional</option>
                 <option value="uf produccion">UF Produccion</option>
@@ -52,25 +49,24 @@
                 </select>
             </div>
 
-                <div class="form-group">
-                    <label for="observacion">Observacion</label>
-                    <input value="{{ $investigacion->observacion}}" disabled="true" name="observacion" id="observacion" class="form-control" />
-                </div>
+            <div class="form-group">
+                <label for="observacion">Observacion</label>
+                <input value="{{ $investigacion->observacion}}" disabled="true" name="observacion" id="observacion" class="form-control" />
+            </div>
 
-                <div class="form-group">
-                    <label for="date">Fecha</label>
-                    <input value="{{ $investigacion->date}}" disabled="true" class="form-control" id="date" type="date" name="date" value="" />
-                </div>
+            <div class="form-group">
+                <label for="date">Fecha</label>
+                <input value="{{ $investigacion->date}}" disabled="true" class="form-control" id="date" type="date" name="date" value="" />
+            </div>
 
-                <div class="form-group col-md-12 text-center">
+            <div class="form-group col-md-12 text-center">
 
-                    <a href="{{ route('investigacion.index') }}" class="btn btn-secondary">Cancelar</a>
-                </div>
+                <a href="{{ route('investigacion.index') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
     </div>
-
-    </form>
 </div>
 
-</div>
+
 
 @endsection

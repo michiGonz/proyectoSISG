@@ -15,7 +15,7 @@
 
                 <thead>
                     <tr>
-                    
+
                         <th>Acciones Ejecutadas</th>
                         <th>Observación</th>
                         <th>Fecha</th>
@@ -27,19 +27,19 @@
                     @foreach ($operativa as $operativa)
 
                     <tr>
-    
+
                         <td>{{ $operativa->comite_cumplido}}</td>
                         <td>{{ $operativa->observacion}}</td>
                         <td>{{ $operativa->date}}</td>
 
 
                         <td>
-                            <a href="{{ route('operativa.show', $operativa->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
+                            <a href="{{ route('operativa.show', $operativa->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
                             <form action="{{ route('operativa.destroy', $operativa->id) }}" method="POST" class="d-inline">
                                 @csrf
 
                             </form>
-                            <a href="{{ route('operativa.edit', $operativa->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
+                            <a href="{{ route('operativa.edit', $operativa->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
 
                         </td>
                     </tr>
@@ -47,7 +47,10 @@
                     @endforeach
                 </tbody>
             </table>
-            <script>
-                DataTabla('#operativa', [4, 'desc']);
-            </script>
-            @endsection
+        </div>
+    </div>
+</div>
+<script>
+    DataTabla('#operativa', [4, 'desc']);
+</script>
+@endsection

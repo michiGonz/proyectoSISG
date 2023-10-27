@@ -318,7 +318,6 @@
                     <a href="{{ route('opsa.index') }}" class="btn btn-secondary">Cancelar</a>
                 </div>
             </div>
-
         </form>
     </div>
 </div>

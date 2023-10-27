@@ -305,6 +305,5 @@
         </form>
     </div>
 </div>
-</div>
-</form>
+
 @endsection

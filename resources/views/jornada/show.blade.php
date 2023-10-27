@@ -7,7 +7,6 @@
         Editar Registro de Jornada Ambiental
     </h2>
     <div class="card-body">
-
         <div class="table table-striped-columns">
             <form method="POST" class="row" action="{{ route('jornada.update', $jornada->id) }}" method="POST">
                 @csrf
@@ -40,4 +39,6 @@
                 </div>
             </form>
         </div>
-        @endsection
+    </div>
+</div>
+@endsection

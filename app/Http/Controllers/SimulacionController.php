@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Simulacion;
+use App\Http\Controllers\IndicadorplanController;
 use \App\Models\Indicadorplan;
 
 class SimulacionController extends Controller
@@ -11,7 +12,7 @@ class SimulacionController extends Controller
     public function index()
     {
         $simulacion = Simulacion::all();
-        $indicadorplan = Indicadorplan::all();
+        $indicadorplan = IndicadorplanController::verPlan('simulacro',date('Y'));
         return view('simulacion.index', compact('simulacion','indicadorplan'));
     }
 

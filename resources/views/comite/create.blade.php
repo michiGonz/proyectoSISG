@@ -42,9 +42,9 @@ foreach ($comite as $clave => $valor) {
 
                 <a href="{{ route('comite.create') }}" class="btn btn-secondary">Cancelar</a>
             </div>
+        </form>
     </div>
 
-    </form>
 </div>
 
 

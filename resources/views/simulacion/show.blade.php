@@ -15,20 +15,16 @@
             <input value="{{ $simulacion->name }}" type="text" disabled="true" name="name" id="name"
                 class="form-control" required></textarea>
         </div>
-
         <div>
             <label for="ubicacion">Ubicacion</label>
             <input value="{{ $simulacion->ubicacion }}" disabled="true" type="ubicacion" name="ubicacion" id="ubicacion"
                 class="form-control">
         </div>
-
-
         <div class="form-group">
             <label for="observacion">Observacion</label>
             <textarea name="observacion" id="observacion" disabled="true" class="form-control" rows="1"
                 required>{{ $simulacion->observacion }} </textarea>
         </div>
-
         <div class="container px-1 px-sm-2 mx-auto">
             <div class="form-group">
                 <label for="date">Fecha</label>
@@ -43,5 +39,4 @@
         </div>
     </form>
 </div>
-
 @endsection

@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\IndicadorplanController;
 use App\Models\Plandeformacion;
 
 class PlandeformacionController extends Controller {
     public function index() {
-        $plandeformacion = Plandeformacion::all();
 
-        return view('plandeformacion.index', compact('plandeformacion'));
+        $plandeformacion = Plandeformacion::all();
+        $indicadorplan = IndicadorplanController::verPlan('plan', date('Y'));
+        return view('plandeformacion.index', compact('plandeformacion', 'indicadorplan'));
     }
 
     public function create() {

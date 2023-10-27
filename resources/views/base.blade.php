@@ -24,15 +24,13 @@
     <script src="{{asset('assets/vendor/select2/js/select2.min.js')}}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <link href="{{asset('assets/vendor/DataTables/datatables.min.css')}}" rel="stylesheet">
 
     <script src="{{asset('assets/vendor/DataTables/datatables.min.js')}}"></script>
     <script src="{{asset('assets/js/js.js')}}"></script>
 
     <!-- graficas-->
-
-
     <script src="{{asset('assets/vendor/https://code.highcharts.com/highcharts.js')}}"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -40,7 +38,6 @@
 </head>
 
 <body id="page-top">
-
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -93,37 +90,17 @@
                     <span>Reportes<small>"En construccion"</small></span>
                 </a>
 
-                <a class="nav-link" href="{{ route('indicadorplan.index') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Grafica por indicador<small>"En construccion"</small></span>
-                </a>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('indicadorplan.index') }}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Gráfica general<small>"En construccion"</small></span>
-                </a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('configuracion.index') }}">
                     <i class="fa fa-cog"></i>
                     <span>Configuracion</span>
                 </a>
             </li>
-
-
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-
             <!-- Sidebar Toggler (Sidebar) -->
-
         </ul>
-        <!-- End of Sidebar -->
-        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
 
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -157,7 +134,6 @@
                 </ul>
             </nav>
 
-
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 @yield('content')
@@ -170,7 +146,6 @@
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
         </a>
-
         <!-- Logout Modal-->
         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -190,8 +165,4 @@
             </div>
         </div>
     </div>
-
-    </div>
-
-
 </body>

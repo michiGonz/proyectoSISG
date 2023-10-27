@@ -12,7 +12,7 @@
 
             <thead>
                 <tr>
-     
+
                     <th>Nombre del Manejo al Cambio</th>
                     <th>Observacion</th>
                     <th>Fecha</th>
@@ -22,21 +22,17 @@
             </thead>
             <tbody>
                 @foreach ($manejo as $manejo)
-
                 <tr>
-           
                     <td>{{ $manejo->name}}</td>
                     <td>{{ $manejo->observación}}</td>
                     <td>{{ $manejo->date}}</td>
-
-
                     <td>
-                        <a href="{{ route('manejo.show', $manejo->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye" ></i></a>
+                        <a href="{{ route('manejo.show', $manejo->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
                         <form action="{{ route('manejo.destroy', $manejo->id) }}" method="POST" class="d-inline">
                             @csrf
 
                         </form>
-                        <a href="{{ route('manejo.edit', $manejo->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit" ></i></a>
+                        <a href="{{ route('manejo.edit', $manejo->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
 
                     </td>
                 </tr>
@@ -44,7 +40,10 @@
                 @endforeach
             </tbody>
         </table>
-        <script>
-            DataTabla('#manejo', [4, 'desc']);
-        </script>
-        @endsection
+    </div>
+</div>
+
+<script>
+    DataTabla('#manejo', [4, 'desc']);
+</script>
+@endsection

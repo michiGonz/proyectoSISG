@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\IndicadorplanController;
 use \App\Models\Jornada;
 
 class JornadaController extends Controller
@@ -10,7 +11,8 @@ class JornadaController extends Controller
     public function index()
     {
         $jornada = Jornada::all();
-        return view('jornada.index', compact('jornada'));
+        $indicadorplan = IndicadorplanController::verPlan('monitoreos', date('Y'));
+        return view('jornada.index', compact('jornada' , 'indicadorplan'));
     }
 
     public function create()

@@ -1,7 +1,7 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-
+<?php var_dump($indicadorplan)?>
 <div class="card">
     <h2 class="card-header">
         Monitoreos Ambientales
@@ -26,12 +26,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php
-                $ruido = 0;
-                $agua = 0;
-                $emisiones = 0;
-                $ninguno = 0;
-                ?>
+                    <?php
+                    $ruido = 0;
+                    $agua = 0;
+                    $emisiones = 0;
+                    $ninguno = 0;
+                    ?>
                     @foreach ($monitoreos as $monitoreos)
 
                     <tr>
@@ -41,8 +41,6 @@
                         <td>{{ $monitoreos->emisiones}}</td>
                         <td>{{ $monitoreos->ninguno}}</td>
                         <td>{{ $monitoreos->date}}</td>
-
-
                         <td>
                             <a href="{{ route('monitoreos.show', $monitoreos->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
                             <form action="{{ route('monitoreos.destroy', $monitoreos->id) }}" method="POST" class="d-inline">
@@ -53,102 +51,108 @@
                         </td>
                     </tr>
                     <?php
-                if (substr($monitoreos->date, 0, 4) == date('Y')) {
-                    $ruido= $ruido + $monitoreos->ruido;
-                    $agua = $agua+ $monitoreos->agua;
-                    $emisiones = $emisiones+ $monitoreos->emisiones;
-                    
-                }
-                ?>
+                    if (substr($monitoreos->date, 0, 4) == date('Y')) {
+                        $ruido = $ruido + $monitoreos->ruido;
+                        $agua = $agua + $monitoreos->agua;
+                        $emisiones = $emisiones + $monitoreos->emisiones;
+                        $ninguno=$ninguno + $monitoreos->ninguno;
+                    }
+                    ?>
                     @endforeach
                 </tbody>
                 <tfoot>
-                <tr>
-                    <th class="text-center"><?php echo $ruido; ?></th>
-                    <th class="text-center"><?php echo $agua; ?></th>
-                    <th class="text-center"><?php echo $emisiones; ?></th>
-                 
-                </tr>
-            </tfoot>
+                    <tr>
+                        <th class="text-center"><?php echo $ruido; ?></th>
+                        <th class="text-center"><?php echo $agua; ?></th>
+                        <th class="text-center"><?php echo $emisiones; ?></th>
+                        <th class="text-center"><?php echo $ninguno; ?></th>
+                        <th></th>
+                        <th></th>
+
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>
+
+
     <script>
-        DataTabla('#monitoreos', [5, 'desc']);
+        DataTabla('#parametros', [7, 'desc']);
     </script>
-
-<script>
-            DataTabla('#parametros', [7, 'desc']);
-        </script>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
-        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-        <br>
-        <div class="card">
-            <div class="card-body">
-                <figure class="highcharts-figure">
-                    <div id="container"></div>
-                    <p class="highcharts-description">
-                        Grafica
-                    </p>
-                </figure>
-            </div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <figure class="highcharts-figure">
+                <div id="container"></div>
+                <p class="highcharts-description">
+                    Grafica
+                </p>
+            </figure>
         </div>
+    </div>
+</div>
+<script>
+    Highcharts.chart('container', {
 
-        <script>
-            Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
 
-                chart: {
-                    type: 'column'
-                },
+        title: {
+            text: 'Monitoreos Ambientales <?php echo date('M') ?>',
+            align: 'left'
+        },
 
-                title: {
-                    text: 'Monitoreos Ambientales <?php echo date('M') ?>',
-                    align: 'left'
-                },
+        xAxis: {
+            categories: ['Montioreos']
+        },
 
-                xAxis: {
-                    categories: ['Montioreos']
-                },
+        yAxis: {
+            allowDecimals: false,
+            min: 0,
+            title: {
+                text: 'Count medals'
+            }
+        },
 
-                yAxis: {
-                    allowDecimals: false,
-                    min: 0,
-                    title: {
-                        text: 'Count medals'
-                    }
-                },
+        tooltip: {
+            format: '<b>{key}</b><br/>{series.name}: {y}<br/>' +
+                'Total: {point.stackTotal}'
+        },
 
-                tooltip: {
-                    format: '<b>{key}</b><br/>{series.name}: {y}<br/>' +
-                        'Total: {point.stackTotal}'
-                },
+        plotOptions: {
+            column: {
+                stacking: 'normal'
+            }
+        },
 
-                plotOptions: {
-                    column: {
-                        stacking: 'normal'
-                    }
-                },
+        series: [{
+                name: 'Ruido',
+                data: [<?php echo $ruido; ?>],
+                stack: 'ruido'
+            },
+            {
+                name: 'Agua',
+                data: [<?php echo $agua; ?>],
+                stack: 'Agua'
+            },
+            {
+                name: 'Servicios Generales',
+                data: [<?php echo $emisiones; ?>],
+                stack: 'Emisiones'
+            },
+            {
+                name: 'Ninguno',
+                data: [<?php echo $ninguno; ?>],
+                stack: 'Ninguno'
+            }
 
-                series: [ {
-                        name: 'Ruido',
-                        data: [<?php echo $ruido; ?>],
-                        stack: 'ruido'
-                    },
-                    {
-                        name: 'Agua',
-                        data: [<?php echo $agua; ?>],
-                        stack: 'Agua'
-                    },
-                    {
-                        name: 'Servicios Generales',
-                        data: [<?php echo $emisiones; ?>],
-                        stack: 'Emisiones'
-                    }
-                  
-                ]
+        ]
 
-            });
-        </script>
-    @endsection
+    });
+</script>
+@endsection

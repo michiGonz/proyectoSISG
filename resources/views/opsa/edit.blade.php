@@ -290,24 +290,26 @@
                     <br>
                     <div class="form-group">
                         <label for="cantidad_inseguro"><b>Total de tarjetas inseguras</b></label>
-                        <input class="form-control" id="cantidad_inseguro"  value="{{$opsa->cantidad_inseguro}}" type="number" name="cantidad_inseguro" value="" required />
+                        <input class="form-control" id="cantidad_inseguro" value="{{$opsa->cantidad_inseguro}}" type="number" name="cantidad_inseguro" value="" required />
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label for="date">Fecha</label>
-                        <input class="form-control" id="date" value="{{$opsa->date}}"  type="date" name="date" value="" />
+                        <input class="form-control" id="date" value="{{$opsa->date}}" type="date" name="date" value="" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="observacion">Observacion</label>
-                        <input type="text " name="observacion"  value="{{$opsa->observacion}}" class="form-control" required></input>
+                        <input type="text " name="observacion" value="{{$opsa->observacion}}" class="form-control" required></input>
                     </div>
                     <div class="form-group col-md-12 text-center">
                         <button type="submit" class="btn btn-primary">Actualizar</button>
                         <a href="{{ route('opsa.index') }}" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </div>
+            </div>
 
         </form>
-
-        @endsection
+    </div>
+</div>
+@endsection

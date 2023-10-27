@@ -13,8 +13,7 @@
                 <div class="card-body">
 
                     <label for="PROD">Producción</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="PROD" id="PROD" multiple aria-label="Default select example">
-                        <div class="row" id="PROD"></div>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="PROD[]" id="PROD" multiple>
                         <option id="proceso">Proceso del Gas</option>
                         <option id="agua">Agua</option>
                         <option id="quimico">Químicos consumidos en Operación</option>
@@ -26,7 +25,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="MTTO">Mantenimiento</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="MTTO" id="MTTO" multiple aria-label="Default select example">
+                    <select style="width: 100%;" class="col-md-5 form-control" name="MTTO[]" id="MTTO" multiple>
                         <option>Residuos Sólidos</option>
 
                     </select>
@@ -36,7 +35,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="SSGG">Servicios Generales</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="SSGG" id="SSGG" multiple aria-label="Default select example">
+                    <select style="width: 100%;" class="col-md-5 form-control" name="SSGG[]" id="SSGG" multiple>
                         <option>Residuos Sólidos</option>
 
                     </select>
@@ -46,7 +45,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="CC">Compras y Contrato</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="CC" id="CC" multiple aria-label="Default select example">
+                    <select style="width: 100%;" class="col-md-5 form-control" name="CC[]" id="CC" multiple>
                         <option>Residuos Sólidos</option>
                     </select>
                 </div>
@@ -55,7 +54,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="SSII">Sistemas de Información</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="SSII" id="SSII" multiple aria-label="Default select example">
+                    <select style="width: 100%;" class="col-md-5 form-control" name="SSII[]" id="SSII" multiple>
                         <option>Residuos Sólidos</option>
 
                     </select>
@@ -65,7 +64,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="SC">Seguridad Corporativa</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="SC" id="SC" multiple aria-label="Default select example">
+                    <select style="width: 100%;" class="col-md-5 form-control" name="SC[]" id="SC" multiple>
                         <option>Residuos Sólidos</option>
 
                     </select>

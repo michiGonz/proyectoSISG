@@ -17,7 +17,7 @@
             </select>
             <div class="form-group">
                 <label for="meta">Meta establecida</label>
-                <input type="number" disabled="true" name="meta" id="meta" class="form-control"  />
+                <input type="number" disabled="true" name="meta" id="meta" class="form-control" />
             </div>
 
             <div class="form-group">
@@ -40,8 +40,9 @@
 
                 <a href="{{ route('indicadorplan.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
+        </form>
     </div>
-    </form>
+
 </div>
 
 @endsection

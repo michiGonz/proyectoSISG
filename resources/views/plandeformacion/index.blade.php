@@ -2,6 +2,8 @@
 @section('title', 'Inicio')
 @section('content')
 
+<?php var_dump($indicadorplan)?>
+
 <div class="card">
     <h2 class="card-header">
         Reporte de Formacion Seguridad, Salud y Ambiente
@@ -79,10 +81,10 @@
                         </td>
 
                     </tr>
-                   
+
                     @endforeach
                 </tbody>
-               
+
             </table>
         </div>
     </div>

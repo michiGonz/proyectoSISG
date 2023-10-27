@@ -65,7 +65,6 @@
                                     <label for="noauditadas_qqgas">Permisos de Trabajo no Auditados PDVSA</label>
                                     <input type="number" name="noauditadas_qqgas" id="noauditadas_qqgas" class="form-control" value=0 />
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -80,19 +79,16 @@
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_1"></label>No indica hora de inicio de la actividad.</label>
                                     <input class="form-control" type="number" name="desvqqgas_1" value="0" />
-                             
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_2"></label>Permisos sin cerrar</label>
                                     <input class="form-control" type="number" name="desvqqgas_2" value="0" />
-                                    
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_3"></label>No indica prueba de gas</label>
                                     <input class="form-control" type="number" name="desvqqgas_3" value="0" />
-                                
                                 </div>
 
                                 <div class="form-group col-md-4">
@@ -108,43 +104,36 @@
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_6"></label>El saro no indica firma del supervisor responsable</label>
                                     <input class="form-control" type="number" name="desvqqgas_6" value="0" />
-                                
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_7"></label> El saro no describe el motivo del riesgo en ninguno de los peligros señalados</label>
                                     <input class="form-control" type="number" name="desvqqgas_7" value="0" />
-                                 
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_8"></label> No presento el saro al momento de la auditoria</label>
                                     <input class="form-control" type="number" name="desvqqgas_8" value="0" />
-                                  
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_9"></label> No corresponde de el numero de permiso en el saro</label>
                                     <input class="form-control" type="number" name="desvqqgas_9" value="0" />
-                                  
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_10"></label> El saro no indica el numero de permiso</label>
-                                    <input class="form-control" type="number" name="desvqqgas_10" value="0" />
-                                    
+                                    <input class="form-control" type="number" name="desvqqgas_10" value="0" /> 
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_11"></label> No indica el equipo a intervenir</label>
                                     <input class="form-control" type="number" name="desvqqgas_11" value="0" />
-                                    
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="desvqqgas_12"></label> Casillas sin llenar ó vacias.</label>
                                     <input class="form-control" type="number" name="desvqqgas_12" value="0" />
-                                  
                                 </div>
 
                                 <div class="form-group col-md-4">
@@ -300,8 +289,6 @@
         </div>
     </div>
 </form>
-
-
 
 <script>
     $('#desviacion input').change(function() {

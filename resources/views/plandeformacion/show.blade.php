@@ -55,14 +55,13 @@
                             </div>
                         </div>
 
-                    
-
                         <div class="form-group col-md-12 text-center">
 
                             <a href="{{ route('plandeformacion.index') }}" class="btn btn-secondary">Cancelar</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
         </form>
 

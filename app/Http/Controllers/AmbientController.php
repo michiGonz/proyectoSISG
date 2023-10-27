@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ambient;
 use Illuminate\Http\Request;
-use App\Models\Indicadorplan;
+use App\Http\Controllers\IndicadorplanController;
 use App\Models\Usuariosprofit;
 
 class AmbientController extends Controller
@@ -13,7 +13,7 @@ class AmbientController extends Controller
     {
   
     $ambiente = Ambient::all();
-    $indicadorplan = Indicadorplan::all();
+    $indicadorplan = IndicadorplanController::verPlan('visita',date('Y'));
     return view('ambiente.index', compact('ambiente','indicadorplan'));
     }
 

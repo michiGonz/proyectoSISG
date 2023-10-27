@@ -20,7 +20,7 @@
                     <th>CC</th>
                     <th>SSII</th>
                     <th>Fecha</th>
-                 
+
 
                 </tr>
             </thead>
@@ -33,33 +33,28 @@
                 $SC = 0;
                 $CC = 0;
                 $SSII = 0;
-
                 ?>
                 @foreach ($parametros as $parametros)
 
                 <tr>
-                    <td>{{$parametros->total}}</td>
-                    <td>{{ $parametros->PROD}}</td>
-                    <td>{{ $parametros->MTTO}}</td>
-                    <td>{{ $parametros->SSGG}}</td>
-                    <td>{{ $parametros->SC}}</td>
-                    <td>{{ $parametros->CC}}</td>
-                    <td>{{ $parametros->SSII}}</td>
+                    <td>{{$total_ = (count($parametros->PROD)+count($parametros->MTTO)+count($parametros->SSGG)+count($parametros->SC)+count($parametros->CC)+count($parametros->SSII))}}</td>
+                    <td>{{ count($parametros->PROD)}}</td>
+                    <td>{{ count($parametros->MTTO)}}</td>
+                    <td>{{ count($parametros->SSGG)}}</td>
+                    <td>{{ count($parametros->SC)}}</td>
+                    <td>{{ count($parametros->CC)}}</td>
+                    <td>{{ count($parametros->SSII)}}</td>
                     <td>{{ $parametros->date}}</td>
-
-
-
-                    <td>
-                        
-                        <form action="{{ route('parametros.destroy', $parametros->id) }}" method="POST" class="d-inline">
-                            @csrf
-
-                        </form>
-                       
-
-                    </td>
                 </tr>
-          
+                <?php
+                $total += $total_;
+                $PROD += count($parametros['PROD']);
+                $MTTO += count($parametros['MTTO']);
+                $SSGG += count($parametros['SSGG']);
+                $SC += count($parametros['SC']);
+                $CC += count($parametros['CC']);
+                $SSII += count($parametros['SSII']);
+                ?>
                 @endforeach
             <tfoot>
                 <tr>
@@ -71,7 +66,7 @@
                     <th>{{$CC}}</th>
                     <th>{{$SSII}}</th>
                     <td></td>
-             
+
 
                 </tr>
             </tfoot>
@@ -95,78 +90,80 @@
                 </figure>
             </div>
         </div>
+    </div>
+</div>
 
-        <script>
-            Highcharts.chart('container', {
+<script>
+    Highcharts.chart('container', {
 
-                chart: {
-                    type: 'column'
-                },
+        chart: {
+            type: 'column'
+        },
 
-                title: {
-                    text: 'Parametros <?php echo date('Y') ?>',
-                    align: 'left'
-                },
+        title: {
+            text: 'Parametros <?php echo date('Y') ?>',
+            align: 'left'
+        },
 
-                xAxis: {
-                    categories: ['UF']
-                },
+        xAxis: {
+            categories: ['UF']
+        },
 
-                yAxis: {
-                    allowDecimals: false,
-                    min: 0,
-                    title: {
-                        text: 'Count medals'
-                    }
-                },
+        yAxis: {
+            allowDecimals: false,
+            min: 0,
+            title: {
+                text: 'Count medals'
+            }
+        },
 
-                tooltip: {
-                    format: '<b>{key}</b><br/>{series.name}: {y}<br/>' +
-                        'Total: {point.stackTotal}'
-                },
+        tooltip: {
+            format: '<b>{key}</b><br/>{series.name}: {y}<br/>' +
+                'Total: {point.stackTotal}'
+        },
 
-                plotOptions: {
-                    column: {
-                        stacking: 'normal'
-                    }
-                },
+        plotOptions: {
+            column: {
+                stacking: 'normal'
+            }
+        },
 
-                series: [{
-                        name: 'Total',
-                        data: [<?php echo $total; ?>],
-                        stack: 'total'
-                    }, {
-                        name: 'Mantenimiento',
-                        data: [<?php echo $MTTO; ?>],
-                        stack: 'MTTO'
-                    },
-                    {
-                        name: 'Produccion',
-                        data: [<?php echo $PROD; ?>],
-                        stack: 'PROD'
-                    },
-                    {
-                        name: 'Servicios Generales',
-                        data: [<?php echo $SSGG; ?>],
-                        stack: 'SSGG'
-                    },
-                    {
-                        name: 'seguridad corporativa',
-                        data: [<?php echo $SC; ?>],
-                        stack: 'SC'
-                    },
-                    {
-                        name: 'compra y contratacion',
-                        data: [<?php echo $CC; ?>],
-                        stack: 'CC'
-                    },
-                    {
-                        name: 'sistemas de informacion',
-                        data: [<?php echo $SSII; ?>],
-                        stack: 'SSII'
-                    }
-                ]
+        series: [{
+                name: 'Total',
+                data: [<?php echo $total; ?>],
+                stack: 'total'
+            }, {
+                name: 'Mantenimiento',
+                data: [<?php echo $MTTO; ?>],
+                stack: 'MTTO'
+            },
+            {
+                name: 'Produccion',
+                data: [<?php echo $PROD; ?>],
+                stack: 'PROD'
+            },
+            {
+                name: 'Servicios Generales',
+                data: [<?php echo $SSGG; ?>],
+                stack: 'SSGG'
+            },
+            {
+                name: 'seguridad corporativa',
+                data: [<?php echo $SC; ?>],
+                stack: 'SC'
+            },
+            {
+                name: 'compra y contratacion',
+                data: [<?php echo $CC; ?>],
+                stack: 'CC'
+            },
+            {
+                name: 'sistemas de informacion',
+                data: [<?php echo $SSII; ?>],
+                stack: 'SSII'
+            }
+        ]
 
-            });
-        </script>
-        @endsection
+    });
+</script>
+@endsection

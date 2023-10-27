@@ -2,6 +2,7 @@
 @section('title', 'Inicio')
 @section('content')
 
+<?php var_dump($indicadorplan)?>
 
 <div class="card">
     <h2 class="card-header">Auditorias de Permiso de Trabajo
@@ -101,7 +102,7 @@ Highcharts.chart('container', {
         type: 'pie'
     },
     title: {
-        text: 'OPSA <?php echo date('Y')?>',
+        text: 'Auditorias de permisos de trabajo <?php echo date('Y')?>',
         align: 'left'
     },
     tooltip: {

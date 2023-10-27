@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Aprendiendo;
+use App\Http\Controllers\IndicadorplanController;
 use \App\Models\Indicadorplan;
 
 class AprendiendoController extends Controller
@@ -11,7 +12,7 @@ class AprendiendoController extends Controller
     public function index()
     {
         $aprendiendo = Aprendiendo::all();
-        $indicadorplan = Indicadorplan::all();
+        $indicadorplan = IndicadorplanController::verPlan('aprendiendo', date('Y'));
         return view('aprendiendo.index', compact('aprendiendo' ,'indicadorplan'));
     }
 

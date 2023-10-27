@@ -69,8 +69,6 @@
                 </div>
             </div>
 
-            </div>
-
             <div class="form-group">
                 <label for="date">Fecha</label>
                 <input value="{{ $parametros->date}}" class="form-control" disabled="true" id="date" type="date" name="date" value="" />
@@ -81,14 +79,14 @@
                 <input value="{{ $parametros->observacion}}" disabled="true" name="observacion" id="observacion" class="form-control" rows="1" />
             </div>
 
-
             <div class="form-group col-md-12 text-center">
 
                 <a href="{{ route('parametros.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
+        </form>
     </div>
-    </form>
 </div>
+
 <script>
     $("#personal").select2();
     $("#personal2").select2();

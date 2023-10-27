@@ -20,7 +20,6 @@
                 </div>
                 <div class="row" id="fechas"></div>
 
-
                 <div class="form-group">
                     <label for="observacion">Observacion</label>
                     <input type="text" name="observacion" id="observacion" class="form-control" />
@@ -33,8 +32,6 @@
                 </div>
         </form>
     </div>
-
-
 </div>
 <script>
     $('#cantidad_actividad').change(function() {

@@ -31,11 +31,11 @@
                 <input value="{{ $comite->observacion}}" type="text" name="observacion" id="observacion" class="form-control" />
             </div>
 
-
             <div class="form-group  col-md-6">
                 <button type="submit" class="btn btn-primary">Actualizar Registro</button>
                 <a href="{{ route('comite.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
-    @endsection
+</div>
+@endsection

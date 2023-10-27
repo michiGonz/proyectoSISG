@@ -7,50 +7,59 @@ use App\Models\Parametros;
 use App\Models\Indicadorplan;
 
 
-class ParametrosController extends Controller
-{
-    public function index()
-    {
+class ParametrosController extends Controller {
+    public function index() {
         $indicadorplan = Indicadorplan::all();
-        $parametros = Parametros::all();
-        return view('parametros.index', compact('parametros' , 'indicadorplan'));
+        $parametros = [];
+        foreach (Parametros::all() as $parametro) {
+            $parametro->PROD = json_decode($parametro->PROD);
+            $parametro->MTTO = json_decode($parametro->MTTO);
+            $parametro->SSGG = json_decode($parametro->SSGG);
+            $parametro->CC = json_decode($parametro->CC);
+            $parametro->SSII = json_decode($parametro->SSII);
+            $parametro->SC = json_decode($parametro->SC);
+            $parametros[] = $parametro;
+        }
+        return view('parametros.index', compact('parametros', 'indicadorplan'));
     }
 
-    public function create()
-    {
+    public function create() {
         $parametros = Parametros::all();
+
         return view('parametros.create', compact('parametros'));
     }
 
-    public function store(Request $request)
-    {
-        Parametros::create($request->all());
+    public function store(Request $request) {
+        $parametros = new Parametros($request->all());
+        $parametros->PROD = json_encode($parametros->PROD);
+        $parametros->MTTO = json_encode($parametros->MTTO);
+        $parametros->SSGG = json_encode($parametros->SSGG);
+        $parametros->CC = json_encode($parametros->CC);
+        $parametros->SSII = json_encode($parametros->SSII);
+        $parametros->SC = json_encode($parametros->SC);
+        $parametros->save();
         return redirect()->route('parametros.index');
     }
 
-    public function edit($id)
-    {
+    public function edit($id) {
         $parametros = Parametros::find($id);
         return view('parametros.edit', compact('parametros'));
     }
 
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $parametros = Parametros::find($id);
         $parametros->update($request->all());
         return redirect()->route('parametros.index');
     }
 
-    public function destroy(Parametros $parametros)
-    {
+    public function destroy(Parametros $parametros) {
         $parametros->delete();
         return redirect()->route('parametros.index');
     }
 
 
-    public function show($id)
-    {
-   
+    public function show($id) {
+
         $parametros = Parametros::find($id);
         return view('parametros.show', compact('parametros'));
     }
