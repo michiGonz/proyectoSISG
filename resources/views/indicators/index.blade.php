@@ -17,7 +17,7 @@
 
             <tr>
                 <td><a class="nav-link" href="{{ route('opsa.index') }}"><span>OPSA </span></a></td>
-                <td></td>
+                <td><a class="btn btn-success" href="{{ route('opsa.create') }}"><i class="fas fa-plus"></i></a></td>
             </tr>
 
 
@@ -78,7 +78,7 @@
 
 
             <tr>
-                <td><a class="nav-link" href="{{ route('monitoreos.index') }}"><span>construccion Datos Monitoreos Ambientales </span></a></td>
+                <td><a class="nav-link" href="{{ route('monitoreos.index') }}"><span> Monitoreos Ambientales </span></a></td>
                 <td><a class="btn btn-success" href="{{ route('monitoreos.create') }}"><i class="fas fa-plus"></i></a></td>
             </tr>
 

@@ -9,52 +9,75 @@
     </h2>
     <div class="card-body">
 
-<div class="table table-striped-columns">
-    <table class="table mt-3" id="indicador">
+        <div class="table table-striped-columns text-center">
+            <table class="table mt-3" id="indicador text-center">
 
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Indicador</th>
-                <th>Meta Establecida</th>
-                <th>Programacion Anual</th>
-                <th>Programacion Mensual</th>
-                <th>Fecha Planificada</th>
-                <th>Acciones</th>
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Programación Anual</th>
+                        <th>Fecha Planificada</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($indicadorplan as $indicadorplan)
-            
-            <tr>
-                <td>{{ $indicadorplan->id }}</td>
-                <td>{{ $indicadorplan->nombre_indicador}}</td>
-                <td>{{ $indicadorplan->meta }}</td>
-                <td>{{ $indicadorplan->programacion_anual}}</td>
-                <td>{{ $indicadorplan->programadas_mes}}</td>
-                <td>
-                <?php $fechas = json_decode($indicadorplan->date);?>
-                    @foreach ($fechas as $fecha)
-                        {{$fecha}}<br>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($indicadorplanes as $clave => $indicadorplan)
+                    <tr>
+                        <td>{{ $indicadorplan->nombre}}</td>
+                        <td>{{ $indicadorplan->programacion_anual}}</td>
+                        <td>
+                            @if ($indicadorplan->nombre_indicador == 'opsa')
+
+                            @elseif ($indicadorplan->nombre_indicador == 'simulacro')
+                            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#indicadorplan{{$clave}}" aria-expanded="false">
+                                Fechas <i class="fas fa-angle-down"></i>
+                            </button>
+                            <div class="collapse" id="indicadorplan{{$clave}}">
+                                <div class="card card-body">
+                                    @foreach ($indicadorplan->date as $date)
+                                    <div><b>Nombre:</b> {{$date->name}}</div>
+                                    <div><b>Fecha:</b> {{$date->date}}</div><br>
+                                    @endforeach
+                                </div>
+                            </div>
+                            @elseif ($indicadorplan->nombre_indicador == 'comite')
+                            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#indicadorplan{{$clave}}" aria-expanded="false">
+                                Fechas <i class="fas fa-angle-down"></i>
+                            </button>
+                            <div class="collapse" id="indicadorplan{{$clave}}">
+                                <div class="card card-body">
+                                    @foreach ($indicadorplan->date as $date)
+                                    <div><b>Reunion:</b> {{$date->reunion}}</div>
+                                    <div><b>Entrega al Inpsasel:</b> {{$date->entrega}}</div><br>
+                                    @endforeach
+                                </div>
+                            </div>
+                            @elseif ($indicadorplan->nombre_indicador == 'plan')
+                            <b>{{$indicadorplan->date}}
+                            </b>
+                            @elseif ($indicadorplan->nombre_indicador == 'visita')
+                                <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#indicadorplan{{$clave}}" aria-expanded="false">
+                                    Fechas <i class="fas fa-angle-down"></i>
+                                </button>
+                                <div class="collapse" id="indicadorplan{{$clave}}">
+                                    <div class="card card-body">
+                                        @foreach ($indicadorplan->date as $date)
+                                            <div><b>Lugar de la Visita:</b> {{$date->name}}</div>
+                                            <div><b>Fecha:</b> {{$date->date}}</div><br>
+                                        @endforeach
+                                    </div>
+                                </div>  
+                            @endif
+                        </td>
+                        
+                    </tr>
                     @endforeach
-                </td>
-                <td>
-                    <a href="{{ route('indicadorplan.show', $indicadorplan->id) }}"
-                        class="btn btn-primary btn-sm ">Planificación</a>
-                    <form action="{{ route('indicadorplan.destroy', $indicadorplan->id) }}" method="POST"
-                        class="d-inline">
-                        @csrf
+            </table>
 
-                    </form>
-
-                </td>
-            </tr>
-
-            @endforeach
-        </tbody>
-    </table>
-    <script>
-    DataTabla('#indicador',[6, 'desc']);
+        </div>
+    </div>
+</div>
+<script>
+    DataTabla('#indicador', [3, 'desc']);
 </script>
-    @endsection
+@endsection

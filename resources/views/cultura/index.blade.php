@@ -14,7 +14,7 @@
 
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Acciones Ejecutadas</th>
                 <th>Observacion</th>
                 <th>Fecha</th>
@@ -26,7 +26,7 @@
             @foreach ($cultura as $cultura)
             
             <tr>
-                <td>{{ $cultura->id }}</td>
+             
                 <td>{{ $cultura->comite_cumplido}}</td>
                 <td>{{ $cultura->observacion}}</td>
                 <td>{{ $cultura->date}}</td>

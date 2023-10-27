@@ -15,9 +15,9 @@
 
                 <thead>
                     <tr>
-                        <th>ID</th>
+                    
                         <th>Acciones Ejecutadas</th>
-                        <th>Observacion</th>
+                        <th>Observación</th>
                         <th>Fecha</th>
                         <th>Acciones</th>
 
@@ -27,7 +27,7 @@
                     @foreach ($operativa as $operativa)
 
                     <tr>
-                        <td>{{ $operativa->id }}</td>
+    
                         <td>{{ $operativa->comite_cumplido}}</td>
                         <td>{{ $operativa->observacion}}</td>
                         <td>{{ $operativa->date}}</td>

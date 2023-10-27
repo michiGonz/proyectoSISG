@@ -7,38 +7,48 @@
         Editar Registro de Monitoreos Ambientales
     </h2>
     <div class="card-body">
-<div class="table table-striped-columns">
-    <form method="POST" class="row" action="{{ route('monitoreos.update', $monitoreos->id) }}" method="POST">
-        @csrf
-        @method('PUT')
+        <div class="table table-striped-columns">
+            <form method="POST" class="row" action="{{ route('monitoreos.update', $monitoreos->id) }}" method="POST">
+                @csrf
+                @method('PUT')
 
-        <div class="form-group">
-            <label for="cantidad_actividad">Acciones Ejecutados</label>
-            <input value="{{ $monitoreos->cantidad_actividad}}" type="number" name="cantidad_actividad" id=""  value=0 class="form-control">
+                <div class="table table-striped-columns">
+
+                    <h6>Selección de Monitoreos:</h6>
+                    <div class="form-group col-md-12">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="ruido">Ruido</label>
+                                    <input value="{{ $monitoreos->ruido}}" type="number" name="ruido" id="ruido" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="emisiones">Emisiones</label>
+                                    <input value="{{ $monitoreos->emisiones}}" type="number" name="emisiones" id="emisiones" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="agua">Agua</label>
+                                    <input type="number" value="{{ $monitoreos->agua}}" name="agua" id="agua" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="ninguno">Ninguno</label>
+                                    <input type="number" name="ninguno" value="{{ $monitoreos->ninguno}}" id="ninguno" class="form-control" v />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="observacion">Observacion</label>
+                                    <input value="{{ $monitoreos->observacion}}" type="text" name="observacion" id="observacion" class="form-control" />
+                                </div>
+
+                                <div class="form-group  col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary">Actualizar Registro</button>
+                                    <a href="{{ route('monitoreos.index') }}" class="btn btn-secondary">Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </form>
         </div>
-
-        <div class="form-group">
-            <div class="form-group">
-                <label for="date">Fecha</label>
-                <input value="{{$monitoreos->date}}" type="date" id="start" class="form-control text-left mr-2"
-                    name="date">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="observacion">Observacion</label>
-            <input value="{{ $monitoreos->observacion}}" type="text" name="observacion" id="observacion"
-                class="form-control" />
-        </div>
-
-     
-
-        <div class="form-group  col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Actualizar Registro</button>
-            <a href="{{ route('monitoreos.index') }}" class="btn btn-secondary">Cancelar</a>
-        </div>
-    </form>
+    </div>
 </div>
 @endsection
-
-

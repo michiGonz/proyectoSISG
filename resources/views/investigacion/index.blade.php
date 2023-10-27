@@ -6,29 +6,28 @@
     <h2 class="card-header">
         Investigacion de Incidentes
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('investigacion.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
-       
-                </a>
+
+        </a>
     </h2>
     <div class="card-body">
         <div class=" table table-striped-columns text-center">
             <table class="table mt-3" id="investigacion">
-
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Status</th>
                         <th>Unidad Funcional</th>
                         <th>Nombre Del incidente</th>
-                        <th>Ubicacion</th>
+                        <th>Ubicación</th>
                         <th>Fecha</th>
                         <th>Acciones</th>
 
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($investigacion as $investigacion)
+                    @foreach ($investigaciones as $investigacion)
                     <tr>
-                        <td>{{ $investigacion->id }}</td>
-                        <td>{{ $investigacion->uf}}</td>
+                        <td>{{ $investigacion->status}}</td>
+                        <td>{{ $investigacion->uf->des_depart}}</td>
                         <td>{{ $investigacion->nombre_incidente}}</td>
                         <td>{{ $investigacion->nombre_lugar}}</td>
                         <td>{{ $investigacion->date}}</td>

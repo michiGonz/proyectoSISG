@@ -15,8 +15,10 @@ class CreateMonitoreosTable extends Migration
     {
         Schema::create('monitoreos', function (Blueprint $table) {
             $table->id();
-            $table->string('cantidad_actividad');
-            $table->text('nombre');
+            $table->text('ruido');
+            $table->text('agua');
+            $table->text('emisiones');
+            $table->text('ninguno');
             $table->date('date');
             $table->text('observacion');
             $table->timestamps();

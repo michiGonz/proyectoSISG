@@ -1,44 +1,10 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
-<div class="row">
-    @foreach ($indicadorplan as $indicadorplan)
-        @if ($indicadorplan->nombre_indicador=="comite" && substr($indicadorplan->created_at,0,4) == date('Y'))
-        <?php $fechas = json_decode($indicadorplan->date); $cumplido=[]; ?>
-            @foreach ($fechas as $clave => $fecha)
-                @foreach ($comite as $comites)
-                    @if (substr($comites->date,0,7) == $fecha && substr($comites->created_at,0,4) == date('Y'))
-                        <?php  $cumplido[$clave]=true;?>
-                    @endif
-                @endforeach
 
-                @if (isset($cumplido[$clave]))
-                    <?php $color="success"; $mensaje="Cumplido";?>
-                @else
-                    <?php $color="danger"; $mensaje="Pendiente";?>
-                @endif
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-<?php echo $color;?> shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ObtenerMes($fecha)?></div>
-                                    <div class="text-xs font-weight-bold text-<?php echo $color;?> text-uppercase mb-1"><?php echo $mensaje;?></div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        @endif
-    @endforeach
-</div>
 <div class="card">
     <h2 class="card-header">
-       Comite de Seguridad Salud Laborales
+       Comité de Seguridad Salud Laborales
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('comite.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
     </h2>
     <div class="card-body">
@@ -51,7 +17,7 @@
                
                 <th>Observacion</th>
                 <th>Fecha de Reunion</th>
-                <th>Fecha de Entrega al Insasel</th>
+                <th>Fecha de Entrega al Inpsasel</th>
                 <th>Acciones</th>
 
             </tr>

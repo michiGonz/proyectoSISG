@@ -23,19 +23,20 @@
     <link href="{{asset('assets/vendor/select2/css/select2.min.css')}}" rel="stylesheet" />
     <script src="{{asset('assets/vendor/select2/js/select2.min.js')}}"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <link href="{{asset('assets/vendor/DataTables/datatables.min.css')}}" rel="stylesheet">
 
     <script src="{{asset('assets/vendor/DataTables/datatables.min.js')}}"></script>
     <script src="{{asset('assets/js/js.js')}}"></script>
 
     <!-- graficas-->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+
+    <script src="{{asset('assets/vendor/https://code.highcharts.com/highcharts.js')}}"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
-
 </head>
 
 <body id="page-top">
@@ -66,6 +67,12 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('crearindicador.index') }}">
+                    <i class="fas fa-edit"></i>
+                    <span>Crear Indicador</span></a>
+            </li>
 
             <!-- reportes planificados -->
             <li class="nav-item">

@@ -14,6 +14,7 @@ class Investigacion extends Model
     protected $fillable = [
        'Acomulado:',
         'uf',
+        'status',
         'nombre_incidente',
         'nombre_lugar',
         'observacion',

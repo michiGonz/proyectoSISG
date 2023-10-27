@@ -11,8 +11,11 @@ class Monitoreos extends Model
     protected $table = 'monitoreos';
 
     protected $fillable = [
-    'cantidad_actividad',
-    'nombre',
+ 
+    'ruido',
+    'agua',
+    'emisiones',
+    'ninguno',
     'date',
     'observacion',
     ];

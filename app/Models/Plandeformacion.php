@@ -12,11 +12,9 @@ class Plandeformacion extends Model
 
     protected $fillable = [
         'ejecutadas_ambiente',
-        'date_ambiente',
+        'date',
         'ejecutadas_seguridad',
-        'date_seguridad',
         'ejecutadas_salud',
-        'date_salud',
        'observacion',
 
 

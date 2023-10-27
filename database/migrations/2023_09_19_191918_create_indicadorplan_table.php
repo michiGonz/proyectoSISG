@@ -16,15 +16,10 @@ class CreateIndicadorplanTable extends Migration
         Schema::create('indicadorplan', function (Blueprint $table) {
             $table->id();
             $table->text('nombre_indicador');
-            $table->string('meta');
             $table->string('programacion_anual');
             $table->string('programadas_mes');
             $table->text('date');
             $table->text('observacion');
-            $table->string('vg');
-            $table->string('simulacro');
-            $table->string('comite');
-            $table->string('parametros');
             $table->timestamps();
         });
     }

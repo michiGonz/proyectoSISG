@@ -31,7 +31,6 @@
                     <td>{{ $auditorias->permisos_generadosqqg  + $auditorias->permisos_generadospdvsa}}</td>
                     <td>{{ $auditorias->permisos_generadosqqg}}</td>
                     <td>{{ $auditorias->permisos_generadospdvsa}}</td>
-
                     <td>{{ $auditorias->date}}</td>
                     <td>
                         <a href="{{ route('auditorias.show', $auditorias->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
@@ -61,7 +60,7 @@
         </table>
     </div>
     <script>
-        DataTabla('#auditoria', [3, 'desc']);
+        DataTabla('#auditoria', [4, 'desc']);
     </script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>

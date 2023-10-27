@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Opsa;
+use App\Models\Indicadorplan;
 use Illuminate\Http\Request;
 
 class OpsaController extends Controller
@@ -11,7 +12,8 @@ class OpsaController extends Controller
     public function index()
     {
         $opsa = Opsa::all();
-        return view('opsa.index', compact('opsa'));
+        $indicadorplan = Indicadorplan::all();
+        return view('opsa.index', compact('opsa', 'indicadorplan'));
     }
 
     public function create()

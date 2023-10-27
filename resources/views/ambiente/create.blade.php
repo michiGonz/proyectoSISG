@@ -1,12 +1,14 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
+
 <?php $t = 0;
 foreach ($ambient as $clave => $valor) {
     if (substr($valor['date'], 0, 4) == date('Y')) {
         $t = $t + 1;
     }
 } ?>
+
 <div class="card">
     <h2 class="card-header">
         Crear Registro de Visita Gerencial
@@ -17,6 +19,7 @@ foreach ($ambient as $clave => $valor) {
         <div class="row">
             <form method="POST" class="row" action="{{ route('ambiente.store') }}">
                 @csrf
+
                 <div class="form-group col-md-6">
                     <label for="name">Lugar de la visita</label>
                     <input type="text" name="name" id="name" class="form-control" rows="1" required>
@@ -31,9 +34,9 @@ foreach ($ambient as $clave => $valor) {
                     <label for="personal">Nombre de Acompañantes</label>
                     <br>
                     <select style="width: 100%;" class="col-md-5 form-control" name="personal[]" id="personal" multiple aria-label="Default select example">
-                    @foreach ($usuarios as $usuario)
-                    <option value="{{$usuario->cod_emp}}">{{$usuario->nombres}} {{$usuario->apellidos}}</option>
-                    @endforeach
+                        @foreach ($usuarios as $usuario)
+                        <option value="{{$usuario->cod_emp}}">{{$usuario->nombres}} {{$usuario->apellidos}}</option>
+                        @endforeach
                     </select>
                 </div>
 
@@ -43,7 +46,7 @@ foreach ($ambient as $clave => $valor) {
                 </div>
 
                 <div class="form-group col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">crear Registro</button>
+                    <button for="registrar" type="submit" id="registrar" class="btn btn-primary registrar">crear Registro</button>
                     <a href="{{ route('ambiente.index') }}" class="btn btn-secondary">Cancelar</a>
                 </div>
             </form>
@@ -53,5 +56,8 @@ foreach ($ambient as $clave => $valor) {
 </div>
 <script>
     $("#personal").select2();
+
 </script>
+
+
 @endsection

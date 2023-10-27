@@ -38,39 +38,16 @@
                 <input value="{{ $investigacion->nombre_lugar}}" type="ubicacion" name="nombre_lugar" id="nombre_lugar" class="form-control">
             </div>
 
-            <table class="table table-striped table-primary">
-                <div class="form-check  table-primary ">
-                    <h5>Status</h5>
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Comunicación
-                    </label>
-                </div>
-                <div class="form-check  table-primary">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Comite
-                    </label>
-                </div>
-                <div class="form-check  table-primary">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Investigación
-                    </label>
-                </div>
-                <div class="form-check  table-primary">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Informe
-                    </label>
-                </div>
-                <div class="form-check  table-primary">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Divulgación
-                    </label>
-                </div>
-
+            <div class="form-group col-md-4">
+                <label>Status</label>
+                <select class="form-control" name="status" id="status" value="{{ $investigacion->status}}" >
+                    <option value="comunicacion"> Comunicación</option>
+                    <option value="comite">Comite</option>
+                    <option value="investigacion"> Investigación</option>
+                    <option value="informe"> Informe</option>
+                    <option value="divulgacion"> Divulgación</option>
+                </select>
+            </div>
                 <div class="form-group">
                     <label for="observacion">Observacion</label>
                     <input value="{{ $investigacion->observacion}}" name="observacion" id="observacion" class="form-control" />

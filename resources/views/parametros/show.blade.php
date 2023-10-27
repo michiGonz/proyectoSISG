@@ -10,30 +10,64 @@
     <div class="card-body">
         <form method="POST" action="{{ route('parametros.store') }}">
             @csrf
-            <div class="form-group">
-                <label for="planificado">Parametros Ambientales Planificados</label>
-                <input type="number" value="{{ $parametros->planificado}}" disabled="true" name="planificado" id="planificado" class="form-control">
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="PROD">Producción</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="personal[]" value="{{ $parametros->PROD}}" id="personal" multiple aria-label="Default select example">
+                        <option>Proceso del Gas</option>
+                        <option>Agua</option>
+                        <option>Químicos consumidos en operación</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="personal2">Mantenimiento</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="personal2[]" id="personal2" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
+
+                    </select>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="ejecutados">Parametros Ambientales Ejecutados</label>
-                <input type="number" value="{{ $parametros->ejecutados}}" disabled="true" name="ejecutados" id="ejecutados" class="form-control" value=0 />
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="personal3">Servicios Generales</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="personal3[]" id="personal3" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
+
+                    </select>
+                </div>
             </div>
 
-            <div class=" card-body form-group col-md-6 table-primary">
-                <h6>Unidades Funcionales </h6>
-                <label for="PROD">Produccion</label>
-                <input value="{{ $parametros->PROD}}" disabled="true" class="form-control" type="number" name="PROD" value=0 />
-                <label for="MTTO">Mantenimiento Mecanico</label>
-                <input value="{{ $parametros->MTTO}}" disabled="true" class="form-control" type="number" name="MTTO" value=0 />
-                <label for="SSGG">SSGG</label>
-                <input value="{{ $parametros->SSGG}}" disabled="true" class="form-control" type="number" name="SSGG" value=0 />
-                <label for="SC">SC</label>
-                <input value="{{ $parametros->SC}}" disabled="true" class="form-control" type="number" name="SC" value=0 />
-                <label for="CC">CC</label>
-                <input value="{{ $parametros->CC}}" disabled="true" class="form-control" type="number" name="CC" value=0 />
-                <label for="SSII">SSII</label>
-                <input value="{{ $parametros->SSII}}" disabled="true" class="form-control" type="number" name="SSII" value=0 />
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="personal4">Compras y Contrato</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="personal4[]" id="personal4" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="personal5">Sistemas de Información</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="personal5[]" id="personal5" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="personal6">Seguridad Corporativa</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="personal6[]" id="personal6" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
+
+                    </select>
+                </div>
+            </div>
 
             </div>
 
@@ -55,4 +89,12 @@
     </div>
     </form>
 </div>
+<script>
+    $("#personal").select2();
+    $("#personal2").select2();
+    $("#personal3").select2();
+    $("#personal4").select2();
+    $("#personal5").select2();
+    $("#personal6").select2();
+</script>
 @endsection

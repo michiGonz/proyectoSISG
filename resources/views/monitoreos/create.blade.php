@@ -5,20 +5,33 @@
 <div class="card">
     <h2 class="card-header">Crear Reporte de Monitoreos Ambientales</h2>
     <div class="card-body">
-                <form method="POST" action="{{ route('monitoreos.store') }}">
+        <form method="POST" action="{{ route('monitoreos.store') }}">
 
-                    <div class="table table-striped-columns">
-                        @csrf
-                        <div class="form-group ">
-                            <label for="cantidad_actividad">Acciones Ejecutados</label>
-                            <input type="number" name="cantidad_actividad" id="cantidad_actividad" class="form-control" value=0 />
+            <div class="table table-striped-columns">
+                @csrf
+                <h6>Selección de Monitoreos:</h6>
+                <div class="form-group col-md-12">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="ruido">Ruido</label>
+                                <input type="number" name="ruido" id="ruido" class="form-control" value=0 />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="emisiones">Emisiones</label>
+                                <input type="number" name="emisiones" id="emisiones" class="form-control" value=0 />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="agua">Agua</label>
+                                <input type="number" name="agua" id="agua" class="form-control" value=0 />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="ninguno">Ninguno</label>
+                                <input type="number" name="ninguno" id="ninguno" class="form-control" value=0 />
+                            </div>
+
                         </div>
-
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text " name="nombre" id="nombre" class="form-control" />
-                        </div>
-
+                        <br>
                         <div class="form-group">
                             <label for="observacion">Observacion</label>
                             <input type="text " name="observacion" id="observacion" class="form-control" />
@@ -35,11 +48,13 @@
 
                             <a href="{{ route('monitoreos.index') }}" class="btn btn-secondary">Cancelar</a>
                         </div>
-                </form>
+                    </div>
+                </div>
             </div>
-        </tr>
-        </tr>
-    </tbody>
+
+        </form>
+    </div>
+
 </div>
 
 @endsection

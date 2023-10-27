@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="form-group col-md-6 ">
-                            <label for="date_reunion">Fecha de Entrega a Insasel</label>
+                            <label for="date_reunion">Fecha de Entrega a Inpsasel</label>
                             <input class="form-control" id="date" value="{{ $comite->date_reunion}}" disabled="true"  type="date" name="date" />
                         </div>
                     </div>

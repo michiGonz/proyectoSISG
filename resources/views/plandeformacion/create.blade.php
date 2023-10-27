@@ -76,7 +76,7 @@
                 $('#fecha').append(
                     '<div class="col-md-6">' +
                     '<label for="date">Fecha</label>' +
-                    '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                    '<input class="form-control" id="date_ambiente" type="date" name="date_ambiente[]" required />' +
                     '</div>'
                 );
             }
@@ -96,7 +96,7 @@
                 $('#fecha1').append(
                     '<div class="col-md-6">' +
                     '<label for="date">Fecha</label>' +
-                    '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                    '<input class="form-control" id="date_seguridad" type="date" name="date_seguridad[]" required />' +
                     '</div>'
                 );
             }
@@ -117,7 +117,7 @@
                 $('#fecha2').append(
                     '<div class="col-md-6">' +
                     '<label for="date">Fecha</label>' +
-                    '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                    '<input class="form-control" id="date_salud" type="date" name="date_salud[]" required />' +
                     '</div>'
                 );
             }

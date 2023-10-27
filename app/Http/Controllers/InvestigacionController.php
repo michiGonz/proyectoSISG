@@ -8,12 +8,23 @@ use \App\Models\Unidadfuncional;
 
 class InvestigacionController extends Controller {
     public function index() {
-        $investigacion = Investigacion::all();
-        return view('investigacion.index', compact('investigacion'));
+        $unidadFuncional = [];
+        $ufs = Unidadfuncional::get();
+        foreach ($ufs as $uf) {
+            $unidadFuncional[trim($uf['co_depart'])] = $uf;
+        }
+        $investigaciones = Investigacion::all();
+        $a = [];
+        foreach ($investigaciones as $investigacion) {
+            $investigacion['uf'] = $unidadFuncional[trim($investigacion['uf'])];
+            $a[] = $investigacion;
+        }
+        $investigacion = $a;
+        return view('investigacion.index', compact('investigaciones'));
     }
 
     public function create() {
-        
+
         $investigacion = Investigacion::all();
         $ufs = Unidadfuncional::get();
         return view('investigacion.create', compact('ufs', 'investigacion'));

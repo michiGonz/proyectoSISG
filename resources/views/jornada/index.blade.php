@@ -14,9 +14,9 @@
 
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Descripcion</th>
-                        <th>Ubicacion</th>
+                
+                        <th>Descripción</th>
+                        <th>Ubicación</th>
                         <th>Date</th>
                         <th>Acciones</th>
 
@@ -25,7 +25,7 @@
                 <tbody>
                     @foreach ($jornada as $jornada)
                     <tr>
-                        <td>{{ $jornada->id }}</td>
+                    
                         <td>{{ $jornada->descripcion }}</td>
                         <td>{{ $jornada->ubicacion }}</td>
                         <td>{{ $jornada->date}}</td>
@@ -44,6 +44,6 @@
             </table>
 
             <script>
-                DataTabla('#jornada', [4, 'desc']);
+                DataTabla('#jornada', [3, 'desc']);
             </script>
             @endsection

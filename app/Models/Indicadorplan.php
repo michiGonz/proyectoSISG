@@ -15,15 +15,11 @@ class Indicadorplan extends Model
     protected $fillable = [
 
         'nombre_indicador',
-        'meta',
         'programacion_anual',
         'programadas_mes',
         'date',
         'observacion',
-        'vg',
-        'simulacro',
-        'comite',
-        'parametros',
+       
 
 
     ];

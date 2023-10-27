@@ -6,72 +6,100 @@
         Crear Reporte de Parametros Ambientales
     </h2>
     <div class="card-body">
-        <form method="POST" action="{{ route('parametros.store') }}">
+        <form method="POST" class="row" action="{{ route('parametros.store') }}">
             @csrf
-            <div class="card col-md-12">
+
+            <div class="card col-md-6">
                 <div class="card-body">
-                    <div class="row">
 
-                        <div class="form-group col-md 4">
-                            <label for="PROD">Produccion</label>
-                            <input class="form-control" type="number" name="PROD" value=0 />
-                    
-                        </div>
+                    <label for="PROD">Producción</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="PROD" id="PROD" multiple aria-label="Default select example">
+                        <div class="row" id="PROD"></div>
+                        <option id="proceso">Proceso del Gas</option>
+                        <option id="agua">Agua</option>
+                        <option id="quimico">Químicos consumidos en Operación</option>
+                    </select>
 
-                        <div class="form-group col-md 4">
-                            <label for="MTTO">Mantenimiento </label>
-                            <input class="form-control" type="number" name="MTTO" value=0 />
-                        </div>
-
-                        <div class="form-group col-md 4">
-                            <label for="SSGG">Servicios Generales</label>
-                            <input class="form-control" type="number" name="SSGG" value=0 />
-
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div class="card col-md-12">
+            <div class="card col-md-6">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="form-group col-md 4">
-                            <label for="SC">Seguridad Corporativa</label>
-                            <input class="form-control" type="number" name="SC" value=0 />
-                        </div>
+                    <label for="MTTO">Mantenimiento</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="MTTO" id="MTTO" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
 
-                        <div class="form-group col-md 4">
-                            <label for="CC">Compra y contratacion</label>
-                            <input class="form-control" type="number" name="CC" value=0 />
-                        </div>
-
-                        <div class="form-group col-md 4">
-                            <label for="SSII">Sistema de informacion</label>
-                            <input class="form-control" type="number" name="SSII" value=0 />
-                        </div>
-
-                    </div>
+                    </select>
                 </div>
             </div>
-            <div class="form-group">
+
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="SSGG">Servicios Generales</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="SSGG" id="SSGG" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="CC">Compras y Contrato</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="CC" id="CC" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="SSII">Sistemas de Información</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="SSII" id="SSII" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <label for="SC">Seguridad Corporativa</label>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="SC" id="SC" multiple aria-label="Default select example">
+                        <option>Residuos Sólidos</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
                 <label for="date">Fecha</label>
-                <input class="form-control" id="date" type="date" name="date" value="" />
+                <input class="form-control" id="date" type="date" name="date" value="" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label for="observacion">Observacion</label>
                 <textarea name="observacion" id="observacion" class="form-control" rows="1" required></textarea>
             </div>
 
 
-            <div class="form-grou col-md-12 text-center">
+            <div class="form-group col-md-12 text-center">
 
                 <button type="submit" class="btn btn-primary">Crear Registro</button>
 
                 <a href="{{ route('parametros.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
+        </form>
     </div>
-    </form>
+
 </div>
+<script>
+    $("#PROD").select2();
+    $("#MTTO").select2();
+    $("#CC").select2();
+    $("#SSII").select2();
+    $("#SC").select2();
+    $("#SSGG").select2();
+</script>
+
 @endsection

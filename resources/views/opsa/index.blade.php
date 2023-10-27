@@ -2,6 +2,29 @@
 @section('title', 'Inicio')
 @section('content')
 
+
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" >
+                        Tarjetas Planificadas anualmente</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800" >7</div>
+                </div>
+                @foreach ($indicadorplan as $indicadorplan)
+                @if ($indicadorplan->nombre_indicador=="opsa")
+                <?php $indicadorplan = json_decode($indicadorplan->programacion_anual);
+                $cumplido = []; ?>
+
+                @endif
+                @endforeach
+              
+            </div>
+        </div>
+    </div>
+</div>
 <div class="card">
     <h2 class="card-header">
         OPSA
@@ -39,14 +62,14 @@
                                 @csrf
 
                             </form>
-                            <a href="{{ route('opsa.edit', $opsa->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
+
                         </td>
                     </tr>
                     <?php
-                    if(substr($opsa->date,0,4)==date('Y')){
-                    $cantidad_seguro = $cantidad_seguro + $opsa->cantidad_seguro;
-                    $cantidad_inseguro = $cantidad_inseguro + $opsa->cantidad_inseguro;
-                    $total = $cantidad_seguro + $cantidad_inseguro;
+                    if (substr($opsa->date, 0, 4) == date('Y')) {
+                        $cantidad_seguro = $cantidad_seguro + $opsa->cantidad_seguro;
+                        $cantidad_inseguro = $cantidad_inseguro + $opsa->cantidad_inseguro;
+                        $total = $cantidad_seguro + $cantidad_inseguro;
                     }
                     ?>
                     @endforeach
@@ -77,7 +100,7 @@
         <figure class="highcharts-figure">
             <div id="container"></div>
             <p class="highcharts-description">
-                Grafica de OPSA
+                Descripción
             </p>
         </figure>
     </div>
@@ -91,7 +114,7 @@
         },
 
         title: {
-            text: 'OPSA <?php echo date('Y')?>',
+            text: 'OPSA <?php echo date('M') ?>',
             align: 'left'
         },
 
@@ -103,7 +126,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Count medals'
+                text: ''
             }
         },
 
@@ -132,7 +155,7 @@
                 data: [<?php echo $cantidad_inseguro; ?>],
                 stack: 'cantidad_inseguro'
             }
-            
+
         ]
     });
 </script>

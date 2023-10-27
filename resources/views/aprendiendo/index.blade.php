@@ -15,9 +15,8 @@
 
         <thead>
             <tr>
-                <th>ID</th>
+    
                 <th>Cant de Aprendiendo en el Trabajo</th>
-                <th>Nombre de Aprendiendo en el Trabajo</th>
                 <th>Observacion</th>
                 <th>Fecha</th>
                 <th>Acciones</th>
@@ -28,7 +27,7 @@
             @foreach ($aprendiendo as $aprendiendo)
             
             <tr>
-                <td>{{ $aprendiendo->id }}</td>
+            
                 <td>{{ $aprendiendo->cantidad_actividad }}</td>
                 <td>{{ $aprendiendo->nombre }}</td>
                 <td>{{ $aprendiendo->observacion}}</td>

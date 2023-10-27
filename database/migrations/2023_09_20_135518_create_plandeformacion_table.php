@@ -16,11 +16,9 @@ class CreatePlandeformacionTable extends Migration
         Schema::create('plandeformacion', function (Blueprint $table) {
             $table->id();
             $table->text('ejecutadas_ambiente');
-            $table->date('date_ambiente');
+            $table->text('date');
             $table->text('ejecutadas_seguridad');
-            $table->date('date_seguridad');
             $table->text('ejecutadas_salud');
-            $table->date('date_salud');
             $table->text('observacion');
             $table->timestamps();
         });

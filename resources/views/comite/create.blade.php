@@ -9,7 +9,7 @@ foreach ($comite as $clave => $valor) {
 } ?>
 <div class="card">
     <h2 class="card-header">Crear Reporte de Comite Seguridad Salud Laborales
-        <small class="float-right">Acomulado: {{$t}}</small>
+        <small class="float-right">Total: {{$t}}</small>
     </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('comite.store') }}">
@@ -24,7 +24,7 @@ foreach ($comite as $clave => $valor) {
                         </div>
 
                         <div class="form-group col-md-6 ">
-                            <label for="date_insasel">Fecha de Entrega a Insasel</label>
+                            <label for="date_insasel">Fecha de Entrega a Inpsasel</label>
                             <input class="form-control" id="date_insasel" type="date" name="date_insasel" value="" />
                         </div>
                     </div>

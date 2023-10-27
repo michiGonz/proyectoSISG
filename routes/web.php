@@ -28,7 +28,9 @@ use App\Http\Controllers\Ambiente_planController;
 use App\Http\Controllers\UnidadfuncionalController;
 use App\Http\Controllers\UsuariosprofitController;
 use App\Http\Controllers\ConfiguracionController;
+use App\Http\Controllers\CrearindicadorController;
 use App\Http\Controllers\opsaController;
+use App\Models\Crearindicador;
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('/');
@@ -56,6 +58,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('usuariosprofit', UsuariosprofitController::class);
     Route::resource('configuracion', ConfiguracionController::class);
     Route::resource('opsa', OpsaController::class);
+    Route::resource('crearindicador', CrearindicadorController::class);
 });
 
 Route::post('login', [AutenticacionController::class,'postLogin'])->name('loginData');

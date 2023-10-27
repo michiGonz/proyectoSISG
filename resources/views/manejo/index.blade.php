@@ -12,8 +12,8 @@
 
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>nombre del Manejo al Cambio</th>
+     
+                    <th>Nombre del Manejo al Cambio</th>
                     <th>Observacion</th>
                     <th>Fecha</th>
                     <th>Acciones</th>
@@ -24,9 +24,9 @@
                 @foreach ($manejo as $manejo)
 
                 <tr>
-                    <td>{{ $manejo->id }}</td>
+           
                     <td>{{ $manejo->name}}</td>
-                    <td>{{ $manejo->observacion}}</td>
+                    <td>{{ $manejo->observación}}</td>
                     <td>{{ $manejo->date}}</td>
 
 
