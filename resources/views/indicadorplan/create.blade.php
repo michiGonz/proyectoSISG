@@ -68,14 +68,12 @@
 
             <div class="form-group">
                 <label for="programacion_anual">Programacion Anual</label>
-                <input type="number" name="programacion_anual" id="programacion_anual" class="form-control" value=0 />
+                <input type="number" name="programacion_anual" id="programacion_anual" class="form-control" value="0" />
             </div>
 
-            <div id="programadas_mes">
-                <div class="form-group">
-                    <label for="programadas_mes">Programacion Mensual</label>
-                    <input type="number" name="programadas_mes" class="form-control" value=0 />
-                </div>
+            <div class="form-group" style="display: none;">
+                <label for="programadas_mes">Programacion Mensual</label>
+                <input type="number" name="programadas_mes" id="programadas_mes" class="form-control" value="0" />
             </div>
 
             <div class="row" id="fechas"></div>
@@ -94,25 +92,19 @@
     </div>
 </div>
 <script>
+    if ($('#nombre_indicador').val() == 'opsa' || $('#nombre_indicador').val() == 'auditoria') {
+        $('#programadas_mes').val(0).parent().css('display', 'block');
+    }
     $('#nombre_indicador').change(function() {
         let indicador = $('#nombre_indicador').val();
         $('#programacion_anual').val('').parent().css('display', 'block');
-        $('#programacion_mensual').html('');
-        $('#programadas_mes').html('');
+        $('#programadas_mes').val('0').parent().css('display', 'none');
         $('#plan_charla').css('display', 'none');
         $('#fechas').html('');
         switch (indicador) {
             case 'opsa':
             case 'auditoria':
-                $('#programacion_mensual').html(`<div class="form-group">` +
-                    `<label for="programadas_mes">Programacion Mensual</label>` +
-                    `<input type="number" name="programadas_mes" id="programadas_mes" class="form-control" value=0 />` +
-                    ` </div>`);
-
-                $('#programadas_mes').html(`<div class="form-group">` +
-                    `<label for="programadas_mes">Programación Mensual</label>` +
-                    `<input type="number" name="programadas_mes" class="form-control" value=0 />` +
-                    `</div>`);
+                $('#programadas_mes').val('0').parent().css('display', 'block');
                 break;
             case 'monitoreo':
                 $('#programacion_anual').val(0).parent().css('display', 'none');
@@ -182,7 +174,10 @@
                     '</select>' +
                     '</div>'
                 );
-                $('#fechas select').select2({ tags: true, tokenSeparators: [','] });
+                $('#fechas select').select2({
+                    tags: true,
+                    tokenSeparators: [',']
+                });
                 //funciones del indicador
                 break; // cierre de las funciones del indicador 
             }
@@ -194,13 +189,23 @@
                 break; // cierre de las funciones del indicador 
         }
     });
-
+    $('#programadas_mes').change(function() {
+        let indicador = $('#nombre_indicador').val();
+        if (indicador == 'auditoria' || indicador == 'opsa') {
+            let mensual = parseInt($('#programadas_mes').val());
+            $('#programacion_anual').val(mensual * 12);
+        }
+    });
     $('#programacion_anual').change(function() {
         let nro = parseInt($('#programacion_anual').val());
         let indicador = $('#nombre_indicador').val();
         $('#fechas').html('')
         if (nro <= 50 || (indicador == 'opsa' || indicador == 'auditoria' || indicador == 'monitoreo' || indicador == 'jornada')) {
             switch (indicador) {
+                case 'opsa':
+                case 'auditoria':
+                    $('#programadas_mes').val(nro / 12);
+                    break;
                 case 'simulacro':
                     for (let index = 0; index < nro; index++) {
                         $('#fechas').append('<div class="form-group col-md-3">' +

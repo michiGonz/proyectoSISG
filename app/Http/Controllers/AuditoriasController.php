@@ -11,7 +11,7 @@ class AuditoriasController extends Controller {
     public function index() {
 
         $auditorias = Auditorias::all();
-        $indicadorplan = IndicadorplanController::verPlan('auditorias', date('Y'));
+        $indicadorplan = IndicadorplanController::verPlan('auditoria', date('Y'));
         return view('auditorias.index', compact('auditorias' , 'indicadorplan'));
     }
 

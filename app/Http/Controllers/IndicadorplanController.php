@@ -20,6 +20,7 @@ class IndicadorplanController extends Controller {
                     break;
                 case 'simulacro':
                     $indicadorplan['nombre'] = 'Simulacro';
+                    $indicadorplan['programadas_mes'] = '';
                     $indicadorplan['date'] = json_decode($indicadorplan['date']);
                     break;
                 case 'comite':
@@ -54,7 +55,10 @@ class IndicadorplanController extends Controller {
                     break;
                 case 'monitoreo':
                     $indicadorplan['nombre'] = 'Monitoreo ambiental';
-                    $indicadorplan['programacion_anual'] = '';
+                    $indicadorplan['date'] = json_decode($indicadorplan['date']);
+                    $indicadorplan['programadas_mes'] = '';
+                    $indicadorplan['programacion_anual'] = ($indicadorplan['date']->ruido + $indicadorplan['date']->emisiones + $indicadorplan['date']->agua);
+
                     break;
                 case 'jornada':
                     $indicadorplan['nombre'] = 'Jornada ambiental';
@@ -233,7 +237,7 @@ class IndicadorplanController extends Controller {
                         $mes = date('Y') . "-" . (($clave < 9) ? '0' . ($clave + 1) : $clave + 1);
                         $mesActual = date('Y-m');
                         $realizadas = number_format(DB::selectOne("SELECT SUM(LENGTH(date) - LENGTH(REPLACE(date, '$mes', ''))) / LENGTH('$mes') AS total FROM plandeformacion;")->total, 0);
-                        
+
 
                         $dates[] = (object)[
                             'mes' => $meses[$clave],
@@ -241,7 +245,7 @@ class IndicadorplanController extends Controller {
                             'dias' => $date->dias,
                             'cntd' => $date->cntd,
                             'realizadas' => $realizadas,
-                            'status' => (($mes<=$mesActual)?(($mes==$mesActual)?(($realizadas >= $date->cntd)?'success':'warning'):(($realizadas >= $date->cntd)?'success':'danger')):(($realizadas >= $date->cntd)?'success':'primary'))
+                            'status' => (($mes <= $mesActual) ? (($mes == $mesActual) ? (($realizadas >= $date->cntd) ? 'success' : 'warning') : (($realizadas >= $date->cntd) ? 'success' : 'danger')) : (($realizadas >= $date->cntd) ? 'success' : 'primary'))
                         ];
 
                         $totalPlanificadas += $date->cntd;
@@ -282,14 +286,10 @@ class IndicadorplanController extends Controller {
                     break;
                 case 'monitoreo':
                     $plan->nombre = 'Monitoreo ambiental';
-                    $dates = [];
-                    foreach (json_decode($plan->date) as $key => $date) {
-                        foreach ($date as $valor) {
-                            $dates[$key][] = ucfirst(strtolower(str_replace('_', ' ', trim($valor))));
-                        }
-                    }
-                    $plan->date = (object)$dates;
-                    
+                    $plan->date = json_decode($plan->date);
+                    $plan->programadas_mes = '';
+                    // $plan->programacion_anual = ($plan->date->ruido + $plan->date->emisiones + $plan->date->agua);
+
                     break;
                 case 'jornada':
                     $plan->nombre = 'jornada';

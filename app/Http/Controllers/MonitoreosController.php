@@ -11,9 +11,9 @@ class MonitoreosController extends Controller {
 
     public function index() {
 
-        $monitoreos = Monitoreos::all();
-        $indicadorplan = IndicadorplanController::verPlan('monitoreos', date('Y'));
-        return view('monitoreos.index', compact('monitoreos' , 'indicadorplan'));
+        $monitoreo = Monitoreos::all();
+        $indicadorplan = IndicadorplanController::verPlan('monitoreo', date('Y'));
+        return view('monitoreos.index', compact('monitoreo' , 'indicadorplan'));
     }
 
     public function create() {
