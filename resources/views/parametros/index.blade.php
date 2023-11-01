@@ -2,6 +2,41 @@
 @section('title', 'Inicio')
 @section('content')
 
+
+@if (property_exists($indicadorplan,'nombre_indicador'))
+<div class="row">
+    @foreach ($indicadorplan->date as $clave => $plan)
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card border-left- shadow h-100 py-2">
+            <div class="card-body" style="padding: 0px 15px;">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="font-weight-bold text- text-uppercase mb-1">
+                            @switch($clave)
+                                @case('PROD') Producción @break
+                                @case('MTTO') Mantenimiento @break
+                                @case('SG') Servicio generales @break
+                                @case('CC') Compras y contratos @break
+                                @case('SSII') Sistemas de información @break
+                                @case('SC') Seguridad corporativa @break
+                            @endswitch
+                            <b class="float-right"><i class="fas fa-hashtag fa-sm"></i>{{count($plan)}}</b>
+                        </div>
+                        <div class="h7 mb-0 font-weight-bold text-gray-800">
+                            @foreach ($plan as $clave => $name)
+                            <h6><i class="fas fa-minus fa-sm"></i> {{$name}}</h6>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
+</div>
+@endif
+
+
 <div class="card">
     <h2 class="card-header">Reporte de Parametros Ambientales
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('parametros.create') }}"><span><i class="fas fa-plus"></i>Crear Reporte</span></a>

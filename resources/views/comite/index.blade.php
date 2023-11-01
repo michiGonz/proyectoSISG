@@ -2,6 +2,31 @@
 @section('title', 'Inicio')
 @section('content')
 
+
+
+@if (property_exists($indicadorplan,'nombre_indicador'))
+<div class="row">
+    @foreach ($indicadorplan->date as $plan)
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-{{$plan->status}} shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-{{$plan->status}} text-uppercase mb-1">
+                            Visitas Gerenciales Planificadas</div>
+                        <div class="h7 mb-0 font-weight-bold text-gray-800">
+                            <h6>Fecha reunion: {{(ObtenerFecha($plan->reunion))}}</h6>
+                            <h6>Fecha Entrega: {{(ObtenerFecha($plan->entrega))}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+</div>
+@endif
+
 <div class="card">
     <h2 class="card-header">
         Comité de Seguridad Salud Laborales

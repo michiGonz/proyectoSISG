@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Indicadorplan;
-
+use PhpParser\Node\Expr\Cast\Object_;
 
 class IndicadorplanController extends Controller {
 
@@ -27,16 +27,26 @@ class IndicadorplanController extends Controller {
                     $indicadorplan['date'] = json_decode($indicadorplan['date']);
                     break;
                 case 'plan':
+                    $dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
                     $indicadorplan['nombre'] = 'Plan de formación de seguridad salud y ambiente';
+                    $indicadorplan['date'] = json_decode($indicadorplan['date']);
+                    $indicadorplan['date']->dia_ = $dias[$indicadorplan['date']->dia];
                     break;
-                case 'parametros_ambientales':  // EN REVISIÓN
+                case 'parametros_ambientales':
                     $indicadorplan['nombre'] = 'Parámetros ambientales';
+                    $dates = [];
+                    foreach (json_decode($indicadorplan['date']) as $key => $date) {
+                        foreach ($date as $valor) {
+                            $dates[$key][] = ucfirst(strtolower(str_replace('_', ' ', trim($valor))));
+                        }
+                    }
+                    $indicadorplan['date'] = (object)$dates;
                     break;
                 case 'visita':
                     $indicadorplan['nombre'] = 'Visita geranial';
                     $indicadorplan['date'] = json_decode($indicadorplan['date']);
                     break;
-                case 'auditoria':  // EN REVISIÓN
+                case 'auditoria':
                     $indicadorplan['nombre'] = 'Auditoria de trabajo';
                     break;
                 case 'aprendiendo':
@@ -44,9 +54,11 @@ class IndicadorplanController extends Controller {
                     break;
                 case 'monitoreo':
                     $indicadorplan['nombre'] = 'Monitoreo ambiental';
+                    $indicadorplan['programacion_anual'] = '';
                     break;
                 case 'jornada':
                     $indicadorplan['nombre'] = 'Jornada ambiental';
+
                     break;
                 default:
                     $indicadorplan['nombre'] = 'Indicador';
@@ -91,12 +103,36 @@ class IndicadorplanController extends Controller {
                 $plan->date = json_encode($date);
                 break;
             case 'plan':
-                $dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-                $plan->date = $dias[$request->charla_dia];
+                $dates = [];
+                for ($i = 0; $i < 12; $i++) {
+                    $dates[] = [
+                        'dias' => $request->cntd_dias[$i],
+                        'cntd' => $request->cntd_mes[$i]
+                    ];
+                }
+                $plan->date = json_encode(['dia' => $request->dia_semana, 'meses' => $dates]);
                 break;
-            case 'parametros_ambientales':  // EN REVISIÓN
-                $uf = [''];
-                $plan->uf = $uf[$request->uf];
+            case 'parametros_ambientales':
+                $dates = [];
+                foreach ($request->PROD as $valor) {
+                    $dates['PROD'][] = strtolower(str_replace(' ', '_', trim($valor)));
+                }
+                foreach ($request->MTTO as $valor) {
+                    $dates['MTTO'][] = strtolower(str_replace(' ', '_', trim($valor)));
+                }
+                foreach ($request->SG as $valor) {
+                    $dates['SG'][] = strtolower(str_replace(' ', '_', trim($valor)));
+                }
+                foreach ($request->CC as $valor) {
+                    $dates['CC'][] = strtolower(str_replace(' ', '_', trim($valor)));
+                }
+                foreach ($request->SSII as $valor) {
+                    $dates['SSII'][] = strtolower(str_replace(' ', '_', trim($valor)));
+                }
+                foreach ($request->SC as $valor) {
+                    $dates['SC'][] = strtolower(str_replace(' ', '_', trim($valor)));
+                }
+                $plan->date = json_encode($dates);
                 break;
             case 'visita':
                 $date = [];
@@ -105,13 +141,20 @@ class IndicadorplanController extends Controller {
                 }
                 $plan->date = json_encode($date);
                 break;
-            case 'auditoria':  // EN REVISIÓN
+            case 'auditoria':
                 break;
             case 'aprendiendo':
                 break;
             case 'monitoreo':
+                $date = [];
+                $plan->date = json_encode((object)[
+                    'ruido' => $request->ruido,
+                    'emisiones' => $request->emisiones,
+                    'agua' => $request->agua,
+                ]);
                 break;
             case 'jornada':
+
                 break;
         }
 
@@ -146,8 +189,8 @@ class IndicadorplanController extends Controller {
 
 
     static public function verPlan($indicador, $anio) {
-        $planes = [];
-        foreach (DB::select("SELECT * FROM indicadorplan WHERE nombre_indicador = '$indicador' AND created_at LIKE '$anio%'") as $plan) {
+        $plan = (object) DB::selectOne("SELECT * FROM indicadorplan WHERE nombre_indicador = '$indicador' AND created_at LIKE '$anio%'");
+        if (property_exists($plan, 'nombre_indicador')) {
             switch ($plan->nombre_indicador) {
                 case 'opsa':
                     $plan->nombre = 'Opsa';
@@ -167,13 +210,56 @@ class IndicadorplanController extends Controller {
                     break;
                 case 'comite':
                     $plan->nombre = 'Comité';
-                    $plan->date = json_decode($plan->date);
+                    $dates = [];
+                    foreach (json_decode($plan->date) as $date) {
+                        $status = DB::selectOne("SELECT COUNT(*) as contar FROM comite WHERE  id != '' AND date_reunion LIKE '{$date->reunion}%'")->contar;
+                        $dates[] = (object)[
+                            'reunion' => $date->reunion,
+                            'entrega' => $date->entrega,
+                            'status' => (($status >= 1) ? 'success' : (($date->reunion == date('Y-m')) ? 'warning' : ((date('Y-m') > $date->reunion) ? 'danger' : 'primary')))
+                        ];
+                    }
+                    $plan->date = $dates;
                     break;
                 case 'plan':
+                    $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+                    $dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
                     $plan->nombre = 'Plan de formación de seguridad salud y ambiente';
+                    $dates = [];
+                    $plan->date = json_decode($plan->date);
+                    $totalRealizadas = 0;
+                    $totalPlanificadas = 0;
+                    foreach ($plan->date->meses as $clave => $date) {
+                        $mes = date('Y') . "-" . (($clave < 9) ? '0' . ($clave + 1) : $clave + 1);
+                        $mesActual = date('Y-m');
+                        $realizadas = number_format(DB::selectOne("SELECT SUM(LENGTH(date) - LENGTH(REPLACE(date, '$mes', ''))) / LENGTH('$mes') AS total FROM plandeformacion;")->total, 0);
+                        
+
+                        $dates[] = (object)[
+                            'mes' => $meses[$clave],
+                            'dia' => $dias[$plan->date->dia],
+                            'dias' => $date->dias,
+                            'cntd' => $date->cntd,
+                            'realizadas' => $realizadas,
+                            'status' => (($mes<=$mesActual)?(($mes==$mesActual)?(($realizadas >= $date->cntd)?'success':'warning'):(($realizadas >= $date->cntd)?'success':'danger')):(($realizadas >= $date->cntd)?'success':'primary'))
+                        ];
+
+                        $totalPlanificadas += $date->cntd;
+                        $totalRealizadas += $realizadas;
+                    }
+                    $plan->date->meses = $dates;
+                    $plan->date->planificadas = $totalPlanificadas;
+                    $plan->date->realizadas = $totalRealizadas;
                     break;
-                case 'parametros_ambientales':  // EN REVISIÓN
+                case 'parametros_ambientales':
                     $plan->nombre = 'Parámetros ambientales';
+                    $dates = [];
+                    foreach (json_decode($plan->date) as $key => $date) {
+                        foreach ($date as $valor) {
+                            $dates[$key][] = ucfirst(strtolower(str_replace('_', ' ', trim($valor))));
+                        }
+                    }
+                    $plan->date = (object)$dates;
                     break;
                 case 'visita':
                     $plan->nombre = 'Visita geranial';
@@ -188,7 +274,7 @@ class IndicadorplanController extends Controller {
                     }
                     $plan->date = $dates;
                     break;
-                case 'auditoria':  // EN REVISIÓN
+                case 'auditoria':
                     $plan->nombre = 'Auditoria de trabajo';
                     break;
                 case 'aprendiendo':
@@ -196,21 +282,34 @@ class IndicadorplanController extends Controller {
                     break;
                 case 'monitoreo':
                     $plan->nombre = 'Monitoreo ambiental';
+                    $dates = [];
+                    foreach (json_decode($plan->date) as $key => $date) {
+                        foreach ($date as $valor) {
+                            $dates[$key][] = ucfirst(strtolower(str_replace('_', ' ', trim($valor))));
+                        }
+                    }
+                    $plan->date = (object)$dates;
+                    
                     break;
                 case 'jornada':
-                    $plan->nombre = 'Jornada ambiental';
+                    $plan->nombre = 'jornada';
+                    break;
+                case 'parametros_ambientales':
+                    $plan->nombre = 'Parametros ambiental';
+                    $dates = [];
+                    foreach (json_decode($plan->date) as $key => $date) {
+                        foreach ($date as $valor) {
+                            $dates[$key][] = ucfirst(strtolower(str_replace('_', ' ', trim($valor))));
+                        }
+                    }
+                    $plan->date = (object)$dates;
                     break;
                 default:
                     $plan->nombre = 'Indicador';
                     $plan->date = [];
                     break;
-                case 'parametros_ambientales':
-                    $plan->nombre = 'Parametros ambiental';
-                    break;
             }
-            $planes[] = $plan;
         }
-
-        return $planes;
+        return $plan;
     }
 }

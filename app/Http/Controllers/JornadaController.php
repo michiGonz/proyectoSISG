@@ -11,7 +11,7 @@ class JornadaController extends Controller
     public function index()
     {
         $jornada = Jornada::all();
-        $indicadorplan = IndicadorplanController::verPlan('monitoreos', date('Y'));
+        $indicadorplan = IndicadorplanController::verPlan('jornada', date('Y'));
         return view('jornada.index', compact('jornada' , 'indicadorplan'));
     }
 

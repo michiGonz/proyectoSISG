@@ -11,7 +11,7 @@ class Jornada extends Model
     protected $table = 'jornada';
 
     protected $fillable = [
-    'jornadas_ejecutadas',
+
       'descripcion',
       'ubicacion',
       'date'

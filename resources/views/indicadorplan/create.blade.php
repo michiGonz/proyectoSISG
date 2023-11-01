@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="charla_nro_dias">Charlas por dia</label>
-                        <input type="number" name="charla_nro_dias" id="charla_nro_dias" class="form-control" value=0>
+                        <input type="number" name="charla_nro_dias" id="charla_nro_dias" class="form-control" value="0">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="charla_dia">Dia de la semana</label>
@@ -68,13 +68,13 @@
 
             <div class="form-group">
                 <label for="programacion_anual">Programacion Anual</label>
-                <input type="number" name="programacion_anual" id="programacion_anual" class="form-control" value=0 required>
+                <input type="number" name="programacion_anual" id="programacion_anual" class="form-control" value=0 />
             </div>
 
             <div id="programadas_mes">
                 <div class="form-group">
                     <label for="programadas_mes">Programacion Mensual</label>
-                    <input type="number" name="programadas_mes" class="form-control" value=0>
+                    <input type="number" name="programadas_mes" class="form-control" value=0 />
                 </div>
             </div>
 
@@ -106,15 +106,86 @@
             case 'auditoria':
                 $('#programacion_mensual').html(`<div class="form-group">` +
                     `<label for="programadas_mes">Programacion Mensual</label>` +
-                    `<input type="number" name="programadas_mes" id="programadas_mes" class="form-control" value=0>` +
+                    `<input type="number" name="programadas_mes" id="programadas_mes" class="form-control" value=0 />` +
                     ` </div>`);
 
                 $('#programadas_mes').html(`<div class="form-group">` +
-                    `<label for="programadas_mes">Programacion Mensual</label>` +
-                    `<input type="number" name="programadas_mes" class="form-control" value=0>` +
+                    `<label for="programadas_mes">Programación Mensual</label>` +
+                    `<input type="number" name="programadas_mes" class="form-control" value=0 />` +
                     `</div>`);
                 break;
+            case 'monitoreo':
+                $('#programacion_anual').val(0).parent().css('display', 'none');
+                $('#fechas').html(
+                    '<div class="form-group col-md-12">' +
+                    '<div class="card-body">' +
+                    '<div class="row">' +
+                    '<div class="form-group col-md-4">' +
+                    '<label for="ruido">Ruido (Anual)</label>' +
+                    '<input type="number" name="ruido" id="ruido" class="form-control" value=0 />' +
+                    ' </div>' +
+                    '<div class="form-group col-md-4">' +
+                    '<label for="emisiones">Emisiones (Anual)</label>' +
+                    '<input type="number" name="emisiones" id="emisiones" class="form-control" value=0 />' +
+                    '</div>' +
+                    '<div class="form-group col-md-4">' +
+                    '<label for="agua">Agua (Anual)</label>' +
+                    '<input type="number" name="agua" id="agua" class="form-control" value=0 />' +
+                    '</div>'
+                );
+                break;
+            case 'parametros_ambientales': {
+                $('#programacion_anual').val(0).parent().css('display', 'none');
+                $('#fechas').html('  <div class="card-body">' +
+                    '<div class="row">' +
+                    '<div class="form-group col-md-4 ">' +
+                    '<label for="">Producción</label>' +
+                    '<select style="width: 100%;" id="PROD" name="PROD[]" multiple required>' +
+                    ' <option value="Proceso del Gas">Proceso del Gas</option>' +
+                    ' <option value="Agua">Agua</option>' +
+                    '<option value="Químicos consumidos en Operación">Químicos consumidos en Operación</option>' +
+                    '</select>' +
+                    '</div>' +
 
+                    '<div class="form-group col-md-4 ">' +
+                    '<label for="">Mantenimiento</label>' +
+                    '<select style="width: 100%;" id="MTTO" name="MTTO[]" multiple required>' +
+                    ' <option value="Residuos Sólidos">Residuos Sólidos</option>' +
+                    '</select>' +
+                    '</div>' +
+
+                    '<div class="form-group col-md-4 ">' +
+                    '<label for="">Servicios Generales</label>' +
+                    '<select style="width: 100%;" id="SG" name="SG[]" multiple required>' +
+                    ' <option value="Residuos Sólidos">Residuos Sólidos</option>' +
+                    '</select>' +
+                    '</div>' +
+
+                    '<div class="form-group col-md-4 ">' +
+                    '<label for="">Compras y Contratos</label>' +
+                    '<select style="width: 100%;" id="CC" name="CC[]" multiple required>' +
+                    ' <option value="Residuos Sólidos">Residuos Sólidos</option>' +
+                    '</select>' +
+                    '</div>' +
+
+                    '<div class="form-group col-md-4 ">' +
+                    '<label for="">Sistema de Información</label>' +
+                    '<select style="width: 100%;" id="SSII" name="SSII[]" multiple required>' +
+                    ' <option value="Residuos Sólidos">Residuos Sólidos</option>' +
+                    '</select>' +
+                    '</div>' +
+
+                    '<div class="form-group col-md-4 ">' +
+                    '<label for="">Seguridad Corporativa</label>' +
+                    '<select style="width: 100%;" id="SC" name="SC[]" multiple required>' +
+                    ' <option value="Residuos Sólidos">Residuos Sólidos</option>' +
+                    '</select>' +
+                    '</div>'
+                );
+                $('#fechas select').select2({ tags: true, tokenSeparators: [','] });
+                //funciones del indicador
+                break; // cierre de las funciones del indicador 
+            }
             case 'plan': // nombre del indicador
                 $('#programacion_anual').parent().css('display', 'none');
                 $('#plan_charla').css('display', 'block');
@@ -162,68 +233,8 @@
                             '</div>');
                     } //funciones del indicador
                     break; // cierre de las funciones del indicador 
-
-                case 'monitoreo': // nombre del indicador 
-                {
-                    $('#fechas').append(
-
-                        '<div class="form-group col-md-12">' +
-                        '<div class="card-body">' +
-                        '<div class="row">' +
-                        '<div class="form-group col-md-4">' +
-                        '<label for="ruido">Ruido</label>' +
-                        '<input type="number" name="ruido" id="ruido" class="form-control" value=0 />' +
-                        ' </div>' +
-                        '<div class="form-group col-md-4">' +
-                        '<label for="emisiones">Emisiones</label>' +
-                        '<input type="number" name="emisiones" id="emisiones" class="form-control" value=0 />' +
-                        '</div>' +
-                        '<div class="form-group col-md-4">' +
-                        '<label for="agua">Agua</label>' +
-                        '<input type="number" name="agua" id="agua" class="form-control" value=0 />' +
-                        '</div>' +
-                        '<div class="form-group col-md-4">' +
-                        '<label for="ninguno">Ninguno</label>' +
-                        '<input type="number" name="ninguno" id="ninguno" class="form-control" value=0 />' +
-                        '</div>'
-                    );
-                } //funciones del indicador
-                break; //
-                $('#fechas').append('  <div class="card-body">' +
-                    '<div class="row">' +
-                    '<div class="form-group col-md-4 ">' +
-                    '<label for="">Producción</label>' +
-                    '<input class="form-control"  type="text" name="PROD[]" required />' +
-                    '</div>' +
-
-                    '<div class="form-group col-md-4 ">' +
-                    '<label for="">Mantenimiento</label>' +
-                    '<input class="form-control" id="PROD" type="text" name="MTTO[]" required />' +
-                    '</div>' +
-
-                    '<div class="form-group col-md-4 ">' +
-                    '<label for="">Servicios Generales</label>' +
-                    '<input class="form-control" id="SG" type="text" name="SG[]" required />' +
-                    '</div>' +
-
-                    '<div class="form-group col-md-4 ">' +
-                    '<label for="">Compras y Contratos</label>' +
-                    '<input class="form-control" id="date" type="text" name="CC[]" required />' +
-                    '</div>' +
-
-                    '<div class="form-group col-md-4 ">' +
-                    '<label for="">Sistema de Información</label>' +
-                    '<input class="form-control" id="date" type="text" name="SSII[]" required />' +
-                    '</div>' +
-
-                    '<div class="form-group col-md-4 ">' +
-                    '<label for="">Seguridad Corporativa</label>' +
-                    '<input class="form-control" id="date" type="text" name="SC[]" required />' +
-                    '</div>'
-                );
-                //funciones del indicador
-                break; // cierre de las funciones del indicador 
             }
+
         } else {
             alert('Máximo 50 fechas');
             $('#fechas').html('');
@@ -294,12 +305,12 @@
         let distribuir = distribuirCantidad(nroDias, diaSemana);
         let total = 0,
             totalCharlas = 0;
-        $('#charla_meses').html('');
+        $('#charla_meses').html(`<input name="dia_semana" value="${diaSemana}" style="display:none"/>`);
         distribuir[0].forEach(function(mes, index) {
             $('#charla_meses').append(`<div class="btn btn-primary border-dark text-left col-md-2">` +
                 `<b>${meses[index]}</b>` +
-                `<br>${distribuir[0][index]} ${dias[diaSemana]}` +
-                `<br>${distribuir[1][index]} Charlas` +
+                `<br>${distribuir[0][index]} ${dias[diaSemana]} <input name="cntd_dias[]" value="${distribuir[0][index]}" style="display:none"/>` +
+                `<br>${distribuir[1][index]} Charlas <input name="cntd_mes[]" value="${distribuir[1][index]}" style="display:none"/>` +
                 `</div>`);
             totalCharlas = totalCharlas + parseInt(distribuir[0][index]);
             total = total + parseInt(distribuir[1][index]);

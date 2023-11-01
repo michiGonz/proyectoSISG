@@ -54,8 +54,8 @@
                                     @endforeach
                                 </div>
                             </div>
-                            @elseif ($indicadorplan->nombre_indicador == 'plan')
-                            <b>{{$indicadorplan->date}}
+                            @elseif ($indicadorplan->nombre_indicador == 'plan' )
+                            <b>{{$indicadorplan->date->dia_}}
                             </b>
                             @elseif ($indicadorplan->nombre_indicador == 'visita')
                             <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#indicadorplan{{$clave}}" aria-expanded="false">
@@ -70,8 +70,9 @@
                                 </div>
                             </div>
                             @endif
-                        </td>
 
+                        </td>
+                      
                     </tr>
                     @endforeach
             </table>

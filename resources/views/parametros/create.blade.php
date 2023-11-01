@@ -14,11 +14,10 @@
 
                     <label for="PROD">Producción</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="PROD[]" id="PROD" multiple>
-                        <option id="proceso">Proceso del Gas</option>
-                        <option id="agua">Agua</option>
-                        <option id="quimico">Químicos consumidos en Operación</option>
+                        @foreach ($indicadorplan->date->PROD as $valor)
+                        <option id="{{$valor}}">{{$valor}}</option>
+                        @endforeach
                     </select>
-
                 </div>
             </div>
 
@@ -26,8 +25,7 @@
                 <div class="card-body">
                     <label for="MTTO">Mantenimiento</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="MTTO[]" id="MTTO" multiple>
-                        <option>Residuos Sólidos</option>
-
+                    <option>Residuos Sólidos</option>
                     </select>
                 </div>
             </div>
@@ -37,7 +35,6 @@
                     <label for="SSGG">Servicios Generales</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="SSGG[]" id="SSGG" multiple>
                         <option>Residuos Sólidos</option>
-
                     </select>
                 </div>
             </div>
@@ -56,7 +53,6 @@
                     <label for="SSII">Sistemas de Información</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="SSII[]" id="SSII" multiple>
                         <option>Residuos Sólidos</option>
-
                     </select>
                 </div>
             </div>
@@ -66,7 +62,6 @@
                     <label for="SC">Seguridad Corporativa</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="SC[]" id="SC" multiple>
                         <option>Residuos Sólidos</option>
-
                     </select>
                 </div>
             </div>
@@ -83,9 +78,7 @@
 
 
             <div class="form-group col-md-12 text-center">
-
                 <button type="submit" class="btn btn-primary">Crear Registro</button>
-
                 <a href="{{ route('parametros.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>

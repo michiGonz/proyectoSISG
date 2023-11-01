@@ -68,7 +68,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('crearindicador.index') }}">
                     <i class="fas fa-edit"></i>
-                    <span>Crear Indicador</span></a>
+                    <span>Crear Indicador<small>"En construccion"</small></span></a>
             </li>
 
             <!-- reportes planificados -->

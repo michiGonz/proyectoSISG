@@ -15,7 +15,6 @@ class Monitoreos extends Model
     'ruido',
     'agua',
     'emisiones',
-    'ninguno',
     'date',
     'observacion',
     ];

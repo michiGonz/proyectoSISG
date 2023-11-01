@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Parametros;
-use App\Models\Indicadorplan;
+
+use App\Http\Controllers\IndicadorplanController;
 
 
 class ParametrosController extends Controller {
     public function index() {
-        $indicadorplan = Indicadorplan::all();
+        $indicadorplan = IndicadorplanController::verPlan('parametros_ambientales',date('Y'));
         $parametros = [];
         foreach (Parametros::all() as $parametro) {
             $parametro->PROD = json_decode($parametro->PROD);
@@ -24,9 +25,9 @@ class ParametrosController extends Controller {
     }
 
     public function create() {
-        $parametros = Parametros::all();
-
-        return view('parametros.create', compact('parametros'));
+        $indicadorplan = IndicadorplanController::verPlan('parametros_ambientales',date('Y'));
+        $parametros = Parametros::get();
+        return view('parametros.create', compact('parametros','indicadorplan'));
     }
 
     public function store(Request $request) {

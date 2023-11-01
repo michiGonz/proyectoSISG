@@ -25,11 +25,7 @@
                                 <label for="agua">Agua</label>
                                 <input type="number" name="agua" id="agua" class="form-control" value=0 />
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="ninguno">Ninguno</label>
-                                <input type="number" name="ninguno" id="ninguno" class="form-control" value=0 />
-                            </div>
-
+                   
                         </div>
                         <br>
                         <div class="form-group">

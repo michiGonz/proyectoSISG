@@ -2,29 +2,27 @@
 @section('title', 'Inicio')
 @section('content')
 
-<?php var_dump($indicadorplan)?>
-<div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
 
-                <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" >
-                        Tarjetas Planificadas anualmente</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" >7</div>
+@if (property_exists($indicadorplan,'nombre_indicador'))
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left- shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text- text-uppercase mb-1">
+                        OPSA</div>
+                        <div class="h7 mb-0 font-weight-bold text-gray-800">
+                            <h6>Programación Anual: {{$indicadorplan->programacion_anual}}</h6>
+                            <h6>Programación Mensual: {{$indicadorplan->programadas_mes}}</h6>
+                        </div>
+                    </div>
                 </div>
-                @foreach ($indicadorplan as $indicadorplan)
-                @if ($indicadorplan->nombre_indicador=="opsa")
-                <?php $indicadorplan = json_decode($indicadorplan->programacion_anual);
-                $cumplido = []; ?>
-
-                @endif
-                @endforeach
-              
             </div>
         </div>
     </div>
 </div>
+@endif
 <div class="card">
     <h2 class="card-header">
         OPSA

@@ -28,10 +28,6 @@
                                 <label for="agua">Agua</label>
                                 <input type="number" value="{{ $monitoreos->agua}}" name="agua" id="agua" class="form-control" disabled />
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="ninguno">Ninguno</label>
-                                <input type="number" name="ninguno" value="{{ $monitoreos->ninguno}}" id="ninguno" class="form-control" v disabled />
-                            </div>
 
                             <div class="form-group">
                                 <label for="observacion">Observacion</label>

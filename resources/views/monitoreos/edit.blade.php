@@ -30,11 +30,7 @@
                                     <label for="agua">Agua</label>
                                     <input type="number" value="{{ $monitoreos->agua}}" name="agua" id="agua" class="form-control" />
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label for="ninguno">Ninguno</label>
-                                    <input type="number" name="ninguno" value="{{ $monitoreos->ninguno}}" id="ninguno" class="form-control" v />
-                                </div>
-
+                          
                                 <div class="form-group">
                                     <label for="observacion">Observacion</label>
                                     <input value="{{ $monitoreos->observacion}}" type="text" name="observacion" id="observacion" class="form-control" />

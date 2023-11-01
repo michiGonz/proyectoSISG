@@ -2,27 +2,25 @@
 @section('title', 'Inicio')
 @section('content')
 
-@if (!empty($indicadorplan))
+@if (property_exists($indicadorplan,'nombre_indicador'))
 <div class="row">
-@foreach ($indicadorplan as $plan)
-    @foreach ($plan->date as $plan_)
+@foreach ($indicadorplan->date as $plan)
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-{{$plan_->status}} shadow h-100 py-2">
+        <div class="card border-left-{{$plan->status}} shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-{{$plan_->status}} text-uppercase mb-1">
-                            Visitas Gerenciales Planificadas</div>
+                        <div class="text-xs font-weight-bold text-{{$plan->status}} text-uppercase mb-1">
+                            Simulacros Planificados</div>
                         <div class="h7 mb-0 font-weight-bold text-gray-800">
-                            <h6>Ubicación: {{$plan_->name}}</h6>
-                            <h6>Fecha: {{(ObtenerMes($plan_->date))}}</h6>
+                            <h6>Ubicación: {{$plan->name}}</h6>
+                            <h6>Fecha: {{(ObtenerMes($plan->date))}}</h6>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @endforeach
 @endforeach
 </div>
 @endif
