@@ -10,7 +10,7 @@ foreach ($investigacion as $clave => $valor) {
 
 <div class="card">
     <h2 class="card-header">Crear Registro de Investigacion de Incidentes
-        <small class="float-right">Acomulado: {{$t}}</small>
+        <small class="float-right">Total de registros: {{$t}}</small>
     </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('investigacion.store') }}">
@@ -38,8 +38,8 @@ foreach ($investigacion as $clave => $valor) {
             </div>
 
 
-            <div class="form-group col-md-4">
-                <label>Status</label>
+            <div class="form-group">
+                <label>Estado</label>
                 <select class="form-control" name="status" id="status">
                     <option value="Comunicacion"> Comunicación</option>
                     <option value="Comite">Comite</option>

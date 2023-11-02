@@ -15,7 +15,7 @@
                             @switch($clave)
                                 @case('PROD') Producción @break
                                 @case('MTTO') Mantenimiento @break
-                                @case('SG') Servicio generales @break
+                                @case('SSGG') Servicio generales @break
                                 @case('CC') Compras y contratos @break
                                 @case('SSII') Sistemas de información @break
                                 @case('SC') Seguridad corporativa @break
@@ -107,98 +107,6 @@
             </tfoot>
             </tbody>
         </table>
-        <script>
-            DataTabla('#parametros', [7, 'desc']);
-        </script>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
-        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-        <br>
-        <div class="card">
-            <div class="card-body">
-                <figure class="highcharts-figure">
-                    <div id="container"></div>
-                    <p class="highcharts-description">
-                        Grafica
-                    </p>
-                </figure>
-            </div>
-        </div>
     </div>
 </div>
-
-<script>
-    Highcharts.chart('container', {
-
-        chart: {
-            type: 'column'
-        },
-
-        title: {
-            text: 'Parametros <?php echo date('Y') ?>',
-            align: 'left'
-        },
-
-        xAxis: {
-            categories: ['UF']
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Count medals'
-            }
-        },
-
-        tooltip: {
-            format: '<b>{key}</b><br/>{series.name}: {y}<br/>' +
-                'Total: {point.stackTotal}'
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            }
-        },
-
-        series: [{
-                name: 'Total',
-                data: [<?php echo $total; ?>],
-                stack: 'total'
-            }, {
-                name: 'Mantenimiento',
-                data: [<?php echo $MTTO; ?>],
-                stack: 'MTTO'
-            },
-            {
-                name: 'Produccion',
-                data: [<?php echo $PROD; ?>],
-                stack: 'PROD'
-            },
-            {
-                name: 'Servicios Generales',
-                data: [<?php echo $SSGG; ?>],
-                stack: 'SSGG'
-            },
-            {
-                name: 'seguridad corporativa',
-                data: [<?php echo $SC; ?>],
-                stack: 'SC'
-            },
-            {
-                name: 'compra y contratacion',
-                data: [<?php echo $CC; ?>],
-                stack: 'CC'
-            },
-            {
-                name: 'sistemas de informacion',
-                data: [<?php echo $SSII; ?>],
-                stack: 'SSII'
-            }
-        ]
-
-    });
-</script>
 @endsection

@@ -12,10 +12,7 @@ class Manejo extends Model
     protected $table = 'manejo';
 
     protected $fillable = [
-        'name',
         'observacion',
         'date',
-     
-
     ];
 }

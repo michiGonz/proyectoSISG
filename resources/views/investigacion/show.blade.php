@@ -38,8 +38,8 @@
                 <input value="{{ $investigacion->nombre_lugar}}" disabled="true" type="ubicacion" name="nombre_lugar" id="nombre_lugar" class="form-control">
             </div>
 
-            <div class="form-group col-md-4">
-                <label>Status</label>
+            <div class="form-group ">
+                <label>Estado</label>
                 <select class="form-control" name="status" id="status" disabled>
                     <option value="comunicacion"> Comunicación</option>
                     <option value="comite">Comite</option>

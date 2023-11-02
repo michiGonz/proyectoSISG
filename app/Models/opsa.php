@@ -62,7 +62,6 @@ class Opsa extends Model
         'A_10',
         'cantidad_seguro',
         'cantidad_inseguro',
-        'total',
         'observacion',
        'date',
        

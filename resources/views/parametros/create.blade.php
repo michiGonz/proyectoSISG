@@ -14,9 +14,11 @@
 
                     <label for="PROD">Producción</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="PROD[]" id="PROD" multiple>
+                    @if(count($indicadorplan->date->PROD)>0)
                         @foreach ($indicadorplan->date->PROD as $valor)
-                        <option id="{{$valor}}">{{$valor}}</option>
+                        <option value="{{$valor}}">{{$valor}}</option>
                         @endforeach
+                    @endif
                     </select>
                 </div>
             </div>
@@ -25,7 +27,11 @@
                 <div class="card-body">
                     <label for="MTTO">Mantenimiento</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="MTTO[]" id="MTTO" multiple>
-                    <option>Residuos Sólidos</option>
+                    @if(count($indicadorplan->date->MTTO)>0)
+                        @foreach ($indicadorplan->date->MTTO as $valor)
+                        <option value="{{$valor}}">{{$valor}}</option>
+                        @endforeach
+                    @endif
                     </select>
                 </div>
             </div>
@@ -34,7 +40,11 @@
                 <div class="card-body">
                     <label for="SSGG">Servicios Generales</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="SSGG[]" id="SSGG" multiple>
-                        <option>Residuos Sólidos</option>
+                    @if(count($indicadorplan->date->SSGG)>0)
+                        @foreach ($indicadorplan->date->SSGG as $valor)
+                        <option value="{{$valor}}">{{$valor}}</option>
+                        @endforeach
+                    @endif
                     </select>
                 </div>
             </div>
@@ -43,7 +53,11 @@
                 <div class="card-body">
                     <label for="CC">Compras y Contrato</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="CC[]" id="CC" multiple>
-                        <option>Residuos Sólidos</option>
+                    @if(count($indicadorplan->date->CC)>0)
+                        @foreach ($indicadorplan->date->CC as $valor)
+                        <option value="{{$valor}}">{{$valor}}</option>
+                        @endforeach
+                    @endif
                     </select>
                 </div>
             </div>
@@ -52,7 +66,11 @@
                 <div class="card-body">
                     <label for="SSII">Sistemas de Información</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="SSII[]" id="SSII" multiple>
-                        <option>Residuos Sólidos</option>
+                    @if(count($indicadorplan->date->SSII)>0)
+                        @foreach ($indicadorplan->date->SSII as $valor)
+                        <option value="{{$valor}}">{{$valor}}</option>
+                        @endforeach
+                    @endif
                     </select>
                 </div>
             </div>
@@ -61,7 +79,11 @@
                 <div class="card-body">
                     <label for="SC">Seguridad Corporativa</label>
                     <select style="width: 100%;" class="col-md-5 form-control" name="SC[]" id="SC" multiple>
-                        <option>Residuos Sólidos</option>
+                    @if(count($indicadorplan->date->SC)>0)
+                        @foreach ($indicadorplan->date->SC as $valor)
+                        <option value="{{$valor}}">{{$valor}}</option>
+                        @endforeach
+                    @endif
                     </select>
                 </div>
             </div>
@@ -86,12 +108,7 @@
 
 </div>
 <script>
-    $("#PROD").select2();
-    $("#MTTO").select2();
-    $("#CC").select2();
-    $("#SSII").select2();
-    $("#SC").select2();
-    $("#SSGG").select2();
+    $("select").select2();
 </script>
 
 @endsection

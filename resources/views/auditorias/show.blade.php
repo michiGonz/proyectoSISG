@@ -50,6 +50,7 @@
                                 <div class="row">
 
                                     <div class="form-group col-md 3">
+                                    <br>
                                         <label for="permisos_generadospdvsa"> Permisos Generados de PDVSA</label>
                                         <input type="number" value="{{ $auditorias->permisos_generadospdvsa}}" name="permisos_generadospdvsa" id="permisos_generadospdvsa" class="form-control" value=0 disabled />
                                     </div>

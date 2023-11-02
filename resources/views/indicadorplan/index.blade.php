@@ -37,6 +37,7 @@
                             <div class="collapse" id="indicadorplan{{$clave}}">
                                 <div class="card card-body">
                                     @foreach ($indicadorplan->date as $date)
+
                                     <div><b>Nombre:</b> {{$date->name}}</div>
                                     <div><b>Fecha:</b> {{$date->date}}</div><br>
                                     @endforeach
@@ -72,7 +73,7 @@
                             @endif
 
                         </td>
-                      
+
                     </tr>
                     @endforeach
             </table>

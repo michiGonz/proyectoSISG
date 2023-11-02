@@ -4,7 +4,7 @@
 
 <div class="card">
     <h2 class="card-header">
-        Editar Registro de Jornada Ambiental
+        Jornada Ambiental
     </h2>
     <div class="card-body">
         <div class="table table-striped-columns">
@@ -12,11 +12,7 @@
                 @csrf
                 @method('PUT')
 
-                <div class="form-group col-md-6">
-                    <label for="jornadas_ejecutadas">Comites Ejecutados</label>
-                    <input disabled value="{{ $jornada->jornadas_ejecutadas}}" type="number" name="jornadas_ejecutadas" id="jornadas_ejecutadas" value=0 class="form-control">
-                </div>
-
+              
                 <div class="form-group col-md-6">
                     <label for="descripcion">Descripcion</label>
                     <input disabled value="{{ $jornada->descripcion}}" type="text" name="descripcion" id="descripcion" class="form-control" />

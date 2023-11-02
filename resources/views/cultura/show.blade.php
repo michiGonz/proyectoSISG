@@ -11,7 +11,7 @@
             <div class="table table-striped-columns">
                 @csrf
                 <div class="form-group ">
-                    <label for="Reuniones">Comites Ejecutados</label>
+                    <label for="comite_cumplido">Acciones Ejecutados</label>
                     <input value="{{ $cultura->comite_cumplido}}" type="number" disabled="true" name="ejecutadas" id="ejecutadas" class="form-control" value=0 />
                 </div>
 

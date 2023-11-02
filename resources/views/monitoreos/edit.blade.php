@@ -31,7 +31,7 @@
                                     <input type="number" value="{{ $monitoreos->agua}}" name="agua" id="agua" class="form-control" />
                                 </div>
                           
-                                <div class="form-group">
+                                <div class="form-group col-md-12">
                                     <label for="observacion">Observacion</label>
                                     <input value="{{ $monitoreos->observacion}}" type="text" name="observacion" id="observacion" class="form-control" />
                                 </div>

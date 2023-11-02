@@ -40,8 +40,8 @@
                 <thead>
                     <tr>
 
-                        <th>Observacion</th>
-                        <th>Fecha de Reunion</th>
+                        <th>Observación</th>
+                        <th>Fecha de Reunión</th>
                         <th>Fecha de Entrega al Inpsasel</th>
                         <th>Acciones</th>
 
@@ -60,7 +60,7 @@
                                 @csrf
 
                             </form>
-                            <a href="{{ route('comite.edit', $comite->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
+                            <!-- <a href="{{ route('comite.edit', $comite->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a> -->
                         </td>
                     </tr>
                     @endforeach

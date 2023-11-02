@@ -7,15 +7,15 @@
 <div class="row">
 
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left- shadow h-100 py-2">
+        <div class="card border-left-{{$indicadorplan->status}} shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text- text-uppercase mb-1">
+                        <div class="text-xs font-weight-bold text-{{$indicadorplan->status}} text-uppercase mb-1">
                             Jornadas Ambientales Planificadas</div>
                         <div class="h7 mb-0 font-weight-bold text-gray-800">
                             <h6>Programación Anual: {{$indicadorplan->programacion_anual}}</h6>
-
+                            <h6>Realizadas: {{$indicadorplan->realizadas}}</h6>
                         </div>
                     </div>
                 </div>
@@ -38,28 +38,33 @@
                 <thead>
                     <tr>
 
-                        <th>Cant de Aprendiendo en el Trabajo</th>
-                        <th>Observacion</th>
+                        <th>Cantidad de Aprendiendo en el Trabajo</th>
+                        <th>Observación</th>
                         <th>Fecha</th>
-                        <th>Acciones</th>
+                      
 
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($aprendiendo as $aprendiendo)
+                    @foreach ($aprendiendo as $clave => $aprendiend)
                     <tr>
-                        <td>{{ $aprendiendo->cantidad_actividad }}</td>
-                        <td>{{ $aprendiendo->nombre }}</td>
-                        <td>{{ $aprendiendo->observacion}}</td>
-                        <td>{{ $aprendiendo->date}}</td>
+                        <td>{{ $aprendiend->cantidad_actividad }}</td>
+                        <td>{{ $aprendiend->observacion}}</td>
                         <td>
-                            <a href="{{ route('aprendiendo.show', $aprendiendo->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
-                            <form action="{{ route('aprendiendo.destroy', $aprendiendo->id) }}" method="POST" class="d-inline">
-                                @csrf
+                        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#aprendiend{{$clave}}" aria-expanded="false">
+                                Fechas <i class="fas fa-angle-down"></i>
+                            </button>
+                            <div class="" id="aprendiend{{$clave}}">
+                                <div class="card card-body">
+                                    @foreach ($aprendiend->date as $date)
 
-                            </form>
-                            <a href="{{ route('aprendiendo.edit', $aprendiendo->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
+                                    <div><b>Nombre:</b> {{$date->name}}</div>
+                                    <div><b>Fecha:</b> {{$date->date}}</div><br>
+                                    @endforeach
+                                </div>
+                            </div>
                         </td>
+                    
                     </tr>
                     @endforeach
                 </tbody>
@@ -68,6 +73,6 @@
     </div>
 </div>
 <script>
-    DataTabla('#aprendiendo', [4, 'desc']);
+    DataTabla('#aprendiendo', [2, 'desc']);
 </script>
 @endsection

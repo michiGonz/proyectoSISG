@@ -32,13 +32,14 @@
 
     </h2>
     <div class="card-body">
-        <div class="table table-striped-columns ">
-            <table class="table mt-3 table table-striped-columns" id="simulacion">
+        <div class="table table-striped-columns-text-center ">
+            <table class="table mt-3 table table-striped-columns-text-center" id="simulacion">
 
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Date</th>
+                        <th>Nombre del Simulacro</th>
+                        <th>Ubicación</th>
+                        <th>Fecha</th>
                         <th>Acciones</th>
 
                     </tr>
@@ -50,6 +51,7 @@
                     <tr>
                     
                         <td>{{ $simulacion->name }}</td>
+                        <td>{{ $simulacion->ubicacion }}</td>
                         <td>{{ $simulacion->date}}</td>
                         <td>
                             <a href="{{ route('simulacion.show', $simulacion->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
@@ -57,7 +59,7 @@
                                 @csrf
 
                             </form>
-                            <a href="{{ route('simulacion.edit', $simulacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
+                            <!-- <a href="{{ route('simulacion.edit', $simulacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a> -->
 
                         </td>
                     </tr>

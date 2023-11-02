@@ -14,7 +14,7 @@
             <table class="table mt-3" id="investigacion">
                 <thead>
                     <tr>
-                        <th>Status</th>
+                        <th>Estado</th>
                         <th>Unidad Funcional</th>
                         <th>Nombre Del incidente</th>
                         <th>Ubicación</th>
@@ -39,7 +39,7 @@
                                 @csrf
 
                             </form>
-                            <a href="{{ route('investigacion.edit', $investigacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
+                            <!-- <a href="{{ route('investigacion.edit', $investigacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a> -->
 
                         </td>
                     </tr>

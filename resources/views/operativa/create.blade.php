@@ -14,13 +14,13 @@
                 @csrf
 
                 <div class="form-group ">
-                    <label for="cantidad">Acciones Pendientes</label>
-                    <input type="number" name="comite_cumplido" id="cantidad" class="form-control" value=0 />
+                    <label for="acciones_pendientes">Acciones Pendientes</label>
+                    <input type="number" name="acciones_pendientes" id="acciones_pendientes" class="form-control" value=0 />
                 </div>
 
                 <div class="form-group ">
-                    <label for="cantidad_manejo">Acciones Ejecutados</label>
-                    <input type="number" name="comite_cumplido" id="cantidad_manejo" class="form-control" value=0 />
+                    <label for="acciones_ejecutadas">Acciones Ejecutados</label>
+                    <input type="number" name="acciones_ejecutadas" id="acciones_ejecutadas" class="form-control" value=0 />
                 </div>
 
                 <div class="form-group">
@@ -28,7 +28,7 @@
                     <input type="text " name="observacion" id="observacion" class="form-control" />
                 </div>
 
-                <div class="row" id="fechas"></div>
+                <div class="row" id="date"></div>
 
                 <div class="form-group col-md-12 text-center">
                     <br>
@@ -38,23 +38,21 @@
                 </div>
         </form>
     </div>
-    </tr>
-    </tr>
-    </tbody>
+    
 </div>
 <script>
-    $('#cantidad_manejo').change(function() {
-        let nro = parseInt($('#cantidad_manejo').val());
+    $('#acciones_ejecutadas').change(function() {
+        let nro = parseInt($('#acciones_ejecutadas').val());
         $('#fechas').html('')
         if (nro <= 100) {
        
                 for (let index = 0; index < nro; index++) {
-                    $('#fechas').append(
+                    $('#date').append(
                         '<div class="card col-md-6">'+
                             '<div class="card-body">'+
                                 '<div class="row">'+
                                     '<div class="form-group col-md-4">' +
-                                        '<label for="name">Fecha</label>' +
+                                        '<label for="name"> Eficiencia Operativa</label>' +
                                         '<input class="form-control" id="name" type="text" name="name[]" required />' +
                                     '</div>'+
                                     '<div class="form-group col-md-4">' +
@@ -62,8 +60,8 @@
                                         '<input class="form-control" id="date" type="month" name="date[]" required />' +
                                     '</div>'+
                                     '<div class="form-group col-md-4">' +
-                                        '<label>Status</label>' +
-                                        '<select class="form-control" name="Status" id="status">'+
+                                        '<label>Estado</label>' +
+                                        '<select class="form-control" id="status" name="status[]">'+
                                             '<option value="pendiente">Pendiente</option>'+
                                             '<option value="evaluado">Ejecutado</option>'+
                                         '</select>'+

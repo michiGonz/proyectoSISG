@@ -15,8 +15,8 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="{{asset('assets/js/googleapis.js')}}"/>
+    <link rel="{{asset('assets/js/apis.js')}}" />
     <!-- Flag sprites service provided by Martijn Lafeber,
         https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
 
@@ -31,10 +31,7 @@
     <script src="{{asset('assets/js/js.js')}}"></script>
 
     <!-- graficas-->
-    <script src="{{asset('assets/vendor/https://code.highcharts.com/highcharts.js')}}"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -64,6 +61,7 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
+
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('crearindicador.index') }}">
@@ -105,17 +103,24 @@
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
 
+               
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
                     <div class="topbar-divider d-none d-sm-block"></div>
 
                     <!-- Nav Item - User Information -->
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('indicators.index') }}">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{

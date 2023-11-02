@@ -6,15 +6,15 @@
 @if (property_exists($indicadorplan,'nombre_indicador'))
 <div class="row">
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left- shadow h-100 py-2">
+        <div class="card border-left-{{$indicadorplan->status}} shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text- text-uppercase mb-1">
+                        <div class="text-xs font-weight-bold text-{{$indicadorplan->status}} text-uppercase mb-1">
                         Jornadas Ambientales Planificadas</div>
                         <div class="h7 mb-0 font-weight-bold text-gray-800">
                             <h6>Programación Anual: {{$indicadorplan->programacion_anual}}</h6>
-
+                            <h6>Programación Anual: {{$indicadorplan->total}}</h6>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
 
                         <th>Descripción</th>
                         <th>Ubicación</th>
-                        <th>Date</th>
+                        <th>Fecha</th>
                         <th>Acciones</th>
 
                     </tr>
@@ -57,7 +57,7 @@
                                 @csrf
 
                             </form>
-                            <a href="{{ route('jornada.edit', $jornada->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
+                            <!-- <a href="{{ route('jornada.edit', $jornada->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a> -->
 
                         </td>
                     </tr>

@@ -9,13 +9,13 @@
     </h2>
     <div class="card-body">
 <div class="table table-striped-columns">
-    <form method="POST" class="row" action="{{ route('operativa.update', $operativa->id) }}" method="POST">
+    <form method="POST" class="row" action="{{ route('operativa.update', $operativ->id) }}" method="POST">
         @csrf
         @method('PUT')
 
         <div class="form-group col-md-6">
-            <label for="comite_cumplido">Acciones Ejecutados</label>
-            <input value="{{ $operativa->comite_cumplido}}" type="number" name="comite_cumplido" id=""  value=0 class="form-control">
+            <label for="acciones_pendientes">Acciones Ejecutados</label>
+            <input value="{{ $operativa->acciones_pendientes}}" type="number" name="acciones_pendientes" id=""  value=0 class="form-control">
         </div>
 
         <div class="form-group col-md-6">

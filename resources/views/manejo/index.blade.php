@@ -32,11 +32,10 @@
                             @csrf
 
                         </form>
-                        <a href="{{ route('manejo.edit', $manejo->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
+                        <!-- <a href="{{ route('manejo.edit', $manejo->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a> -->
 
                     </td>
                 </tr>
-
                 @endforeach
             </tbody>
         </table>

@@ -12,7 +12,6 @@ class Aprendiendo extends Model
 
     protected $fillable = [
     'cantidad_actividad',
-    'nombre',
     'date',
     'observacion',
     ];

@@ -7,12 +7,7 @@
     </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('monitoreos.store') }}">
-
-
-
             <div class="table table-striped-columns">
-
-                <h6>Selección de Monitoreos:</h6>
                 <div class="form-group col-md-12">
                     <div class="card-body">
                         <div class="row">
@@ -29,7 +24,7 @@
                                 <input type="number" value="{{ $monitoreos->agua}}" name="agua" id="agua" class="form-control" disabled />
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group col-md-12">
                                 <label for="observacion">Observacion</label>
                                 <input value="{{ $monitoreos->observacion}}" type="text" name="observacion" id="observacion" class="form-control" disabled />
                             </div>

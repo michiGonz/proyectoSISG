@@ -25,7 +25,7 @@
             <textarea name="observacion" id="observacion" disabled="true" class="form-control" rows="1"
                 required>{{ $simulacion->observacion }} </textarea>
         </div>
-        <div class="container px-1 px-sm-2 mx-auto">
+        <div class="form-group">
             <div class="form-group">
                 <label for="date">Fecha</label>
                 <input value="{{ $simulacion->date }}" type="date" disabled="true" id="start"

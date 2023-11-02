@@ -56,10 +56,10 @@
                         <td>
 
                             <a href="{{ route('opsa.show', $opsa->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
-                            <form action="{{ route('opsa.edit', $opsa->id) }}" method="POST" class="d-inline">
+                            <!-- <form action="{{ route('opsa.edit', $opsa->id) }}" method="POST" class="d-inline">
                                 @csrf
 
-                            </form>
+                            </form> -->
 
                         </td>
                     </tr>
@@ -88,73 +88,5 @@
         </script>
     </div>
 </div>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<br>
-<div class="card">
-    <div class="card-body">
-        <figure class="highcharts-figure">
-            <div id="container"></div>
-            <p class="highcharts-description">
-                Descripción
-            </p>
-        </figure>
-    </div>
-</div>
 
-<script>
-    Highcharts.chart('container', {
-
-        chart: {
-            type: 'column'
-        },
-
-        title: {
-            text: 'OPSA <?php echo date('M') ?>',
-            align: 'left'
-        },
-
-        xAxis: {
-            categories: ['OPSA']
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: ''
-            }
-        },
-
-        tooltip: {
-            format: '<b>{key}</b><br/>{series.name}: {y}<br/>' +
-                'Total: {point.stackTotal}'
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            }
-        },
-
-        series: [{
-                name: 'Total',
-                data: [<?php echo $total; ?>],
-                stack: 'total'
-            }, {
-                name: 'Actos Seguros',
-                data: [<?php echo $cantidad_seguro; ?>],
-                stack: 'cantidad_seguro'
-            },
-            {
-                name: 'Actos Inseguro',
-                data: [<?php echo $cantidad_inseguro; ?>],
-                stack: 'cantidad_inseguro'
-            }
-
-        ]
-    });
-</script>
 @endsection

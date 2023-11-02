@@ -30,7 +30,7 @@
 
 
             <div class="form-group col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Crear Registro</button>
+                <button type="submit" class="btn btn-primary">Actualizar Registro</button>
                 <a href="{{ route('simulacion.create') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>

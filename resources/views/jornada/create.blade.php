@@ -9,7 +9,7 @@ foreach ($jornada as $clave => $valor) {
 } ?>
 <div class="card">
     <h2 class="card-header">Crear Registro de Jornada Ambiental
-        <small class="float-right">Acomulado: {{$t}}</small>
+        <small class="float-right">Total de registros: {{$t}}</small>
     </h2>
     <div class="card-body">
 

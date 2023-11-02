@@ -15,9 +15,10 @@ class CreateOperativaTable extends Migration
     {
         Schema::create('operativa', function (Blueprint $table) {
             $table->id();
-            $table->string('comite_cumplido');
+            $table->string('cantidad_actividad');
+            $table->string('acciones_ejecutadas');
             $table->text('observacion');
-            $table->date('date');
+            $table->text('date');
             $table->timestamps();
         });
     }

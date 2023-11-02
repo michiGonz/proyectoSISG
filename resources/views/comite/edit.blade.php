@@ -30,12 +30,12 @@
                 <label for="observacion">Observacion</label>
                 <input value="{{ $comite->observacion}}" type="text" name="observacion" id="observacion" class="form-control" />
             </div>
-
-            <div class="form-group  col-md-6">
+            <div class="form-group col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Actualizar Registro</button>
                 <a href="{{ route('comite.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
+
     </div>
 </div>
 @endsection

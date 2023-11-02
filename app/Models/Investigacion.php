@@ -12,7 +12,7 @@ class Investigacion extends Model
     protected $with = ['unidad_funcional'];
 
     protected $fillable = [
-       'Acomulado:',
+       'Total de registros:',
         'uf',
         'status',
         'nombre_incidente',

@@ -38,7 +38,7 @@
                                 @csrf
 
                             </form>
-                            <a href="{{ route('cultura.edit', $cultura->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
+                            <!-- <a href="{{ route('cultura.edit', $cultura->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a> -->
 
                         </td>
                     </tr>

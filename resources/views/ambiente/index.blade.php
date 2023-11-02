@@ -46,14 +46,18 @@
                     <tr>
                         <td>{{ $ambiente->name }}</td>
                         <td>{{ $ambiente->description }}</td>
-                        <td>{{ $ambiente->personal}}</td>
+                        <td>
+                            @foreach ($ambiente->personal as $persona)
+                                {{$persona}}<br>
+                            @endforeach
+                        </td>
                         <td>{{ ObtenerFecha($ambiente->date) }}</td>
                         <td>
                             <a href="{{ route('ambiente.show', $ambiente->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
                             <form action="{{ route('ambiente.destroy', $ambiente->id) }}" method="POST" class="d-inline">
                                 @csrf
                             </form>
-                            <a class="btn btn-success float-right" class="nav-link" href="{{ route('ambiente.edit', $ambiente->id) }}" class="btn btn-success btn-sm"> <i class="fas fa-edit"></i>
+                            <!-- <a class="btn btn-success float-right" class="nav-link" href="{{ route('ambiente.edit', $ambiente->id) }}" class="btn btn-success btn-sm"> <i class="fas fa-edit"></i> -->
                         </td>
                     </tr>
                     @endforeach

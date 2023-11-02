@@ -44,7 +44,7 @@ class IndicadorplanController extends Controller {
                     $indicadorplan['date'] = (object)$dates;
                     break;
                 case 'visita':
-                    $indicadorplan['nombre'] = 'Visita geranial';
+                    $indicadorplan['nombre'] = 'Visita Gerencial';
                     $indicadorplan['date'] = json_decode($indicadorplan['date']);
                     break;
                 case 'auditoria':
@@ -124,8 +124,8 @@ class IndicadorplanController extends Controller {
                 foreach ($request->MTTO as $valor) {
                     $dates['MTTO'][] = strtolower(str_replace(' ', '_', trim($valor)));
                 }
-                foreach ($request->SG as $valor) {
-                    $dates['SG'][] = strtolower(str_replace(' ', '_', trim($valor)));
+                foreach ($request->SSGG as $valor) {
+                    $dates['SSGG'][] = strtolower(str_replace(' ', '_', trim($valor)));
                 }
                 foreach ($request->CC as $valor) {
                     $dates['CC'][] = strtolower(str_replace(' ', '_', trim($valor)));
@@ -237,8 +237,6 @@ class IndicadorplanController extends Controller {
                         $mes = date('Y') . "-" . (($clave < 9) ? '0' . ($clave + 1) : $clave + 1);
                         $mesActual = date('Y-m');
                         $realizadas = number_format(DB::selectOne("SELECT SUM(LENGTH(date) - LENGTH(REPLACE(date, '$mes', ''))) / LENGTH('$mes') AS total FROM plandeformacion;")->total, 0);
-
-
                         $dates[] = (object)[
                             'mes' => $meses[$clave],
                             'dia' => $dias[$plan->date->dia],
@@ -283,6 +281,10 @@ class IndicadorplanController extends Controller {
                     break;
                 case 'aprendiendo':
                     $plan->nombre = 'Aprendiendo en el trabajo';
+                    $dates = [];
+                    $realizadas = number_format(DB::selectOne("SELECT SUM(LENGTH(date) - LENGTH(REPLACE(date, '{\"name\":\"', ''))) / LENGTH('{\"name\":\"') AS total FROM aprendiendo;")->total, 0);
+                    $plan->realizadas = $realizadas;
+                    $plan->status = (($realizadas >= $plan->programacion_anual) ? 'success' : 'danger');
                     break;
                 case 'monitoreo':
                     $plan->nombre = 'Monitoreo ambiental';
@@ -293,6 +295,9 @@ class IndicadorplanController extends Controller {
                     break;
                 case 'jornada':
                     $plan->nombre = 'jornada';
+                    $status = DB::selectOne("SELECT COUNT(*) as contar FROM jornada WHERE  id != '' AND date LIKE '".date('Y')."%'")->contar;
+                    $plan->total = $status;
+                    $plan->status = (($status >= $plan->programacion_anual) ? 'success' : 'danger');
                     break;
                 case 'parametros_ambientales':
                     $plan->nombre = 'Parametros ambiental';
@@ -313,3 +318,4 @@ class IndicadorplanController extends Controller {
         return $plan;
     }
 }
+

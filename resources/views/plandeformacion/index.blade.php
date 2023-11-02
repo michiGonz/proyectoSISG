@@ -134,12 +134,11 @@
 
                         </td>
                         <td>
-                            <a href="{{ route('plandeformacion.show', $plandeformacion->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
-                            <form action="{{ route('plandeformacion.destroy', $plandeformacion->id) }}" method="POST" class="d-inline">
+                            
                                 @csrf
 
                             </form>
-                            <a href="{{ route('plandeformacion.edit', $plandeformacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
+                            <!-- <a href="{{ route('plandeformacion.edit', $plandeformacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a> -->
 
                         </td>
 

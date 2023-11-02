@@ -26,6 +26,7 @@ class ParametrosController extends Controller {
 
     public function create() {
         $indicadorplan = IndicadorplanController::verPlan('parametros_ambientales',date('Y'));
+        // dd($indicadorplan);
         $parametros = Parametros::get();
         return view('parametros.create', compact('parametros','indicadorplan'));
     }

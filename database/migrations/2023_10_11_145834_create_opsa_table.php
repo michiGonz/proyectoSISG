@@ -64,10 +64,8 @@ class CreateOpsaTable extends Migration
             $table->text('A_10');
             $table->text('cantidad_seguro');
             $table->text('cantidad_inseguro');
-            $table->text('total');
             $table->text('observacion');
-            $table->date('date');
-            $table->string('cantidad')->nullable();
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }

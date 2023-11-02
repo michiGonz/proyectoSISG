@@ -19,7 +19,7 @@
                     <option value="simulacro">Simulacro</option>
                     @endif
                     @if (!in_array('comite',$consulta))
-                    <option value="comite">Comite de Seguridad Salud y Ambiente</option>
+                    <option value="comite">Comite de Seguridad y Salud Laborales</option>
                     @endif
                     @if (!in_array('plan',$consulta))
                     <option value="plan">Plan de formacion seguridad salud y ambiente</option>
@@ -95,7 +95,8 @@
     if ($('#nombre_indicador').val() == 'opsa' || $('#nombre_indicador').val() == 'auditoria') {
         $('#programadas_mes').val(0).parent().css('display', 'block');
     }
-    $('#nombre_indicador').change(function() {
+
+    function cambiarTipo() {
         let indicador = $('#nombre_indicador').val();
         $('#programacion_anual').val('').parent().css('display', 'block');
         $('#programadas_mes').val('0').parent().css('display', 'none');
@@ -128,7 +129,7 @@
                 break;
             case 'parametros_ambientales': {
                 $('#programacion_anual').val(0).parent().css('display', 'none');
-                $('#fechas').html('  <div class="card-body">' +
+                $('#fechas').html('<div class="card-body">' +
                     '<div class="row">' +
                     '<div class="form-group col-md-4 ">' +
                     '<label for="">Producción</label>' +
@@ -148,7 +149,7 @@
 
                     '<div class="form-group col-md-4 ">' +
                     '<label for="">Servicios Generales</label>' +
-                    '<select style="width: 100%;" id="SG" name="SG[]" multiple required>' +
+                    '<select style="width: 100%;" id="SSGG" name="SSGG[]" multiple required>' +
                     ' <option value="Residuos Sólidos">Residuos Sólidos</option>' +
                     '</select>' +
                     '</div>' +
@@ -188,6 +189,10 @@
 
                 break; // cierre de las funciones del indicador 
         }
+    }
+    cambiarTipo();
+    $('#nombre_indicador').change(function() {
+        cambiarTipo();
     });
     $('#programadas_mes').change(function() {
         let indicador = $('#nombre_indicador').val();
@@ -199,7 +204,7 @@
     $('#programacion_anual').change(function() {
         let nro = parseInt($('#programacion_anual').val());
         let indicador = $('#nombre_indicador').val();
-        $('#fechas').html('')
+        $('#fechas').html('');
         if (nro <= 50 || (indicador == 'opsa' || indicador == 'auditoria' || indicador == 'monitoreo' || indicador == 'jornada')) {
             switch (indicador) {
                 case 'opsa':

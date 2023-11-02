@@ -23,11 +23,6 @@
                     <input type="text" name="observacion" id="observacion" class="form-control" />
                 </div>
 
-                <div class="form-group">
-                    <label for="date">Fecha</label>
-                    <input class="form-control" id="date" type="date" name="date" value="" />
-                </div>
-
                 <div class="form-group col-md-12 text-center">
                     <br>
                     <button type="submit" class="btn btn-primary">Crear Registro</button>
@@ -60,7 +55,7 @@
                     '</div>' +
                     '<div class="form-group col-md-4">' +
                     '<label>Status</label>' +
-                    '<select class="form-control" name="Status" id="status">' +
+                    '<select class="form-control" name="status[]" id="status">' +
                     '<option value="activo">Pendiente</option>' +
                     '<option value="pendiente">Evaluado</option>' +
                     '<option value="evaluado">Aprobado</option>' +

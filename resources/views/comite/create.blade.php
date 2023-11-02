@@ -9,7 +9,7 @@ foreach ($comite as $clave => $valor) {
 } ?>
 <div class="card">
     <h2 class="card-header">Crear Reporte de Comite Seguridad Salud Laborales
-        <small class="float-right">Total: {{$t}}</small>
+        <small class="float-right">Total de Registros: {{$t}}</small>
     </h2>
     <div class="card-body">
         <form method="POST" action="{{ route('comite.store') }}">
@@ -40,7 +40,7 @@ foreach ($comite as $clave => $valor) {
                 <br>
                 <button type="submit" class="btn btn-primary">Crear Registro</button>
 
-                <a href="{{ route('comite.create') }}" class="btn btn-secondary">Cancelar</a>
+                <a href="{{ route('comite.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

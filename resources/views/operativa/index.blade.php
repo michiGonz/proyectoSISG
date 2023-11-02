@@ -6,44 +6,45 @@
 
 <div class="card">
     <h2 class="card-header">
-        Eficiencia Operativa
+      Eficiencia Operativa
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('operativa.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
     </h2>
     <div class="card-body">
         <div class="table table-striped-columns text-center">
-            <table class="table mt-3" id="operativa">
+            <table class="table mt-3" id="aprendiendo">
 
                 <thead>
                     <tr>
 
-                        <th>Acciones Ejecutadas</th>
+                        <th>Cantidad de Aprendiendo en el Trabajo</th>
                         <th>Observación</th>
                         <th>Fecha</th>
-                        <th>Acciones</th>
+                      
 
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($operativa as $operativa)
-
+                    @foreach ($operativa as $clave => $operativ)
                     <tr>
-
-                        <td>{{ $operativa->comite_cumplido}}</td>
-                        <td>{{ $operativa->observacion}}</td>
-                        <td>{{ $operativa->date}}</td>
-
-
+                        <td>{{ $operativ->acciones_pendientes }}</td>
+                        <td>{{ $operativ->observacion}}</td>
                         <td>
-                            <a href="{{ route('operativa.show', $operativa->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
-                            <form action="{{ route('operativa.destroy', $operativa->id) }}" method="POST" class="d-inline">
-                                @csrf
+                            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#operativa{{$clave}}" aria-expanded="false">
+                               Datos <i class="fas fa-angle-down"></i>
+                            </button>
+                            <div class="collapse" id="operativa{{$clave}}">
+                                <div class="card card-body">
+                                    @foreach ($operativ->date as $date)
 
-                            </form>
-                            <a href="{{ route('operativa.edit', $operativa->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a>
-
+                                    <div><b>Nombre:</b> {{$date->name}}</div>
+                                    <div><b>Fecha:</b> {{$date->date}}</div><br>
+                                 
+                                    @endforeach
+                                </div>
+                            </div>
                         </td>
+                      
                     </tr>
-
                     @endforeach
                 </tbody>
             </table>
