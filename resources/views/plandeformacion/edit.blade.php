@@ -65,7 +65,7 @@
         </form>
     </div>
     <script>
-        $('#ejecutadas_ambiente').change(function() {
+        $('#ejecutadas_ambiente').on('input keyup', function() {
             let nro = parseInt($('#ejecutadas_ambiente').val());
             $('#ejecutadas_ambiente').html('')
             $('#fecha').html('')
@@ -85,7 +85,7 @@
             }
         });
 
-        $('#ejecutadas_seguridad').change(function() {
+        $('#ejecutadas_seguridad').on('input keyup', function() {
             let nro = parseInt($('#ejecutadas_seguridad').val());
             $('#ejecutadas_seguridad').html('')
             $('#fecha1').html('')
@@ -106,7 +106,7 @@
         });
 
 
-        $('#ejecutadas_salud').change(function() {
+        $('#ejecutadas_salud').on('input keyup', function() {
             let nro = parseInt($('#ejecutadas_salud').val());
             $('#ejecutadas_salud').html('')
             $('#fecha2').html('')

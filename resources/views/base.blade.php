@@ -7,6 +7,7 @@
     <title>@yield('title') | Sistema de Indicadores de Gestión</title>
 
     <!-- Custom fonts for this template-->
+    <link href="{{asset('assets/css/sb-admin-2.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link>
     <script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
@@ -66,7 +67,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('crearindicador.index') }}">
                     <i class="fas fa-edit"></i>
-                    <span>Crear Indicador<small>"En construccion"</small></span></a>
+                    <span><b>Crear Indicador</b><small>"En construccion"</small></span></a>
             </li>
 
             <!-- reportes planificados -->

@@ -6,7 +6,8 @@
 <div class="card">
     <h2 class="card-header">
         Crear Registro opsa
-        <a onclick="consultaOpsa2('<?php echo date('m'); ?>','<?php echo date('Y'); ?>')" class="btn btn-warning float-right">Traer datos Opsa</a>
+        <!-- <a onclick="consultaOpsa2('<?php echo date('m'); ?>','<?php echo date('Y'); ?>')" class="btn btn-warning float-right">Traer datos Opsa</a> -->
+        <a onclick="consultaOpsa2('03','2023')" class="btn btn-warning float-right">Traer datos Opsa</a>
     </h2>
 
     <div class="card-body">
@@ -323,7 +324,7 @@
 </div>
 
 <script>
-    $('#opsa_seguro input').change(function() {
+    $('#opsa_seguro input').on('input keyup', function() {
         let suma = 0;
         $('#opsa_seguro').find('*').each(function(index) {
             if ($(this).attr('name')) {
@@ -335,10 +336,8 @@
         });
         $('#suma_main').html('Total: ' + suma);
     });
-</script>
-
-<script>
-    $('#main input').change(function() {
+    
+    $('#main input').on('input keyup', function() {
         let suma = 0;
         $('#main').find('*').each(function(index) {
             if ($(this).attr('name')) {
@@ -350,10 +349,8 @@
         });
         $('#suma_main').html('Total: ' + suma);
     });
-</script>
-
-<script>
-    $('#reaccion input').change(function() {
+    
+    $('#reaccion input').on('input keyup', function() {
         let suma = 0;
         $('#reaccion').find('*').each(function(index) {
             if ($(this).attr('name')) {
@@ -366,7 +363,7 @@
         $('#suma_reaccion').html('Total: ' + suma);
     });
 
-    $('#equipo input').change(function() {
+    $('#equipo input').on('input keyup', function() {
         let suma = 0;
         $('#equipo').find('*').each(function(index) {
             if ($(this).attr('name')) {
@@ -379,7 +376,7 @@
         $('#suma_equipo').html('Total: ' + suma);
     });
 
-    $('#posicion input').change(function() {
+    $('#posicion input').on('input keyup', function() {
         let suma = 0;
         $('#posicion').find('*').each(function(index) {
             if ($(this).attr('name')) {
@@ -392,7 +389,7 @@
         $('#suma_posicion').html('Total: ' + suma);
     });
 
-    $('#herramientas input').change(function() {
+    $('#herramientas input').on('input keyup', function() {
         let suma = 0;
         $('#herramientas').find('*').each(function(index) {
             if ($(this).attr('name')) {
@@ -405,7 +402,7 @@
         $('#suma_herramienta').html('Total: ' + suma);
     });
 
-    $('#procedimiento input').change(function() {
+    $('#procedimiento input').on('input keyup', function() {
         let suma = 0;
         $('#procedimiento').find('*').each(function(index) {
             if ($(this).attr('name')) {
@@ -418,7 +415,7 @@
         $('#suma_procedimiento').html('Total: ' + suma);
     });
 
-    $('#ambiente input').change(function() {
+    $('#ambiente input').on('input keyup', function() {
         let suma = 0;
         $('#ambiente').find('*').each(function(index) {
             if ($(this).attr('name')) {

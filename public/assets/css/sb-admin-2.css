@@ -4558,12 +4558,14 @@ input[type="button"].btn-block {
 
 .card-header:first-child {
   border-radius: calc(0.35rem - 1px) calc(0.35rem - 1px) 0 0;
+ 
 }
 
 .card-footer {
   padding: 0.75rem 1.25rem;
   background-color: #f8f9fc;
   border-top: 1px solid #e3e6f0;
+  
 }
 
 .card-footer:last-child {
@@ -6491,7 +6493,7 @@ button.bg-dark:focus {
 }
 
 .bg-white {
-  background-color: #fff !important;
+  background-image: url(../css/Imagen1.png) !important;
 }
 
 .bg-transparent {
@@ -7570,7 +7572,8 @@ button.bg-dark:focus {
 }
 
 .shadow {
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+  box-shadow: 0 0.15rem 1.75rem 0  !important;
+  background-color: #244ec9;
 }
 
 .shadow-lg {
@@ -9797,8 +9800,10 @@ a:focus {
 }
 
 #wrapper #content-wrapper {
-  background-color: #f8f9fc;
+  background-image: url(../css/Imagen1.png);
   width: 100%;
+  background-color: transparent;
+  
   overflow-x: hidden;
 }
 
@@ -9901,14 +9906,14 @@ a:focus {
 }
 
 .bg-gradient-primary {
-  background-color: #4e73df;
-  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  background-color: #232f52;
+  background-image: linear-gradient(180deg, #232f52 10%, #8f939f #100%);
   background-size: cover;
 }
 
 .bg-gradient-secondary {
   background-color: #858796;
-  background-image: linear-gradient(180deg, #858796 10%, #60616f 100%);
+  background-image: linear-gradient(180deg,#1e2f60 10%,#687087 100%);
   background-size: cover;
 }
 

@@ -13,7 +13,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-{{$plan->status}} text-uppercase mb-1">
-                            Visitas Gerenciales Planificadas</div>
+                            Comité Planificado</div>
                         <div class="h7 mb-0 font-weight-bold text-gray-800">
                             <h6>Fecha reunion: {{(ObtenerFecha($plan->reunion))}}</h6>
                             <h6>Fecha Entrega: {{(ObtenerFecha($plan->entrega))}}</h6>

@@ -14,6 +14,7 @@
             <table class="table mt-3" id="investigacion">
                 <thead>
                     <tr>
+                       
                         <th>Estado</th>
                         <th>Unidad Funcional</th>
                         <th>Nombre Del incidente</th>
@@ -26,6 +27,7 @@
                 <tbody>
                     @foreach ($investigaciones as $investigacion)
                     <tr>
+                    
                         <td>{{ $investigacion->status}}</td>
                         <td>{{ $investigacion->uf->des_depart}}</td>
                         <td>{{ $investigacion->nombre_incidente}}</td>

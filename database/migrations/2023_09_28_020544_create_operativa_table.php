@@ -15,7 +15,7 @@ class CreateOperativaTable extends Migration
     {
         Schema::create('operativa', function (Blueprint $table) {
             $table->id();
-            $table->string('cantidad_actividad');
+            $table->string('acciones_pendientes');
             $table->string('acciones_ejecutadas');
             $table->text('observacion');
             $table->text('date');

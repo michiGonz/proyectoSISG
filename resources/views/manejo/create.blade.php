@@ -12,7 +12,7 @@
                 <div class="table table-striped-columns">
                     @csrf
 
-                    <label for="cantidad_ejecutadas">Manejos Al cambio Realizados</label>
+                    <label for="cantidad_ejecutadas">Manejos del Cambio Realizados</label>
                     <input type="number" name="cantidad_manejo" id="cantidad_ejecutadas" class="form-control" value=0 required>
                 </div>
 
@@ -35,7 +35,7 @@
 </div>
 
 <script>
-    $('#cantidad_ejecutadas').change(function() {
+    $('#cantidad_ejecutadas').on('input keyup', function() {
         let nro = parseInt($('#cantidad_ejecutadas').val());
         $('#fechas').html('')
         if (nro <= 100) {
@@ -56,9 +56,9 @@
                     '<div class="form-group col-md-4">' +
                     '<label>Status</label>' +
                     '<select class="form-control" name="status[]" id="status">' +
-                    '<option value="activo">Pendiente</option>' +
-                    '<option value="pendiente">Evaluado</option>' +
-                    '<option value="evaluado">Aprobado</option>' +
+                    '<option value="pendiente">Pendiente</option>' +
+                    '<option value="evaluado">Evaluado</option>' +
+                    '<option value="aprobado">Aprobado</option>' +
                     '</select>' +
                     '</div>' +
                     '<div>' +

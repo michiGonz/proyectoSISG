@@ -11,9 +11,7 @@ class Auditorias extends Model
     protected $table = 'auditorias';
 
     protected $fillable = [
-        'permisos_generadosqqg',
-        'permisos_generadospdvsa',
-        'total_permisos',
+       
 
             'desvqqgas_1',
            'desvqqgas_2',

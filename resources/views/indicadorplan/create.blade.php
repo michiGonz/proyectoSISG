@@ -194,14 +194,14 @@
     $('#nombre_indicador').change(function() {
         cambiarTipo();
     });
-    $('#programadas_mes').change(function() {
+    $('#programadas_mes').on('input keyup', function() {
         let indicador = $('#nombre_indicador').val();
         if (indicador == 'auditoria' || indicador == 'opsa') {
             let mensual = parseInt($('#programadas_mes').val());
             $('#programacion_anual').val(mensual * 12);
         }
     });
-    $('#programacion_anual').change(function() {
+    $('#programacion_anual').on('input keyup', function() {
         let nro = parseInt($('#programacion_anual').val());
         let indicador = $('#nombre_indicador').val();
         $('#fechas').html('');
@@ -309,7 +309,7 @@
         }
         return [diasPorMes, totalPorMes];
     }
-    $('#charla_nro_dias, #charla_dia').change(function() {
+    $('#charla_nro_dias, #charla_dia').on('input keyup', function() {
         let nroDias = parseInt($('#charla_nro_dias').val());
         let diaSemana = parseInt($('#charla_dia').val());
         let distribuir = distribuirCantidad(nroDias, diaSemana);

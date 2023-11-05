@@ -52,7 +52,7 @@
             </tr>
 
             <tr>
-                <td><a class="nav-link" href="{{ route('cultura.index') }}"><span> Cultura en Seguridad</span></a></td>
+                <td><a class="nav-link" href="{{ route('cultura.index') }}"><span> Cultura en Seguridad, Salud y Ambiente</span></a></td>
                 <td><a class="btn btn-success" href="{{ route('cultura.create') }}"><i class="fas fa-plus"></i></a></td>
             </tr>
 

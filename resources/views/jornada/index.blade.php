@@ -14,7 +14,7 @@
                         Jornadas Ambientales Planificadas</div>
                         <div class="h7 mb-0 font-weight-bold text-gray-800">
                             <h6>Programación Anual: {{$indicadorplan->programacion_anual}}</h6>
-                            <h6>Programación Anual: {{$indicadorplan->total}}</h6>
+                            <h6>Jornadas Cumplidas: {{$indicadorplan->total}}</h6>
                         </div>
                     </div>
                 </div>

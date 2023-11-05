@@ -41,7 +41,7 @@
     
 </div>
 <script>
-    $('#acciones_ejecutadas').change(function() {
+    $('#acciones_ejecutadas').on('input keyup', function() {
         let nro = parseInt($('#acciones_ejecutadas').val());
         $('#fechas').html('')
         if (nro <= 100) {

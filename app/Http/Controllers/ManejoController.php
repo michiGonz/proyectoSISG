@@ -7,8 +7,7 @@ use \App\Models\Manejo;
 
 class ManejoController extends Controller {
     public function index() {
-        $manejo = Manejo::all();
-        $Manejo = [];
+        $manejo = [];
         foreach (Manejo::get() as $value) {
             $value->date = json_decode($value->date);
             $manejo[] = $value;

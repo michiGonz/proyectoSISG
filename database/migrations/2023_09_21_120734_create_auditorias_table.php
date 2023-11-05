@@ -15,9 +15,7 @@ class CreateAuditoriasTable extends Migration
     {
         Schema::create('auditorias', function (Blueprint $table) {
             $table->id();
-            $table->string('permisos_generadosqqg');
-            $table->string('permisos_generadospdvsa');
-            $table->string('total_permisos');
+        
 
             $table->string('desvqqgas_1');
             $table->string('desvqqgas_2');

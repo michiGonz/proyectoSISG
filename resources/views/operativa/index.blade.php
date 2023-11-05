@@ -16,7 +16,7 @@
                 <thead>
                     <tr>
 
-                        <th>Cantidad de Aprendiendo en el Trabajo</th>
+                        <th>Cantidad de Eficiencia Operativa</th>
                         <th>Observación</th>
                         <th>Fecha</th>
                       

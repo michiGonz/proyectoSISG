@@ -14,26 +14,8 @@
             <option value="planificado">Planificado</option>
             <option value="noplanificado">No planificado</option>
 
-
         </select>
     </div>
+</div>
 
-    <script>
-        $('#nombre_indicador').change(function() {
-            let indicador = $('#nombre_indicador').val();
-            switch (indicador) {
-                case 'planificado':
-                    $('#planificado').html(`<div class="form-group">` +
-                        `<label for="nombre_indicador">Programacion Mensual</label>` +
-                        `<input type="number" name="programadas_mes" id="programadas_mes" class="form-control" value=0>` +
-                        ` </div>`);
-
-
-                    break;
-
-
-            }
-        });
-    </script>
-
-    @endsection
+@endsection
