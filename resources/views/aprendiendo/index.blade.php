@@ -38,9 +38,9 @@
                 <thead>
                     <tr>
 
-                        <th>Cantidad de Aprendiendo en el Trabajo</th>
-                        <th>Observación</th>
-                        <th>Fecha</th>
+                        <th class="text-center">Cantidad de Aprendiendo en el Trabajo</th>
+                        <th class="text-center">Observación</th>
+                        <th class="text-center">Fecha</th>
                       
 
                     </tr>
@@ -48,9 +48,9 @@
                 <tbody>
                     @foreach ($aprendiendo as $clave => $aprendiend)
                     <tr>
-                        <td>{{ $aprendiend->cantidad_actividad }}</td>
-                        <td>{{ $aprendiend->observacion}}</td>
-                        <td>
+                        <td class="text-center"> {{ $aprendiend->cantidad_actividad }}</td>
+                        <td class="text-center">{{ $aprendiend->observacion}}</td>
+                        <td class="text-center">
                         <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#aprendiend{{$clave}}" aria-expanded="false">
                                 Fechas <i class="fas fa-angle-down"></i>
                             </button>

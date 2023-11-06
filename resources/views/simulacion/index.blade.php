@@ -37,10 +37,10 @@
 
                 <thead>
                     <tr>
-                        <th>Nombre del Simulacro</th>
-                        <th>Ubicación</th>
-                        <th>Fecha</th>
-                        <th>Acciones</th>
+                        <th class="text-center">Nombre del Simulacro</th>
+                        <th class="text-center">Ubicación</th>
+                        <th class="text-center">Fecha</th>
+                        <th class="text-center">Acciones</th>
 
                     </tr>
                 </thead>
@@ -50,10 +50,10 @@
                     @foreach ($simulacion as $simulacion)
                     <tr>
                     
-                        <td>{{ $simulacion->name }}</td>
-                        <td>{{ $simulacion->ubicacion }}</td>
-                        <td>{{ $simulacion->date}}</td>
-                        <td>
+                        <td class="text-center">{{ $simulacion->name }}</td>
+                        <td class="text-center">{{ $simulacion->ubicacion }}</td>
+                        <td >{{ $simulacion->date}}</td>
+                        <td class="text-center">
                             <a href="{{ route('simulacion.show', $simulacion->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
                             <form action="{{ route('simulacion.destroy', $simulacion->id) }}" method="POST" class="d-inline">
                                 @csrf

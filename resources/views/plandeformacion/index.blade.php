@@ -14,7 +14,7 @@
                         <div class="font-weight-bold text-{{$plan->status}} text-uppercase mb-1">
                             {{$plan->mes}}
                         </div>
-                        <div class="h7 mb-0 font-weight-bold text-gray-800">
+                        <div class="h7 mb-0 font-weight-bold text-gray-800 text-center">
                             {{$plan->dias}} {{$plan->dia}}<br>
                             {{$plan->cntd}} Charlas<br>
                             {{$plan->realizadas}} Realizadas<br>
@@ -63,19 +63,18 @@
 
 <div class="card">
     <h2 class="card-header">
-        Reporte de Formacion Seguridad, Salud y Ambiente
+        Reporte de Formación Seguridad, Salud y Ambiente
         <a class="btn btn-success float-right" class="nav-link" href="{{ route('plandeformacion.create') }}"><span> <i class="fas fa-plus"></i> Crear Reporte</span></a>
     </h2>
     <div class="card-body">
 
         <div class=" table table-striped-columns  text-center">
-            <table class="table mt-3" id="formacion">
+            <table class="table mt-3 text-center" id="formacion">
                 <thead>
                     <tr>
-                        <th>Formaciones en Ambiente</th>
-                        <th>Formaciones en Seguridad</th>
-                        <th>Formaciones en Salud</th>
-                        <th>Acciones</th>
+                        <th class="text-center">Formaciones en Ambiente</th>
+                        <th class="text-center">Formaciones en Seguridad</th>
+                        <th class="text-center">Formaciones en Salud</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -131,17 +130,7 @@
                                     @endif
                                 </div>
                             </div>
-
                         </td>
-                        <td>
-                            
-                                @csrf
-
-                            </form>
-                            <!-- <a href="{{ route('plandeformacion.edit', $plandeformacion->id) }}" class="btn btn-success float-left"> <i class="fas fa-edit"></i></a> -->
-
-                        </td>
-
                     </tr>
 
                     @endforeach

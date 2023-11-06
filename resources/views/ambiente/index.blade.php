@@ -33,12 +33,11 @@
             <table class="table mt-3 text center" id="table-ambiente">
                 <thead>
                     <tr>
-
-                        <th>Lugar de Visita</th>
-                        <th>Descripción</th>
-                        <th>Acompanantes</th>
-                        <th>Fecha</th>
-                        <th>Acciones</th>
+                        <th class="text-center">Lugar de Visita</th>
+                        <th class="text-center">Descripción</th>
+                        <th class="text-center">Acompañantes</th>
+                        <th class="text-center">Fecha</th>
+                        <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>

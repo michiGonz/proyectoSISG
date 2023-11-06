@@ -34,11 +34,11 @@
             <table class="table mt-3" id="opsa">
                 <thead>
                     <tr>
-                        <th>Total</th>
-                        <th>Tarjetas Seguras</th>
-                        <th>Tarjetas Inseguras</th>
-                        <th>Fecha</th>
-                        <th>Acciones</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Tarjetas Actos Seguras</th>
+                        <th class="text-center">Tarjetas Actos Inseguras</th>
+                        <th class="text-center">Fecha</th>
+                        <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
 
@@ -49,11 +49,11 @@
                     ?>
                     @foreach ($opsa as $opsa)
                     <tr>
-                        <td>{{ $opsa->cantidad_seguro + $opsa->cantidad_inseguro}}</td>
-                        <td>{{ $opsa->cantidad_seguro}}</td>
-                        <td>{{ $opsa->cantidad_inseguro}}</td>
-                        <td>{{ $opsa->date}}</td>
-                        <td>
+                        <td class="text-center">{{ $opsa->cantidad_seguro + $opsa->cantidad_inseguro}}</td>
+                        <td class="text-center">{{ $opsa->cantidad_seguro}}</td>
+                        <td class="text-center">{{ $opsa->cantidad_inseguro}}</td>
+                        <td class="text-center">{{ $opsa->date}}</td>
+                        <td class="text-center">
 
                             <a href="{{ route('opsa.show', $opsa->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
                             <!-- <form action="{{ route('opsa.edit', $opsa->id) }}" method="POST" class="d-inline">

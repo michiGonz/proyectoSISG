@@ -37,10 +37,10 @@
                 <thead>
                     <tr>
 
-                        <th>Descripción</th>
-                        <th>Ubicación</th>
-                        <th>Fecha</th>
-                        <th>Acciones</th>
+                        <th class="text-center">Descripción</th>
+                        <th class="text-center">Ubicación</th>
+                        <th class="text-center">Fecha</th>
+                        <th class="text-center">Acciones</th>
 
                     </tr>
                 </thead>
@@ -48,10 +48,10 @@
                     @foreach ($jornada as $jornada)
                     <tr>
 
-                        <td>{{ $jornada->descripcion }}</td>
-                        <td>{{ $jornada->ubicacion }}</td>
-                        <td>{{ $jornada->date}}</td>
-                        <td>
+                        <td class="text-center">{{ $jornada->descripcion }}</td>
+                        <td class="text-center">{{ $jornada->ubicacion }}</td>
+                        <td class="text-center">{{ $jornada->date}}</td>
+                        <td class="text-center">
                             <a href="{{ route('jornada.show', $jornada->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
                             <form action="{{ route('jornada.destroy', $jornada->id) }}" method="POST" class="d-inline">
                                 @csrf

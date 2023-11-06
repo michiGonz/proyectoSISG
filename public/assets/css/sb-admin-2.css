@@ -2383,7 +2383,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #2653d4;
+  background-color: #ced3e2;
   border-color: #244ec9;
 }
 
@@ -4524,12 +4524,14 @@ input[type="button"].btn-block {
 
 .card-body {
   flex: 1 1 auto;
+  background-color: #ffffff;
   min-height: 1px;
   padding: 1.25rem;
 }
 
 .card-title {
   margin-bottom: 0.75rem;
+  background-color: #fcfcff;
 }
 
 .card-subtitle {
@@ -7573,7 +7575,7 @@ button.bg-dark:focus {
 
 .shadow {
   box-shadow: 0 0.15rem 1.75rem 0  !important;
-  background-color: #244ec9;
+  background-color: #dde2ef;
 }
 
 .shadow-lg {
@@ -9907,12 +9909,12 @@ a:focus {
 
 .bg-gradient-primary {
   background-color: #232f52;
-  background-image: linear-gradient(180deg, #232f52 10%, #8f939f #100%);
+  background-image: linear-gradient(180deg, #112b76 10%, #112b76 100%);
   background-size: cover;
 }
 
 .bg-gradient-secondary {
-  background-color: #858796;
+  background-color: #818183;
   background-image: linear-gradient(180deg,#1e2f60 10%,#687087 100%);
   background-size: cover;
 }
@@ -10022,7 +10024,7 @@ a:focus {
 }
 
 .text-gray-600 {
-  color: #858796 !important;
+  color: #fff !important;
 }
 
 .text-gray-700 {
@@ -10063,7 +10065,7 @@ a:focus {
 }
 
 .border-left-success {
-  border-left: 0.25rem solid #1cc88a !important;
+  border-left: 0.25rem solid #fff !important;
 }
 
 .border-bottom-success {

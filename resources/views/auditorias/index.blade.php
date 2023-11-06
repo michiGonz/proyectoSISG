@@ -36,11 +36,11 @@
             <thead>
                 <tr>
 
-                    <th>Permisos Generados</th>
-                    <th>Permisos Generados QQGAS</th>
-                    <th>Permisos Generados PDVSA</th>
-                    <th>Fecha</th>
-                    <th>Acciones</th>
+                    <th class="text-center">Permisos Generados</th>
+                    <th class="text-center">Permisos Generados QQGAS</th>
+                    <th class="text-center">Permisos Generados PDVSA</th>
+                    <th class="text-center">Fecha</th>
+                    <th class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>

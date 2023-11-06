@@ -3,8 +3,8 @@
 @section('content')
 
 
-<div class="container">
-    <h1>Indicadores de Quiriquire Gas SA</h1>
+<div class="container- bg-light">
+    <h2 class="text-center badge-dark border-bottom">INDICADORES QUIRIQUIRE GAS S.A</h2>
     
     <div class=" table table-striped-columns ">
         <table class="table">

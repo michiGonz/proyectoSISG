@@ -14,7 +14,7 @@
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/sb-admin-2.css') }}" rel="stylesheet">
 
     <link href="{{asset('assets/js/googleapis.js')}}"/>
     <link rel="{{asset('assets/js/apis.js')}}" />
@@ -57,7 +57,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('/') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Inicio</span></a>
+                    <span><b>Inicio</b></span></a>
             </li>
 
             <!-- Divider -->
@@ -74,25 +74,25 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('indicadorplan.index') }}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Planificación de Indicadores</span></a>
+                    <span><b>Planificación de Indicadores</b></span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('indicators.index') }}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Gestión de Indicadores</span></a>
+                    <span><b>Gestión de Indicadores</b></span></a>
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa fa-book"></i>
-                    <span>Reportes<small>"En construccion"</small></span>
+                    <span><b>Reportes</b><small>"En construccion"</small></span>
                 </a>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('configuracion.index') }}">
                     <i class="fa fa-cog"></i>
-                    <span>Configuracion</span>
+                    <span><b>Configuración</b></span>
                 </a>
             </li>
             <!-- Divider -->
@@ -124,12 +124,11 @@
                 </li>
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{
-                                    str_replace('-',',',Auth::user()->name) }}</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <b>{{
+                                  str_replace('-',',',Auth::user()->name) }}</span></b> 
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

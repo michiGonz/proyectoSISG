@@ -16,19 +16,19 @@
                     $comite_cumplido = 0;
                     ?>
                     <tr>
-                        <th>Acciones Ejecutadas</th>
-                        <th>Observacion</th>
-                        <th>Fecha</th>
-                        <th>Acciones</th>
+                        <th class="text-center">Acciones Ejecutadas</th>
+                        <th class="text-center">Observacion</th>
+                        <th class="text-center">Fecha</th>
+                        <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($cultura as $cultura)
                     <tr>
-                        <td>{{ $cultura->comite_cumplido}}</td>
-                        <td>{{ $cultura->observacion}}</td>
-                        <td>{{ $cultura->date}}</td>
-                        <td>
+                        <td class="text-center">{{ $cultura->comite_cumplido}}</td>
+                        <td class="text-center">{{ $cultura->observacion}}</td>
+                        <td class="text-center">{{ $cultura->date}}</td>
+                        <td class="text-center">
                             <a href="{{ route('cultura.show', $cultura->id) }}" class="btn btn-info float-left"> <i class="fas fa-eye"></i></a>
 
                         </td>
