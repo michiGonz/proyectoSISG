@@ -12,17 +12,17 @@
                 @csrf
                 <div class="form-group ">
                     <label for="comite_cumplido">Acciones Ejecutados</label>
-                    <input type="number" name="comite_cumplido" id="comite_cumplido" class="form-control" value=0 />
+                    <input type="number" name="comite_cumplido" id="comite_cumplido" class="form-control" value=0 required/>
                 </div>
 
                 <div class="form-group">
                     <label for="observacion">Observacion</label>
-                    <input type="text " name="observacion" id="observacion" class="form-control" />
+                    <input type="text " name="observacion" id="observacion" class="form-control" required/>
                 </div>
 
                 <div class="form-group">
                     <label for="date">Fecha</label>
-                    <input class="form-control" id="date" type="date" name="date" value="" />
+                    <input class="form-control" id="date" type="date" name="date" value="" required/>
                 </div>
 
                 <div class="form-group">

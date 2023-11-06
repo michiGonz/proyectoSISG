@@ -21,7 +21,7 @@ foreach ($jornada as $clave => $valor) {
 
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
-                    <input type="text " name="descripcion" id="descripcion" class="form-control" />
+                    <input type="text " name="descripcion" id="descripcion" class="form-control" required/>
                 </div>
 
                 <div class="form-group">
@@ -31,7 +31,7 @@ foreach ($jornada as $clave => $valor) {
 
                 <div class="form-group ">
                     <label for="date">Fecha</label>
-                    <input class="form-control" id="date" type="date" name="date" value="" />
+                    <input class="form-control" id="date" type="date" name="date" value="" required/>
                 </div>
 
                 <div class="form-group col-md-12 text-center">

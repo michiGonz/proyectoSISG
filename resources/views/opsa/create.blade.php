@@ -7,7 +7,7 @@
     <h2 class="card-header">
         Crear Registro opsa
         <!-- <a onclick="consultaOpsa2('<?php echo date('m'); ?>','<?php echo date('Y'); ?>')" class="btn btn-warning float-right">Traer datos Opsa</a> -->
-        <a onclick="consultaOpsa2('03','2023')" class="btn btn-warning float-right">Traer datos Opsa</a>
+        <a onclick="consultaOpsa2('11','2023')" class="btn btn-warning float-right">Traer datos Opsa</a>
     </h2>
 
     <div class="card-body">

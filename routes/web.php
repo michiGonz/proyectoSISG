@@ -29,7 +29,7 @@ use App\Http\Controllers\UnidadfuncionalController;
 use App\Http\Controllers\UsuariosprofitController;
 use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\CrearindicadorController;
-use App\Http\Controllers\opsaController;
+use App\Http\Controllers\OpsaController;
 use App\Models\Crearindicador;
 
 Route::group(['middleware' => 'auth'], function () {

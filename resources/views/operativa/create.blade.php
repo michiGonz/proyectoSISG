@@ -15,17 +15,17 @@
 
                 <div class="form-group ">
                     <label for="acciones_pendientes">Acciones Pendientes</label>
-                    <input type="number" name="acciones_pendientes" id="acciones_pendientes" class="form-control" value=0 />
+                    <input type="number" name="acciones_pendientes" id="acciones_pendientes" class="form-control" value=0 required/>
                 </div>
 
                 <div class="form-group ">
                     <label for="acciones_ejecutadas">Acciones Ejecutados</label>
-                    <input type="number" name="acciones_ejecutadas" id="acciones_ejecutadas" class="form-control" value=0 />
+                    <input type="number" name="acciones_ejecutadas" id="acciones_ejecutadas" class="form-control" value=0 required/>
                 </div>
 
                 <div class="form-group">
                     <label for="observacion">Observacion</label>
-                    <input type="text " name="observacion" id="observacion" class="form-control" />
+                    <input type="text " name="observacion" id="observacion" class="form-control" required/>
                 </div>
 
                 <div class="row" id="date"></div>
@@ -57,7 +57,7 @@
                                     '</div>'+
                                     '<div class="form-group col-md-4">' +
                                         '<label for="date">Fecha</label>' +
-                                        '<input class="form-control" id="date" type="month" name="date[]" required />' +
+                                        '<input class="form-control" id="date" type="date" name="date[]" required />' +
                                     '</div>'+
                                     '<div class="form-group col-md-4">' +
                                         '<label>Estado</label>' +

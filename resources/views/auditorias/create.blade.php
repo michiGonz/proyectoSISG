@@ -43,17 +43,17 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="auditadas_pdvsa">Permisos Auditados por PDVSA </label>
-                                <input type="number" name="auditadas_pdvsa" id="auditadas_pdvsa" class="form-control" value=0 />
+                                <input type="number" name="auditadas_pdvsa" id="auditadas_pdvsa" class="form-control" value=0 required/>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="desviaciones_pdvsa">Permisos con Desviaciones PDVSA</label>
-                                <input type="number" name="desviaciones_pdvsa" id="desviaciones_pdvsa" class="form-control" value=0 />
+                                <input type="number" name="desviaciones_pdvsa" id="desviaciones_pdvsa" class="form-control" value=0 required/>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="noauditadas_pdvsa">Permisos de Trabajo no Auditados PDVSA</label>
-                                <input type="number" name="noauditadas_pdvsa" id="noauditadas_pdvsa" class="form-control" value=0 />
+                                <input type="number" name="noauditadas_pdvsa" id="noauditadas_pdvsa" class="form-control" value=0 required/>
                             </div>
                         </div>
                     </div>

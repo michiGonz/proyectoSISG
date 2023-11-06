@@ -16,13 +16,13 @@
 
                 <div class="form-group">
                     <label for="cantidad_actividad">Cantidad de Aprendiendo en el Trabajo</label>
-                    <input type="number" name="cantidad_actividad" id="cantidad_actividad" class="form-control" value=0 />
+                    <input type="number" name="cantidad_actividad" id="cantidad_actividad" class="form-control" value=0 required/>
                 </div>
                 <div class="row" id="fechas"></div>
 
                 <div class="form-group">
                     <label for="observacion">Observacion</label>
-                    <input type="text" name="observacion" id="observacion" class="form-control" />
+                    <input type="text" name="observacion" id="observacion" class="form-control" required/>
                 </div>
 
                 <div class="form-group col-md-12 text-center">

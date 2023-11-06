@@ -74,9 +74,9 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>{{$total}}</th>
-                        <th>{{$cantidad_seguro}}</th>
-                        <th>{{$cantidad_inseguro}}</th>
+                        <th class="text-center">{{$total}}</th>
+                        <th class="text-center">{{$cantidad_seguro}}</th>
+                        <th class="text-center">{{$cantidad_inseguro}}</th>
                         <th></th>
                         <th></th>
                     </tr>

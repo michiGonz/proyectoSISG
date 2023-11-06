@@ -15,27 +15,27 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="ruido">Ruido</label>
-                                <input type="number" name="ruido" id="ruido" class="form-control" value=0 />
+                                <input type="number" name="ruido" id="ruido" class="form-control" value=0 required/>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="emisiones">Emisiones</label>
-                                <input type="number" name="emisiones" id="emisiones" class="form-control" value=0 />
+                                <input type="number" name="emisiones" id="emisiones" class="form-control" value=0 required/>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="agua">Agua</label>
-                                <input type="number" name="agua" id="agua" class="form-control" value=0 />
+                                <input type="number" name="agua" id="agua" class="form-control" value=0 required/>
                             </div>
                    
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="observacion">Observacion</label>
-                            <input type="text " name="observacion" id="observacion" class="form-control" />
+                            <input type="text " name="observacion" id="observacion" class="form-control"required />
                         </div>
 
                         <div class="form-group">
                             <label for="date">Fecha</label>
-                            <input class="form-control" id="date" type="date" name="date" value="" />
+                            <input class="form-control" id="date" type="date" name="date" value="" required/>
                         </div>
 
                         <div class="form-group">

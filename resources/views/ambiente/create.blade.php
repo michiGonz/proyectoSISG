@@ -33,7 +33,7 @@ foreach ($ambient as $clave => $valor) {
                 <div class="col-md-5">
                     <label for="personal">Nombre de Acompañantes</label>
                     <br>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="personal[]" id="personal" multiple aria-label="Default select example">
+                    <select style="width: 100%;" class="col-md-5 form-control" name="personal[]" id="personal" multiple aria-label="Default select example" required>
                         @foreach ($usuarios as $usuario)
                         <option value="{{$usuario->nombres}}">{{$usuario->nombres}} {{$usuario->apellidos}}</option>
                         @endforeach
@@ -42,7 +42,7 @@ foreach ($ambient as $clave => $valor) {
 
                 <div class="form-group col-md-5">
                     <label for="date">Fecha</label>
-                    <input class="form-control" id="date" type="date" name="date" value="" />
+                    <input class="form-control" id="date" type="date" name="date" value="" required/>
                 </div>
 
                 <div class="form-group col-md-12 text-center">

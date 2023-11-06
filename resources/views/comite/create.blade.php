@@ -20,12 +20,12 @@ foreach ($comite as $clave => $valor) {
 
                         <div class="form-group col-md-6 ">
                             <label for="date_reunion">Fecha de Reunión</label>
-                            <input class="form-control" id="date_reunion" type="date" name="date_reunion" value="" />
+                            <input class="form-control" id="date_reunion" type="date" name="date_reunion" value="" required/>
                         </div>
 
                         <div class="form-group col-md-6 ">
                             <label for="date_insasel">Fecha de Entrega a Inpsasel</label>
-                            <input class="form-control" id="date_insasel" type="date" name="date_insasel" value="" />
+                            <input class="form-control" id="date_insasel" type="date" name="date_insasel" value="" required/>
                         </div>
                     </div>
                 </div>

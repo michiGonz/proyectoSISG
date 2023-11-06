@@ -1,5 +1,6 @@
 <?php error_reporting(0); // Desactivar toda notificación de error
 function ObtenerMes($fecha) {
+    $mes='';
     switch (substr($fecha, 5, 8)) {
         case '01':
             $mes = "Enero";
@@ -41,6 +42,7 @@ function ObtenerMes($fecha) {
     return $mes;
 }
 function ObtenerFecha($fecha) {
+    $mes='';
     $f = explode('-', explode(' ', $fecha)[0]);
     switch ($f[1]) {
         case '01':

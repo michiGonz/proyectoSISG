@@ -22,7 +22,7 @@ foreach ($simulacion as $clave => $valor) {
 
             <div class="form-group">
                 <label for="ubicacion">Ubicacion</label>
-                <input type="ubicacion" name="ubicacion" id="ubicacion" class="form-control">
+                <input type="ubicacion" name="ubicacion" id="ubicacion" class="form-control" required />
             </div>
 
 
@@ -34,7 +34,7 @@ foreach ($simulacion as $clave => $valor) {
 
             <div class="form-group">
                 <label for="Fecha">Fecha</label>
-                <input class="form-control" id="date" type="date" name="date" value="" />
+                <input class="form-control" id="date" type="date" name="date" value="" required/>
             </div>
 
             <div class="form-group">

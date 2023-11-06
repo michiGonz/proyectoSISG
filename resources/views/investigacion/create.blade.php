@@ -24,7 +24,7 @@ foreach ($investigacion as $clave => $valor) {
             </div>
             <br>
             <div>
-                <select class="form-control" name="uf" id="uf" aria-label="Default select example">
+                <select class="form-control" name="uf" id="uf" aria-label="Default select example" required>
                     @foreach ($ufs as $uf)
                     <option value="{{$uf->co_depart}}">{{$uf->des_depart}}</option>
                     @endforeach
@@ -34,13 +34,13 @@ foreach ($investigacion as $clave => $valor) {
             
             <div class="form-group">
                 <label for="nombre_lugar">Ubicación</label>
-                <input type="ubicacion" name="nombre_lugar" id="nombre_lugar" class="form-control">
+                <input type="ubicacion" name="nombre_lugar" id="nombre_lugar" class="form-control" required>
             </div>
 
 
             <div class="form-group">
                 <label>Estado</label>
-                <select class="form-control" name="status" id="status">
+                <select class="form-control" name="status" id="status"required >
                     <option value="Comunicacion"> Comunicación</option>
                     <option value="Comite">Comite</option>
                     <option value="Investigacion"> Investigación</option>
@@ -57,7 +57,7 @@ foreach ($investigacion as $clave => $valor) {
 
             <div class="form-group">
                 <label for="date">Fecha</label>
-                <input class="form-control" id="date" type="date" name="date" value="" />
+                <input class="form-control" id="date" type="date" name="date" value="" required/>
             </div>
 
             <div class="form-group col-md-12 text-center">

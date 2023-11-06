@@ -17,7 +17,7 @@
                             <div class="card-body">
                                 <div class="form-group ">
                                     <label for="ejecutadas_ambiente">Formaciones ejecutadas de Ambiente</label>
-                                    <input type="number" name="ejecutadas_ambiente" id="ejecutadas_ambiente" class="form-control" value=0 />
+                                    <input type="number" name="ejecutadas_ambiente" id="ejecutadas_ambiente" class="form-control" value=0 required/>
                                 </div>
                                 <div class="row" id="fecha"></div>
                             </div>
@@ -27,7 +27,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="ejecutadas_seguridad">Formaciones ejecutadas de Seguridad</label>
-                                    <input type="number" name="ejecutadas_seguridad" id="ejecutadas_seguridad" class="form-control" value=0 />
+                                    <input type="number" name="ejecutadas_seguridad" id="ejecutadas_seguridad" class="form-control" value=0 required/>
                                 </div>
                                 <div class="row" id="fecha1"></div>
                             </div>
@@ -37,7 +37,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="ejecutadas_salud">Formaciones ejecutadas de Salud</label>
-                                    <input type="number" name="ejecutadas_salud" id="ejecutadas_salud" class="form-control" value=0 />
+                                    <input type="number" name="ejecutadas_salud" id="ejecutadas_salud" class="form-control" value=0 required/>
                                 </div>
                                 <div class="row" id="fecha2"></div>
                             </div>

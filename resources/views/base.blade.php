@@ -16,7 +16,7 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.css') }}" rel="stylesheet">
 
-    <link href="{{asset('assets/js/googleapis.js')}}"/>
+    <link href="{{asset('assets/js/googleapis.js')}}" />
     <link rel="{{asset('assets/js/apis.js')}}" />
     <!-- Flag sprites service provided by Martijn Lafeber,
         https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
@@ -110,7 +110,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-               
+
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
@@ -118,23 +118,21 @@
 
                     <!-- Nav Item - User Information -->
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ route('indicators.index') }}">
-                        <i class="fas fa-home"></i>
-                    </a>
-                </li>
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <b>{{
-                                  str_replace('-',',',Auth::user()->name) }}</span></b> 
+                        <a class="nav-link" href="{{ route('indicators.index') }}">
+                            <i class="fas fa-home"></i>
                         </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Cerrar Sesión
-                            </a>
-                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{str_replace('-',',',Auth::user()->name) }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Cerrar Sesión
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>

@@ -68,18 +68,18 @@
 
             <div class="form-group">
                 <label for="programacion_anual">Programacion Anual</label>
-                <input type="number" name="programacion_anual" id="programacion_anual" class="form-control" value="0" />
+                <input type="number" name="programacion_anual" id="programacion_anual" class="form-control" value="0" required/>
             </div>
 
             <div class="form-group" style="display: none;">
                 <label for="programadas_mes">Programacion Mensual</label>
-                <input type="number" name="programadas_mes" id="programadas_mes" class="form-control" value="0" />
+                <input type="number" name="programadas_mes" id="programadas_mes" class="form-control" value="0" required/>
             </div>
 
             <div class="row" id="fechas"></div>
             <div class="form-group">
                 <label for="observacion">Observacion</label>
-                <input name="observacion" id="observacion" required class="form-control" />
+                <input name="observacion" id="observacion" required class="form-control"required />
             </div>
 
             <div class="form-group">
