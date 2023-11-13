@@ -13,19 +13,19 @@
             <div class="form-group">
                 <select class="form-control table-primary" name="nombre_indicador" id="nombre_indicador" aria-label="Default select example">
                     @if (!in_array('opsa',$consulta))
-                    <option value="opsa">OPSA</option>
+                    <option value="opsa">Observación Preventiva</option>
                     @endif
-                    @if (!in_array('simulacro',$consulta))
+                    @if (!in_array('Simulacro',$consulta))
                     <option value="simulacro">Simulacro</option>
                     @endif
                     @if (!in_array('comite',$consulta))
-                    <option value="comite">Comite de Seguridad y Salud Laborales</option>
+                    <option value="comite">Comité de Seguridad y Salud Laborales</option>
                     @endif
                     @if (!in_array('plan',$consulta))
-                    <option value="plan">Plan de formacion seguridad salud y ambiente</option>
+                    <option value="plan">Plan de formación seguridad salud y ambiente</option>
                     @endif
                     @if (!in_array('parametros_ambientales',$consulta))
-                    <option value="parametros_ambientales">Parametros Ambientales</option>
+                    <option value="parametros_ambientales">Parámetros Ambientales</option>
                     @endif
                     @if (!in_array('visita',$consulta))
                     <option value="visita">Visita Gerencial</option>
@@ -198,7 +198,7 @@
         let indicador = $('#nombre_indicador').val();
         if (indicador == 'auditoria' || indicador == 'opsa') {
             let mensual = parseInt($('#programadas_mes').val());
-            $('#programacion_anual').val(mensual * 12);
+            $('#programacion_anual').val(mensual * 12);_
         }
     });
     $('#programacion_anual').on('input keyup', function() {

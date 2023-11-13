@@ -15,8 +15,8 @@
                             {{$plan->mes}}
                         </div>
                         <div class="h7 mb-0 font-weight-bold text-gray-800 text-center">
-                            {{$plan->dias}} {{$plan->dia}}<br>
-                            {{$plan->cntd}} Charlas<br>
+
+                            {{$plan->cntd}} Programadas<br>
                             {{$plan->realizadas}} Realizadas<br>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="font-weight-bold text-info text-uppercase mb-1">
-                            Planificadas
+                            Planificadas Anual
                         </div>
                         <div class="h7 mb-0 font-weight-bold text-gray-800">
                             {{$indicadorplan->date->planificadas}}
@@ -47,7 +47,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="font-weight-bold text-info text-uppercase mb-1">
-                            Realizadas
+                            Total Acomuladas
                         </div>
                         <div class="h7 mb-0 font-weight-bold text-gray-800">
                             {{$indicadorplan->date->realizadas}}
@@ -72,9 +72,11 @@
             <table class="table mt-3 text-center" id="formacion">
                 <thead>
                     <tr>
+                        <th class="text-center">Mes</th>
                         <th class="text-center">Formaciones en Ambiente</th>
                         <th class="text-center">Formaciones en Seguridad</th>
                         <th class="text-center">Formaciones en Salud</th>
+                        <th class="text-center">Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -84,53 +86,40 @@
 
                     ?>
                     @foreach ($plandeformacion as $clave => $plandeformacion)
-                    <?php $dates = json_decode($plandeformacion->date); ?>
                     <tr>
                         <td>
-                            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#ejecutadas_ambiente{{$clave}}" aria-expanded="false">
-                                {{ $plandeformacion->ejecutadas_ambiente}} <i class="fas fa-angle-down"></i>
+                            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#desplegar{{$clave}}" aria-expanded="false">
+                                Mes <i class="fas fa-angle-down"></i>
                             </button>
-                            <div class="collapse" id="ejecutadas_ambiente{{$clave}}">
+                        </td>
+                        <td>
+                           <b>{{ $plandeformacion->ejecutadas_ambiente}}</b> 
+                            <div class="collapse" id="desplegar{{$clave}}">
                                 <div class="card card-body">
-                                    @if ($dates->ambiente)
-                                    @foreach ($dates->ambiente as $date)
-                                    {{$date}}<br>
+                                    @foreach ($plandeformacion->date['ambiente'] as $ambiente)
+                                    {{$ambiente->name}}<br>
+                                    {{ObtenerFecha($ambiente->date)}}<br>
                                     @endforeach
-                                    @endif
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#ejecutadas_seguridad{{$clave}}" aria-expanded="false">
-                                {{ $plandeformacion->ejecutadas_seguridad}} <i class="fas fa-angle-down"></i>
-                            </button>
-                            </button>
-                            <div class="collapse" id="ejecutadas_seguridad{{$clave}}">
+                            <b>{{ $plandeformacion->ejecutadas_seguridad}}</b>
+                            <div class="collapse" id="desplegar{{$clave}}">
                                 <div class="card card-body">
-                                    @if ($dates->seguridad)
-                                    @foreach ($dates->seguridad as $date)
-                                    {{$date}}<br>
-                                    @endforeach
-                                    @endif
+        
                                 </div>
                             </div>
 
                         </td>
                         <td>
-                            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#ejecutadas_salud{{$clave}}" aria-expanded="false">
-                                {{ $plandeformacion->ejecutadas_salud}} <i class="fas fa-angle-down"></i>
-                            </button>
-                            </button>
-                            <div class="collapse" id="ejecutadas_salud{{$clave}}">
+                            <b>{{ $plandeformacion->ejecutadas_salud}}</b> 
+                            <div class="collapse" id="desplegar{{$clave}}">
                                 <div class="card card-body">
-                                    @if ($dates->salud)
-                                    @foreach ($dates->salud as $date)
-                                    {{$date}}<br>
-                                    @endforeach
-                                    @endif
                                 </div>
                             </div>
                         </td>
+                        <td>{{$plandeformacion->ejecutadas_ambiente+$plandeformacion->ejecutadas_seguridad+$plandeformacion->ejecutadas_salud}}</td>
                     </tr>
 
                     @endforeach
@@ -142,7 +131,7 @@
 </div>
 
 <script>
-    DataTabla('#formacion', [4, 'desc']);
+    DataTabla('#formacion', [6, 'desc']);
 </script>
 
 

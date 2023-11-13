@@ -46,7 +46,7 @@ foreach ($ambient as $clave => $valor) {
                 </div>
 
                 <div class="form-group col-md-12 text-center">
-                    <button for="registrar" type="submit" id="registrar" class="btn btn-primary registrar">crear Registro</button>
+                    <button for="registrar" type="submit" id="alerta" name="alerta" class="btn btn-primary registrar">crear Registro</button>
                     <a href="{{ route('ambiente.index') }}" class="btn btn-secondary">Cancelar</a>
                 </div>
             </form>
@@ -54,8 +54,7 @@ foreach ($ambient as $clave => $valor) {
     </div>
 </div>
 <script>
+   
     $("#personal").select2();
 </script>
-
-
 @endsection

@@ -1,6 +1,7 @@
 @extends('base')
 @section('title', 'Inicio')
 @section('content')
+@yield('card')
 
 
 @if (property_exists($indicadorplan,'nombre_indicador'))
@@ -34,7 +35,7 @@
             <table class="table mt-3" id="opsa">
                 <thead>
                     <tr>
-                        <th class="text-center">Total</th>
+                        <th class="text-center"><b>Total</b></th>
                         <th class="text-center">Tarjetas Actos Seguras</th>
                         <th class="text-center">Tarjetas Actos Inseguras</th>
                         <th class="text-center">Fecha</th>
@@ -49,7 +50,7 @@
                     ?>
                     @foreach ($opsa as $opsa)
                     <tr>
-                        <td class="text-center">{{ $opsa->cantidad_seguro + $opsa->cantidad_inseguro}}</td>
+                        <td class="text-center"><b>{{ $opsa->cantidad_seguro + $opsa->cantidad_inseguro}}</b></td>
                         <td class="text-center">{{ $opsa->cantidad_seguro}}</td>
                         <td class="text-center">{{ $opsa->cantidad_inseguro}}</td>
                         <td class="text-center">{{ $opsa->date}}</td>

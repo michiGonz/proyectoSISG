@@ -73,13 +73,13 @@
             <!-- reportes planificados -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('indicadorplan.index') }}">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fa fa-calendar"></i>
                     <span><b>Planificación de Indicadores</b></span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('indicators.index') }}">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fa fa-check-circle"></i>
                     <span><b>Gestión de Indicadores</b></span></a>
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
@@ -124,7 +124,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{str_replace('-',',',Auth::user()->name) }}
+                            <b> {{str_replace('-',',',Auth::user()->name) }}</b>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal" data-target="#logoutModal">

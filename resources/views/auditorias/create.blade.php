@@ -273,7 +273,7 @@
 
             <div class="form-group col-md-4">
                 <label for="date">Fecha</label>
-                <input class="form-control" id="date" type="date" name="date" value="0" />
+                <input class="form-control" id="date" type="date" name="date" value="0" required />
             </div>
             <div class="col-md-12 text-center">
                 <br>

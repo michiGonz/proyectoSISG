@@ -136,7 +136,7 @@ public function logout(Request $request): RedirectResponse
             'email' => 'required',
             'password' => 'required',
         ], [
-            'email.required' => 'El Email es requerido',
+            'email.required' => 'El Usuario es requerido',
             'password.required' => 'Debe de ingresar la Contraseña',
         ]);
 
@@ -147,7 +147,7 @@ public function logout(Request $request): RedirectResponse
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'La contraseña ingresada no es correcta.',
         ])->onlyInput('email');
     }
 }

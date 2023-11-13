@@ -16,7 +16,7 @@ class IndicadorplanController extends Controller {
         foreach ($indicadorplanes as $indicadorplan) {
             switch ($indicadorplan['nombre_indicador']) {
                 case 'opsa':
-                    $indicadorplan['nombre'] = 'Opsa';
+                    $indicadorplan['nombre'] = 'Observaciones Preventivas';
                     break;
                 case 'simulacro':
                     $indicadorplan['nombre'] = 'Simulacro';
@@ -24,7 +24,7 @@ class IndicadorplanController extends Controller {
                     $indicadorplan['date'] = json_decode($indicadorplan['date']);
                     break;
                 case 'comite':
-                    $indicadorplan['nombre'] = 'Comité';
+                    $indicadorplan['nombre'] = 'Comité de Seguridad y Salud Laborales';
                     $indicadorplan['date'] = json_decode($indicadorplan['date']);
                     break;
                 case 'plan':

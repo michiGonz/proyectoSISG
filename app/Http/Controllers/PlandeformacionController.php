@@ -5,11 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\IndicadorplanController;
 use App\Models\Plandeformacion;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class PlandeformacionController extends Controller {
     public function index() {
-
-        $plandeformacion = Plandeformacion::all();
+        $plandeformacion = [];
+        foreach (Plandeformacion::get() as $key => $plan) {
+            $dates=[];
+            foreach (json_decode($plan->date) as $key => $date) {
+                $dates[$key]=$date;
+            }
+            $plan->date = $dates;
+            $plandeformacion[]=$plan;
+        }
         $indicadorplan = IndicadorplanController::verPlan('plan', date('Y'));
         return view('plandeformacion.index', compact('plandeformacion', 'indicadorplan'));
     }
@@ -22,7 +30,24 @@ class PlandeformacionController extends Controller {
     public function store(Request $request) {
 
         $plan = new Plandeformacion($request->all());
-        $plan->date = json_encode(['ambiente' => $request->date_ambiente, 'seguridad' => $request->date_seguridad, 'salud' => $request->date_salud]);
+        $date = [];
+        if ($request->date_ambiente) {
+            foreach ($request->date_ambiente as $clave => $valor) {
+                $date['ambiente'][$clave] = ['name' => $request->name_ambiente[$clave], 'date' => $valor];
+            }
+        }
+        if ($request->date_seguridad) {
+            foreach ($request->date_seguridad as $clave => $valor) {
+                $date['seguridad'][$clave] = ['name' => $request->name_seguridad[$clave], 'date' => $valor];
+            }
+        }
+        if ($request->date_salud) {
+            foreach ($request->date_salud as $clave => $valor) {
+                $date['salud'][$clave] = ['name' => $request->name_salud[$clave], 'date' => $valor];
+            }
+        }
+
+        $plan->date = json_encode($date);
         $plan->save();
 
         return redirect()->route('plandeformacion.index');

@@ -13,7 +13,7 @@
                 <div class="card-body">
 
                     <label for="PROD">Producción</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="PROD[]" id="PROD" multiple>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="PROD[]" id="PROD" multiple required />
                     @if(count($indicadorplan->date->PROD)>0)
                         @foreach ($indicadorplan->date->PROD as $valor)
                         <option value="{{$valor}}">{{$valor}}</option>
@@ -26,7 +26,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="MTTO">Mantenimiento</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="MTTO[]" id="MTTO" multiple>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="MTTO[]" id="MTTO" multiple required />
                     @if(count($indicadorplan->date->MTTO)>0)
                         @foreach ($indicadorplan->date->MTTO as $valor)
                         <option value="{{$valor}}">{{$valor}}</option>
@@ -39,7 +39,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="SSGG">Servicios Generales</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="SSGG[]" id="SSGG" multiple>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="SSGG[]" id="SSGG" multiple required />
                     @if(count($indicadorplan->date->SSGG)>0)
                         @foreach ($indicadorplan->date->SSGG as $valor)
                         <option value="{{$valor}}">{{$valor}}</option>
@@ -52,7 +52,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="CC">Compras y Contrato</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="CC[]" id="CC" multiple>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="CC[]" id="CC" multiple required />
                     @if(count($indicadorplan->date->CC)>0)
                         @foreach ($indicadorplan->date->CC as $valor)
                         <option value="{{$valor}}">{{$valor}}</option>
@@ -65,7 +65,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="SSII">Sistemas de Información</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="SSII[]" id="SSII" multiple>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="SSII[]" id="SSII" multiple required />
                     @if(count($indicadorplan->date->SSII)>0)
                         @foreach ($indicadorplan->date->SSII as $valor)
                         <option value="{{$valor}}">{{$valor}}</option>
@@ -78,7 +78,7 @@
             <div class="card col-md-6">
                 <div class="card-body">
                     <label for="SC">Seguridad Corporativa</label>
-                    <select style="width: 100%;" class="col-md-5 form-control" name="SC[]" id="SC" multiple>
+                    <select style="width: 100%;" class="col-md-5 form-control" name="SC[]" id="SC" multiple required />
                     @if(count($indicadorplan->date->SC)>0)
                         @foreach ($indicadorplan->date->SC as $valor)
                         <option value="{{$valor}}">{{$valor}}</option>

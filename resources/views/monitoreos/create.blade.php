@@ -30,7 +30,7 @@
                         <br>
                         <div class="form-group">
                             <label for="observacion">Observacion</label>
-                            <input type="text " name="observacion" id="observacion" class="form-control"required />
+                            <input type="text " name="observacion" id="observacion" class="form-control" required/>
                         </div>
 
                         <div class="form-group">
